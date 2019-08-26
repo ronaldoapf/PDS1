@@ -21,4 +21,4 @@ A interface seria onde a pessoa joga o endereço e a resposta seria a qual setor
 
 # Produtos semelhantes
 
-Existem produtos semelhantes mas em monte carmelo não temos.
+Existem produtos semelhantes mas em monte carmelo não temos. Foi feita uma pesquisa pós reunião para pesquisar se existia alguma aplicação que desenvolvesse a atividade desejada, com a pesquisa não obtivemos um aplicativo que atendesse aos requisitos da proposta.
