@@ -21,3 +21,10 @@ Na UFU existe um dispositivo que coleta dados a todo momento sobre a nossa atmos
 ##### Já foi feito um software por um aluno
 - não faz gráficos
 - possui funcionalidades a desejar
+
+## Glossário:
+Ionosfera:parte superior da atmosfera terrestre, onde se realiza a ionização, situada acima da estratosfera.
+
+Mapa de ionosfera: Apresenta as caractéristicas da ionosfera em mapa.
+
+Refração:Mudança na velocidade de uma onda ao atravessar a fronteira entre dois meios com diferentes índices de refração
