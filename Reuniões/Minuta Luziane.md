@@ -21,4 +21,8 @@ A interface será onde o individuo inseri seu endereço e logo obterá  a respos
 
 # Produtos semelhantes
 
-Existem produtos semelhantes mas em monte carmelo não temos. Foi feita uma pesquisa pós reunião para pesquisar se existia alguma aplicação que desenvolvesse a atividade desejada, com a pesquisa não obtivemos um aplicativo que atendesse aos requisitos da proposta.
+Existem produtos semelhantes,porém em Monte Carmelo não temos nada parecido. Foi feita uma pesquisa pós reunião para pesquisar se existia alguma aplicação que desenvolvesse a atividade desejada, com a pesquisa não obtivemos um aplicativo que atendesse aos requisitos da proposta.
+
+Aplicativo e-cidade é um software de simulação do cálculo de IPTU, sua objetividade é simular o cálculo do imposto a partir de diversos elementos, em relação ao que se é repassado pela prefeitura, seu uso é limitado para  os servidores municipais. 
+Como resultado será montado um mapa temático com todas as informações inseridas, onde o usuário poderá gerar relatórios nas variações do IPTU,variação dos valores separadas por setor, contribuinte ou bairro. 
+
