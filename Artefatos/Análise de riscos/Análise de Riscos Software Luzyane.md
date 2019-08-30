@@ -14,3 +14,13 @@ Principalmente nos quesitos de manipulação de mapas, como permitir que o usuá
 O projeto em questão apresenta vários casos de uso e possívelmente 3 perfis diferentes, podendo demandar bastante tempo tanto da equipe para implementar/testar a aplicação, quanto da professora Luzyane para explicar como cada funcionalidade/perfil deve operar e quais são suas entradas e saídas.
 - Probabilidade: **Alta**
 - Efeitos: **Toleráveis**
+
+### Falta de informações provenientes da prefeitura e usuário
+O projeto em questão necessita de informações que são repassadas pela prefeitura e usuário para que seu funcionamento posso ocorrer, caso essas informações não sejam informadas ou sejam informadas incorretamente vai ocasionar um falha no ciclo de vida do sistema..
+- Probabilidade: **Média**
+- Efeitos: **Sérios**
+
+### Coleta de dados
+O projeto em questão necessita de uma coleta de dados que podera ser feita por meios dos alunos envolvidos no projeto, ou via prefeitura de Monte Carmelo. Caso essas coletas não sejam feitas, não será possível que o sistema entre em uso, pois elas são de extrema importância para o seu funcionamento.
+- Probabilidade: **Alta**
+- Efeitos: **Sérios**
