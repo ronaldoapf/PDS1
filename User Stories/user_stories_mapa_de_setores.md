@@ -16,3 +16,14 @@ Graças ao aplicativo, e com poucos minutos de uso, Sílvia decide que primeiro 
 
 Amanda acaba de se mudar para outra região da cidade de Monte Carmelo e ao receber suas primeiras contas do mês, de água e energia, percebe que segundo o DEMAE (Departamento de Água e Esgoto) ela reside em um endereço no bairro Vila Nova, e segundo a CEMIG (Companhia Energética de Minas Gerais) ela reside no bairro Tamboril.
 Em dúvida sobre seu verdadeiro endereço, Amanda utiliza o aplicativo de mapa de setores para verificar qual o seu setor e qual o verdadeiro endereço de sua residência. Após concluir que a mesma reside no bairro Vila Nova, ela decide comunicar a CEMIG que seu endereço está errado e pede a correção do mesmo.
+
+
+### Fazer atualizacao de setor novo 
+
+Paulo trabalha na prefeitura da cidade de Monte Carmelo, atualmente ele percebeu um novo setor na cidade, onde o mesmo se encontra indisponivel no mapa da cidade, porém o mesmo existe. Contudo Paulo utilizará o aplicativo de mapa de setores para fazer a atualização deste novo setor, sendo assim ficarà mais fàcil para ele que è funcionàrio da prefeitura visualizar este novo setor ,  maior facilidade aos turistas e moradores deste bairro para o visualizar. Paulo conseguiu fazer o cadastramento deste novo setor com muita facilidade, e o mesmo jà se encontra disponìvel no aplicativo de mapa de setores.
+
+
+### Conferindo setores da cidade de Monte Carmelo
+
+Fernanda trabalha na coleta de dados e informações do aplicativo de mapa de setores e recentemente foi contestada para fazer um relatòrio contendo todos os setores existentes da cidade de Monte Carmelo, que a prefeitura a solicitou. Com isso Fernanda visualizou detalhamente todos os setores cadastros no aplicativo e fez seu relatòrio. Fernanda percebeu depois de um tempo que o mesmo estava atualizado.
+
