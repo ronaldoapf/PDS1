@@ -36,7 +36,7 @@ Com isso, ela resolveu utilizar o aplicativo para que pudesse obter um melhor va
 
 A prefeitura de Monte Carmelo-MG começou a receber inúmeras reclamações devido ao fato de que muitos alunos estavam sendo registrados em escolas afastadas dos bairros aos quais elas moravam.
 Tal situação estava trazendo muitos problemas e complicações para as familias, além do fato de que as vezes poderia se tornar inviável o aluno ir a escola.
-Com isso a prefeitura resolver consultar o aplicativo, para que pudesse ser feito uma melhor distribuição tendo como base os dados disponibilizados pelo próprio aplicativo.
+Com isso a prefeitura resolver consultar o aplicativo, para que pudesse ser feito uma melhor distribuição tendo como base os dados disponibilizados e os relatórios gerados pelo mesmo.
 
 
 ### Atualização do mapa de setores
