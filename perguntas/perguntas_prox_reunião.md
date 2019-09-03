@@ -1,4 +1,4 @@
-# Marcar reuniao para ver seguintes tópicos:
+# Marcar reunião para ver seguintes tópicos:
 
 - qual o principal objetivo da aplicação?
 - qual o problema em questão?
@@ -11,3 +11,4 @@
 ## Outras perguntas:
 
 - como o sistema funcionará? (fluxo de operações)
+- qual será a plataforma (app, web ou desktop)?
