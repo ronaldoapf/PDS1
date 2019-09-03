@@ -12,3 +12,4 @@
 
 - como o sistema funcionará? (fluxo de operações)
 - qual será a plataforma (app, web ou desktop)?
+- Com relação as estorias mostradas, tem alguma que não foi criada?
