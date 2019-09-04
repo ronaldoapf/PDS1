@@ -5,11 +5,12 @@
 - como a utilização de software resolverá o problema?
 - quem será o beneficiado?
 - discutir casos de uso
-- por que não utilizar google maps ?
-
+- quais funções do google maps poderiam ser úteis neste problema? Em que ele é limitado?
+- quais plataformas você imagina que seriam úteis na solução (app, web ou desktop)? Como?
 
 ## Outras perguntas:
 
 - como o sistema funcionará? (fluxo de operações)
-- qual será a plataforma (app, web ou desktop)?
-- Com relação as estorias mostradas, tem alguma que não foi criada?
+- você conhece sistemas similares?
+- há algum tipo de funcionalidade em outros sistemas que seriam interessantes nesse? Quais?
+- com relação as estorias mostradas, tem alguma que não foi criada?
