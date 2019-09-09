@@ -2,6 +2,7 @@ Atualizar/Melhorar docs:
 - [ ] Visão de negócios
 - [x] Casos de uso
 - [ ] Análise de riscos
+
 Criar/Atualizar estórias de usuários:
 - [ ] Criar tasks necessárias para concluir os critérios de aceitação das estórias.
 
