@@ -25,3 +25,8 @@ O projeto em questão necessita que seu banco de dados seja populado por meio do
 - Probabilidade: **Média**
 - Efeitos: **Sérios**
 
+### Usuário com dificuldade no uso do sistema 
+O projeto em questão na primeira etapa será uma aplicação que não vai constar de visualização gráfica, com isso pode ocorrer de o usuário final do sistema não conseguir manusear a aplicação, caso este não tenha um conhecimento básico de tecnologia.
+- Probabilidade: **Baixa**
+- Efeitos: **Toleráveis**
+
