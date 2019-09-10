@@ -30,3 +30,7 @@ O projeto em questão na primeira etapa será uma aplicação que não vai const
 - Probabilidade: **Baixa**
 - Efeitos: **Toleráveis**
 
+### Necessário a ajuda dos usuários para que o banco de dados seja conciso
+O projeto em questão pretende utilizar o site ´[openstreetmap](https://www.openstreetmap.org/about) para fazer a coleta de dados inicial. Esse projeto é desenvolvido por uma comunidade voluntária de mapeadores que contribuem e mantêm os dados. Isso pode fazer com que os dados dessa aplicação não seja tão confiável/segura para utilização. Seria necessário uma averiguação para a verificação se os dados não estão desatualizados. Como a própria professora Luziane deu um exemplo que o local onde ela reside não está mapeado. Sendo assim, seria necessário que o usuário informe ao sistema os seus dados de maneira correta para que isso auxilie na criação de um banco de dados com informações mais concisas. 
+- Probabilidade: **Alta**
+- Efeitos: **Toleráveis**
