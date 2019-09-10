@@ -1,8 +1,8 @@
 # Caso de negócio referente ao projeto da professora Luziane
 
-O projeto foi apresentado pela professora Luziane devido ao fato de que a cidade de Monte Carmelo-MG possui algumas pendencias decorrentes de uma falta de um plano diretor bem elaborado além de uma setorização mal distribuida, causando assim problemas para a população em geral e prefeitura, como por exemplo: 
+O projeto foi apresentado pela professora Luziane devido ao fato de que a cidade de Monte Carmelo-MG possuir algumas pendências decorrentes da falta de um plano diretor bem elaborado além de uma setorização mal distribuida, causando assim problemas para a população em geral e prefeitura, como por exemplo: 
 
-- Valor de iptu injusto.
+- Realização de cálculos de iptu injustos.
 - Valores das contas de energia e água injustos.
 - Valor do metro quadrado dos lotes injustos.
 - Problemas com má distribuições de serviços públicos como postos de saúde e escolas.
