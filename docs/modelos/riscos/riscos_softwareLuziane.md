@@ -20,7 +20,8 @@ O projeto em questão necessita de informações que são repassadas pela prefei
 - Probabilidade: **Média**
 - Efeitos: **Sérios**
 
-### Coleta de dados
-O projeto em questão necessita de uma coleta de dados que podera ser feita por meios dos alunos envolvidos no projeto, ou via prefeitura de Monte Carmelo. Caso essas coletas não sejam feitas, não será possível que o sistema entre em uso, pois elas são de extrema importância para o seu funcionamento.
-- Probabilidade: **Alta**
+### Falha na coleta de informação por meio do site openstreetmap 
+O projeto em questão necessita que seu banco de dados seja populado por meio do site openstreetmap para que este entre em funcionamento, caso tenha falha na coleta das informações o sistema não vai conseguir popular o banco de dados, tornando assim sem uso para os usuários finais.
+- Probabilidade: **Média**
 - Efeitos: **Sérios**
+
