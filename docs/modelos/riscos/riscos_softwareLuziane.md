@@ -10,7 +10,7 @@ O projeto em questão pretende utilizar uma API provida pelo site [openstreetmap
 Tal projeto é desenvolvido por uma comunidade voluntária de mapeadores que contribuem e mantêm os dados. Isso pode fazer com que os dados da aplicação de setores não seja tão confiável/segura para utilização. Seria necessário uma averiguação para verificar se os dados não estão desatualizados ou inconsistentes. Como a própria professora Luziane deu um exemplo que o local onde ela reside não está mapeado no openstreetmap.
 Sendo assim, seria desejado que houvesem usuários ligados à aplicação e que ao mesmo tempo fizessem parte da comunidade voluntária de mapeadores, com o objetivo de garantir o controle de qualidade dos dados utilizados na aplicação. Futuramente é desejável a implementação de um serviço do tipo "Fale Conosco", na qual o usuário final da aplicação poderá enviar sugestões/melhorias/comentários para os desenvolvedores e/ou equipe que administra a mesma.
 - Probabilidade: **Alta**
-- Efeitos: **Toleráveis**
+- Efeitos: **Sérios**
 
 ### Banco de dados não populado, ou populado incorretamente, por meio de falhas durante a integração com a API devido a complexidade de utilizar a mesma
 O projeto em questão necessita que seu banco de dados seja populado por meio do site openstreetmap, gerando a necessidade dos desenvolvedores em aprender a utilizar tal API. Além do processo de aprendizado poder demandar, relativamente, bastante tempo, pode ocorrer também um mal entendimento da mesma gerando uma base de dados com ruídos dificultando a execução e a utilização da aplicação
