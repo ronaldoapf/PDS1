@@ -8,7 +8,7 @@ O projeto em questão apresenta vários casos de uso e possívelmente 3 perfis d
 ### Alta dependência de API que pode fornecer dados duvidosos para a aplicação
 O projeto em questão pretende utilizar uma API provida pelo site [openstreetmap](https://www.openstreetmap.org/about) para fazer a coleta de dados inicial e compor a base de dados da aplicação.
 Tal projeto é desenvolvido por uma comunidade voluntária de mapeadores que contribuem e mantêm os dados. Isso pode fazer com que os dados da aplicação de setores não seja tão confiável/segura para utilização. Seria necessário uma averiguação para verificar se os dados não estão desatualizados ou inconsistentes. Como a própria professora Luziane deu um exemplo que o local onde ela reside não está mapeado no openstreetmap.
-Sendo assim, seria desejado que houvesem usuários ligados à aplicação e que ao mesmo tempo fizessem parte da comunidade voluntária de mapeadores, com o objetivo de garantir o controle de qualidade dos dados utilizados na aplicação. Futuramente é desejável a implementação de um serviço do tipo "Fale Conosco", na qual o usuário final da aplicação poderá enviar sugestões/melhorias/comentários para os desenvolvedores e/ou equipe que administra a mesma.
+Sendo assim, seria desejado que houvessem usuários ligados à aplicação e que ao mesmo tempo fizessem parte da comunidade voluntária de mapeadores, com o objetivo de garantir o controle de qualidade dos dados utilizados na aplicação. Futuramente é desejável a implementação de um serviço do tipo "Fale Conosco", na qual o usuário final da aplicação poderá enviar sugestões/melhorias/comentários para os desenvolvedores e/ou equipe que administra a mesma.
 - Probabilidade: **Alta**
 - Efeitos: **Toleráveis**
 
