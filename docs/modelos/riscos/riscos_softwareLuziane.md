@@ -21,3 +21,9 @@ O projeto em questão necessita que seu banco de dados seja populado por meio do
 Na primeira etapa do projeto será planejada uma aplicação que não constará de visualização de mapeamento gráfico, ou seja, não terá um mapa personalizado de acordo com a necessidade da aplicação. Como o público alvo da aplicação são os moradores da cidade de Monte Carmelo na faixa etária de "Adultos/Idosos", pode ser que os mesmos não tenham tanto contato com tecnologia. Diante de tal situação, pode ocorrer de o usuário final não conseguir manusear a aplicação ou interpretar os resultados, caso este não tenha um conhecimento básico de tecnologia.
 - Probabilidade: **Baixa**
 - Efeitos: **Toleráveis**
+
+
+### Usuário final não passar os dados necessários para o funcionamento das funções de cálculo de iptu
+O projeto em questão necessita que o usuário final informe dados da sua residencia como : área de lote,área construida, entre outras informações para que o cálculo do iptu possa ser efetuado da maneira mais precisa, assim correspondendo a realidade. Como o público alvo da aplicação são os moradores da cidade de Monte Carmelo-MG, é possível que alguns usuários não se sintam confortáveis para informar esses dados, assim não sendo possível efetuar os cálculos para eles.
+- Probabilidade: **Baixa**
+- Efeitos: **Toleráveis**
