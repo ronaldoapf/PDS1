@@ -27,3 +27,9 @@ Na primeira etapa do projeto será planejada uma aplicação que não constará 
 O projeto em questão necessita que o usuário final informe dados da sua residencia como : área de lote,área construida, entre outras informações para que o cálculo do iptu possa ser efetuado da maneira mais precisa, assim correspondendo a realidade. Como o público alvo da aplicação são os moradores da cidade de Monte Carmelo-MG, é possível que alguns usuários não se sintam confortáveis para informar esses dados, assim não sendo possível efetuar os cálculos para eles.
 - Probabilidade: **Baixa**
 - Efeitos: **Toleráveis**
+
+### Valores calculados no aplicativo não condizente com a realidade da cidade
+O projeto em questão tem como umas das principais funções e benefícios para o usuário o cálculo do iptu, água, energia, com isso há possibilidade de que o método realizado na prefeitura não condizente com o metodo padrão, assim os valores não vão ser aproximados entre si. Com isso pode gerar insatisfação do usuário final do aplicativo, mesmo não sendo um erro do aplicativo em si e sim da prefeitura.
+- Probabilidade: **Baixa**
+- Efeitos: **Sérios**
+
