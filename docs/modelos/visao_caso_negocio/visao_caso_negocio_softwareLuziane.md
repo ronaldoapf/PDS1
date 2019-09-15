@@ -7,7 +7,7 @@ O projeto foi apresentado pela professora Luziane devido ao fato de que a cidade
 - Valor do metro quadrado dos lotes injustos.
 - Problemas com má distribuições de serviços públicos como postos de saúde e escolas.
 
-Em vista da **dificuldade** de acesso a informações como o valor do m², custo médio de kWh, escolaridade, renda, transporte, saniamento básico, dentre outras informações sobre a "região" na qual o morador reside (também denominado setor), o objetivo da aplicação é permitir o acesso deste conteúdo por meio de uma plataforma web e mobile (de um aplicativo e de um site).
+Em vista da **dificuldade** de acesso a informações como o valor do m², custo médio de kWh, escolaridade, renda, transporte, saneamento básico, dentre outras informações sobre a "região" na qual o morador reside (também denominado setor), o objetivo da aplicação é permitir o acesso deste conteúdo por meio de uma plataforma web e mobile (de um aplicativo e de um site).
 A solução recomendada pela professora Luziane é que apartir da utilização de outro sistema, uma API chamada [OpenStreetMap](https://www.openstreetmap.org/about), que promoverá uma série de dados necessários para a população da base de dados da aplicação, além de informações públicas do IBGE(Instituto Brasileiro de Geografia e Estatística) que vai possibilitar pegar mais informações sobre a cidade, tanto os moradores quanto a prefeitura da cidade de Monte Carmelo, poderão pesquisar por endereços do município e visualizar uma série de informações sobre o setor de tal endereço.
 
 Dentre as várias funcionalidades e benefícios que a aplicação trará, encontram-se os seguintes exemplos:
@@ -18,7 +18,7 @@ Dentre as várias funcionalidades e benefícios que a aplicação trará, encont
 - Melhor distribuição de atendimento hospitalar.
 - Consulta sobre valores baseado no endereço em que se encontra.
 - Verificar o tipo de edificação de um endereço.
-- Verifiar referente ao endereço como se tem calçada, transporte público, iluminação, coleta de lixo, distancia das escolas mais próximas.
+- Verificar informações referentes ao endereço, como se possui calçada, transporte público, iluminação, coleta de lixo, nível de escolaridade.
 
 Caso o projeto não seja iniciado ou não termine este não vai ter um impacto direto no municipio, pois sua influência só vai ocorrer após o seu lançamento, mas caso este seja desenvolvido vai impactar positivamente a cidade, pois a cidade de Monte Carmelo é muito precária com relação a documentos importantes como: CTM, Plano diretor, que são fundamentais para que possa ser feito um bom planejamento estratégico para a cidade, além de serem essenciais para cálculos de iptu.
 
