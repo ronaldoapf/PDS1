@@ -28,8 +28,21 @@ O projeto em questão necessita que o usuário final informe dados da sua reside
 - Probabilidade: **Baixa**
 - Efeitos: **Toleráveis**
 
+
 ### Valores calculados no aplicativo não condizente com a realidade da cidade
 O projeto em questão tem como umas das principais funções e benefícios para o usuário o cálculo do iptu, água, energia, com isso há possibilidade de que o método realizado na prefeitura não condizente com o metodo padrão, assim os valores não vão ser aproximados entre si. Com isso pode gerar insatisfação do usuário final do aplicativo, mesmo não sendo um erro do aplicativo em si e sim da prefeitura.
 - Probabilidade: **Baixa**
 - Efeitos: **Sérios**
+
+### Usuário final deseja informar um novo setor só que a API não o reconhece.
+O projeto em questão dá a opção do usuário fazer login e na seção Fale conosco o mesmo poderá dar sugestões, reclamações aos administradores do aplicativo. Portanto caso o usuário informe um novo endereço no setor de Monte Carmelo só que o mesmo não está disponível no Api no site  site openstreetmap, será necessário uma interrogação sobre como resolver determinado problema.
+- Probabilidade: **Média**
+- Efeitos: **Sérios**
+
+### Usuário final pretende utilizar o aplicativo pois o mesmo não pretende fazer o cadastro
+Para se utilizar o aplicativo de mapa de setores é necessário fazer o cadastro e efetuar login. Para aparar melhor os usuários e dar uma resposta caso necessário. Porém alguns usuários não se sentem confortável para passar suas informações, com isso não será possível efetuar cadastro e nem login.
+- Probabilidade: **Baixa**
+- Efeitos: **Toleráveis**
+
+
 
