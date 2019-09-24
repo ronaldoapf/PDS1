@@ -43,6 +43,3 @@ O projeto em questão dá a opção do usuário fazer login e na seção Fale co
 Para se utilizar o aplicativo de mapa de setores é necessário fazer o cadastro e efetuar login. Para aparar melhor os usuários e dar uma resposta caso necessário. Porém alguns usuários não se sentem confortável para passar suas informações, com isso não será possível efetuar cadastro e nem login.
 - Probabilidade: **Baixa**
 - Efeitos: **Toleráveis**
-
-
-
