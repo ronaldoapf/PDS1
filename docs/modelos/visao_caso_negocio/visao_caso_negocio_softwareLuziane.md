@@ -1,26 +1,20 @@
 # Caso de negócio referente ao projeto da professora Luziane
 
-O projeto foi apresentado pela professora Luziane devido ao fato de que a cidade de Monte Carmelo-MG possuir algumas pendências decorrentes da falta de um plano diretor bem elaborado além de uma setorização mal distribuida, causando assim problemas para a população em geral e prefeitura, como por exemplo: 
+O projeto foi apresentado pela professora Luziane devido a necessidade de automatizar um trabalho manual que ela efetuava, sendo este trabalho a decodificação de planilhas do excel que contém informações disponibilizadas pelo IBGE, logo o softare tem como objetivo traduzir essas colunas codificadas baseado em um arquivo PDF disponibilizado também pelo IBGE.
 
-- Realização de cálculos de iptu injustos.
-- Valores das contas de energia e água injustos.
-- Valor do metro quadrado dos lotes injustos.
-- Problemas com má distribuições de serviços públicos como postos de saúde e escolas.
+- Tempo gasto para traduzir colunas.
+- Trabalho manual cansativo.
+- Grande quantidade de colunas há serem traduzidas manualmente.
 
-Em vista da **dificuldade** de acesso a informações como o valor do m², custo médio de kWh, escolaridade, renda, transporte, saneamento básico, dentre outras informações sobre a "região" na qual o morador reside (também denominado setor), o objetivo da aplicação é permitir o acesso deste conteúdo por meio de uma plataforma web e mobile (de um aplicativo e de um site).
-A solução recomendada pela professora Luziane é que apartir da utilização de outro sistema, uma API chamada [OpenStreetMap](https://www.openstreetmap.org/about), que promoverá uma série de dados necessários para a população da base de dados da aplicação, além de informações públicas do IBGE(Instituto Brasileiro de Geografia e Estatística) que vai possibilitar pegar mais informações sobre a cidade, tanto os moradores quanto a prefeitura da cidade de Monte Carmelo, poderão pesquisar por endereços do município e visualizar uma série de informações sobre o setor de tal endereço. O aplicativo visa também melhorar a comunicação com o usuário, possibilitando que ele envie dúvidas e reclamações via aplicativo, com o objetivo de melhorar o desenvolvimento da cidade e otimizar esta comunicação.
+Em vista da **dificuldade** da realização das traduções manuais das planilhas do IBGE, o objetivo da aplicação é permitir o acesso destas planilhas já traduzidas e com nomes **amigáveis** aos usuários, sendo também possível disponibilizar tais informações visualmente, utilizando a API chamada [OpenStreetMap](https://www.openstreetmap.org/about).
+A solução recomendada pela professora Luziane é que a partir da criação de um software para Desktop, que promoverá uma interface para o usuário inserir a planilha do excel e o arquivo de índice, o software vai traduzir as colunas e gerar uma nova planilha. A partir desta nova planilha, será possível criar uma visualização gráfica utilizando a API do OpenStreetMap, sendo disponibilizado as informações coletadas na planilha para mostrar dados referentes a um setor.
 
 Dentre as várias funcionalidades e benefícios que a aplicação trará, encontram-se os seguintes exemplos:
 
-- Cálculo de IPTU
-- Possibilidade de encontrar melhor valor vendal para imóveis
-- Melhor distribuição de vagas em escolas públicas.
-- Melhor distribuição de atendimento hospitalar.
-- Consulta sobre valores baseado no endereço em que se encontra.
-- Verificar o tipo de edificação de um endereço.
-- Verificar informações referentes ao endereço, como se possui calçada, transporte público, iluminação, coleta de lixo, nível de escolaridade.
-- Criação de um canal de comunicação para os usuários, com o intuito de sanar dúvidas e enviar reclamações.
+- Automização da decodificação da planilha.
+- Visualização gráfica das informações.
+- Criação de um sistema que vai beneficiar a área acadêmica e profissional.
 
-Caso o projeto não seja iniciado ou não termine este não vai ter um impacto direto no municipio, pois sua influência só vai ocorrer após o seu lançamento, mas caso este seja desenvolvido vai impactar positivamente a cidade, pois a cidade de Monte Carmelo é muito precária com relação a documentos importantes como: CTM, Plano diretor, que são fundamentais para que possa ser feito um bom planejamento estratégico para a cidade, além de serem essenciais para cálculos de iptu.
+Caso o projeto não seja iniciado ou não termine este vai impactar diretamente a professora Luziane, pois esta necessita do software para o uso diário na Universidade, ou seja, o projeto sendo implementado vai ser uma forma de otimizar suas pesquisas e trabalhos, melhorando assim sua perfomance e eficiência no trabalho.
 
-O desenvolvimento do projeto tem tempo previsto de 4 meses, sendo que este vai ser dividido em três partes com duas de responsabilidade da professora Luziane e a última parte sendo de responsabilidade da equipe. Para seu desenvolvimento não é previsto investimentos necessários, tendo em vista que todo equipamento e mão de obra já estão disponiveis.
+O desenvolvimento do projeto tem tempo previsto de 4 meses, sendo este de total responsabilidade da equipe de desenvolvimento, a única responsabilidade da professora Luziane será informar o local para coletar as pesquisas efeutadas pelo IBGE.
