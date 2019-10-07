@@ -10,3 +10,8 @@ O projeto em questão necessita que os usuários tenham um conhecimento básico 
 - Probabilidade: **Baixa**
 - Efeitos: **Gravíssimos**
 
+### Nomes das colunas extremamente grande 
+O projeto em questão necessita que o usuário entre com a planilha xlsx e a planilha de índice para ser feita a decodificação das colunas, porém grande parte das colunas possuem nomes relativamente grandes que não seriam apropriados de serem inclusos na tabela, devido a isso, caso não seja feito um trabalho de ORI nessas informações, a decodificação pode não ser eficiente.
+- Probabilidade: **Média**
+- Efeitos: **Sérios**
+
