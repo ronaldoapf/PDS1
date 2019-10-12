@@ -6,6 +6,9 @@ def gerarIndiceTXT(diretorio, frase):
        f = open(diretorio,"a+")
        f.write(frase)
        f.close()
+       
+def salvarPlanilhaCSV(df,file_name):
+        df.to_csv(file_name, sep='\t', encoding='utf-8')
 
 planilha = pd.read_csv("./planilhas/Basico_MG.csv", delimiter=",")
 indice_csv = pd.read_csv("./pdfs/indice.csv", delimiter=",")
@@ -28,3 +31,6 @@ print(dict_indice)
 #criar arquivo txt baseado na planilha de indices
 for key, value in dict_indice.items(): 
     gerarIndiceTXT("indice.txt",' \n' + 'Código: ' + key + ' Valor: ' + value)
+
+#teste salvar planilha csv
+salvarPlanilhaCSV(planilha, "teste.csv")
