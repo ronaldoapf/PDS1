@@ -1,0 +1,17 @@
+chave,valor
+basico_uf_situacao_1,urb_cid_vila
+basico_uf_situacao_2,nao_urb_cid_vila
+basico_uf_situacao_3,urb_isolada
+basico_uf_situacao_4,rur_ext_urb
+basico_uf_situacao_5,rur_isol_povoado
+basico_uf_situacao_6,rur_isol_nucleo
+basico_uf_situacao_7,rur_isol_outros_aglo
+basico_uf_situacao_8,rur_excl_rur
+basico_uf_tipo_do_setor_0,comum
+basico_uf_tipo_do_setor_1,aglo_subnormal
+basico_uf_tipo_do_setor_2,militar
+basico_uf_tipo_do_setor_3,alojamentos_acamp
+basico_uf_tipo_do_setor_4,naval
+basico_uf_tipo_do_setor_5,indigena
+basico_uf_tipo_do_setor_6,penal
+basico_uf_tipo_do_setor_7,asilos_orfanatos
