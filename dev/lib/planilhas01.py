@@ -1,6 +1,5 @@
-from tabula import read_pdf
+import tabula as tb
 
-df = read_pdf("../pdf/Documentacao.pdf")
+df = tb.read_pdf("../pdf/Documentacao.pdf")
 
 print(df)
-
