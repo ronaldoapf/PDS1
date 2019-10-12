@@ -1,4 +1,11 @@
 import pandas as pd
+import numpy as np
+
+#criar arquivo txt baseado na planilha de indice
+def gerarIndiceTXT(diretorio, frase):
+       f = open(diretorio,"a+")
+       f.write(frase)
+       f.close()
 
 planilha = pd.read_csv("./planilhas/Basico_MG.csv", delimiter=",")
 indice_csv = pd.read_csv("./pdfs/indice.csv", delimiter=",")
@@ -16,3 +23,8 @@ for val in planilha.situacao.unique():
     planilha.situacao[planilha.situacao == val] = dict_indice[indx]
 
 print(planilha.situacao)
+print(dict_indice)
+
+#criar arquivo txt baseado na planilha de indices
+for key, value in dict_indice.items(): 
+    gerarIndiceTXT("indice.txt",' \n' + 'Código: ' + key + ' Valor: ' + value)
