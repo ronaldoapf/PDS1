@@ -9,6 +9,12 @@ def gerarIndiceTXT(diretorio, frase):
        
 def salvarPlanilhaCSV(df,file_name):
         df.to_csv(file_name, sep='\t', encoding='utf-8')
+        
+def filtrarCamposRenomiar(planilha2):
+        for col in planilha.columns: 
+            if len(col) > 10:
+                print(col)
+        
 
 planilha = pd.read_csv("C:\Users\joao\PDS1\dev\csv\Basico_MG.csv", delimiter=",")
 indice_csv = pd.read_csv("C:\Users\joao\PDS1\dev\csv\indice.csv", delimiter=",")
@@ -34,3 +40,6 @@ for key, value in dict_indice.items():
 
 #teste salvar planilha csv
 salvarPlanilhaCSV(planilha, "teste.csv")
+
+#filtrar colunas
+filtrarCamposRenomiar(planilha)
