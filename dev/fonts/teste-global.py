@@ -9,32 +9,39 @@ def gerarIndiceTXT(diretorio, frase):
 def salvarPlanilhaCSV(df,file_name):
     df.to_csv(file_name, sep='\t', encoding='utf-8')
         
-def gerar_dict_indice(dir_csv_indice):
+def gerarDictIndice(dir_csv_indice):
     indice_csv = pd.read_csv(dir_csv_indice, delimiter=",")
     dict_indice = indice_csv.set_index('chave')['valor'].to_dict() 
     return dict_indice
 
-def carregarCSV(dir_csv):
+def carregarCsvEmDataframe(dir_csv):
     return pd.read_csv(dir_csv, delimiter=",")
 
-def toLowerCase(array):
-    return
+def decodificarColunasDeDataframe(nomeArquivo, dataframe, dict_indice):
+    c = []
+    for column in dataframe.columns:
+        i = nomeArquivo + "_" + column
+        if(i in dict_indice):
+            c.append(dict_indice[i])
+        else:
+            c.append(column)
+    return c
 
-planilha = carregarCSV("../csv/Basico_MG.csv")
-#indice_csv = pd.read_csv("../csv/indice.csv", delimiter=",")
+def removerColunasDoDataframe(dataframe, cols):
+    return dataframe.drop(columns=cols)
 
-#deixando o nome das colunas todos em minusculo
+
+planilha = carregarCsvEmDataframe("../csv/Descrição dos Setores_MG.csv")
 planilha.columns = planilha.columns.str.lower()
 
-#criando dicionario da planilha de indices
-#dict_indice = indice_csv.set_index('key')['value'].to_dict() 
 
-#print(dict_indice)
+idx = gerarDictIndice("../csv/indice.csv")
 
-print(luz.gerar_dict_indice("../csv/indice.csv"))
+planilha.columns = decodificarColunasDeDataframe("basico",planilha, idx)
+
+print(planilha.head())
 
 """
-
 print(planilha.situacao)
 
 for val in planilha.situacao.unique():
@@ -50,5 +57,4 @@ for key, value in dict_indice.items():
 
 #teste salvar planilha csv
 salvarPlanilhaCSV(planilha, "teste.csv")
-
 """
