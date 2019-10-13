@@ -1,25 +1,39 @@
 import pandas as pd
-import numpy as np
 
 #criar arquivo txt baseado na planilha de indice
 def gerarIndiceTXT(diretorio, frase):
-       f = open(diretorio,"a+")
-       f.write(frase)
-       f.close()
+    f = open(diretorio,"a+")
+    f.write(frase)
+    f.close()
        
 def salvarPlanilhaCSV(df,file_name):
-        df.to_csv(file_name, sep='\t', encoding='utf-8')
+    df.to_csv(file_name, sep='\t', encoding='utf-8')
+        
+def gerar_dict_indice(dir_csv_indice):
+    indice_csv = pd.read_csv(dir_csv_indice, delimiter=",")
+    dict_indice = indice_csv.set_index('chave')['valor'].to_dict() 
+    return dict_indice
 
-planilha = pd.read_csv("../csv/Basico_MG.csv", delimiter=",")
-indice_csv = pd.read_csv("../csv/indice.csv", delimiter=",")
+def carregarCSV(dir_csv):
+    return pd.read_csv(dir_csv, delimiter=",")
+
+def toLowerCase(array):
+    return
+
+planilha = carregarCSV("../csv/Basico_MG.csv")
+#indice_csv = pd.read_csv("../csv/indice.csv", delimiter=",")
 
 #deixando o nome das colunas todos em minusculo
 planilha.columns = planilha.columns.str.lower()
 
 #criando dicionario da planilha de indices
-dict_indice = indice_csv.set_index('key')['value'].to_dict() 
+#dict_indice = indice_csv.set_index('key')['value'].to_dict() 
 
-print(dict_indice)
+#print(dict_indice)
+
+print(luz.gerar_dict_indice("../csv/indice.csv"))
+
+"""
 
 print(planilha.situacao)
 
@@ -36,3 +50,5 @@ for key, value in dict_indice.items():
 
 #teste salvar planilha csv
 salvarPlanilhaCSV(planilha, "teste.csv")
+
+"""
