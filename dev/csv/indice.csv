@@ -15,7 +15,7 @@ basico_tipo_do_setor_4,naval
 basico_tipo_do_setor_5,indigena
 basico_tipo_do_setor_6,penal
 basico_tipo_do_setor_7,asilos_orfanatos
-basico_var01,num,
+basico_var01,num_dom_part
 basico_var02,rendim_mensal_total
 basico_var03,rendim_mensal_por_pessoa
 basico_var04,variancia_rend_mensal_por_pessoa
@@ -29,7 +29,6 @@ basico_var11,variancia_anos_estudados
 basico_var12,num_moradores_em_dom
 basico_var13,media_moradores_em_dom
 basico_var14,variancia_num_moradores
-
 domicilio_v0001,dom
 domicilio_v0002,dom_part
 domicilio_v000,dom_part_perm

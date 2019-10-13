@@ -1,5 +1,7 @@
-import tabula as tb
+import pandas as pd
 
-df = tb.read_pdf("../pdf/Documentacao.pdf")
+indice_csv = pd.read_csv("../csv/indice.csv", delimiter=",")
 
-print(df)
+dict_indice = indice_csv.set_index('chave')['valor'].to_dict() 
+
+print(dict_indice)
