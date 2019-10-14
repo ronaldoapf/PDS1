@@ -11,10 +11,19 @@ def salvarPlanilhaCSV(df,file_name):
         df.to_csv(file_name, sep='\t', encoding='utf-8')
         
 def filtrarCamposRenomiar(planilha2):
+        index = 0
+        lista_colunas = []
         for col in planilha.columns: 
             if len(col) > 10:
                 print(col)
+                lista_colunas.append(index)
+            index+=1
+            
+        return lista_colunas
         
+def substituirColunas(df,list_columns):
+        df.rename(columns={"cod_uf": "a"})
+        return df
 
 planilha = pd.read_csv("C:\Users\joao\PDS1\dev\csv\Basico_MG.csv", delimiter=",")
 indice_csv = pd.read_csv("C:\Users\joao\PDS1\dev\csv\indice.csv", delimiter=",")
@@ -42,4 +51,7 @@ for key, value in dict_indice.items():
 salvarPlanilhaCSV(planilha, "teste.csv")
 
 #filtrar colunas
-filtrarCamposRenomiar(planilha)
+list_columns = filtrarCamposRenomiar(planilha)
+
+#teste substituirColunas
+planilha = substituirColunas(planilha)
