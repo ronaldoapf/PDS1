@@ -10,16 +10,10 @@ def gerarIndiceTXT(diretorio, frase):
 def salvarPlanilhaCSV(df,file_name):
         df.to_csv(file_name, sep='\t', encoding='utf-8')
         
-def filtrarCamposRenomiar(planilha2):
-        index = 0
-        lista_colunas = []
-        for col in planilha.columns: 
-            if len(col) > 10:
-                print(col)
-                lista_colunas.append(index)
-            index+=1
-            
-        return lista_colunas
+def filtrarCamposRenomiar(df, lista_mudar):
+        for colunas in lista_mudar.keys: 
+            df.columns[colunas] = lista_mudar[colunas]     
+        return df
         
 def substituirColunas(df,list_columns):
         df.rename(columns={"cod_uf": "a"})
@@ -51,7 +45,7 @@ for key, value in dict_indice.items():
 salvarPlanilhaCSV(planilha, "teste.csv")
 
 #filtrar colunas
-list_columns = filtrarCamposRenomiar(planilha)
+planilha2 = filtrarCamposRenomiar(planilha, dict_indice)
 
 #teste substituirColunas
 planilha = substituirColunas(planilha)
