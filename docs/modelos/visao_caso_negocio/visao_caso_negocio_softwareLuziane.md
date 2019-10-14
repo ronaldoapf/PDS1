@@ -7,7 +7,7 @@ O projeto foi apresentado pela professora Luziane devido a necessidade de automa
 - Grande quantidade de colunas há serem traduzidas manualmente.
 
 Em vista da **dificuldade** da realização das traduções manuais das planilhas do IBGE, o objetivo da aplicação é permitir o acesso destas planilhas já traduzidas e com nomes **amigáveis** aos usuários, sendo também possível disponibilizar tais informações visualmente, utilizando a API chamada [OpenStreetMap](https://www.openstreetmap.org/about).
-A solução recomendada pela professora Luziane é que a partir da criação de um software para Desktop, que promoverá uma interface para o usuário inserir a planilha do excel e o arquivo de índice, o software vai traduzir as colunas e gerar uma nova planilha. A partir desta nova planilha, será possível criar uma visualização gráfica utilizando a API do OpenStreetMap, sendo disponibilizado as informações coletadas na planilha para mostrar dados referentes a um setor.
+A solução recomendada pela professora Luziane é que a partir da criação de um software para Desktop, que promoverá uma interface para o usuário inserir a planilha do excel e o arquivo de índice, o usuário tera a oportunidade de selecionar as colunas na qual ele vai utilizar e com isso podendo renomear esta, com um nome mais amigável após a decodificação. A partir desta nova planilha, será possível criar uma visualização gráfica utilizando a API do OpenStreetMap, sendo disponibilizado as informações coletadas na planilha para mostrar dados referentes a um setor.
 
 Dentre as várias funcionalidades e benefícios que a aplicação trará, encontram-se os seguintes exemplos:
 
