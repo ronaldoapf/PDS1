@@ -29,17 +29,17 @@ def decodificarColunasDeDataframe(nomeArquivo, dataframe, dict_indice):
 
 def removerColunasDoDataframe(dataframe, cols):
     return dataframe.drop(columns=cols)
+    
+def toLowerCase(strings):
+    x = []
+    for s in strings:
+        x.append(s.lower())
+        
+    return x
 
+x = ["César Henriqje Marçál", "Ronaldo Amanda Oliveira"]
 
-planilha = carregarCsvEmDataframe("../csv/Descrição dos Setores_MG.csv")
-planilha.columns = planilha.columns.str.lower()
-
-
-idx = gerarDictIndice("../csv/indice.csv")
-
-planilha.columns = decodificarColunasDeDataframe("basico",planilha, idx)
-
-print(planilha.head())
+print(toLowerCase(x))
 
 """
 print(planilha.situacao)
