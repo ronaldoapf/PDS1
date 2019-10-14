@@ -37,24 +37,40 @@ def toLowerCase(strings):
         
     return x
 
-x = ["César Henriqje Marçál", "Ronaldo Amanda Oliveira"]
+def decodificarValoresDaColuna(df, colunas, indices):
+    for coluna in colunas:
+        idx = [i for i in indices.keys() if coluna in i] 
+        if(idx):
+            values = list(map(int,[i.split("_")[-1] for i in idx]))
+            dic = dict(zip(values,[indices[i] for i in idx]))
+            
+            
+            df[coluna] = df[coluna].map(dic)
+    
+    return df
+    
+            
+#carregando indices
+idx = gerarDictIndice("../csv/indice.csv")
+#carregando csv de  teste
+df = carregarCsvEmDataframe("../csv/Basico_MG.csv")
+#colocando caracteres das colunas para minusculo
+df.columns = toLowerCase(df.columns)
 
-print(toLowerCase(x))
+#colunas removidas
+del_cols = ['cod_uf', 'nome_da_uf', 'cod_meso', 'nome_da_meso',
+       'cod_micro', 'nome_da_micro', 'cod_rm', 'nome_da_rm', 'cod_municipio',
+       'nome_do_municipio', 'cod_distrito',
+       'cod_subdistrito', 'nome_do_subdistrito', 'cod_bairro',
+       'nome_do_bairro', 'var01', 'var02',
+       'var03', 'var04', 'var05', 'var06', 'var07', 'var08', 'var09', 'var10',
+       'var11', 'var12', 'var13']
+#removendo colunas
+df = removerColunasDoDataframe(df,del_cols)
 
-"""
-print(planilha.situacao)
+#decodificando colunas
+df.columns = decodificarColunasDeDataframe("basico", df, idx)
 
-for val in planilha.situacao.unique():
-    indx = "basico_uf_" + "situacao_" + str(val)
-    planilha.situacao[planilha.situacao == val] = dict_indice[indx]
-
-print(planilha.situacao)
-print(dict_indice)
-
-#criar arquivo txt baseado na planilha de indices
-for key, value in dict_indice.items(): 
-    gerarIndiceTXT("indice.txt",' \n' + 'Código: ' + key + ' Valor: ' + value)
-
-#teste salvar planilha csv
-salvarPlanilhaCSV(planilha, "teste.csv")
-"""
+#decodificando valores das colunas que restaram
+df = decodificarValoresDaColuna(df, df.columns, idx)
+print(df.head())
