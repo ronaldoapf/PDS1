@@ -2,9 +2,11 @@ import pandas as pd
 import numpy as np
 
 #criar arquivo txt baseado na planilha de indice
-def gerarIndiceTXT(diretorio, frase):
-       f = open(diretorio,"a+")
-       f.write(frase)
+def gerarIndiceTXT(dict):
+       f = open("dict.txt","w")       
+       for k, v in dict.items():
+            f.write(str(k) + ' : '+ str(v) + '\n\n')
+        
        f.close()
        
 def salvarPlanilhaCSV(df,file_name):
@@ -30,16 +32,12 @@ dict_indice = indice_csv.set_index('chave')['valor'].to_dict()
 
 print(planilha.situacao)
 
-for val in planilha.situacao.unique():
-    indx = "basico_uf_" + "situacao_" + str(val)
-    planilha.situacao[planilha.situacao == val] = dict_indice[indx]
 
 print(planilha.situacao)
 print(dict_indice)
 
 #criar arquivo txt baseado na planilha de indices
-for key, value in dict_indice.items(): 
-    gerarIndiceTXT("indice.txt",' \n' + 'Código: ' + key + ' Valor: ' + value)
+gerarIndiceTXT(dict_indice)
 
 #teste salvar planilha csv
 salvarPlanilhaCSV(planilha, "teste.csv")
