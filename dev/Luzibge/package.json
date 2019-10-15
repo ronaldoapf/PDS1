@@ -1,0 +1,29 @@
+{
+  "name": "luzibge",
+  "version": "1.0.0",
+  "description": "Esse é um simples programa desenvolvido para decodificar planilhas do IBGE.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronaldoapf/PDS1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ronaldoapf/PDS1/issues"
+  },
+  "homepage": "https://github.com/ronaldoapf/PDS1#readme",
+  "devDependencies": {
+    "electron": "^6.0.12"
+  },
+  "dependencies": {
+    "electron-json-storage": "^4.1.8",
+    "jquery": "^3.4.1",
+    "json": "^9.0.6",
+    "python-shell": "^1.0.8",
+    "utf8": "^3.0.0"
+  }
+}

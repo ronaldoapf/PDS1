@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <script src="../_assets/_js/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="../_assets/_css/bootstrap.css">
+    <script src="../_assets/_js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../_assets/_js/popper.min.js"></script>
+    <script src="../_assets/_js/bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
+      <script src="../_linkers/files.js"></script>
+</head>
+
+<body>
+    <style>
+        .btnBack{
+            margin-bottom: 10px;
+        }
+        .btnBack a{
+            color: white;
+            text-decoration: none;
+        }
+        
+        .button {
+            display: flex;
+        }
+        .icon{
+            margin-left: -10px;
+            margin-right: 5px;
+        }
+        .button button {
+            float: right !important;
+        }
+
+        .input-file {
+            margin-bottom: 40px;
+        }
+
+        .input-file .input-group {
+            margin-bottom: 8px;
+        }
+
+        .input-group a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+
+    <div class="d-flex align-items-center h-100">
+        <div class="container">
+            <button type="button" class="btnBack btn btn-primary">
+                <a href="index.html">
+                    <div class="d-flex">
+                        <div class="icon">
+                            <i class="material-icons">arrow_back</i>
+                        </div>
+                        <div class="label">        
+                            Voltar
+                        </div>
+                    </div>
+                </a>
+            </button>
+            <div class="jumbotron">
+                <h2 class="text-center" style="margin-bottom: 50px;">
+                    Seleção de arquivos
+                </h2>
+
+                <div class="input-file">
+                    <div class="input-group">
+                        <label>Selecionar planilhas do IBGE (.csv)</label>
+                    </div>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" multiple="multiple" class="custom-file-input" accept=".csv"
+                                id="planilhasCSV" aria-describedby="inputGroupFileAddon04">
+                            <label class="custom-file-label" for="inputGroupFile04">Selecione os arquivos</label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="input-file">
+                    <div class="input-group">
+                        <label>Selecionar planilha de índice (.csv)</label>
+                    </div>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file"  class="custom-file-input" accept=".csv"
+                                id="indiceCSV" aria-describedby="inputGroupFileAddon04">
+                            <label class="custom-file-label" for="inputGroupFile04">Selecione o arquivo</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="button col-12 text-right">
+                        <div class="input-group">
+                            <button class="btn btn-success" onclick="getFiles()" type="button"
+                                id="inputGroupFileAddon04">
+                                    <!-- <a href="selecionarColunas.html">Próximo</a> -->
+                                Próximo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
