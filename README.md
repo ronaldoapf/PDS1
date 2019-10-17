@@ -6,3 +6,6 @@ Repositório referente a matéria de Projeto e Desenvolvimento de Sistemas 1
 - César Cardoso
 - João Vitor
 - Ronaldo Alves
+
+# Para executar a aplicação é necessário ter instalado:
+- Nodejs (https://nodejs.org/en/download/)
