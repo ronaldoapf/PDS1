@@ -1,4 +1,4 @@
-	   Seg Ter Qua Qui Sex
+	Seg	Ter	Qua	Qui	Sex
 07:10	-	-	-	-	-
 08:50	-	x	-	x	-
 10:40	-	-	-	-	-
