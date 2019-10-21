@@ -1,5 +1,5 @@
-	   Seg Ter Qua Qui Sex
-07:10	-	  -   x	  -	  -
+	Seg      Ter     Qua     Qui     Sex
+07:10	-	  -   	  x	  -	  -
 08:50	x	  x	  x	  x	  x
 10:40	x	  x	  -	  -	  -
 13:10	x	  x	  -	  -	  x
