@@ -12,9 +12,10 @@ def gerarIndiceTXT(dict):
 #Abrir planilhas em csv
 def abrirPlanilha(diretorio):
        return pd.read_csv(diretorio, delimiter=",")
-       
-def salvarPlanilhaCSV(df,file_name):
-        df.to_csv(file_name, sep='\t', encoding='utf-8')
+
+#Salvar planilhas em diretorio padrão
+def salvarPlanilha(dataFrame,nomePlanilha):
+       dataFrame.to_csv(nomePlanilha + ".csv", sep='\t', encoding='utf-8')
         
 def filtrarCamposRenomiar(df, lista_mudar):
         for colunas in lista_mudar.keys: 
@@ -27,6 +28,7 @@ def substituirColunas(df,list_columns):
 
 
 planilha = abrirPlanilha("C:\Users\joao\PDS1\dev\csv\Basico_MG.csv")
+salvarPlanilha(planilha, "teste")
 """
 planilha = pd.read_csv("C:\Users\joao\PDS1\dev\csv\Basico_MG.csv", delimiter=",")
 indice_csv = pd.read_csv("C:\Users\joao\PDS1\dev\csv\indice.csv", delimiter=",")
