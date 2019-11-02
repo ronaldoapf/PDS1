@@ -2,10 +2,6 @@ import sys
 import pandas as pd
 import json
 
-
-# lines = sys.stdin.readlines()
-
-#criar arquivo txt baseado na planilha de indice
 def gerarIndiceTXT(diretorio, frase):
     f = open(diretorio,"a+")
     f.write(frase)
@@ -42,5 +38,8 @@ def toLowerCase(strings):
         
     return x
 
-print("Fala viado")
+teste = sys.argv[1]
+teste2 = sys.argv[2]
+
+print(teste)
 sys.stdout.flush()
