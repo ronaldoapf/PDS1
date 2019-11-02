@@ -10,24 +10,22 @@ function getFiles(){
     var indiceCSV =   $('#indiceCSV').prop("files")
     var indice = $.map(indiceCSV, function(val) { return val.path; });
     
-    // Criação do JSON
-    // json = {
-    //     "opcao": 1,
-    //     "planilhas": JSON.stringify(planilhas),
-    //     "indice": indice
-    // }
+   var json = {
+        "opcao": 1,
+        "planilhas": planilhas,
+        "indice": indice
+   };
     
     var opcoes = {
         mode: "text",
         encoding: "utf8",
         pythonOptions: ["-u"],
         scriptPath : path.join(__dirname, '../_engine/'),
-        args : [1,planilhas, indice],
-        pythonPath: 'C:/Python27/python'
+        args : JSON.stringify(json),
+        pythonPath: 'C:/Users/Henri/AppData/Local/Programs/Python/Python38-32/python.exe'
     }
 
     var file = new PythonShell('teste-global.py', opcoes);
-    
 
     file.on('message', function(message) {
         console.log(message);

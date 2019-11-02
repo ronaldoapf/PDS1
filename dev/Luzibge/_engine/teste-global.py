@@ -1,6 +1,7 @@
 import sys
 import pandas as pd
 import json
+import string
 
 def gerarIndiceTXT(diretorio, frase):
     f = open(diretorio,"a+")
@@ -21,11 +22,11 @@ def carregarCsvEmDataframe(dir_csv):
 def decodificarColunasDeDataframe(nomeArquivo, dataframe, dict_indice):
     c = []
     for column in dataframe.columns:
-        i = nomeArquivo + "_" + column
+        i = nomeArquivo + "_" + column.lower()
         if(i in dict_indice):
             c.append(dict_indice[i])
         else:
-            c.append(column)
+            c.append(column.lower())
     return c
 
 def removerColunasDoDataframe(dataframe, cols):
@@ -38,6 +39,20 @@ def toLowerCase(strings):
         
     return x
 
-print("teste")
-# print(sys.argv[1:])
+#pegando json
+x = sys.argv[1]
+x = json.loads(x)
+
+if x["opcao"] == 1:
+    for i in x["indice"]:
+        indice = gerarDictIndice(i)
+
+    for p in x["planilhas"]:
+        df = carregarCsvEmDataframe(p)
+        
+        nome_arquivo = p.split('\\')[-1].lower()
+        nome_arquivo = nome_arquivo.split("_")[0]
+        
+        print(decodificarColunasDeDataframe(nome_arquivo,df,indice))
+
 # sys.stdout.flush()
