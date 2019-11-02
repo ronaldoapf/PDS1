@@ -2,9 +2,12 @@ import sys
 import pandas as pd
 import json
 
+<<<<<<< HEAD
 # lines = sys.stdin.readlines()
 
 #criar arquivo txt baseado na planilha de indice
+=======
+>>>>>>> a4e810738bb18b6cea368ac2d899103238a6fc67
 def gerarIndiceTXT(diretorio, frase):
     f = open(diretorio,"a+")
     f.write(frase)
