@@ -3,8 +3,7 @@
 <head>
     <script src="../_assets/_js/sweetalert.min.js"></script>
     <link rel="stylesheet" href="../_assets/_css/bootstrap.css">
-    <script src="../_assets/_js/jquery-3.3.1.slim.min.js"></script>
-    <script src="../_assets/_js/popper.min.js"></script>
+    
     <!-- <script src="../_assets/_js/bootstrap.js"></script> -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -23,9 +22,11 @@
             color: white;
             text-decoration: none;
         }
-        
-        .button {
+
+        .buttonNext{
             display: flex;
+            float: right;
+            margin-top: 25px;
         }
         .icon{
             margin-left: -10px;
@@ -51,18 +52,22 @@
 
     <div class="d-flex align-items-center h-100">
         <div class="container">
-            <button type="button" class="btnBack btn btn-primary">
-                <a href="index.html">
-                    <div class="d-flex">
-                        <div class="icon">
-                            <i class="material-icons">arrow_back</i>
-                        </div>
-                        <div class="label">        
-                            Voltar
-                        </div>
-                    </div>
-                </a>
-            </button>
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="btnBack btn btn-primary">
+                        <a href="index.html">
+                            <div class="d-flex">
+                                <div class="icon">
+                                    <i class="material-icons">arrow_back</i>
+                                </div>
+                                <div class="label">        
+                                    Voltar
+                                </div>
+                            </div>
+                        </a>
+                    </button>
+                </div>
+            </div>
             <div class="jumbotron">
                 <h2 class="text-center" style="margin-bottom: 50px;">
                     Seleção de arquivos
@@ -96,13 +101,15 @@
                 </div>
 
                 <div class="row">
-                    <div class="button col-12 text-right">
-                        <div class="input-group">
-                            <button class="btn btn-success" onclick="getFiles()" type="button"
+                    <div class="col-12">
+                        <div class="buttonNext">
+                            <div class="input-group">
+                                <button class="btn btn-success" onclick="getFiles()" type="button"
                                 id="inputGroupFileAddon04">
                                     <!-- <a href="selecionarColunas.html">Próximo</a> -->
-                                Próximo
-                            </button>
+                                    Próximo
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -110,6 +117,10 @@
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
