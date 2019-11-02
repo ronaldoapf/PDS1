@@ -2,7 +2,6 @@ import sys
 import pandas as pd
 import json
 
-
 # lines = sys.stdin.readlines()
 
 #criar arquivo txt baseado na planilha de indice
@@ -42,5 +41,6 @@ def toLowerCase(strings):
         
     return x
 
-print("Fala viado")
+data = sys.argv[1]
+print(data)
 sys.stdout.flush()

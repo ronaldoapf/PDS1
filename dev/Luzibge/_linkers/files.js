@@ -4,14 +4,15 @@ function getFiles(){
     
     var planilhasCSV = $('#planilhasCSV').prop("files")
     var planilhas = $.map(planilhasCSV, function(val) { return val.path; });
-    
+    console.log(planilhas)
+
     var indiceCSV =   $('#indiceCSV').prop("files")
     var indice = $.map(indiceCSV, function(val) { return val.path; });
     
     // Criação do JSON
     json = {
         "opcao": 1,
-        "planilhas": planilhas,
+        "planilhas": JSON.stringify(planilhas),
         "indice": indice
     }
     
