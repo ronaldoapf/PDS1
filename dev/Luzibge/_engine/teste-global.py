@@ -4,6 +4,7 @@ import sys
 import pandas as pd
 import json
 import string
+import requests
 
 def gerarIndiceTXT(diretorio, frase):
     f = open(diretorio,"a+")
@@ -41,8 +42,23 @@ def toLowerCase(strings):
         
     return x
 
+def enviarJson(planilha):
+    
+    
+    url = 'http://maps.googleapis.com/maps/api/directions/json'
+    
+    params = dict(
+        planilha = planilha.to_json(orient='split')
+    )
+    
+    
+    resp = requests.get(url=url, params=params)
+    print(resp)
+    
+
 def processarRequest(r_json):
     df = pd.DataFrame()
+    #Buscar colunas do DataFrame
     if x["opcao"] == 1:
         for i in x["indice"]:
             indice = gerarDictIndice(i)
@@ -54,14 +70,24 @@ def processarRequest(r_json):
             nome_arquivo = nome_arquivo.split("_")[0]
             
             print(decodificarColunasDeDataframe(nome_arquivo,df,indice))
-
+            
+    
+    #Retirar colunas não selecionadas     
     if x["opcao"] == 2:
         colunas_remover = x["colunas_remover"]
-        print(removerColunasDoDataframe( ,colunas_remover))
+        print(removerColunasDoDataframe(df ,colunas_remover))
+        #enviarJson(removerColunasDoDataframe(df ,colunas_remover))
+        
+    #retornar  colunas de uma planilha decodificada
+    if x["opcao"] == 3:
+        print("Opcao 3")
+        
 ### MAIN
 # pegando json\
 
 x = sys.argv[1]
 x = json.loads(x, encoding="utf-8")
+
+
 processarRequest(x)
 sys.stdout.flush()
