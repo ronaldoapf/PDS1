@@ -57,7 +57,7 @@ def processarRequest(r_json):
 
     if x["opcao"] == 2:
         colunas_remover = x["colunas_remover"]
-        print(removerColunasDoDataframe( ,colunas_remover))
+        print(removerColunasDoDataframe(df ,colunas_remover))
 ### MAIN
 # pegando json\
 
