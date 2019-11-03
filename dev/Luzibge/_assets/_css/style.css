@@ -22,8 +22,6 @@ body {
     color: white;
 }
 
-.btnCheck-circle-solid {}
-
 .check-circle-solid {
     background-image: url("check-circle-solid.svg");
     background-repeat: no-repeat;
@@ -31,7 +29,9 @@ body {
     background-color: red;
     width: 30px;
     height: 30px;
-}.btnBack{
+}
+
+.btnBack{
     margin-bottom: 10px;
 }
 
@@ -45,10 +45,12 @@ body {
     float: right;
     margin-top: 25px;
 }
+
 .icon{
     margin-left: -10px;
     margin-right: 5px;
 }
+
 .button button {
     float: right !important;
 }
