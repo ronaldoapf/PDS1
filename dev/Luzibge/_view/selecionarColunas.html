@@ -1,51 +1,19 @@
-<html>
+<html lang="en">
 
 <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Importação arquivos CSS -->
     <link rel="stylesheet" href="../_assets/_css/bootstrap.css">
-    <script src="../_assets/_js/jquery-3.3.1.slim.min.js"></script>
-    <script src="../_assets/_js/popper.min.js"></script>
-    <script src="../_assets/_js/bootstrap.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../_assets/_css/style.css">
+    <link rel="stylesheet" href="../_assets/_css/material-icons.css">
+
 </head>
 
-<body>
-    <style>
-        .btnBack {
-            margin-bottom: 10px;
-        }
-
-        .btnBack a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .button {
-            display: flex;
-        }
-
-        .icon {
-            margin-left: -10px;
-            margin-right: 5px;
-        }
-
-        .button button {
-            float: right !important;
-        }
-
-        .input-file {
-            margin-bottom: 40px;
-        }
-
-        .input-file .input-group {
-            margin-bottom: 8px;
-        }
-
-        .input-group a {
-            text-decoration: none;
-            color: white;
-        }
-    </style>
-    <div class="d-flex align-items-center h-100">
+<body class="">
+    <div class="btnBack d-flex align-items-center h-100">
         <div class="container">
             <button type="button" class="btnBack btn btn-primary">
                 <a href="telaArquivos.html">
@@ -59,38 +27,86 @@
                     </div>
                 </a>
             </button>
-            <div class="jumbotron">
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Colunas</th>
-                            <th scope="col">Valores</th>
-                            <th scope="col">Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Var01</td>
-                            <td>Teste</td>
-                            <td>
-                                <input type="radio" name="" id="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+            <div class="row">
+                <div class="col-12 title-columns">
+                    <h4>Selecione uma planilha para codificar suas colunas: </h4>
+                </div>
             </div>
+
+            <table class="table table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome do Arquivo</th>
+                        <th scope="col">Novo nome da planilha</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <input type="radio" name="planilha" id="">
+                        </th>
+                        <td>Arquivo 1</td>
+                        <td>
+                            <input type="text" name="" id="" disabled="true">
+                        </td>
+                        <td>Pendente</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <input type="radio" name="planilha" id="">
+                        </th>
+                        <td>Arquivo 2</td>
+                        <td>
+                            <input type="text" name="" id="" disabled="true">
+                        </td>
+                        <td>Pendente</td>
+                    </tr>
+
+                    
+
+                </tbody>
+            </table>
+
+            <table class="table table-borderless">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col ">Coluna original</th>
+                        <th scope="col">Coluna decodificada</th>
+                        <th scope="col">Valor renomeado</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td class="">Var_001</td>
+                        <td class="">Teste</td>
+                        <td>
+                            <input type="text" disabled="true">
+                        </td>
+                        <td class="">
+                            <button class="check-circle-solid">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
+
+    <!-- Importação arquivos JS -->
+    <script src="../_assets/_js/jquery-3.4.1.js"></script>
+    <script src="../_assets/_js/popper.min.js"></script>
+    <script src="../_assets/_js/bootstrap.js"></script>
 </body>
 
 </html>
