@@ -4,7 +4,7 @@ import sys
 import pandas as pd
 import json
 import string
-import requests
+#import request
 
 def gerarIndiceTXT(diretorio, frase):
     f = open(diretorio,"a+")
@@ -42,35 +42,43 @@ def toLowerCase(strings):
         
     return x
 
-def enviarJson(planilha):
+# def enviarJson(planilha):
     
     
-    url = 'http://maps.googleapis.com/maps/api/directions/json'
+#     url = 'http://maps.googleapis.com/maps/api/directions/json'
     
-    params = dict(
-        planilha = planilha.to_json(orient='split')
-    )
+#     params = dict(
+#         planilha = planilha.to_json(orient='split')
+#     )
     
     
-    resp = requests.get(url=url, params=params)
-    print(resp)
+#     resp = requests.get(url=url, params=params)
+#     print(resp)
     
 
 def processarRequest(r_json):
     df = pd.DataFrame()
     #Buscar colunas do DataFrame
-    if x["opcao"] == 1:
-        for i in x["indice"]:
-            indice = gerarDictIndice(i)
+    # if x["opcao"] == 1:
+    #     for i in x["indice"]:
+    #         indice = gerarDictIndice(i)
 
-        for p in x["planilhas"]:
-            df = carregarCsvEmDataframe(p)
+    #     for p in x["planilhas"]:
+    #         df = carregarCsvEmDataframe(p)
             
-            nome_arquivo = p.split('\\')[-1].lower()
-            nome_arquivo = nome_arquivo.split("_")[0]
+    #         nome_arquivo = p.split('\\')[-1].lower()
+    #         nome_arquivo = nome_arquivo.split("_")[0]
             
-            print(decodificarColunasDeDataframe(nome_arquivo,df,indice))
-            
+    #         print(decodificarColunasDeDataframe(nome_arquivo,df,indice))
+    
+    if x["opcao" == 1]:
+        dir = opcoes["planilha"]
+        df = carregarCsvEmDataframe(dir)
+        response = {
+            "opcao": 1,
+            "colunas": df.columns()
+        }
+        print (json.loads(response))
     
     #Retirar colunas não selecionadas     
     if x["opcao"] == 2:
