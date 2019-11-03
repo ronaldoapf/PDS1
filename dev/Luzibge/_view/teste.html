@@ -10,6 +10,8 @@
     </script>
     <script>
         $(document).ready(function() {
+
+
             var getUrlParameter = function getUrlParameter(sParam) {
                 var sPageURL = window.location.search.substring(1),
                     sURLVariables = sPageURL.split('&'),
@@ -24,8 +26,22 @@
                     }
                 }
             };
-            console.log(getUrlParameter("indice"));
-            console.log(getUrlParameter("planilhas"));
+
+            var getPlanilhas = function getPlanilhas(str) {
+                let i=0;
+                let planilhas = [];
+                while(getUrlParameter(str + i)) {
+                    planilhas.push(getUrlParameter(str + i));
+                    i++;
+                }
+                return planilhas;
+            }
+            var getIndice = function getIndice(str) {
+                return getUrlParameter(str);
+            }
+
+            console.log(getPlanilhas("planilhas"));
+            console.log(getIndice("indice"));
         })
     </script>
 </head>

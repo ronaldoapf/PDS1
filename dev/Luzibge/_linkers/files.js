@@ -41,9 +41,9 @@ $(document).ready(function () {
         var indiceCSV =   $('#indiceCSV').prop("files")
         var indice = $.map(indiceCSV, function(val) { return val.path; });
 
-        planilhas.forEach( p => {
+        planilhas.forEach( (p,i) => {
             console.log(p)
-            $("#form").append('<input type="hidden" name="planilhas[]" value="'+ p +'">')
+            $("#form").append('<input type="hidden" name="planilhas'+ i +'" value="'+ p +'">')
         })
         indice.forEach( i => {
             console.log(i)
