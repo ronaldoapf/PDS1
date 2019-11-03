@@ -42,6 +42,7 @@ def toLowerCase(strings):
     return x
 
 def processarRequest(r_json):
+    df = pd.DataFrame()
     if x["opcao"] == 1:
         for i in x["indice"]:
             indice = gerarDictIndice(i)
@@ -54,8 +55,12 @@ def processarRequest(r_json):
             
             print(decodificarColunasDeDataframe(nome_arquivo,df,indice))
 
+    if x["opcao"] == 2:
+        colunas_remover = x["colunas_remover"]
+        print(removerColunasDoDataframe( ,colunas_remover))
 ### MAIN
-# pegando json
+# pegando json\
+
 x = sys.argv[1]
 x = json.loads(x, encoding="utf-8")
 processarRequest(x)
