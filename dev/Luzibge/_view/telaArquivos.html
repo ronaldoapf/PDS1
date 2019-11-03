@@ -12,8 +12,9 @@
 
     <!-- Importação arquivos JS -->
     <script src="../_assets/_js/sweetalert.min.js"></script>
+    <script src="../_assets/_js/jquery-3.4.1.js"></script>
     <script src="../_linkers/files.js"></script>
-    <script>window.$ = window.jQuery = require('jquery');</script>
+
 </head>
 
 <body>
@@ -42,40 +43,37 @@
                     <h2 class="text-center" style="margin-bottom: 50px;">
                         Seleção de arquivos
                     </h2>
-                    
-                        <div class="input-file">
-                            <div class="input-group">
-                                <label>Selecionar planilhas do IBGE (.csv)</label>
-                            </div>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" multiple="multiple" class="custom-file-input" accept=".csv"
-                                    id="planilhasCSV" aria-describedby="inputGroupFileAddon04" required>
-                                    <label class="custom-file-label" for="inputGroupFile04">Selecione os arquivos</label>
-                                </div>
+
+                    <div class="input-file">
+                        <div class="input-group">
+                            <label>Selecionar planilhas do IBGE (.csv)</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" multiple="multiple" class="custom-file-input" accept=".csv" id="planilhasCSV" aria-describedby="inputGroupFileAddon04" required>
+                                <label class="custom-file-label" for="inputGroupFile04">Selecione os arquivos</label>
                             </div>
                         </div>
-                        
-                        
-                        <div class="input-file">
-                            <div class="input-group">
-                                <label>Selecionar planilha de índice (.csv)</label>
-                            </div>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" accept=".csv"
-                                    id="indiceCSV" aria-describedby="inputGroupFileAddon04" required>
-                                    <label class="custom-file-label" for="inputGroupFile04">Selecione o arquivo</label>
-                                </div>
+                    </div>
+
+
+                    <div class="input-file">
+                        <div class="input-group">
+                            <label>Selecionar planilha de índice (.csv)</label>
+                        </div>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" accept=".csv" id="indiceCSV" aria-describedby="inputGroupFileAddon04" required>
+                                <label class="custom-file-label" for="inputGroupFile04">Selecione o arquivo</label>
                             </div>
                         </div>
-                        
+                    </div>
+
                     <div class="row">
                         <div class="col-12">
                             <div class="buttonNext">
                                 <div class="input-group">
-                                    <button class="btn btn-success" type="submit"
-                                    id="inputGroupFileAddon04">
+                                    <button class="btn btn-success" type="submit" id="inputGroupFileAddon04">
                                         Próximo
                                         <!-- <a href="selecionarColunas.html">Próximo</a> -->
                                         <!-- <a href="teste.html">Próximo</a> -->
@@ -84,18 +82,17 @@
                             </div>
                         </div>
                     </div>
-                
+
                 </div>
             </form>
         </div>
     </div>
 
     <!-- Importação arquivos JS -->
-    <script src="../_assets/_js/jquery-3.4.1.js"></script>
     <script src="../_assets/_js/popper.min.js"></script>
     <script src="../_assets/_js/bootstrap.js"></script>
 
-    
+
 </body>
 
 </html>

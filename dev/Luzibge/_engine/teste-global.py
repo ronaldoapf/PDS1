@@ -59,18 +59,26 @@ def toLowerCase(strings):
 def processarRequest(r_json):
     df = pd.DataFrame()
     #Buscar colunas do DataFrame
-    if x["opcao"] == 1:
-        for i in x["indice"]:
-            indice = gerarDictIndice(i)
+    # if x["opcao"] == 1:
+    #     for i in x["indice"]:
+    #         indice = gerarDictIndice(i)
 
-        for p in x["planilhas"]:
-            df = carregarCsvEmDataframe(p)
+    #     for p in x["planilhas"]:
+    #         df = carregarCsvEmDataframe(p)
             
-            nome_arquivo = p.split('\\')[-1].lower()
-            nome_arquivo = nome_arquivo.split("_")[0]
+    #         nome_arquivo = p.split('\\')[-1].lower()
+    #         nome_arquivo = nome_arquivo.split("_")[0]
             
-            print(decodificarColunasDeDataframe(nome_arquivo,df,indice))
-            
+    #         print(decodificarColunasDeDataframe(nome_arquivo,df,indice))
+    
+    if x["opcao" == 1]:
+        dir = opcoes["planilha"]
+        df = carregarCsvEmDataframe(dir)
+        response = {
+            "opcao": 1,
+            "colunas": df.columns()
+        }
+        print (json.loads(response))
     
     #Retirar colunas não selecionadas     
     if x["opcao"] == 2:
