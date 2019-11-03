@@ -8,8 +8,8 @@ let win
 function createWindow () {
   // Criar uma janela de navegação.
   win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1600,
+    height: 1200,
     webPreferences: {
       nodeIntegration: true
     }
@@ -17,6 +17,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   win.loadFile('_view/index.html')
+  win.maximize() 
 
   // Open the DevTools.
   win.webContents.openDevTools()

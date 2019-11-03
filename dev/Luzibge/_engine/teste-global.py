@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sys
 import pandas as pd
 import json
@@ -39,20 +41,22 @@ def toLowerCase(strings):
         
     return x
 
-#pegando json
+def processarRequest(r_json):
+    if x["opcao"] == 1:
+        for i in x["indice"]:
+            indice = gerarDictIndice(i)
+
+        for p in x["planilhas"]:
+            df = carregarCsvEmDataframe(p)
+            
+            nome_arquivo = p.split('\\')[-1].lower()
+            nome_arquivo = nome_arquivo.split("_")[0]
+            
+            print(decodificarColunasDeDataframe(nome_arquivo,df,indice))
+
+### MAIN
+# pegando json
 x = sys.argv[1]
-x = json.loads(x)
-
-if x["opcao"] == 1:
-    for i in x["indice"]:
-        indice = gerarDictIndice(i)
-
-    for p in x["planilhas"]:
-        df = carregarCsvEmDataframe(p)
-        
-        nome_arquivo = p.split('\\')[-1].lower()
-        nome_arquivo = nome_arquivo.split("_")[0]
-        
-        print(decodificarColunasDeDataframe(nome_arquivo,df,indice))
-
-# sys.stdout.flush()
+x = json.loads(x, encoding="utf-8")
+processarRequest(x)
+sys.stdout.flush()
