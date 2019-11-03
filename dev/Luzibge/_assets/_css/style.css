@@ -1,3 +1,7 @@
+body {
+    height: 100%;
+}
+
 .center {
     width: 100%;
     max-height: 100% !important;
@@ -21,7 +25,7 @@
 .btnCheck-circle-solid {}
 
 .check-circle-solid {
-    background-image: url("../icon/check-circle-solid.svg");
+    background-image: url("check-circle-solid.svg");
     background-repeat: no-repeat;
     border-radius: 40px;
     background-color: red;
@@ -60,4 +64,9 @@
 .input-group a{
     text-decoration: none;
     color: white;
+}
+
+.title-columns{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
