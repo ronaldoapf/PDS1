@@ -25,7 +25,7 @@ def carregarCsvEmDataframe(dir_csv):
 def decodificarColunasDeDataframe(nomeArquivo, dataframe, dict_indice):
     c = []
     for column in dataframe.columns:
-        i = nomeArquivo + "_" + column.lower()
+        i = nomeArquivo.lower().split("_")[0] + "_" + column.lower()
         if(i in dict_indice):
             c.append(dict_indice[i])
         else:
@@ -56,46 +56,45 @@ def toLowerCase(strings):
 #     print(resp)
     
 
-def processarRequest(r_json):
-    df = pd.DataFrame()
-    #Buscar colunas do DataFrame
-    # if x["opcao"] == 1:
-    #     for i in x["indice"]:
-    #         indice = gerarDictIndice(i)
+def processarRequest(request):
 
-    #     for p in x["planilhas"]:
-    #         df = carregarCsvEmDataframe(p)
-            
-    #         nome_arquivo = p.split('\\')[-1].lower()
-    #         nome_arquivo = nome_arquivo.split("_")[0]
-            
-    #         print(decodificarColunasDeDataframe(nome_arquivo,df,indice))
-    
-    if x["opcao" == 1]:
-        dir = opcoes["planilha"]
+    if request['opcao'] == 1:
+        dir = request["dir_planilha"]
         df = carregarCsvEmDataframe(dir)
+        columns = df.columns
         response = {
             "opcao": 1,
-            "colunas": df.columns()
+            "colunas": columns.tolist()
         }
-        print (json.loads(response))
+        print (json.dumps( response ))
     
+    #retornar  colunas de uma planilha decodificada
+    if request["opcao"] == 2:
+        dir_planilha = request["dir_planilha"]
+        dir_indice = request["dir_indice"]
+        nome_planilha = dir_planilha.split('\\')[-1]
+        
+        colunnas_decodificadas = decodificarColunasDeDataframe(nome_planilha, carregarCsvEmDataframe(dir_planilha), gerarDictIndice(dir_indice))
+        response = {
+            "opcao": 2,
+            "colunas_decodificadas": colunnas_decodificadas
+        }
+        print (json.dumps( response ))
+
     #Retirar colunas não selecionadas     
-    if x["opcao"] == 2:
-        colunas_remover = x["colunas_remover"]
+    if request["opcao"] == 3:
+        colunas_remover = request["colunas_remover"]
         print(removerColunasDoDataframe(df ,colunas_remover))
         #enviarJson(removerColunasDoDataframe(df ,colunas_remover))
-        
-    #retornar  colunas de uma planilha decodificada
-    if x["opcao"] == 3:
-        print("Opcao 3")
         
 ### MAIN
 # pegando json\
 
-x = sys.argv[1]
-x = json.loads(x, encoding="utf-8")
+if __name__ == "__main__":
+    if sys.argv[1]:
+        x = sys.argv[1]
+        print(x)
+        x = json.loads(x)
 
-
-processarRequest(x)
-sys.stdout.flush()
+        processarRequest(x)
+        sys.stdout.flush()

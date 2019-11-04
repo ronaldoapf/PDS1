@@ -23,7 +23,7 @@ body {
 }
 
 .check-circle-solid {
-    background-image: url("check-circle-solid.svg");
+    background-image: url("../icon/check-circle-solid.svg");
     background-repeat: no-repeat;
     border-radius: 40px;
     background-color: red;

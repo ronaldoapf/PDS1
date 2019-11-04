@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="../_assets/_css/material-icons.css">
 
     <!-- Importação arquivos JS -->
-    <script src="../_assets/_js/jquery-3.4.1.js"></script>
+    <!-- <script src="../_assets/_js/jquery-3.4.1.js"></script> -->
+    <script>window.$ = window.jQuery = require('jquery');</script>
     <script src="../_assets/_scripts/script.js"></script>
 </head>
 
@@ -37,7 +38,7 @@
                 </div>
             </div>
 
-            <table class="table table-sm">
+            <table id="table-planilhas" class="table table-sm">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
@@ -47,33 +48,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">
-                            <input type="radio" name="planilha" id="">
-                        </th>
-                        <td>Arquivo 1</td>
-                        <td>
-                            <input type="text" name="" id="" disabled="true">
-                        </td>
-                        <td>Pendente</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <input type="radio" name="planilha" id="">
-                        </th>
-                        <td>Arquivo 2</td>
-                        <td>
-                            <input type="text" name="" id="" disabled="true">
-                        </td>
-                        <td>Pendente</td>
-                    </tr>
-
-
-
                 </tbody>
             </table>
 
-            <table class="table table-borderless">
+            <h3 id="planilha-selecionada"></h3>
+
+            <table id="table-colunas" class="table table-borderless">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>

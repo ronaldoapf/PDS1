@@ -16,7 +16,7 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  win.loadFile('_view/index.html')
+  win.loadFile('./index.html')
   win.maximize() 
 
   // Open the DevTools.
