@@ -123,20 +123,19 @@ function carregarPlanilhasNaTabela(sheets) {
 }
 
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
-function carregarColunasNaTabela(colunas, colunas_decodificadas, i_inicio, i_fim) {
-    console.log({colunas,colunas_decodificadas,i_inicio,i_fim})
+function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
     //limpando conteudo da tabela
     $("#table-colunas > tbody > tr").remove();
 
     //pegando intervalo para iterar de no máximo 10 em 10 até o final das colunas
-    var x = i_fim - i_inicio;
+    var x = colunas.length - index;
     x = (10 < x) ? 10:x
 
     for (i = 0; i < x; i++) {
         let html = `<tr>
             <th scope="row">${i+1}</th>
-            <td class="">${colunas[i_inicio + i]}</td>
-            <td class="">${colunas_decodificadas[i_inicio + i]}</td>
+            <td class="">${colunas[index + i]}</td>
+            <td class="">${colunas_decodificadas[index + i]}</td>
             <td>
                 <input type="text" disabled="true">
             </td>
@@ -171,11 +170,17 @@ $(document).ready(function() {
         nome = nome[nome.length-1]
         $("#planilha-selecionada").html('');
         $("#planilha-selecionada").html('Planilha Selecionada: ' + nome);
-        if(confirm('Deseja carregar as colunas da planilha selecionada?')) {
 
-            if(colunas_planilha_atual.length == colunas_decodificadas_planilha_atual.length) {
-                carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual, colunas_planilha_atual.length);
-            }
+        if(colunas_planilha_atual.length == colunas_decodificadas_planilha_atual.length) {
+            carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
+        }
+        
+        if($("#div-botao").is(":hidden")) {
+            $("#div-botao").show();
         }
     });
+
+    $("#table-colunas").on("click", ".check-circle-solid", function () {
+        $(this).toggleClass("bc-green")
+    })
 })
