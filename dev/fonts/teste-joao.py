@@ -17,7 +17,7 @@ def abrirPlanilha(diretorio):
 def salvarPlanilha(dataFrame,nomePlanilha):
        dataFrame.to_csv(nomePlanilha + ".csv", sep='\t', encoding='utf-8')
         
-def filtrarCamposRenomiar(df, lista_mudar):
+def filtrarCamposRenomear(df, lista_mudar):
         for colunas in lista_mudar.keys: 
             df.columns[colunas] = lista_mudar[colunas]     
         return df
