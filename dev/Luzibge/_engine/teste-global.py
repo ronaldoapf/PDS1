@@ -67,8 +67,23 @@ def processarRequest(request):
         }
         print (json.dumps( response ))
 
-    #Retirar colunas não selecionadas     
     if request["opcao"] == 3:
+        dir_planilha = request["dir_planilha"]
+        dir_indice = request["dir_indice"]
+        nome_planilha = dir_planilha.split('\\')[-1]
+        
+        df = carregarCsvEmDataframe(dir_planilha)
+        colunas = df.columns
+        colunnas_decodificadas = decodificarColunasDeDataframe(nome_planilha, df, gerarDictIndice(dir_indice))
+        response = {
+            "opcao": 3,
+            "colunas": colunas.tolist(),
+            "colunas_decodificadas": colunnas_decodificadas
+        }
+        print (json.dumps( response ))
+
+    #Retirar colunas não selecionadas     
+    if request["opcao"] == 4:
         colunas_remover = request["colunas_remover"]
         print(removerColunasDoDataframe(df ,colunas_remover))
         #enviarJson(removerColunasDoDataframe(df ,colunas_remover))
