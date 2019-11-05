@@ -42,20 +42,6 @@ def toLowerCase(strings):
         
     return x
 
-# def enviarJson(planilha):
-    
-    
-#     url = 'http://maps.googleapis.com/maps/api/directions/json'
-    
-#     params = dict(
-#         planilha = planilha.to_json(orient='split')
-#     )
-    
-    
-#     resp = requests.get(url=url, params=params)
-#     print(resp)
-    
-
 def processarRequest(request):
 
     if request['opcao'] == 1:

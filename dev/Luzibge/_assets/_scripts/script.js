@@ -6,6 +6,8 @@ var indice_col_atual = 0; //variavel que armazenará o indice de quais colunas q
 var colunas_planilha_atual = [];
 var colunas_decodificadas_planilha_atual = [];
 
+
+
 function sendRequest(json) {
     var {
         PythonShell
@@ -20,6 +22,7 @@ function sendRequest(json) {
         pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
+
     var response;
     //quando o arquivo python retornar algo esse evento será disparado
     python.on('message', function(data) {
@@ -49,10 +52,6 @@ function sleep(milliseconds) {
       }
     }
   }
-
-function montarDados(data) {
-    $("body").append(`<div> ${JSON.stringify(data)} </div>`)
-}
 
 async function buscarColunasDePlanilha(dir_planilha) {
     var json = {
@@ -178,9 +177,13 @@ $(document).ready(function() {
         if($("#div-botao").is(":hidden")) {
             $("#div-botao").show();
         }
+        return false;
     });
 
     $("#table-colunas").on("click", ".check-circle-solid", function () {
         $(this).toggleClass("bc-green")
+        var input = $(this).closest("td").prev().find("input")
+        input.prop('disabled', function(i, v) { return !v; });
+        input.val('')
     })
 })
