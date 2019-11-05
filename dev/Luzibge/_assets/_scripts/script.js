@@ -17,7 +17,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)] ,
-        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+        pythonPath: 'C:\\Users\\Amanda\\AppData\\Local\\Programs\\Python\\Python37\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
     var response;
@@ -182,5 +182,9 @@ $(document).ready(function() {
 
     $("#table-colunas").on("click", ".check-circle-solid", function () {
         $(this).toggleClass("bc-green")
+        var input = $(this).closest("td").prev().find("input")
+        input.prop('disabled', function(i, v) { return !v; });
+        input.val('')
     })
-})
+
+});
