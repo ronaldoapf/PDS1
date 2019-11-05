@@ -207,7 +207,6 @@ $(document).ready(function() {
     });
     
     $("#botao-colunas").click(function(){
-<<<<<<< HEAD
         if(indice_col_atual == colunas_planilha_atual.length) {
             //document.getElementById(planilha_atual).disabled = false;
             
@@ -219,14 +218,12 @@ $(document).ready(function() {
         }else {
             carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
         }
-=======
         carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
     });
 
     $("#botao-colunasRetornar").click(function(){
-        indice_col_atual = indice_col_atual - 10
+        indice_col_atual = indice_col_atual - 10;
         carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
->>>>>>> 1c222b6c31fae8c369168c020203fd4bd443c317
     });
 
     $("#table-colunas").on("click", ".check-circle-solid", function () {
