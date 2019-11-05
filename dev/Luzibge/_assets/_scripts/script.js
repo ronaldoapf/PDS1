@@ -62,7 +62,22 @@ function sleep(milliseconds) {
     }
   }
 
-function salvarNovaPlanilha(colunas,)
+/*async function buscarColunasDePlanilha(dir_planilha) {
+    var json = {
+        "opcao": 1,
+        "dir_planilha": dir_planilha
+    };
+    await sendRequest(json);
+}
+
+async function buscarColunasDecodificadasDePlanilha(dir_planilha, dir_indice) {
+    var json = {
+        "opcao": 2,
+        "dir_planilha": dir_planilha,
+        "dir_indice": dir_indice
+    };
+    await sendRequest(json);
+}*/
 
 function buscarColunasCodificadas_Decodificadas(p_atual, p_indice) {
     var json = {
@@ -169,7 +184,8 @@ $(document).ready(function() {
     
     $('input[name="radio-planilha"]').change(function() {
         planilha_atual = planilhas[$('input[name="radio-planilha"]:checked').closest('tr').index()];
-        
+        /*buscarColunasDePlanilha(planilha_atual)
+        buscarColunasDecodificadasDePlanilha(planilha_atual, indice)*/
         buscarColunasCodificadas_Decodificadas(planilha_atual,indice);
 
         let nome = planilha_atual.split('\\');
@@ -192,10 +208,6 @@ $(document).ready(function() {
         var input = $(this).closest("td").prev().find("input")
         input.prop('disabled', function(i, v) { return !v; });
         input.val('')
-    })
-
-    $("#botao-salvar-planilha").click(function () {
-
     })
 
 });
