@@ -19,7 +19,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)] ,
-        pythonPath: 'C:\\Python\\python.exe'
+        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -124,9 +124,9 @@ function carregarPlanilhasNaTabela(sheets) {
     sheets.forEach( p => {
         nome = p.split('\\')
         nome = nome[nome.length-1]
-        let html = `<tr>
+        let html = `<tr class="trClass">
             <th scope="row">
-                <input type="radio" name="radio-planilha">
+                <input class="radioButton" type="radio" name="radio-planilha">
             </th>
             <td>${nome}</td>
             <td>
@@ -136,6 +136,8 @@ function carregarPlanilhasNaTabela(sheets) {
         </tr>`;
 
         $("#table-planilhas").append(html)
+
+
     });
 }
 
@@ -148,21 +150,26 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
         $("#table-colunas > tbody > tr").remove();
         
         //pegando intervalo para iterar de no máximo 10 em 10 até o final das colunas
-        var x = colunas.length - index;
+        var x = colunas.length - index
         x = (10 < x) ? 10:x
         
         for (i = 0; i < x; i++) {
+            var valorDecodificado = colunas_decodificadas[index + i];
+            if(valorDecodificado.length > 50){
+                valorDecodificado = valorDecodificado.slice(0,47)
+                valorDecodificado += '...'
+            }
             let html = `<tr>
-            <th scope="row">${index+i+1}</th>
-            <td class="">${colunas[index + i]}</td>
-            <td class="">${colunas_decodificadas[index + i]}</td>
-            <td>
-            <input type="text" disabled="true">
-            </td>
-            <td class="">
-            <button class="check-circle-solid">
-            </td>
-            </tr>`;
+                <th scope="row">${index+i+1}</th>
+                <td title="${colunas[index + i]}" class="">${colunas[index + i]}</td>
+                <td title="${colunas_decodificadas[index + i]}"class="">${valorDecodificado}</td>
+                <td>
+                <input type="text" disabled="true">
+                </td>
+                <td class="">
+                <button class="check-circle-solid">
+                </td>
+                </tr>`;
             
             $("#table-colunas").append(html);
         }
@@ -200,6 +207,7 @@ $(document).ready(function() {
     });
     
     $("#botao-colunas").click(function(){
+<<<<<<< HEAD
         if(indice_col_atual == colunas_planilha_atual.length) {
             //document.getElementById(planilha_atual).disabled = false;
             
@@ -211,6 +219,14 @@ $(document).ready(function() {
         }else {
             carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
         }
+=======
+        carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
+    });
+
+    $("#botao-colunasRetornar").click(function(){
+        indice_col_atual = indice_col_atual - 10
+        carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
+>>>>>>> 1c222b6c31fae8c369168c020203fd4bd443c317
     });
 
     $("#table-colunas").on("click", ".check-circle-solid", function () {
@@ -219,5 +235,7 @@ $(document).ready(function() {
         input.prop('disabled', function(i, v) { return !v; });
         input.val('')
     })
+
+    
 
 });
