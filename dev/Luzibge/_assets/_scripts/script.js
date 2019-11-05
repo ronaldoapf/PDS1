@@ -19,7 +19,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)] ,
-        pythonPath: 'C:\\Python\\python.exe'
+        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -62,22 +62,7 @@ function sleep(milliseconds) {
     }
   }
 
-/*async function buscarColunasDePlanilha(dir_planilha) {
-    var json = {
-        "opcao": 1,
-        "dir_planilha": dir_planilha
-    };
-    await sendRequest(json);
-}
-
-async function buscarColunasDecodificadasDePlanilha(dir_planilha, dir_indice) {
-    var json = {
-        "opcao": 2,
-        "dir_planilha": dir_planilha,
-        "dir_indice": dir_indice
-    };
-    await sendRequest(json);
-}*/
+function salvarNovaPlanilha(colunas,)
 
 function buscarColunasCodificadas_Decodificadas(p_atual, p_indice) {
     var json = {
@@ -141,7 +126,7 @@ function carregarPlanilhasNaTabela(sheets) {
 
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
-    console.log({colunas,colunas_decodificadas,index})
+    
     if(colunas && colunas_decodificadas) {
 
         //limpando conteudo da tabela
@@ -184,8 +169,7 @@ $(document).ready(function() {
     
     $('input[name="radio-planilha"]').change(function() {
         planilha_atual = planilhas[$('input[name="radio-planilha"]:checked').closest('tr').index()];
-        /*buscarColunasDePlanilha(planilha_atual)
-        buscarColunasDecodificadasDePlanilha(planilha_atual, indice)*/
+        
         buscarColunasCodificadas_Decodificadas(planilha_atual,indice);
 
         let nome = planilha_atual.split('\\');
@@ -208,6 +192,10 @@ $(document).ready(function() {
         var input = $(this).closest("td").prev().find("input")
         input.prop('disabled', function(i, v) { return !v; });
         input.val('')
+    })
+
+    $("#botao-salvar-planilha").click(function () {
+
     })
 
 });
