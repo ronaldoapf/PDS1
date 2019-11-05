@@ -17,7 +17,11 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)] ,
+<<<<<<< HEAD
         pythonPath: 'C:\\Python\\python.exe'
+=======
+        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+>>>>>>> 1156d6821c66d95667d82471012068709ab5c3b6
     }
     var python = new PythonShell('teste-global.py', opcoes);
     var response;
