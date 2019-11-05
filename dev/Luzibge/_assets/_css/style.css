@@ -5,7 +5,18 @@ body {
 .container{
     overflow: auto !important;
 }
+.trClass{
+    background-color: white;
+}
 
+.bc-greyLight{
+    background-color: #eaeaea;
+}
+
+.radioButton{
+    width: 20px;
+    height: 20px;
+}
 .center {
     width: 100%;
     max-height: 100% !important;

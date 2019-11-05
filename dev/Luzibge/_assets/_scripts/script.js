@@ -124,9 +124,9 @@ function carregarPlanilhasNaTabela(sheets) {
     sheets.forEach( p => {
         nome = p.split('\\')
         nome = nome[nome.length-1]
-        let html = `<tr>
+        let html = `<tr class="trClass">
             <th scope="row">
-                <input type="radio" name="radio-planilha">
+                <input class="radioButton" type="radio" name="radio-planilha">
             </th>
             <td>${nome}</td>
             <td>
@@ -136,6 +136,8 @@ function carregarPlanilhasNaTabela(sheets) {
         </tr>`;
 
         $("#table-planilhas").append(html)
+
+
     });
 }
 
@@ -219,5 +221,7 @@ $(document).ready(function() {
         input.prop('disabled', function(i, v) { return !v; });
         input.val('')
     })
+
+    
 
 });
