@@ -130,9 +130,9 @@ function carregarPlanilhasNaTabela(sheets) {
             </th>
             <td>${nome}</td>
             <td>
-                <input type="text" name="" id="" disabled="true">
+                <input class="input-renomear-planilha" type="text" name="" id="${p}" disabled="true">
             </td>
-            <td>Pendente</td>
+            <td><p>Pendente</p></td>
         </tr>`;
 
         $("#table-planilhas").append(html)
@@ -199,8 +199,18 @@ $(document).ready(function() {
         return false;
     });
     
-    $("#div-botao").click(function(){
-        carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
+    $("#botao-colunas").click(function(){
+        if(indice_col_atual == colunas_planilha_atual.length) {
+            //document.getElementById(planilha_atual).disabled = false;
+            
+            var input = document.getElementById(planilha_atual);
+            //nput.disabled = false;
+            //console.log(input);
+            //var texto = $(this).closest("td").next().find("p");
+            //console.log(texto);
+        }else {
+            carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
+        }
     });
 
     $("#table-colunas").on("click", ".check-circle-solid", function () {
