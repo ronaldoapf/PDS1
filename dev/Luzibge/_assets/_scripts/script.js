@@ -19,7 +19,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)] ,
-        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+        pythonPath: 'C:\\Python\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -153,7 +153,7 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
         
         for (i = 0; i < x; i++) {
             let html = `<tr>
-            <th scope="row">${i+1}</th>
+            <th scope="row">${index+i+1}</th>
             <td class="">${colunas[index + i]}</td>
             <td class="">${colunas_decodificadas[index + i]}</td>
             <td>
@@ -197,6 +197,10 @@ $(document).ready(function() {
             $("#div-botao").show();
         }
         return false;
+    });
+    
+    $("#div-botao").click(function(){
+        carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
     });
 
     $("#table-colunas").on("click", ".check-circle-solid", function () {
