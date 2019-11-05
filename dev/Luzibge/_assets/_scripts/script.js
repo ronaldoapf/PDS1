@@ -19,7 +19,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)] ,
-        pythonPath: 'C:\\Python\\python.exe'
+        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -148,21 +148,26 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
         $("#table-colunas > tbody > tr").remove();
         
         //pegando intervalo para iterar de no máximo 10 em 10 até o final das colunas
-        var x = colunas.length - index;
+        var x = colunas.length - index
         x = (10 < x) ? 10:x
         
         for (i = 0; i < x; i++) {
+            var valorDecodificado = colunas_decodificadas[index + i];
+            if(valorDecodificado.length > 50){
+                valorDecodificado = valorDecodificado.slice(0,47)
+                valorDecodificado += '...'
+            }
             let html = `<tr>
-            <th scope="row">${index+i+1}</th>
-            <td class="">${colunas[index + i]}</td>
-            <td class="">${colunas_decodificadas[index + i]}</td>
-            <td>
-            <input type="text" disabled="true">
-            </td>
-            <td class="">
-            <button class="check-circle-solid">
-            </td>
-            </tr>`;
+                <th scope="row">${index+i+1}</th>
+                <td title="${colunas[index + i]}" class="">${colunas[index + i]}</td>
+                <td title="${colunas_decodificadas[index + i]}"class="">${valorDecodificado}</td>
+                <td>
+                <input type="text" disabled="true">
+                </td>
+                <td class="">
+                <button class="check-circle-solid">
+                </td>
+                </tr>`;
             
             $("#table-colunas").append(html);
         }
@@ -199,7 +204,12 @@ $(document).ready(function() {
         return false;
     });
     
-    $("#div-botao").click(function(){
+    $("#botao-colunas").click(function(){
+        carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
+    });
+
+    $("#botao-colunasRetornar").click(function(){
+        indice_col_atual = indice_col_atual - 10
         carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
     });
 
