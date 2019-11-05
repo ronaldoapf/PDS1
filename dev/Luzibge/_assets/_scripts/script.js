@@ -17,7 +17,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)] ,
-        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+        pythonPath: 'C:\\Python\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
     var response;
@@ -122,6 +122,10 @@ function carregarPlanilhasNaTabela(sheets) {
     });
 }
 
+function teste(){
+    alert("clicou no botao");
+}
+
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
     //limpando conteudo da tabela
@@ -130,8 +134,11 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
     //pegando intervalo para iterar de no máximo 10 em 10 até o final das colunas
     var x = colunas.length - index;
     x = (10 < x) ? 10:x
-
-    for (i = 0; i < x; i++) {
+    
+    var j = 0;
+    
+    //while(j <= colunas.length-1)
+        for (i = 0; i < x; i++) {
         let html = `<tr>
             <th scope="row">${i+1}</th>
             <td class="">${colunas[index + i]}</td>
@@ -145,9 +152,13 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
         </tr>`;
 
         $("#table-colunas").append(html);
-    }
+        }
+    //}
+    
     indice_col_atual += x;
 }
+
+
 
 $(document).ready(function() {
     //inicializando arquivo python
@@ -172,12 +183,19 @@ $(document).ready(function() {
         $("#planilha-selecionada").html('Planilha Selecionada: ' + nome);
 
         if(colunas_planilha_atual.length == colunas_decodificadas_planilha_atual.length) {
+            console.log(colunas_planilha_atual)
             carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
         }
         
         if($("#div-botao").is(":hidden")) {
             $("#div-botao").show();
+            
         }
+    });
+    
+    $("#div-botao").click(function(){
+        indice_col_atual  = indice_col_atual + 10;
+        carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
     });
 
     $("#table-colunas").on("click", ".check-circle-solid", function () {
