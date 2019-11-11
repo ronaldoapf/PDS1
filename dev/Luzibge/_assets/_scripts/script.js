@@ -19,7 +19,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)] ,
-        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+        pythonPath: 'C:\\Python\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -143,7 +143,7 @@ function carregarPlanilhasNaTabela(sheets) {
 
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
-    console.log({colunas,colunas_decodificadas,index})
+    //console.log({colunas,colunas_decodificadas,index})
     if(colunas && colunas_decodificadas) {
 
         //limpando conteudo da tabela
@@ -211,20 +211,16 @@ $(document).ready(function() {
             //document.getElementById(planilha_atual).disabled = false;
             
             var input = document.getElementById(planilha_atual);
-            //nput.disabled = false;
+            input.disabled = false
             //console.log(input);
             //var texto = $(this).closest("td").next().find("p");
             //console.log(texto);
         }else {
             carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
         }
-        carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
+        
     });
 
-    $("#botao-colunasRetornar").click(function(){
-        indice_col_atual = indice_col_atual - 10;
-        carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
-    });
 
     $("#table-colunas").on("click", ".check-circle-solid", function () {
         $(this).toggleClass("bc-green")
