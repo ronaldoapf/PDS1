@@ -21,7 +21,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)] ,
-        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -103,7 +103,7 @@ function carregarPlanilhasNaTabela(sheets) {
             <th scope="row">
                 <input class="radioButton" type="radio" name="radio-planilha" hidden>
             </th>
-            <td style="cursor: pointer;" onmouseover="style='text-decoration:underline;cursor: pointer;'" onmouseout="style='text-decoration:none;cursor: pointer;'">${nome}</td>
+            <td onmouseover="style='text-decoration:underline;'" onmouseout="style='text-decoration:none;'">${nome}</td>
             <td>
                 <input class="input-renomear-planilha" type="text" name="" id="${p}" disabled="true">
             </td>
@@ -164,12 +164,17 @@ $(document).ready(function() {
     carregarPlanilhasNaTabela(url_planilhas)
     
     $('#table-planilhas').on('click', 'tr', function() {
-    
+
         planilha_atual.diretorio = url_planilhas[$(this).index()];
         //input[name="radio-planilha"],
-        console.log($(this).closest('input'))
-        buscarColunasCodificadas_Decodificadas(planilha_atual.diretorio,url_indice);
 
+        buscarColunasCodificadas_Decodificadas(planilha_atual.diretorio,url_indice);
+        
+        var selected = $(this).hasClass("bg-gray");
+        $("#table-planilhas tr").removeClass("bg-gray");
+        if(!selected)
+                $(this).addClass("bg-gray");
+        
         let nome = planilha_atual.diretorio.split('\\');
         nome = nome[nome.length-1]
         $("#planilha-selecionada").html('');
@@ -184,13 +189,10 @@ $(document).ready(function() {
 
     $("#botao-colunas").click(function(){
         if(planilha_atual.indice == planilha_atual.colunas.length) {
-            //document.getElementById(planilha_atual).disabled = false;
             
             var input = document.getElementById(planilha_atual.diretorio);
             input.disabled = false
-            //console.log(input);
-            //var texto = $(this).closest("td").next().find("p");
-            //console.log(texto);
+            
         }else {
             carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
         }

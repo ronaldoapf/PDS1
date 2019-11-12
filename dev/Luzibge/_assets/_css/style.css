@@ -96,3 +96,13 @@ body {
 .bc-red {
     background-color: red;
 }
+
+#table-planilhas,tr:hover {
+    background-color: #BBB;
+    cursor: pointer;
+}
+
+.bg-gray {
+    background-color: #888;
+    color: white;
+}
