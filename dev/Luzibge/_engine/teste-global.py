@@ -6,6 +6,9 @@ import json
 import string
 #import request
 
+def dataframeToCsv(dataFrame,nomePlanilha):
+       dataFrame.to_csv(nomePlanilha + ".csv", sep='\t', encoding='utf-8')
+
 def gerarIndiceTXT(diretorio, frase):
     f = open(diretorio,"a+")
     f.write(frase)
