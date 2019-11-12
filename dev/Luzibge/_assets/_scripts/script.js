@@ -99,28 +99,25 @@ function carregarPlanilhasNaTabela(sheets) {
     sheets.forEach( p => {
         nome = p.split('\\')
         nome = nome[nome.length-1]
-        let html = `<tr>
+        let html = `<tr class="trClass">
             <th scope="row">
-                <input type="radio" name="radio-planilha">
+                <input class="radioButton" type="radio" name="radio-planilha">
             </th>
             <td>${nome}</td>
             <td>
-                <input type="text" name="" id="" disabled="true">
+                <input class="input-renomear-planilha" type="text" name="" id="${p}" disabled="true">
             </td>
-            <td>Pendente</td>
+            <td><p>Pendente</p></td>
         </tr>`;
 
         $("#table-planilhas").append(html)
+
+
     });
 }
 
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
-<<<<<<< HEAD
-    //console.log({colunas,colunas_decodificadas,index})
-=======
-    
->>>>>>> 78291a7fea3cd41662e720f8278d261126bc8084
     if(colunas && colunas_decodificadas) {
 
         //limpando conteudo da tabela
@@ -131,21 +128,26 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
         x = (10 < x) ? 10:x
         
         for (i = 0; i < x; i++) {
+            var valorDecodificado = colunas_decodificadas[index + i];
+            if(valorDecodificado.length > 50){
+                valorDecodificado = valorDecodificado.slice(0,47)
+                valorDecodificado += '...'
+            }
             let html = `<tr>
-            <th scope="row">${index+i+1}</th>
-            <td class="">${colunas[index + i]}</td>
-            <td class="">${colunas_decodificadas[index + i]}</td>
-            <td>
-            <input type="text" disabled="true">
-            </td>
-            <td class="">
-            <button class="check-circle-solid">
-            </td>
-            </tr>`;
+                <th scope="row">${index+i+1}</th>
+                <td title="${colunas[index + i]}" class="">${colunas[index + i]}</td>
+                <td title="${colunas_decodificadas[index + i]}"class="">${valorDecodificado}</td>
+                <td>
+                <input type="text" disabled="true">
+                </td>
+                <td class="">
+                <button class="check-circle-solid">
+                </td>
+                </tr>`;
             
             $("#table-colunas").append(html);
         }
-        planilha_atual.indice += x;
+        indice_col_atual += x;
     }
 }
     
@@ -178,7 +180,7 @@ $(document).ready(function() {
         return false;
     });
     
-<<<<<<< HEAD
+
     $("#botao-colunas").click(function(){
         if(indice_col_atual == colunas_planilha_atual.length) {
             //document.getElementById(planilha_atual).disabled = false;
@@ -194,11 +196,11 @@ $(document).ready(function() {
         
     });
 
-=======
+
     $("#div-botao").click(function(){
         carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
     });
->>>>>>> 78291a7fea3cd41662e720f8278d261126bc8084
+
 
     $("#table-colunas").on("click", ".check-circle-solid", function () {
         $(this).toggleClass("bc-green")
