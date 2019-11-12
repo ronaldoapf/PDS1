@@ -101,9 +101,9 @@ function carregarPlanilhasNaTabela(sheets) {
         nome = nome[nome.length-1]
         let html = `<tr class="trClass">
             <th scope="row">
-                <input class="radioButton" type="radio" name="radio-planilha">
+                <input class="radioButton" type="radio" name="radio-planilha" hidden>
             </th>
-            <td>${nome}</td>
+            <td style="cursor: pointer;" onmouseover="style='text-decoration:underline;cursor: pointer;'" onmouseout="style='text-decoration:none;cursor: pointer;'">${nome}</td>
             <td>
                 <input class="input-renomear-planilha" type="text" name="" id="${p}" disabled="true">
             </td>
@@ -163,10 +163,11 @@ $(document).ready(function() {
     
     carregarPlanilhasNaTabela(url_planilhas)
     
-    $('input[name="radio-planilha"]').change(function() {
-        planilha_atual.diretorio = url_planilhas[$('input[name="radio-planilha"]:checked').closest('tr').index()];
-        
-
+    $('#table-planilhas').on('click', 'tr', function() {
+    
+        planilha_atual.diretorio = url_planilhas[$(this).index()];
+        //input[name="radio-planilha"],
+        console.log($(this).closest('input'))
         buscarColunasCodificadas_Decodificadas(planilha_atual.diretorio,url_indice);
 
         let nome = planilha_atual.diretorio.split('\\');
