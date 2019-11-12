@@ -21,7 +21,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)] ,
-        pythonPath: 'C:\\Python\\python.exe'
+        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -147,7 +147,7 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
             
             $("#table-colunas").append(html);
         }
-        indice_col_atual += x;
+            planilha_atual.indice += x;
     }
 }
     
@@ -182,23 +182,18 @@ $(document).ready(function() {
     
 
     $("#botao-colunas").click(function(){
-        if(indice_col_atual == colunas_planilha_atual.length) {
+        if(planilha_atual.indice == planilha_atual.colunas.length) {
             //document.getElementById(planilha_atual).disabled = false;
             
-            var input = document.getElementById(planilha_atual);
+            var input = document.getElementById(planilha_atual.diretorio);
             input.disabled = false
             //console.log(input);
             //var texto = $(this).closest("td").next().find("p");
             //console.log(texto);
         }else {
-            carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
+            carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
         }
         
-    });
-
-
-    $("#div-botao").click(function(){
-        carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
     });
 
 
