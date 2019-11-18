@@ -181,7 +181,7 @@ $(document).ready(function() {
         nome = nome[nome.length-1]
         $("#input-busca").toggle(true)
         $("#planilha-selecionada").html('');
-        $("#planilha-selecionada").html('Planilha Selecionada: ' + nome);
+        $("#planilha-selecionada").html('Filtrar colunas da planilha "'+nome + '":');
         
         if($("#div-botao").is(":hidden")) {
             $("#div-botao").show();
