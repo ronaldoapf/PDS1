@@ -7,7 +7,8 @@ var planilha_atual = {
     diretorio : "",
     indice : 0, // quantidade de colunas passadas de 10 em 10
     colunas : [],
-    colunas_decodificadas : []
+    colunas_decodificadas : [],
+    colunas_selecionadas : {}
 };
 
 function sendRequest(json) {
@@ -21,7 +22,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)] ,
-        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+        pythonPath: 'C:\\Python\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -96,6 +97,7 @@ function getIndice() {
 }
 
 function carregarPlanilhasNaTabela(sheets) {
+    
     sheets.forEach( p => {
         nome = p.split('\\')
         nome = nome[nome.length-1]
@@ -152,6 +154,7 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
 }
     
 $(document).ready(function() {
+    $("#input-busca").hide()
     //inicializando arquivo python
     var {
         PythonShell
@@ -177,8 +180,9 @@ $(document).ready(function() {
         
         let nome = planilha_atual.diretorio.split('\\');
         nome = nome[nome.length-1]
+        $("#input-busca").toggle(true)
         $("#planilha-selecionada").html('');
-        $("#planilha-selecionada").html('Planilha Selecionada: ' + nome);
+        $("#planilha-selecionada").html('Filtrar colunas da planilha "'+nome + '":');
         
         if($("#div-botao").is(":hidden")) {
             $("#div-botao").show();
@@ -204,6 +208,9 @@ $(document).ready(function() {
         $(this).toggleClass("bc-green")
         var input = $(this).closest("td").prev().find("input")
         input.prop('disabled', function(i, v) { return !v; });
+        console.log(planilha_atual.colunas_decodificadas[$(this).closest("tr").index() + planilha_atual.indice - 10]); 
+        console.log($(this).closest("tr").index() + planilha_atual.indice - 10); 
+        planilha_atual.colunas_selecionadas[$(this).closest("tr").index() + planilha_atual.indice - 10] = planilha_atual.colunas_decodificadas[$(this).closest("tr").index() + planilha_atual.indice - 10]; 
         input.val('')
     })
 

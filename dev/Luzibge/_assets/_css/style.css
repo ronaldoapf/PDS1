@@ -106,3 +106,13 @@ body {
     background-color: #888;
     color: white;
 }
+
+.campo-busca{
+    display: flex;
+    justify-content: right;
+}
+
+.campo-busca{
+    width: 40%;
+    float: right;
+}
