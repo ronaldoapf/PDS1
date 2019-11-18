@@ -199,6 +199,7 @@ $(document).ready(function() {
             
         }else {
             carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
+            console.log(planilha_atual.colunas_selecionadas)
         }
         
     });
@@ -210,8 +211,15 @@ $(document).ready(function() {
         input.prop('disabled', function(i, v) { return !v; });
         console.log(planilha_atual.colunas_decodificadas[$(this).closest("tr").index() + planilha_atual.indice - 10]); 
         console.log($(this).closest("tr").index() + planilha_atual.indice - 10); 
-        planilha_atual.colunas_selecionadas[$(this).closest("tr").index() + planilha_atual.indice - 10] = planilha_atual.colunas_decodificadas[$(this).closest("tr").index() + planilha_atual.indice - 10]; 
+        planilha_atual.colunas_selecionadas[$(this).closest("tr").index() + planilha_atual.indice - 10] = planilha_atual.colunas_decodificadas[$(this).closest("tr").index() + planilha_atual.indice - 10]; //salvando o valor padrão da decodificação por precaução
+        $("input").blur(function () { //pego o determinado valor que o usuário digitar no campo para renomear
+            if($(this).val().length > 0) {
+                planilha_atual.colunas_selecionadas[$(this).closest("tr").index() + planilha_atual.indice - 10] = $(this).val(); //save valor renomeado que o usuario digitou
+            }
+        })
         input.val('')
     })
+    
+    
 
 });
