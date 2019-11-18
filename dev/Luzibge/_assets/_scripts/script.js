@@ -118,6 +118,20 @@ function carregarPlanilhasNaTabela(sheets) {
     });
 }
 
+//função que verifica se a coluna já foi marcada
+function verificarColunaNaTavela(index,colunas_selecionadas){
+    console.log("index chegado:" + index)
+    var lista = Object.keys(colunas_selecionadas)
+    console.log(lista)
+    var flag=0;
+    for (j=0; j < lista.length; j++){
+        if(index == lista[j]){
+            flag=1;
+        }
+    }
+    return flag;
+}
+
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
     if(colunas && colunas_decodificadas) {
@@ -146,8 +160,10 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
                 <button class="check-circle-solid">
                 </td>
                 </tr>`;
+                
             
             $("#table-colunas").append(html);
+            console.log(verificarColunaNaTavela(index+i,planilha_atual.colunas_selecionadas) == 1))
         }
             planilha_atual.indice += x;
     }
