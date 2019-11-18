@@ -190,10 +190,9 @@ $(document).ready(function() {
         return false;
     });
     
-
+    //botão próximo
     $("#botao-colunas").click(function(){
         if(planilha_atual.indice == planilha_atual.colunas.length) {
-            
             var input = document.getElementById(planilha_atual.diretorio);
             input.disabled = false
             
@@ -203,14 +202,33 @@ $(document).ready(function() {
         }
         
     });
-
+    
+    //botao voltar 
+    $("#botao-colunasRetornar").click(function(){
+        
+        
+        if(planilha_atual.indice%10 != 0) {
+            console.log("entrou")
+            planilha_atual.indice = planilha_atual.indice - 10 - (planilha_atual.indice%10)
+            carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
+        }
+        
+        else if(planilha_atual.indice - 10 > 0) {
+            console.log(planilha_atual.indice)
+            console.log(planilha_atual.indice - 10)
+            console.log(planilha_atual.indice - 20)
+            planilha_atual.indice-=20
+            carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
+            
+        }
+    });
 
     $("#table-colunas").on("click", ".check-circle-solid", function () {
         $(this).toggleClass("bc-green")
         var input = $(this).closest("td").prev().find("input")
         input.prop('disabled', function(i, v) { return !v; });
-        console.log(planilha_atual.colunas_decodificadas[$(this).closest("tr").index() + planilha_atual.indice - 10]); 
-        console.log($(this).closest("tr").index() + planilha_atual.indice - 10); 
+        //console.log(planilha_atual.colunas_decodificadas[$(this).closest("tr").index() + planilha_atual.indice - 10]); 
+        //console.log($(this).closest("tr").index() + planilha_atual.indice - 10); 
         planilha_atual.colunas_selecionadas[$(this).closest("tr").index() + planilha_atual.indice - 10] = planilha_atual.colunas_decodificadas[$(this).closest("tr").index() + planilha_atual.indice - 10]; //salvando o valor padrão da decodificação por precaução
         $("input").blur(function () { //pego o determinado valor que o usuário digitar no campo para renomear
             if($(this).val().length > 0) {
