@@ -21,7 +21,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)] ,
-        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -96,6 +96,7 @@ function getIndice() {
 }
 
 function carregarPlanilhasNaTabela(sheets) {
+    
     sheets.forEach( p => {
         nome = p.split('\\')
         nome = nome[nome.length-1]
@@ -152,6 +153,7 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
 }
     
 $(document).ready(function() {
+    $("#input-busca").hide()
     //inicializando arquivo python
     var {
         PythonShell
@@ -177,6 +179,7 @@ $(document).ready(function() {
         
         let nome = planilha_atual.diretorio.split('\\');
         nome = nome[nome.length-1]
+        $("#input-busca").toggle(true)
         $("#planilha-selecionada").html('');
         $("#planilha-selecionada").html('Planilha Selecionada: ' + nome);
         
