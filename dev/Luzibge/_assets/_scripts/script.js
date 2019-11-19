@@ -251,17 +251,18 @@ $(document).ready(function() {
         $(this).toggleClass("bc-green")
         var input = $(this).closest("td").prev().find("input")
         input.prop('disabled', function(i, v) { return !v; });
-        input.val(planilha_atual.colunas_decodificadas[planilha_atual.indice - 10]) //setar nome no campo
-        planilha_atual.colunas_selecionadas[$(this).closest("tr").index() + planilha_atual.indice - 10] = planilha_atual.colunas_decodificadas[$(this).closest("tr").index() + planilha_atual.indice - 10]; //salvando o valor padrão da decodificação por precaução
+        
+        let i = $(this).closest("tr").index()
+        
+        planilha_atual.colunas_selecionadas[i + planilha_atual.indice - 10] = planilha_atual.colunas_decodificadas[i + planilha_atual.indice - 10]; //salvando o valor padrão da decodificação por precaução
+        
+        let aux = planilha_atual.colunas_decodificadas[i + planilha_atual.indice - 10]
         $("input").blur(function () { //pego o determinado valor que o usuário digitar no campo para renomear
             
             if($(this).val().length > 0) {
-                planilha_atual.colunas_selecionadas[$(this).closest("tr").index() + planilha_atual.indice - 10] = $(this).val(); //save valor renomeado que o usuario digitou
+                planilha_atual.colunas_selecionadas[i + planilha_atual.indice - 10] = $(this).val(); //save valor renomeado que o usuario digitou
             }
         })
-        input.val('')
+        input.val(aux)
     })
-    
-    
-
 });
