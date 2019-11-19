@@ -119,7 +119,7 @@ function carregarPlanilhasNaTabela(sheets) {
 }
 
 //função que verifica se a coluna já foi marcada
-function verificarColunaNaTavela(index,colunas_selecionadas){
+function verificarColunaNaTabela(index,colunas_selecionadas){
     console.log("index chegado:" + index)
     var lista = Object.keys(colunas_selecionadas)
     console.log(lista)
@@ -149,21 +149,29 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
                 valorDecodificado = valorDecodificado.slice(0,47)
                 valorDecodificado += '...'
             }
+            let aux = ""
+            let valor = ""
+            let disabled = "disabled=true"
+            if(verificarColunaNaTabela(index+i,planilha_atual.colunas_selecionadas) == 1) {
+                aux = "bc-green"
+                valor = planilha_atual.colunas_selecionadas[index+i]
+                disabled = ""
+            }
+            
             let html = `<tr>
                 <th scope="row">${index+i+1}</th>
                 <td title="${colunas[index + i]}" class="">${colunas[index + i]}</td>
                 <td title="${colunas_decodificadas[index + i]}"class="">${valorDecodificado}</td>
                 <td>
-                <input type="text" disabled="true">
+                <input type="text" ${disabled} value="${valor}">
                 </td>
                 <td class="">
-                <button class="check-circle-solid">
+                <button class="check-circle-solid ${aux}">
                 </td>
                 </tr>`;
                 
             
             $("#table-colunas").append(html);
-            console.log(verificarColunaNaTavela(index+i,planilha_atual.colunas_selecionadas) == 1))
         }
             planilha_atual.indice += x;
     }
@@ -243,10 +251,10 @@ $(document).ready(function() {
         $(this).toggleClass("bc-green")
         var input = $(this).closest("td").prev().find("input")
         input.prop('disabled', function(i, v) { return !v; });
-        //console.log(planilha_atual.colunas_decodificadas[$(this).closest("tr").index() + planilha_atual.indice - 10]); 
-        //console.log($(this).closest("tr").index() + planilha_atual.indice - 10); 
+        input.val(planilha_atual.colunas_decodificadas[planilha_atual.indice - 10]) //setar nome no campo
         planilha_atual.colunas_selecionadas[$(this).closest("tr").index() + planilha_atual.indice - 10] = planilha_atual.colunas_decodificadas[$(this).closest("tr").index() + planilha_atual.indice - 10]; //salvando o valor padrão da decodificação por precaução
         $("input").blur(function () { //pego o determinado valor que o usuário digitar no campo para renomear
+            
             if($(this).val().length > 0) {
                 planilha_atual.colunas_selecionadas[$(this).closest("tr").index() + planilha_atual.indice - 10] = $(this).val(); //save valor renomeado que o usuario digitou
             }
