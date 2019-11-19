@@ -120,9 +120,7 @@ function carregarPlanilhasNaTabela(sheets) {
 
 //função que verifica se a coluna já foi marcada
 function verificarColunaNaTabela(index,colunas_selecionadas){
-    console.log("index chegado:" + index)
     var lista = Object.keys(colunas_selecionadas)
-    console.log(lista)
     var flag=0;
     for (j=0; j < lista.length; j++){
         if(index == lista[j]){
@@ -193,7 +191,7 @@ $(document).ready(function() {
     $('#table-planilhas').on('click', 'tr', function() {
 
         planilha_atual.diretorio = url_planilhas[$(this).index()];
-        //input[name="radio-planilha"],
+        
 
         buscarColunasCodificadas_Decodificadas(planilha_atual.diretorio,url_indice);
         
@@ -232,15 +230,11 @@ $(document).ready(function() {
         
         
         if(planilha_atual.indice%10 != 0) {
-            console.log("entrou")
             planilha_atual.indice = planilha_atual.indice - 10 - (planilha_atual.indice%10)
             carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
         }
         
         else if(planilha_atual.indice - 10 > 0) {
-            console.log(planilha_atual.indice)
-            console.log(planilha_atual.indice - 10)
-            console.log(planilha_atual.indice - 20)
             planilha_atual.indice-=20
             carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
             
