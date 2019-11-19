@@ -42,7 +42,7 @@ function sendRequest(json) {
                     planilha_atual.indice = 0;
                     planilha_atual.colunas = response.colunas
                     planilha_atual.colunas_decodificadas = response.colunas_decodificadas
-                    
+                    planilha_atual.colunas_selecionadas = {}
                     if(planilha_atual.colunas && planilha_atual.colunas_decodificadas) {
                         carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
                     }
@@ -189,35 +189,42 @@ $(document).ready(function() {
     carregarPlanilhasNaTabela(url_planilhas)
     
     $('#table-planilhas').on('click', 'tr', function() {
-
-        planilha_atual.diretorio = url_planilhas[$(this).index()];
-        
-
-        buscarColunasCodificadas_Decodificadas(planilha_atual.diretorio,url_indice);
-        
-        var selected = $(this).hasClass("bg-gray");
-        $("#table-planilhas tr").removeClass("bg-gray");
-        if(!selected)
-                $(this).addClass("bg-gray");
-        
-        let nome = planilha_atual.diretorio.split('\\');
-        nome = nome[nome.length-1]
-        $("#input-busca").toggle(true)
-        $("#planilha-selecionada").html('');
-        $("#planilha-selecionada").html('Filtrar colunas da planilha "'+nome + '":');
-        
-        if($("#div-botao").is(":hidden")) {
-            $("#div-botao").show();
+        let flag=1
+        //verificando se o usuario deseja trocar de planilha, caso ele deseja a flag =1 vai ser ativada e vai trocar a planilha
+        if(planilha_atual.diretorio.length >0 && planilha_atual.diretorio != url_planilhas[$(this).index()]) {
+            flag = 0
+            if(confirm("Deseja trocar de planilha?")){
+                flag = 1
+            }
         }
-        return false;
+        if(flag==1) {
+            
+            planilha_atual.diretorio = url_planilhas[$(this).index()];
+            buscarColunasCodificadas_Decodificadas(planilha_atual.diretorio,url_indice);
+            
+            var selected = $(this).hasClass("bg-gray");
+            $("#table-planilhas tr").removeClass("bg-gray");
+            if(!selected)
+                    $(this).addClass("bg-gray");
+
+            let nome = planilha_atual.diretorio.split('\\');
+            nome = nome[nome.length-1]
+            $("#input-busca").toggle(true)
+            $("#planilha-selecionada").html('');
+            $("#planilha-selecionada").html('Filtrar colunas da planilha "'+nome + '":');
+
+            if($("#div-botao").is(":hidden")) {
+                $("#div-botao").show();
+            }
+            return false;
+        }
     });
     
     //botão próximo
     $("#botao-colunas").click(function(){
         if(planilha_atual.indice == planilha_atual.colunas.length) {
             var input = document.getElementById(planilha_atual.diretorio);
-            input.disabled = false
-            
+            input.disabled = false        
         }else {
             carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
             console.log(planilha_atual.colunas_selecionadas)
