@@ -1,7 +1,10 @@
 //variaveis globais
+var planilhas  = [];
+var planilha_atual = 0
 var url_indice; // par para pegar a planilha de indice vinda da url
 var url_planilhas; //var para pegar as planilhas vindas da url
 
+/*
 //Este objeto tem como proposito armazenar informaçÕes sobre a planilha que está sendo processada (passando de 10 em 10 entre suas colunas)
 var planilha_atual = { 
     diretorio : "",
@@ -9,7 +12,7 @@ var planilha_atual = {
     colunas : [],
     colunas_decodificadas : [],
     colunas_selecionadas : {}
-};
+};*/
 
 function sendRequest(json) {
     var {
@@ -33,18 +36,18 @@ function sendRequest(json) {
             response = JSON.parse(data)  
             if (response) {
                 if (response.opcao == 1) {
+                    console.log("op 1")
                     planilha_atual.colunas = response.colunas;
                 }
                 if(response.opcao == 2) {
+                    console.log("op 2")
                     planilha_atual.colunas_decodificadas = response.colunas_decodificadas;
                 }
                 if(response.opcao == 3) {
-                    planilha_atual.indice = 0;
-                    planilha_atual.colunas = response.colunas
-                    planilha_atual.colunas_decodificadas = response.colunas_decodificadas
-                    planilha_atual.colunas_selecionadas = {}
-                    if(planilha_atual.colunas && planilha_atual.colunas_decodificadas) {
-                        carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
+                    planilhas[planilha_atual] = new Planilha(url_planilhas[planilha_atual],0,response.colunas,response.colunas_decodificadas,{})
+                    if(planilhas[planilha_atual].colunas && planilhas[planilha_atual].colunas_decodificadas) {
+                        console.log("P" +planilhas[planilha_atual].indice)
+                        carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
                     }
                 }
             }
@@ -56,12 +59,18 @@ function sendRequest(json) {
 }
 
 function buscarColunasCodificadas_Decodificadas(dir_planilha, dir_indice) {
-    var json = {
-        "opcao": 3,
-        "dir_planilha": dir_planilha,
-        "dir_indice": dir_indice
-    };
-    sendRequest(json)
+    let aux = planilhas[planilha_atual]
+    if(aux) {
+        aux.indice = aux.indice - (10 + aux.indice%10)
+        carregarColunasNaTabela(aux.colunas, aux.colunas_decodificadas,aux.indice)
+    }else{
+        var json = {
+            "opcao": 3,
+            "dir_planilha": dir_planilha,
+            "dir_indice": dir_indice
+        };
+        sendRequest(json)
+    }
 }
 
 //funcao para pegar parametros da url
@@ -97,10 +106,12 @@ function getIndice() {
 }
 
 function carregarPlanilhasNaTabela(sheets) {
-    
+        
     sheets.forEach( p => {
+        
         nome = p.split('\\')
         nome = nome[nome.length-1]
+        
         let html = `<tr class="trClass">
             <th scope="row">
                 <input class="radioButton" type="radio" name="radio-planilha" hidden>
@@ -132,6 +143,7 @@ function verificarColunaNaTabela(index,colunas_selecionadas){
 
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
+    
     if(colunas && colunas_decodificadas) {
 
         //limpando conteudo da tabela
@@ -150,9 +162,9 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
             let aux = ""
             let valor = ""
             let disabled = "disabled=true"
-            if(verificarColunaNaTabela(index+i,planilha_atual.colunas_selecionadas) == 1) {
+            if(verificarColunaNaTabela(index+i,planilhas[planilha_atual].colunas_selecionadas) == 1) {
                 aux = "bc-green"
-                valor = planilha_atual.colunas_selecionadas[index+i]
+                valor = planilhas[planilha_atual].colunas_selecionadas[index+i]
                 disabled = ""
             }
             
@@ -171,7 +183,7 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
             
             $("#table-colunas").append(html);
         }
-            planilha_atual.indice += x;
+            planilhas[planilha_atual].indice += x;
     }
 }
     
@@ -189,25 +201,29 @@ $(document).ready(function() {
     carregarPlanilhasNaTabela(url_planilhas)
     
     $('#table-planilhas').on('click', 'tr', function() {
+         
+        planilha_atual = $(this).index()
+        
         let flag=1
         //verificando se o usuario deseja trocar de planilha, caso ele deseja a flag =1 vai ser ativada e vai trocar a planilha
-        if(planilha_atual.diretorio.length >0 && planilha_atual.diretorio != url_planilhas[$(this).index()]) {
+        /*
+        if(planilhas[planilha_atual].diretorio.length >0 && planilhas[planilha_atual].diretorio != url_planilhas[$(this).index()]) {
             flag = 0
             if(confirm("Deseja trocar de planilha?")){
                 flag = 1
             }
-        }
+        }*/
         if(flag==1) {
-            
-            planilha_atual.diretorio = url_planilhas[$(this).index()];
-            buscarColunasCodificadas_Decodificadas(planilha_atual.diretorio,url_indice);
+            //planilha_atual.diretorio = url_planilhas[indice];
+            buscarColunasCodificadas_Decodificadas(url_planilhas[planilha_atual],url_indice);
             
             var selected = $(this).hasClass("bg-gray");
             $("#table-planilhas tr").removeClass("bg-gray");
+            
             if(!selected)
-                    $(this).addClass("bg-gray");
+                $(this).addClass("bg-gray");
 
-            let nome = planilha_atual.diretorio.split('\\');
+            let nome = url_planilhas[planilha_atual].split('\\');
             nome = nome[nome.length-1]
             $("#input-busca").toggle(true)
             $("#planilha-selecionada").html('');
@@ -218,16 +234,19 @@ $(document).ready(function() {
             }
             return false;
         }
+        
     });
     
     //botão próximo
     $("#botao-colunas").click(function(){
-        if(planilha_atual.indice == planilha_atual.colunas.length) {
-            var input = document.getElementById(planilha_atual.diretorio);
+        console.log(planilhas[planilha_atual].indice)
+        if(planilhas[planilha_atual].indice == planilhas[planilha_atual].colunas.length) {
+            planilhas[planilha_atual].indice = 0
+            var input = document.getElementById(planilhas[planilha_atual].diretorio);
             input.disabled = false        
         }else {
-            carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
-            console.log(planilha_atual.colunas_selecionadas)
+            carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
+            console.log(planilhas[planilha_atual].colunas_selecionadas)
         }
         
     });
@@ -235,41 +254,40 @@ $(document).ready(function() {
     //botao voltar 
     $("#botao-colunasRetornar").click(function(){
         
-        
-        if(planilha_atual.indice%10 != 0) {
-            planilha_atual.indice = planilha_atual.indice - 10 - (planilha_atual.indice%10)
-            carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
+        if(planilhas[planilha_atual].indice%10 != 0) {
+            planilhas[planilha_atual].indice = planilhas[planilha_atual].indice - 10 - (planilhas[planilha_atual].indice%10)
+            carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
         }
         
-        else if(planilha_atual.indice - 10 > 0) {
-            planilha_atual.indice-=20
-            carregarColunasNaTabela(planilha_atual.colunas, planilha_atual.colunas_decodificadas, planilha_atual.indice);
+        else if(planilhas[planilha_atual].indice - 10 > 0) {
+            planilhas[planilha_atual].indice-=20
+            carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
             
         }
     });
 
     $("#table-colunas").on("click", ".check-circle-solid", function () {
         var input = $(this).closest("td").prev().find("input")
-        let i = $(this).closest("tr").index() + planilha_atual.indice - 10
+        let i = $(this).closest("tr").index() + planilhas[planilha_atual].indice - 10
         
         if($(this).hasClass("bc-green")) {
             
             $(this).removeClass("bc-green")
             input.prop('disabled', function(i, v) { return !v; });
-            delete planilha_atual.colunas_selecionadas[i]
+            delete planilhas[planilha_atual].colunas_selecionadas[i]
             input.val("")
         
         }else {
             $(this).addClass("bc-green")
             input.prop('disabled', function(i, v) { return !v; });
 
-            planilha_atual.colunas_selecionadas[i] = planilha_atual.colunas_decodificadas[i]; //salvando o valor padrão da decodificação por precaução
-            let aux = planilha_atual.colunas_decodificadas[i]
+            planilhas[planilha_atual].colunas_selecionadas[i] = planilhas[planilha_atual].colunas_decodificadas[i]; //salvando o valor padrão da decodificação por precaução
+            let aux = planilhas[planilha_atual].colunas_decodificadas[i]
             
             $("input").blur(function () { //pego o determinado valor que o usuário digitar no campo para renomear
 
                 if($(this).val().length > 0) {
-                    planilha_atual.colunas_selecionadas[i] = $(this).val(); //save valor renomeado que o usuario digitou
+                    planilhas[planilha_atual].colunas_selecionadas[i] = $(this).val(); //save valor renomeado que o usuario digitou
                 }
             })
             input.val(aux)
