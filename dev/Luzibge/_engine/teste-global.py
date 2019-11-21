@@ -46,7 +46,7 @@ def toLowerCase(strings):
     return x
 
 def processarRequest(request):
-
+    """
     if request['opcao'] == 1:
         dir = request["dir_planilha"]
         df = carregarCsvEmDataframe(dir)
@@ -69,8 +69,9 @@ def processarRequest(request):
             "colunas_decodificadas": colunnas_decodificadas
         }
         print (json.dumps( response ))
+    """
 
-    if request["opcao"] == 3:
+    if request["opcao"] == 1:
         dir_planilha = request["dir_planilha"]
         dir_indice = request["dir_indice"]
         nome_planilha = dir_planilha.split('\\')[-1]
@@ -79,9 +80,16 @@ def processarRequest(request):
         colunas = df.columns
         colunnas_decodificadas = decodificarColunasDeDataframe(nome_planilha, df, gerarDictIndice(dir_indice))
         response = {
-            "opcao": 3,
+            "opcao": 1,
             "colunas": colunas.tolist(),
             "colunas_decodificadas": colunnas_decodificadas
+        }
+        print (json.dumps( response ))
+    
+    elif request["opcao"] == 2:
+        response = {
+            "opcao": 2,
+            "msg": request
         }
         print (json.dumps( response ))
 
@@ -97,7 +105,6 @@ def processarRequest(request):
 if __name__ == "__main__":
     if sys.argv[1]:
         x = sys.argv[1]
-        print(x)
         x = json.loads(x)
 
         processarRequest(x)
