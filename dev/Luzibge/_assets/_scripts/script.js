@@ -248,6 +248,10 @@ $(document).ready(function() {
 
     $("#table-colunas").on("click", ".check-circle-solid", function() {
 
+        $("input[type='text']").on("click", function() {
+            $(this).select();
+        });
+
         var input = $(this).closest("td").prev().find("input")
         let i = $(this).closest("tr").index() + planilhas[planilha_atual].indice - 10
 
