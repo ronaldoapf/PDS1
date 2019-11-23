@@ -13,19 +13,19 @@ def gerarIndiceTXT(diretorio, frase):
     f = open(diretorio,"a+")
     f.write(frase)
     f.close()
-       
-def salvarPlanilhaCSV(df,file_name):
-    df.to_csv(file_name, sep='\t', encoding='utf-8')
-        
+
 def gerarDictIndice(dir_csv_indice):
     indice_csv = pd.read_csv(dir_csv_indice, delimiter=",")
     dict_indice = indice_csv.set_index('chave')['valor'].to_dict() 
     return dict_indice
+       
+def salvarPlanilhaCSV(dataframe,file_name):
+    dataframe.to_csv(file_name, sep='\t', encoding='utf-8')
 
 def carregarCsvEmDataframe(dir_csv):
-    df = pd.read_csv(dir_csv, delimiter=",")
-    df.columns = toLowerCase(df.columns)
-    return df
+    dataframe = pd.read_csv(dir_csv, delimiter=",")
+    dataframe.columns = toLowerCase(dataframe.columns)
+    return dataframe
 
 def decodificarColunasDeDataframe(nomeArquivo, dataframe, dict_indice):
     c = []
@@ -37,6 +37,10 @@ def decodificarColunasDeDataframe(nomeArquivo, dataframe, dict_indice):
             c.append(column.lower())
     return c
 
+def renomearColunasDoDataframe(dataframe, novas_colunas):
+    dataframe.columns = novas_colunas
+    return dataframe
+
 def removerColunasDoDataframe(dataframe, cols):
     for col in cols:
         dataframe = dataframe.drop(col, axis=1)
@@ -47,6 +51,20 @@ def getColunasNaoUtilizadas(colunas_totais, colunas_utilizadas):
     for i in reversed(colunas_utilizadas):
         del colunas_totais[i]
     return colunas_totais
+
+def decodificarValoresDoDataframe(dataframe, dict_indices):
+    indices = list(dict_indices.keys())
+    colunas = list(dataframe.columns)
+    for coluna in colunas:
+        idx = [i for i in indices if coluna in i]
+        aux = [s for s in idx if len(s.split("_")) > 2]
+        if(aux):
+            values = list(map(int,[i.split("_")[-1] for i in idx]))
+            dic = dict(zip(values,[dict_indices[i] for i in idx]))
+            
+            dataframe[coluna] = dataframe[coluna].map(dic)
+    
+    return dataframe
     
 def toLowerCase(strings):
     x = []

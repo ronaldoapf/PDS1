@@ -248,6 +248,7 @@ $(document).ready(function() {
         }
     });
 
+    //quando um item é marcado como interessante
     $("#table-colunas").on("click", ".check-circle-solid", function() {
 
         $("input[type='text']").on("click", function() {
