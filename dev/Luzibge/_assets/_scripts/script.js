@@ -33,6 +33,8 @@ function sendRequest(json) {
                     }
                 } else if (response.opcao == 2) {
                     console.log(response)
+                } else {
+                    console.log(response)
                 }
             } else {
                 alert("Erro ao carregar planilha!");
@@ -59,7 +61,7 @@ function buscarColunasCodificadas_Decodificadas(dir_planilha, dir_indice) {
 function salvarPlanilha(diretorio, colunas_selecionadas) {
     var json = {
         "opcao": 2,
-        "dir_planilha": diretorio,
+        "dir_salvar": diretorio,
         "colunas_selecionadas": colunas_selecionadas
     }
     sendRequest(json)
@@ -112,7 +114,7 @@ function carregarPlanilhasNaTabela(sheets) {
             <td>
                 <input class="input-renomear-planilha" type="text" name="" id="${p}" disabled="true">
             </td>
-            <td><p>Pendente</p> <button class="btn btn-success salvar-planilha" hidden>Salvar</button></td>
+            <td><p>Pendente</p> <button class="btn btn-success salvar-planilha" >Salvar</button></td>
         </tr>`;
 
         $("#table-planilhas").append(html)
@@ -280,6 +282,11 @@ $(document).ready(function() {
     })
 
     $(".salvar-planilha").click(function() {
-        salvarPlanilha(planilha_atual.diretorio, planilha_atual.colunas_selecionadas)
+        //var dir = $(this).closest("input").val()
+        var dir = planilhas[planilha_atual].diretorio
+        dir = dir.substring(0, dir.indexOf(".csv"))
+        dir += "-renomeado.csv"
+        console.log(dir)
+        salvarPlanilha(dir, planilhas[planilha_atual].colunas_selecionadas)
     })
 });
