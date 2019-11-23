@@ -4,10 +4,7 @@ import sys
 import pandas as pd
 import json
 import string
-#import request
 
-def dataframeToCsv(dataFrame,nomePlanilha):
-       dataFrame.to_csv(nomePlanilha + ".csv", sep='\t', encoding='utf-8')
 
 def gerarIndiceTXT(diretorio, frase):
     f = open(diretorio,"a+")
@@ -19,8 +16,8 @@ def gerarDictIndice(dir_csv_indice):
     dict_indice = indice_csv.set_index('chave')['valor'].to_dict() 
     return dict_indice
        
-def salvarPlanilhaCSV(dataframe,file_name):
-    dataframe.to_csv(file_name, sep='\t', encoding='utf-8')
+def salvarPlanilhaCSV(dataframe,diretorio):
+    dataframe.to_csv(diretorio,index=False, sep='\t', encoding='utf-8')
 
 def carregarCsvEmDataframe(dir_csv):
     dataframe = pd.read_csv(dir_csv, delimiter=",")
