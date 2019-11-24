@@ -15,7 +15,11 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
+<<<<<<< HEAD
         pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+=======
+        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+>>>>>>> 3d25c99ab3db5867b8ac415afbb7f33b802b4968
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -115,15 +119,29 @@ function carregarPlanilhasNaTabela(sheets) {
             <th scope="row">
                 ${i+1}
             </th>
-            <td style="cursor: pointer;" onmouseover="style='text-decoration:underline;'" onmouseout="style='text-decoration:none;'"><p class="nome-planilha">${nome}</p></td>
+
+            <td style="cursor: pointer;" onmouseover="style='text-decoration:underline;'" onmouseout="style='text-decoration:none;'">
+            <p class="nome-planilha">${nome}</p></td>
             <td>
-                <input class="input-renomear-planilha" type="text" name="" id="${p}" disabled="true">
+                <input class="input-renomear-planilha" type="text" name="" id="${p}" style="width: 80%;" disabled="true">
             </td>
-            <td><p>Pendente</p> <button class="btn btn-success salvar-planilha" >Salvar</button></td>
+            <td> 
+                <button title="Desfazer ações" class="btn btn-light desfazerAcoes">
+                    <img src="../_assets/icon/icons8-undefined-26.png" alt="Ícone para desfazer ações"></img>
+                </button>
+                
+                <button title="Editar nome da planilha" class="btn btn-light editarPlanilha">
+                    <img src="../_assets/icon/icons8-editar-26.png"></img>
+                </button>
+
+                <button title="Salvar planilha" class="btn btn-light salvarPlanilha">
+                    <img src="../_assets/icon/icons8-salvar-26.png"></img>
+                </button>
+
+            </td>
         </tr>`;
 
         $("#table-planilhas").append(html)
-
 
     });
 }
@@ -289,12 +307,43 @@ $(document).ready(function() {
         }
     })
 
-    $(".salvar-planilha").click(function() {
+    // Função para salvar planilha quando o usuário bem entender necessário
+    $(".salvarPlanilha").click(function() {
         //var dir = $(this).closest("input").val()
-        var dir = planilhas[planilha_atual].diretorio
-        dir = dir.substring(0, dir.indexOf(".csv"))
-        dir += "-renomeado.csv"
 
-        salvarPlanilha(dir, planilhas[planilha_atual].diretorio, url_indice, planilhas[planilha_atual].colunas_selecionadas)
+        input = $(this).closest("tr").find("input")
+        
+        if(input.prop("disabled") || input.val() == "Informe o novo nome da planilha"){
+            input.prop("disabled", false)
+            input.val("Informe o novo nome da planilha")
+            input.select()
+        }
+
+        else{
+           console.log(input.val())
+        }
+
+        // var dir = planilhas[planilha_atual].diretorio
+        // dir = dir.substring(0, dir.indexOf(".csv"))
+        // dir += "-renomeado.csv"
+        // salvarPlanilha(dir, planilhas[planilha_atual].colunas_selecionadas)
+    })
+
+    // Função para liberar o campo de input para editar planilhas
+    $(".editarPlanilha").click(function(){
+        let input = $(this).closest("tr").find("input")
+        input.prop("disabled", false)
+    })
+
+    // Função para desfazer ações fazendo com que o vetor de colunas_selecionadas receba nenhum valor
+    $(".desfazerAcoes").click(function(){
+        let tr = $(this).closest("tr");
+        planilha_atual = tr.index()   
+
+        planilhas[planilha_atual].colunas_selecionadas = {}
+        planilhas[planilha_atual].indice = 0
+        
+        carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
+
     })
 });
