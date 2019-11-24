@@ -22,6 +22,7 @@ function sendRequest(json) {
     var response;
     //quando o arquivo python retornar algo esse evento será disparado
     python.on('message', function(data) {
+        console.log(data)
         if (JSON.parse(data)) {
             response = JSON.parse(data)
             if (response) {
@@ -46,7 +47,7 @@ function sendRequest(json) {
 function buscarColunasCodificadas_Decodificadas(dir_planilha, dir_indice) {
     let aux = planilhas[planilha_atual]
     if (aux) {
-        if(aux.indice > 10) {
+        if (aux.indice > 10) {
             aux.indice = aux.indice - (10 + aux.indice % 10)
         }
         carregarColunasNaTabela(aux.colunas, aux.colunas_decodificadas, aux.indice)
@@ -60,10 +61,12 @@ function buscarColunasCodificadas_Decodificadas(dir_planilha, dir_indice) {
     }
 }
 
-function salvarPlanilha(diretorio, colunas_selecionadas) {
+function salvarPlanilha(diretorio_salvar, diretorio_planilha, diretorio_indice, colunas_selecionadas) {
     var json = {
         "opcao": 2,
-        "dir_salvar": diretorio,
+        "dir_salvar": diretorio_salvar,
+        "dir_planilha": diretorio_planilha,
+        "dir_indice": diretorio_indice,
         "colunas_selecionadas": colunas_selecionadas
     }
     sendRequest(json)
@@ -214,12 +217,12 @@ $(document).ready(function() {
     carregarPlanilhasNaTabela(url_planilhas)
 
     $('#table-planilhas').on('click', '.nome-planilha', function() {
-        
+
         let tr = $(this).closest("tr");
         planilha_atual = tr.index()
 
         buscarColunasCodificadas_Decodificadas(url_planilhas[planilha_atual], url_indice);
-        
+
         var selected = tr.hasClass("bg-gray");
         $("#table-planilhas tr").removeClass("bg-gray");
 
@@ -242,7 +245,7 @@ $(document).ready(function() {
 
     //botão próximo
     $("#botao-colunas").click(function() {
-        
+
         if (planilhas[planilha_atual].indice == planilhas[planilha_atual].colunas.length) {
             planilhas[planilha_atual].indice = 0
             var input = document.getElementById(planilhas[planilha_atual].diretorio);
@@ -284,7 +287,7 @@ $(document).ready(function() {
             input.val("")
 
         } else {
-            
+
             $(this).addClass("bc-green")
             input.prop('disabled', function(i, v) { return !v; });
 
