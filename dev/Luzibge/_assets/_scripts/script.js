@@ -3,8 +3,7 @@ var planilhas = [];
 var planilha_atual;
 var url_indice; // par para pegar a planilha de indice vinda da url
 var url_planilhas; //var para pegar as planilhas vindas da url
-var relation = {}
-    
+
 
 function sendRequest(json) {
     var {
@@ -352,11 +351,7 @@ $(document).ready(function() {
         }
     })
     
-    var $search = $("#input-busca").on('input',function(){
-    
-      var matcher = $(this).val();
-      
-      console.log(planilhas[planilha_atual].colunas.find(matcher)); 
-      console.log(matcher.test(planilhas[planilha_atual].colunas) || matcher.test(planilhas[planilha_atual].colunas_decodificadas))
+    $("#input-busca").on('input',function(){
+        console.log(planilhas[planilha_atual].getRelation())
     })
 });
