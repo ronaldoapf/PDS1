@@ -4,6 +4,7 @@ var planilha_atual;
 var url_indice; // par para pegar a planilha de indice vinda da url
 var url_planilhas; //var para pegar as planilhas vindas da url
 
+
 function sendRequest(json) {
     var {
         PythonShell
@@ -15,30 +16,22 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
-<<<<<<< HEAD
-        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
-=======
-        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
->>>>>>> 3d25c99ab3db5867b8ac415afbb7f33b802b4968
+        pythonPath: 'C:\\Python\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
     var response;
     //quando o arquivo python retornar algo esse evento será disparado
     python.on('message', function(data) {
-        console.log(data)
         if (JSON.parse(data)) {
             response = JSON.parse(data)
             if (response) {
                 if (response.opcao == 1) {
                     planilhas[planilha_atual] = new Planilha(url_planilhas[planilha_atual], 0, response.colunas, response.colunas_decodificadas, {})
                     if (planilhas[planilha_atual].colunas && planilhas[planilha_atual].colunas_decodificadas) {
-                        console.log(planilhas[planilha_atual])
                         carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
                     }
-                } else if (response.opcao == 2) {
-                    console.log(response)
-                } else {
+                } else if (response.opcao == 2) {} else {
                     console.log(response)
                 }
             } else {
@@ -51,7 +44,7 @@ function sendRequest(json) {
 function buscarColunasCodificadas_Decodificadas(dir_planilha, dir_indice) {
     let aux = planilhas[planilha_atual]
     if (aux) {
-        if (aux.indice > 10) {
+        if (aux.indice >= 10) {
             aux.indice = aux.indice - (10 + aux.indice % 10)
         }
         carregarColunasNaTabela(aux.colunas, aux.colunas_decodificadas, aux.indice)
@@ -126,15 +119,15 @@ function carregarPlanilhasNaTabela(sheets) {
                 <input class="input-renomear-planilha" type="text" name="" id="${p}" style="width: 80%;" disabled="true">
             </td>
             <td> 
-                <button title="Desfazer ações" class="btn btn-light desfazerAcoes">
+                <button title="Desfazer ações" class="btn btn-light desfazerAcoes" disabled>
                     <img src="../_assets/icon/icons8-undefined-26.png" alt="Ícone para desfazer ações"></img>
                 </button>
                 
-                <button title="Editar nome da planilha" class="btn btn-light editarPlanilha">
+                <button title="Editar nome da planilha" class="btn btn-light editarPlanilha" disabled>
                     <img src="../_assets/icon/icons8-editar-26.png"></img>
                 </button>
 
-                <button title="Salvar planilha" class="btn btn-light salvarPlanilha">
+                <button title="Salvar planilha" class="btn btn-light salvarPlanilha" disabled>
                     <img src="../_assets/icon/icons8-salvar-26.png"></img>
                 </button>
 
@@ -227,6 +220,10 @@ $(document).ready(function() {
 
         buscarColunasCodificadas_Decodificadas(url_planilhas[planilha_atual], url_indice);
 
+        let buttons = $(this).closest("tr").find("button");
+        buttons.prop("disabled", false)
+
+
         var selected = tr.hasClass("bg-gray");
         $("#table-planilhas tr").removeClass("bg-gray");
 
@@ -235,6 +232,7 @@ $(document).ready(function() {
 
         let nome = url_planilhas[planilha_atual].split('\\');
         nome = nome[nome.length - 1]
+
         $("#input-busca").toggle(true)
         $("#planilha-selecionada").html('');
         $("#planilha-selecionada").html('Filtrar colunas da planilha "' + nome + '":');
@@ -256,7 +254,6 @@ $(document).ready(function() {
             input.disabled = false
         } else {
             carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
-            console.log(planilhas[planilha_atual].colunas_selecionadas)
         }
 
     });
@@ -312,15 +309,11 @@ $(document).ready(function() {
         //var dir = $(this).closest("input").val()
 
         input = $(this).closest("tr").find("input")
-        
-        if(input.prop("disabled") || input.val() == "Informe o novo nome da planilha"){
+
+        if (input.prop("disabled") || input.val() == "Informe o novo nome da planilha") {
             input.prop("disabled", false)
             input.val("Informe o novo nome da planilha")
             input.select()
-        }
-
-        else{
-           console.log(input.val())
         }
 
         // var dir = planilhas[planilha_atual].diretorio
@@ -330,20 +323,35 @@ $(document).ready(function() {
     })
 
     // Função para liberar o campo de input para editar planilhas
-    $(".editarPlanilha").click(function(){
+    $(".editarPlanilha").click(function() {
         let input = $(this).closest("tr").find("input")
         input.prop("disabled", false)
+        input.val("Informe o novo nome da planilha")
+        input.select()
     })
 
     // Função para desfazer ações fazendo com que o vetor de colunas_selecionadas receba nenhum valor
-    $(".desfazerAcoes").click(function(){
-        let tr = $(this).closest("tr");
-        planilha_atual = tr.index()   
+    $(".desfazerAcoes").click(function() {
+        let p = $(this).closest("tr").find("p")
 
-        planilhas[planilha_atual].colunas_selecionadas = {}
-        planilhas[planilha_atual].indice = 0
-        
-        carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
+        if (confirm(`Deseja desfazer todo o processamento realizado na planilha "${p.text()}" ?`)) {
+            let tr = $(this).closest("tr")
+            let input = $(this).closest("tr").find("input")
+            planilha_atual = tr.index()
 
+            if (planilhas[planilha_atual]) {
+
+                planilhas[planilha_atual].indice = 0
+                planilhas[planilha_atual].colunas_selecionadas = {}
+
+                carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice)
+            }
+            input.val("")
+            input.prop("disabled", true)
+        }
+    })
+    
+    $("#input-busca").on('input',function(){
+        console.log(planilhas[planilha_atual].getRelation())
     })
 });
