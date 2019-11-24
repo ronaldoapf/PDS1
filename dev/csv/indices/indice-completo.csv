@@ -1,12 +1,12 @@
 chave_valor
-basico_situacao_ 1,urb cid vila
-basico_situacao_ 2,nao urb cid vila
-basico_situacao_ 3,urb isolada
-basico_situacao_ 4,rur ext urb
-basico_situacao_ 5,rur isol povoado
-basico_situacao_ 6,rur isol nucleo
-basico_situacao_ 7,rur isol outros aglo
-basico_situacao_ 8,rur excl rur
+basico_situacao_1,urb cid vila
+basico_situacao_2,nao urb cid vila
+basico_situacao_3,urb isolada
+basico_situacao_4,rur ext urb
+basico_situacao_5,rur isol povoado
+basico_situacao_6,rur isol nucleo
+basico_situacao_7,rur isol outros aglo
+basico_situacao_8,rur excl rur
 basico_tipo_do_setor 0,comum
 basico_tipo_do_setor 1,aglo subnormal
 basico_tipo_do_setor 2,militar
