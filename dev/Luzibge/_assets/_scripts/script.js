@@ -17,7 +17,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
-        pythonPath: 'C:\\Python\\python.exe'
+        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -30,12 +30,9 @@ function sendRequest(json) {
                 if (response.opcao == 1) {
                     planilhas[planilha_atual] = new Planilha(url_planilhas[planilha_atual], 0, response.colunas, response.colunas_decodificadas, {})
                     if (planilhas[planilha_atual].colunas && planilhas[planilha_atual].colunas_decodificadas) {
-                        console.log(planilhas[planilha_atual])
                         carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
                     }
-                } else if (response.opcao == 2) {
-                    console.log(response)
-                } else {
+                } else if (response.opcao == 2) {} else {
                     console.log(response)
                 }
             } else {
@@ -48,7 +45,7 @@ function sendRequest(json) {
 function buscarColunasCodificadas_Decodificadas(dir_planilha, dir_indice) {
     let aux = planilhas[planilha_atual]
     if (aux) {
-        if(aux.indice > 10) {
+        if (aux.indice > 10) {
             aux.indice = aux.indice - (10 + aux.indice % 10)
         }
         carregarColunasNaTabela(aux.colunas, aux.colunas_decodificadas, aux.indice)
@@ -62,10 +59,12 @@ function buscarColunasCodificadas_Decodificadas(dir_planilha, dir_indice) {
     }
 }
 
-function salvarPlanilha(diretorio, colunas_selecionadas) {
+function salvarPlanilha(diretorio_salvar, diretorio_planilha, diretorio_indice, colunas_selecionadas) {
     var json = {
         "opcao": 2,
-        "dir_salvar": diretorio,
+        "dir_salvar": diretorio_salvar,
+        "dir_planilha": diretorio_planilha,
+        "dir_indice": diretorio_indice,
         "colunas_selecionadas": colunas_selecionadas
     }
     sendRequest(json)
@@ -114,15 +113,29 @@ function carregarPlanilhasNaTabela(sheets) {
             <th scope="row">
                 ${i+1}
             </th>
-            <td style="cursor: pointer;" onmouseover="style='text-decoration:underline;'" onmouseout="style='text-decoration:none;'"><p class="nome-planilha">${nome}</p></td>
+
+            <td style="cursor: pointer;" onmouseover="style='text-decoration:underline;'" onmouseout="style='text-decoration:none;'">
+            <p class="nome-planilha">${nome}</p></td>
             <td>
-                <input class="input-renomear-planilha" type="text" name="" id="${p}" disabled="true">
+                <input class="input-renomear-planilha" type="text" name="" id="${p}" style="width: 80%;" disabled="true">
             </td>
-            <td><p>Pendente</p> <button class="btn btn-success salvar-planilha" >Salvar</button></td>
+            <td> 
+                <button title="Desfazer ações" class="btn btn-light desfazerAcoes" disabled>
+                    <img src="../_assets/icon/icons8-undefined-26.png" alt="Ícone para desfazer ações"></img>
+                </button>
+                
+                <button title="Editar nome da planilha" class="btn btn-light editarPlanilha" disabled>
+                    <img src="../_assets/icon/icons8-editar-26.png"></img>
+                </button>
+
+                <button title="Salvar planilha" class="btn btn-light salvarPlanilha" disabled>
+                    <img src="../_assets/icon/icons8-salvar-26.png"></img>
+                </button>
+
+            </td>
         </tr>`;
 
         $("#table-planilhas").append(html)
-
 
     });
 }
@@ -202,12 +215,16 @@ $(document).ready(function() {
     carregarPlanilhasNaTabela(url_planilhas)
 
     $('#table-planilhas').on('click', '.nome-planilha', function() {
-        
+
         let tr = $(this).closest("tr");
         planilha_atual = tr.index()
 
         buscarColunasCodificadas_Decodificadas(url_planilhas[planilha_atual], url_indice);
-        
+
+        let buttons = $(this).closest("tr").find("button");
+        buttons.prop("disabled", false)
+
+
         var selected = tr.hasClass("bg-gray");
         $("#table-planilhas tr").removeClass("bg-gray");
 
@@ -216,6 +233,7 @@ $(document).ready(function() {
 
         let nome = url_planilhas[planilha_atual].split('\\');
         nome = nome[nome.length - 1]
+
         $("#input-busca").toggle(true)
         $("#planilha-selecionada").html('');
         $("#planilha-selecionada").html('Filtrar colunas da planilha "' + nome + '":');
@@ -230,14 +248,13 @@ $(document).ready(function() {
 
     //botão próximo
     $("#botao-colunas").click(function() {
-        
+
         if (planilhas[planilha_atual].indice == planilhas[planilha_atual].colunas.length) {
             planilhas[planilha_atual].indice = 0
             var input = document.getElementById(planilhas[planilha_atual].diretorio);
             input.disabled = false
         } else {
             carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
-            console.log(planilhas[planilha_atual].colunas_selecionadas)
         }
 
     });
@@ -272,7 +289,7 @@ $(document).ready(function() {
             input.val("")
 
         } else {
-            
+
             $(this).addClass("bc-green")
             input.prop('disabled', function(i, v) { return !v; });
 
@@ -288,12 +305,51 @@ $(document).ready(function() {
         }
     })
 
-    $(".salvar-planilha").click(function() {
+    // Função para salvar planilha quando o usuário bem entender necessário
+    $(".salvarPlanilha").click(function() {
         //var dir = $(this).closest("input").val()
-        var dir = planilhas[planilha_atual].diretorio
-        dir = dir.substring(0, dir.indexOf(".csv"))
-        dir += "-renomeado.csv"
-        salvarPlanilha(dir, planilhas[planilha_atual].colunas_selecionadas)
+
+        input = $(this).closest("tr").find("input")
+
+        if (input.prop("disabled") || input.val() == "Informe o novo nome da planilha") {
+            input.prop("disabled", false)
+            input.val("Informe o novo nome da planilha")
+            input.select()
+        }
+
+        // var dir = planilhas[planilha_atual].diretorio
+        // dir = dir.substring(0, dir.indexOf(".csv"))
+        // dir += "-renomeado.csv"
+        // salvarPlanilha(dir, planilhas[planilha_atual].colunas_selecionadas)
+    })
+
+    // Função para liberar o campo de input para editar planilhas
+    $(".editarPlanilha").click(function() {
+        let input = $(this).closest("tr").find("input")
+        input.prop("disabled", false)
+        input.val("Informe o novo nome da planilha")
+        input.select()
+    })
+
+    // Função para desfazer ações fazendo com que o vetor de colunas_selecionadas receba nenhum valor
+    $(".desfazerAcoes").click(function() {
+        let p = $(this).closest("tr").find("p")
+
+        if (confirm(`Deseja desfazer todo o processamento realizado na planilha "${p.text()}" ?`)) {
+            let tr = $(this).closest("tr")
+            let input = $(this).closest("tr").find("input")
+            planilha_atual = tr.index()
+
+            if (planilhas[planilha_atual]) {
+
+                planilhas[planilha_atual].indice = 0
+                planilhas[planilha_atual].colunas_selecionadas = {}
+
+                carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice)
+            }
+            input.val("")
+            input.prop("disabled", true)
+        }
     })
     
     var $search = $("#input-busca").on('input',function(){
