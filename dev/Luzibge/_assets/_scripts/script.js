@@ -17,7 +17,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
-        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+        pythonPath: 'C:\\Python\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -45,7 +45,7 @@ function sendRequest(json) {
 function buscarColunasCodificadas_Decodificadas(dir_planilha, dir_indice) {
     let aux = planilhas[planilha_atual]
     if (aux) {
-        if (aux.indice > 10) {
+        if (aux.indice >= 10) {
             aux.indice = aux.indice - (10 + aux.indice % 10)
         }
         carregarColunasNaTabela(aux.colunas, aux.colunas_decodificadas, aux.indice)
