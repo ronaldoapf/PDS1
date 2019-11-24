@@ -46,7 +46,7 @@ def removerColunasDoDataframe(dataframe, cols):
     
 def getColunasNaoUtilizadas(colunas_totais, colunas_utilizadas):
     for i in reversed(colunas_utilizadas):
-        del colunas_totais[i]
+        del colunas_totais[int(i)]
     return colunas_totais
 
 def decodificarValoresDoDataframe(dataframe, dict_indices):
@@ -87,11 +87,34 @@ def processarRequest(request):
         print (json.dumps( response ))
     
     elif request["opcao"] == 2:
-        dir_planilha = request["dir_salvar"]
+        #pegando variaveis que vieram no json
+        dir_salvar = request["dir_salvar"]
+        dir_planilha = request["dir_planilha"]
+        dir_indice = request["dir_indice"]
         colunas_selecionadas = request["colunas_selecionadas"]
         
-        print (json.dumps( colunas_selecionadas ))
+        nomeArquivo = dir_planilha.split("\\")[-1]
+        nomeArquivo = nomeArquivo.split(".csv")[0]
+        nomeArquivo = nomeArquivo.lower()
+
+        if(nomeArquivo.split("_")):
+            nomeArquivo = "".join(nomeArquivo.split("_")[:-1])
+
+        df = carregarCsvEmDataframe(dir_planilha)
+        idx = gerarDictIndice(dir_indice)
+       
+        chaves_selecionadas = list(colunas_selecionadas.keys())
+        colunas_selecionadas = toLowerCase(list(colunas_selecionadas.values()))
         
+
+        colunas_nao_utilizadas = getColunasNaoUtilizadas(list(df.columns),chaves_selecionadas)
+        response = colunas_nao_utilizadas
+        df = removerColunasDoDataframe(df,colunas_nao_utilizadas)
+        df = decodificarValoresDoDataframe(df,idx)
+        df = renomearColunasDoDataframe(df, colunas_selecionadas)
+        salvarPlanilhaCSV(df,dir_salvar)
+        
+
 ### MAIN
 # pegando json\
 
