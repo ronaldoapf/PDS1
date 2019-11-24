@@ -149,9 +149,12 @@ function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
 
         for (i = 0; i < x; i++) {
             var valorDecodificado = colunas_decodificadas[index + i];
+
             if (valorDecodificado.length > 50) {
-                valorDecodificado = valorDecodificado.slice(0, 47)
-                valorDecodificado += '...'
+                let temp = valorDecodificado.slice(0, valorDecodificado.indexOf("_"))
+                temp += '...'
+                temp += valorDecodificado.slice(valorDecodificado.length - (50 - temp.length), valorDecodificado.length)
+                valorDecodificado = temp
             }
             let aux = ""
             let valor = ""
