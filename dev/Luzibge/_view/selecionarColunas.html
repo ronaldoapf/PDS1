@@ -12,8 +12,11 @@
 
     <!-- Importação arquivos JS -->
     <!-- <script src="../_assets/_js/jquery-3.4.1.js"></script> -->
-    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
     <script src="../_assets/_scripts/script.js"></script>
+    <script src="../_model/Planilha.js"></script>
 </head>
 
 <body>
@@ -34,7 +37,7 @@
 
             <div class="row">
                 <div class="col-12 title-columns">
-                    <h4>Selecione uma planilha para codificar suas colunas: </h4>
+                    <h4>Selecione uma planilha para decodificar suas colunas: </h4>
                 </div>
             </div>
 
@@ -44,18 +47,26 @@
                         <th scope="col">#</th>
                         <th scope="col">Nome do Arquivo</th>
                         <th scope="col">Novo nome da planilha</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
 
-            <h3 id="planilha-selecionada"></h3>
+            
+            <div class="row" style="margin-top: 20px; margin-bottom: 20px; display: flex; justify-content: space-around;">
+                
+                <h3 id="planilha-selecionada"></h3>
 
+    
+                <div class="campo-busca">
+                    <input placeholder="Ex: 'var001, 'var015, 'variancia', 'media'" type="text" name="" id="input-busca" class="form-control">
+                </div>
+            </div>
             <table id="table-colunas" class="table table-borderless">
                 <thead class="thead-dark">
-                    <tr>
+                    <tr class>
                         <th scope="col">#</th>
                         <th scope="col ">Coluna original</th>
                         <th scope="col">Coluna decodificada</th>
@@ -64,14 +75,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                   
+
                 </tbody>
             </table>
-            <div class="row mb-5" id="div-botao" style="display: none;">
-                <div class="col-12">
+            <div class="row col-12" id="div-botao" style="display: flex;">
+
+                <div class="col-6">
+                    <div class="btnBack" style="display: flex;">
+                        <div class="input-group">
+                            <button class="btn btn-secondary" type="submit" id="botao-colunasRetornar">
+                                Colunas Anteriores
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
                     <div class="buttonNext">
                         <div class="input-group">
-                            <button class="btn btn-light" type="submit" id="botao-colunas">
+                            <button class="btn btn-secondary" type="submit" id="botao-colunas">
                                 Próximas colunas
                                 <!-- <a href="selecionarColunas.html">Próximo</a> -->
                                 <!-- <a href="teste.html">Próximo</a> -->
@@ -79,6 +101,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

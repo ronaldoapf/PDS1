@@ -2,8 +2,21 @@ body {
     height: 100%;
 }
 
-.container{
+.container {
     overflow: auto !important;
+}
+
+.trClass {
+    background-color: white;
+}
+
+.bc-greyLight {
+    background-color: #eaeaea;
+}
+
+.radioButton {
+    width: 20px;
+    height: 20px;
 }
 
 .center {
@@ -15,7 +28,8 @@ body {
 }
 
 .btnBack {
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .label {
@@ -35,22 +49,22 @@ body {
     height: 30px;
 }
 
-.btnBack{
+.btnBack {
     margin-bottom: 10px;
 }
 
-.btnBack a{
+.btnBack a {
     color: white;
     text-decoration: none;
 }
 
-.buttonNext{
+.buttonNext {
     display: flex;
     float: right;
     margin-top: 25px;
 }
 
-.icon{
+.icon {
     margin-left: -10px;
     margin-right: 5px;
 }
@@ -67,12 +81,12 @@ body {
     margin-bottom: 8px;
 }
 
-.input-group a{
+.input-group a {
     text-decoration: none;
     color: white;
 }
 
-.title-columns{
+.title-columns {
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -83,4 +97,27 @@ body {
 
 .bc-red {
     background-color: red;
+}
+
+#table-planilhas tr:hover {
+    background-color: #BBB;
+}
+
+#table-planilhas .nome-planilha {
+    cursor: pointer;
+}
+
+.bg-gray {
+    background-color: #888;
+    color: white;
+}
+
+.campo-busca {
+    display: flex;
+    justify-content: right;
+}
+
+.campo-busca {
+    width: 40%;
+    float: right;
 }

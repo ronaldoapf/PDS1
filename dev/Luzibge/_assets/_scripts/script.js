@@ -1,12 +1,8 @@
 //variaveis globais
-var indice;
-var planilhas; //pegando planilhas vindas da url
-var planilha_atual = ""; //variavel que armazenara qual planilha esta sendo processada será q tem como atualizar ela ?
-var indice_col_atual = 0; //variavel que armazenará o indice de quais colunas que estao sendo processadas da planilha atual
-var colunas_planilha_atual = [];
-var colunas_decodificadas_planilha_atual = [];
-
-
+var planilhas = [];
+var planilha_atual;
+var url_indice; // par para pegar a planilha de indice vinda da url
+var url_planilhas; //var para pegar as planilhas vindas da url
 
 function sendRequest(json) {
     var {
@@ -18,73 +14,65 @@ function sendRequest(json) {
         encoding: "utf-8",
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
-        args: [JSON.stringify(json)] ,
-        pythonPath: 'C:\\Python\\python.exe'
+        args: [JSON.stringify(json)],
+<<<<<<< HEAD
+        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+=======
+        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+>>>>>>> 3d25c99ab3db5867b8ac415afbb7f33b802b4968
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
     var response;
     //quando o arquivo python retornar algo esse evento será disparado
     python.on('message', function(data) {
-        if(JSON.parse(data)) {
-            data = JSON.parse(data)  
-            if (data) {
-                if (data.opcao == 1) {
-                    response = data.colunas;
-                    colunas_planilha_atual = response;
-                    //montarDados(response)
-                }
-                if(data.opcao == 2) {
-                    response = data.colunas_decodificadas;
-                    colunas_decodificadas_planilha_atual = response;
-                }
-                if(data.opcao == 3) {
-                    indice_col_atual = 0;
-                    colunas_planilha_atual = data.colunas
-                    colunas_decodificadas_planilha_atual = data.colunas_decodificadas
-                    
-                    if(colunas_planilha_atual && colunas_decodificadas_planilha_atual) {
-                        carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
+        console.log(data)
+        if (JSON.parse(data)) {
+            response = JSON.parse(data)
+            if (response) {
+                if (response.opcao == 1) {
+                    planilhas[planilha_atual] = new Planilha(url_planilhas[planilha_atual], 0, response.colunas, response.colunas_decodificadas, {})
+                    if (planilhas[planilha_atual].colunas && planilhas[planilha_atual].colunas_decodificadas) {
+                        console.log(planilhas[planilha_atual])
+                        carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
                     }
+                } else if (response.opcao == 2) {
+                    console.log(response)
+                } else {
+                    console.log(response)
                 }
+            } else {
+                alert("Erro ao carregar planilha!");
             }
         }
     })
-    // return response; 
 }
 
-function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
-      }
+function buscarColunasCodificadas_Decodificadas(dir_planilha, dir_indice) {
+    let aux = planilhas[planilha_atual]
+    if (aux) {
+        if (aux.indice > 10) {
+            aux.indice = aux.indice - (10 + aux.indice % 10)
+        }
+        carregarColunasNaTabela(aux.colunas, aux.colunas_decodificadas, aux.indice)
+    } else {
+        var json = {
+            "opcao": 1,
+            "dir_planilha": dir_planilha,
+            "dir_indice": dir_indice
+        };
+        sendRequest(json)
     }
-  }
-
-/*async function buscarColunasDePlanilha(dir_planilha) {
-    var json = {
-        "opcao": 1,
-        "dir_planilha": dir_planilha
-    };
-    await sendRequest(json);
 }
 
-async function buscarColunasDecodificadasDePlanilha(dir_planilha, dir_indice) {
+function salvarPlanilha(diretorio_salvar, diretorio_planilha, diretorio_indice, colunas_selecionadas) {
     var json = {
         "opcao": 2,
-        "dir_planilha": dir_planilha,
-        "dir_indice": dir_indice
-    };
-    await sendRequest(json);
-}*/
-
-function buscarColunasCodificadas_Decodificadas(p_atual, p_indice) {
-    var json = {
-        "opcao": 3,
-        "dir_planilha": p_atual,
-        "dir_indice": p_indice
-    };
+        "dir_salvar": diretorio_salvar,
+        "dir_planilha": diretorio_planilha,
+        "dir_indice": diretorio_indice,
+        "colunas_selecionadas": colunas_selecionadas
+    }
     sendRequest(json)
 }
 
@@ -121,93 +109,241 @@ function getIndice() {
 }
 
 function carregarPlanilhasNaTabela(sheets) {
-    sheets.forEach( p => {
+
+    sheets.forEach((p, i) => {
+
         nome = p.split('\\')
-        nome = nome[nome.length-1]
-        let html = `<tr>
+        nome = nome[nome.length - 1]
+
+        let html = `<tr class="trClass">
             <th scope="row">
-                <input type="radio" name="radio-planilha">
+                ${i+1}
             </th>
-            <td>${nome}</td>
+
+            <td style="cursor: pointer;" onmouseover="style='text-decoration:underline;'" onmouseout="style='text-decoration:none;'">
+            <p class="nome-planilha">${nome}</p></td>
             <td>
-                <input type="text" name="" id="" disabled="true">
+                <input class="input-renomear-planilha" type="text" name="" id="${p}" style="width: 80%;" disabled="true">
             </td>
-            <td>Pendente</td>
+            <td> 
+                <button title="Desfazer ações" class="btn btn-light desfazerAcoes">
+                    <img src="../_assets/icon/icons8-undefined-26.png" alt="Ícone para desfazer ações"></img>
+                </button>
+                
+                <button title="Editar nome da planilha" class="btn btn-light editarPlanilha">
+                    <img src="../_assets/icon/icons8-editar-26.png"></img>
+                </button>
+
+                <button title="Salvar planilha" class="btn btn-light salvarPlanilha">
+                    <img src="../_assets/icon/icons8-salvar-26.png"></img>
+                </button>
+
+            </td>
         </tr>`;
 
         $("#table-planilhas").append(html)
+
     });
+}
+
+//função que verifica se a coluna já foi marcada
+function verificarColunaNaTabela(index, colunas_selecionadas) {
+    var lista = Object.keys(colunas_selecionadas)
+    var flag = 0;
+    for (j = 0; j < lista.length; j++) {
+        if (index == lista[j]) {
+            flag = 1;
+        }
+    }
+    return flag;
 }
 
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
-    console.log({colunas,colunas_decodificadas,index})
-    if(colunas && colunas_decodificadas) {
+
+    if (colunas && colunas_decodificadas) {
 
         //limpando conteudo da tabela
         $("#table-colunas > tbody > tr").remove();
-        
+
         //pegando intervalo para iterar de no máximo 10 em 10 até o final das colunas
         var x = colunas.length - index;
-        x = (10 < x) ? 10:x
-        
+        x = (10 < x) ? 10 : x
+
         for (i = 0; i < x; i++) {
+            var valorDecodificado = colunas_decodificadas[index + i];
+
+            if (valorDecodificado.length > 50) {
+                let temp = valorDecodificado.slice(0, valorDecodificado.indexOf("_"))
+                temp += '...'
+                temp += valorDecodificado.slice(valorDecodificado.length - (50 - temp.length), valorDecodificado.length)
+                valorDecodificado = temp
+            }
+            let aux = ""
+            let valor = ""
+            let disabled = "disabled=true"
+            if (verificarColunaNaTabela(index + i, planilhas[planilha_atual].colunas_selecionadas) == 1) {
+                aux = "bc-green"
+                valor = planilhas[planilha_atual].colunas_selecionadas[index + i]
+                disabled = ""
+            }
+
             let html = `<tr>
-            <th scope="row">${index+i+1}</th>
-            <td class="">${colunas[index + i]}</td>
-            <td class="">${colunas_decodificadas[index + i]}</td>
-            <td>
-            <input type="text" disabled="true">
-            </td>
-            <td class="">
-            <button class="check-circle-solid">
-            </td>
-            </tr>`;
-            
+                <th scope="row">${index+i+1}</th>
+                <td title="${colunas[index + i]}" class="">${colunas[index + i]}</td>
+                <td title="${colunas_decodificadas[index + i]}"class="">${valorDecodificado}</td>
+                <td>
+                <input type="text" ${disabled} value="${valor}">
+                </td>
+                <td class="">
+                <button class="check-circle-solid ${aux}">
+                </td>
+                </tr>`;
+
+
             $("#table-colunas").append(html);
         }
-        indice_col_atual += x;
+        planilhas[planilha_atual].indice += x;
     }
 }
-    
+
 $(document).ready(function() {
-    //inicializando arquivo python
+    $("#input-busca").hide()
+        //inicializando arquivo python
     var {
         PythonShell
     } = require("python-shell")
     var path = require("path")
 
-    indice = getIndice(); // pegando planilha de indice vinda da url
-    planilhas = getPlanilhas(); //pegando planilhas vindas da url
-    
-    carregarPlanilhasNaTabela(planilhas)
-    
-    $('input[name="radio-planilha"]').change(function() {
-        planilha_atual = planilhas[$('input[name="radio-planilha"]:checked').closest('tr').index()];
-        /*buscarColunasDePlanilha(planilha_atual)
-        buscarColunasDecodificadasDePlanilha(planilha_atual, indice)*/
-        buscarColunasCodificadas_Decodificadas(planilha_atual,indice);
+    url_indice = getIndice(); // pegando planilha de indice vinda da url
+    url_planilhas = getPlanilhas(); //pegando planilhas vindas da url
 
-        let nome = planilha_atual.split('\\');
-        nome = nome[nome.length-1]
+    carregarPlanilhasNaTabela(url_planilhas)
+
+    $('#table-planilhas').on('click', '.nome-planilha', function() {
+
+        let tr = $(this).closest("tr");
+        planilha_atual = tr.index()
+
+        buscarColunasCodificadas_Decodificadas(url_planilhas[planilha_atual], url_indice);
+
+        var selected = tr.hasClass("bg-gray");
+        $("#table-planilhas tr").removeClass("bg-gray");
+
+        if (!selected)
+            $(this).closest("tr").addClass("bg-gray");
+
+        let nome = url_planilhas[planilha_atual].split('\\');
+        nome = nome[nome.length - 1]
+        $("#input-busca").toggle(true)
         $("#planilha-selecionada").html('');
-        $("#planilha-selecionada").html('Planilha Selecionada: ' + nome);
-        
-        if($("#div-botao").is(":hidden")) {
+        $("#planilha-selecionada").html('Filtrar colunas da planilha "' + nome + '":');
+
+        if ($("#div-botao").is(":hidden")) {
             $("#div-botao").show();
         }
         return false;
-    });
-    
-    $("#div-botao").click(function(){
-        carregarColunasNaTabela(colunas_planilha_atual, colunas_decodificadas_planilha_atual, indice_col_atual);
+
+
     });
 
-    $("#table-colunas").on("click", ".check-circle-solid", function () {
-        $(this).toggleClass("bc-green")
+    //botão próximo
+    $("#botao-colunas").click(function() {
+
+        if (planilhas[planilha_atual].indice == planilhas[planilha_atual].colunas.length) {
+            planilhas[planilha_atual].indice = 0
+            var input = document.getElementById(planilhas[planilha_atual].diretorio);
+            input.disabled = false
+        } else {
+            carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
+            console.log(planilhas[planilha_atual].colunas_selecionadas)
+        }
+
+    });
+
+    //botao voltar 
+    $("#botao-colunasRetornar").click(function() {
+
+        if (planilhas[planilha_atual].indice % 10 != 0) {
+            planilhas[planilha_atual].indice = planilhas[planilha_atual].indice - 10 - (planilhas[planilha_atual].indice % 10)
+            carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
+        } else if (planilhas[planilha_atual].indice - 10 > 0) {
+            planilhas[planilha_atual].indice -= 20
+            carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
+
+        }
+    });
+
+    //quando um item é marcado como interessante
+    $("#table-colunas").on("click", ".check-circle-solid", function() {
+        $("input[type='text']").on("click", function() {
+            $(this).select();
+        });
+
         var input = $(this).closest("td").prev().find("input")
-        input.prop('disabled', function(i, v) { return !v; });
-        input.val('')
+        let i = $(this).closest("tr").index() + planilhas[planilha_atual].indice - 10
+
+        if ($(this).hasClass("bc-green")) {
+
+            $(this).removeClass("bc-green")
+            input.prop('disabled', function(i, v) { return !v; });
+            delete planilhas[planilha_atual].colunas_selecionadas[i]
+            input.val("")
+
+        } else {
+
+            $(this).addClass("bc-green")
+            input.prop('disabled', function(i, v) { return !v; });
+
+            planilhas[planilha_atual].colunas_selecionadas[i] = planilhas[planilha_atual].colunas_decodificadas[i]; //salvando o valor padrão da decodificação por precaução
+            let aux = planilhas[planilha_atual].colunas_decodificadas[i]
+
+            $(input).blur(function() { //pego o determinado valor que o usuário digitar no campo para renomear
+                if ($(this).val().length > 0) {
+                    planilhas[planilha_atual].colunas_selecionadas[i] = $(this).val(); //save valor renomeado que o usuario digitou
+                }
+            })
+            input.val(aux)
+        }
     })
 
+    // Função para salvar planilha quando o usuário bem entender necessário
+    $(".salvarPlanilha").click(function() {
+        //var dir = $(this).closest("input").val()
+
+        input = $(this).closest("tr").find("input")
+        
+        if(input.prop("disabled") || input.val() == "Informe o novo nome da planilha"){
+            input.prop("disabled", false)
+            input.val("Informe o novo nome da planilha")
+            input.select()
+        }
+
+        else{
+           console.log(input.val())
+        }
+
+        // var dir = planilhas[planilha_atual].diretorio
+        // dir = dir.substring(0, dir.indexOf(".csv"))
+        // dir += "-renomeado.csv"
+        // salvarPlanilha(dir, planilhas[planilha_atual].colunas_selecionadas)
+    })
+
+    // Função para liberar o campo de input para editar planilhas
+    $(".editarPlanilha").click(function(){
+        let input = $(this).closest("tr").find("input")
+        input.prop("disabled", false)
+    })
+
+    // Função para desfazer ações fazendo com que o vetor de colunas_selecionadas receba nenhum valor
+    $(".desfazerAcoes").click(function(){
+        let tr = $(this).closest("tr");
+        planilha_atual = tr.index()   
+
+        planilhas[planilha_atual].colunas_selecionadas = {}
+        planilhas[planilha_atual].indice = 0
+        
+        carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice);
+
+    })
 });
