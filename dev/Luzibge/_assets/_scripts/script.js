@@ -15,7 +15,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
-        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+        pythonPath: 'C:\\Python\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -47,7 +47,9 @@ function sendRequest(json) {
 function buscarColunasCodificadas_Decodificadas(dir_planilha, dir_indice) {
     let aux = planilhas[planilha_atual]
     if (aux) {
-        aux.indice = aux.indice - (10 + aux.indice % 10)
+        if (aux.indice > 10) {
+            aux.indice = aux.indice - (10 + aux.indice % 10)
+        }
         carregarColunasNaTabela(aux.colunas, aux.colunas_decodificadas, aux.indice)
     } else {
         var json = {
@@ -229,7 +231,7 @@ $(document).ready(function() {
 
     //botão próximo
     $("#botao-colunas").click(function() {
-        console.log(planilhas[planilha_atual].indice)
+
         if (planilhas[planilha_atual].indice == planilhas[planilha_atual].colunas.length) {
             planilhas[planilha_atual].indice = 0
             var input = document.getElementById(planilhas[planilha_atual].diretorio);
@@ -256,7 +258,6 @@ $(document).ready(function() {
 
     //quando um item é marcado como interessante
     $("#table-colunas").on("click", ".check-circle-solid", function() {
-
         $("input[type='text']").on("click", function() {
             $(this).select();
         });
@@ -272,14 +273,14 @@ $(document).ready(function() {
             input.val("")
 
         } else {
+
             $(this).addClass("bc-green")
             input.prop('disabled', function(i, v) { return !v; });
 
             planilhas[planilha_atual].colunas_selecionadas[i] = planilhas[planilha_atual].colunas_decodificadas[i]; //salvando o valor padrão da decodificação por precaução
             let aux = planilhas[planilha_atual].colunas_decodificadas[i]
 
-            $("input").blur(function() { //pego o determinado valor que o usuário digitar no campo para renomear
-
+            $(input).blur(function() { //pego o determinado valor que o usuário digitar no campo para renomear
                 if ($(this).val().length > 0) {
                     planilhas[planilha_atual].colunas_selecionadas[i] = $(this).val(); //save valor renomeado que o usuario digitou
                 }
