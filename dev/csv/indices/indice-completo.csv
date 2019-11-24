@@ -26,8 +26,8 @@ basico_var08,num responsaveis estudados
 basico_var09,total anos estudados por dom
 basico_var10,media anos estudados por pessoa
 basico_var11,variancia anos estudados
-basico_var12,num,Moradores em dom
-basico_var13,media,Moradores em dom
+basico_var12,num Moradores em dom
+basico_var13,media Moradores em dom
 basico_var14,variancia num moradores
 domicilio_v0001,dom
 domicilio_v0002,dom part
@@ -148,9 +148,9 @@ domicilio_v0116,casa alugados
 domicilio_v0117,casa cedidos por empregador
 domicilio_v0118,casa cedidos outra forma
 domicilio_v0119,casa em outra condição
-domicilio_v0120,próprios,casa em terrenos próprios
-domicilio_v0121,próprios,casa em terrenos cedidos
-domicilio_v0122,próprios,casa em outra condição terreno
+domicilio_v0120,próprios casa em terrenos próprios
+domicilio_v0121,próprios casa em terrenos cedidos
+domicilio_v0122,próprios casa em outra condição terreno
 domicilio_v0123,casa abast água rede geral
 domicilio_v0124,casa abast água rede geral e conduto 1 cômodo
 domicilio_v0125,casa abast água rede geral e conduto propriedade ou terreno
@@ -270,7 +270,7 @@ morador_v0238,Moradores em domicílios particulares
 morador_v0239,Moradores em domicílios particulares permanentes
 morador_v0240,Moradores em domicílios particulares improvisados
 morador_v0241,Moradores em unidades em domicílios coletivos
-morador_v0242,Moradores em domicílios particulares permanentes do tipo,casa
+morador_v0242,Moradores em domicílios particulares permanentes do tipo casa
 morador_v0243,Moradores em domicílios particulares permanentes do tipo apartamento
 morador_v0244,Moradores em domicílios particulares permanentes do tipo cômodo
 morador_v0245,Moradores em domicílios particulares permanentes próprios e quitados
@@ -324,7 +324,7 @@ morador_v0293,Homens Moradores em domicílios particulares
 morador_v0294,Homens Moradores em domicílios particulares permanentes
 morador_v0295,Homens Moradores em domicílios particulares improvisados
 morador_v0296,Homens Moradores em unidades de domicílios coletivos
-morador_v0297,Homens Moradores em domicílios particulares permanentes do tipo,casa
+morador_v0297,Homens Moradores em domicílios particulares permanentes do tipo casa
 morador_v0298,Homens Moradores em domicílios particulares permanentes do tipo apartamento
 morador_v0299,Homens Moradores em domicílios particulares permanentes do tipo cômodo
 morador_v0300,Homens Moradores em domicílios particulares permanentes próprios e quitados
@@ -379,7 +379,7 @@ morador_v0348,Mulheres moradoras em domicílios particulares
 morador_v0349,Mulheres moradoras em domicílios particulares permanentes
 morador_v0350,Mulheres moradoras em domicílios particulares improvisados
 morador_v0351,Mulheres moradoras unidades em domicílios coletivos
-morador_v0352,Mulheres moradoras em domicílios particulares permanentes do tipo,casa
+morador_v0352,Mulheres moradoras em domicílios particulares permanentes do tipo casa
 morador_v0353,Mulheres moradoras em domicílios particulares permanentes do tipo apartamento
 morador_v0354,Mulheres moradoras em domicílios particulares permanentes do tipo cômodo
 morador_v0355,Mulheres moradoras em domicílios particulares permanentes próprios e quitados
@@ -435,7 +435,7 @@ pessoa1_v1332,Pessoas residentes em domicílios particulares permanentes
 pessoa1_v1333,Pessoas residentes em domicílios particulares improvisados
 pessoa1_v1334,Pessoas residentes em domicílios coletivos
 pessoa1_v1335,Responsáveis por domicílios
-pessoa1_v1336,Cônjuge/s ou companheiros as
+pessoa1_v1336,Cônjuges ou companheiros as
 pessoa1_v1337,Filhos as ou enteados as
 pessoa1_v1338,Pais mães ou sogros as
 pessoa1_v1339,Netos as bisnetos as
@@ -1345,7 +1345,7 @@ pessoa7_v2243,Outros parentes Mulheres com 60 a 64 anos de idade
 pessoa7_v2244,Outros parentes Mulheres com 65 a 69 anos de idade
 pessoa7_v2245,Outros parentes Mulheres com 70 a 74 anos de idade
 pessoa7_v2246,Outros parentes Mulheres com 75 a 79 anos de idade
-pessoa7_v2247,Outros parentes,Mulheres com 80 ou mais anos de idade
+pessoa7_v2247,Outros parentes Mulheres com 80 ou mais anos de idade
 planilhainstrucao1_v2248,Pessoas alfabetizadas com 5 ou mais anos de idade
 planilhainstrucao1_v2249,Pessoas não alfabetizadas com 5 ou mais anos de idade
 planilhainstrucao1_v2250,Pessoas alfabetizadas com 5 anos de idade
@@ -1937,9 +1937,9 @@ planilhainstrucao4_v2835,Filhos ou enteados alfabetizados com 5 ou mais anos de 
 planilhainstrucao4_v2836,Pais ou sogros alfabetizados com 20 ou mais anos de idade
 planilhainstrucao4_v2837,Netos ou bisnetos alfabetizados com 5 ou mais anos de idade
 planilhainstrucao4_v2838,Irmãos alfabetizados com 5 ou mais anos de idade
-planilhainstrucao4_v2839,Outros parentes,Homens alfabetizados com 5 ou mais anos de idade
+planilhainstrucao4_v2839,Outros parentes Homens alfabetizados com 5 ou mais anos de idade
 planilhainstrucao4_v2840,Agregados alfabetizados com 5 ou mais anos de idade
-planilhainstrucao4_v2841,Pensionistas,Homens alfabetizados com 5 ou mais anos de idade
+planilhainstrucao4_v2841,Pensionistas Homens alfabetizados com 5 ou mais anos de idade
 planilhainstrucao4_v2842,Empregados domésticos alfabetizados com 10 ou mais anos de idade
 planilhainstrucao4_v2843,Homens parentes dos empregados as domésticos as alfabetizados com 5 ou mais anos de idade
 planilhainstrucao4_v2844,Homem individual em domicílio coletivo alfabetizado com 5 ou mais anos de idade
@@ -1949,9 +1949,9 @@ planilhainstrucao4_v2847,Filhos ou enteados não alfabetizados com 5 ou mais ano
 planilhainstrucao4_v2848,Pais ou sogros não alfabetizados com 20 ou mais anos de idade
 planilhainstrucao4_v2849,Netos ou bisnetos não alfabetizados com 5 ou mais anos de idade
 planilhainstrucao4_v2850,Irmãos não alfabetizados com 5 ou mais anos de idade
-planilhainstrucao4_v2851,Outros parentes,Homens não alfabetizados com 5 ou mais anos de idade
+planilhainstrucao4_v2851,Outros parentes Homens não alfabetizados com 5 ou mais anos de idade
 planilhainstrucao4_v2852,Agregados não alfabetizados com 5 ou mais anos de idade
-planilhainstrucao4_v2853,Pensionistas,Homens não alfabetizados com 5 ou mais anos de idade
+planilhainstrucao4_v2853,Pensionistas Homens não alfabetizados com 5 ou mais anos de idade
 planilhainstrucao4_v2854,Empregados domésticos não alfabetizados com 10 ou mais anos de idade
 planilhainstrucao4_v2855,Homens parentes dos empregados as domésticos as não alfabetizados com 5 ou mais anos de idade
 planilhainstrucao4_v2856,Homem individual em domicílio coletivo não alfabetizado com 5 ou mais anos de idade
@@ -2414,7 +2414,7 @@ responsavel1_v0597,Responsáveis por domicílios particulares permanentes com 17
 responsavel1_v0598,Responsáveis por domicílios particulares permanentes com anos de estudo não determinado
 responsavel1_v0599,Responsáveis por domicílios particulares permanentes com anos de estudo determinado
 responsavel1_v0600,Responsáveis por domicílios particulares permanentes com 1 a 17 ou mais anos de estudo
-responsavel1_v0601,Total de anos de estudo das,Pessoas,Responsáveis por domicílios particulares permanentes
+responsavel1_v0601,Total de anos de estudo das Pessoas Responsáveis por domicílios particulares permanentes
 responsavel1_v0602,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de até ½ salário mínimo
 responsavel1_v0603,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de ½ a 1 salário mínimo
 responsavel1_v0604,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 1 a 2 salários mínimos
@@ -2425,18 +2425,18 @@ responsavel1_v0608,Responsáveis por domicílios particulares permanentes com re
 responsavel1_v0609,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 15 a 20 salários mínimos
 responsavel1_v0610,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 20 salários mínimos
 responsavel1_v0611,Responsáveis por domicílios particulares permanentes sem rendimento nominal mensal
-responsavel1_v0612,Total do rendimento nominal mensal dos,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de até ½ salário mínimo
-responsavel1_v0613,Total do rendimento nominal mensal dos,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de ½ a 1 salário mínimo
-responsavel1_v0614,Total do rendimento nominal mensal dos,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 1 a 2 salários mínimos
-responsavel1_v0615,Total do rendimento nominal mensal dos,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 2 a 3 salários mínimos
-responsavel1_v0616,Total do rendimento nominal mensal dos,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 3 a 5 salários mínimos
-responsavel1_v0617,Total do rendimento nominal mensal dos,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 5 a 10 salários mínimos
-responsavel1_v0618,Total do rendimento nominal mensal dos,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 10 a 15 salários mínimos
-responsavel1_v0619,Total do rendimento nominal mensal dos,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 15 a 20 salários mínimos
-responsavel1_v0620,Total do rendimento nominal mensal dos,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 20 salários mínimos
+responsavel1_v0612,Total do rendimento nominal mensal dos Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de até ½ salário mínimo
+responsavel1_v0613,Total do rendimento nominal mensal dos Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de ½ a 1 salário mínimo
+responsavel1_v0614,Total do rendimento nominal mensal dos Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 1 a 2 salários mínimos
+responsavel1_v0615,Total do rendimento nominal mensal dos Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 2 a 3 salários mínimos
+responsavel1_v0616,Total do rendimento nominal mensal dos Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 3 a 5 salários mínimos
+responsavel1_v0617,Total do rendimento nominal mensal dos Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 5 a 10 salários mínimos
+responsavel1_v0618,Total do rendimento nominal mensal dos Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 10 a 15 salários mínimos
+responsavel1_v0619,Total do rendimento nominal mensal dos Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 15 a 20 salários mínimos
+responsavel1_v0620,Total do rendimento nominal mensal dos Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 20 salários mínimos
 responsavel1_v0621,Responsáveis por domicílios particulares permanentes com ou sem rendimento
 responsavel1_v0622,Responsáveis por domicílios particulares permanentes com rendimento positivo
-responsavel1_v0623,Total do rendimento nominal mensal das,Pessoas,Responsáveis por domicílios particulares permanentes
+responsavel1_v0623,Total do rendimento nominal mensal das Pessoas Responsáveis por domicílios particulares permanentes
 responsavel2_v0624,Responsáveis por domicílios particulares permanentes com 10 anos de idade sem instrução ou com menos de 1 ano de estudo
 responsavel2_v0625,Responsáveis por domicílios particulares permanentes com 10 anos de idade e 1 ano de estudo
 responsavel2_v0626,Responsáveis por domicílios particulares permanentes com 10 anos de idade e 2 anos de estudo
@@ -2759,387 +2759,387 @@ responsavel3_v0942,Responsáveis por domicílios particulares permanentes com 30
 responsavel3_v0943,Responsáveis por domicílios particulares permanentes com 30 ou mais anos de idade e 16 anos de estudo
 responsavel3_v0944,Responsáveis por domicílios particulares permanentes com 30 ou mais anos de idade e 17 ou mais anos de estudo
 responsavel3_v0945,Responsáveis por domicílios particulares permanentes com 30 ou mais anos de idade e anos de estudo não determinado
-responsavel4_v0946,Homens,Responsáveis por domicílios particulares permanentes
-responsavel4_v0947,Homens,Responsáveis por domicílios particulares permanentes com 10 anos de idade
-responsavel4_v0948,Homens,Responsáveis por domicílios particulares permanentes com 11 anos de idade
-responsavel4_v0949,Homens,Responsáveis por domicílios particulares permanentes com 12 anos de idade
-responsavel4_v0950,Homens,Responsáveis por domicílios particulares permanentes com 13 anos de idade
-responsavel4_v0951,Homens,Responsáveis por domicílios particulares permanentes com 14 anos de idade
-responsavel4_v0952,Homens,Responsáveis por domicílios particulares permanentes com 15 anos de idade
-responsavel4_v0953,Homens,Responsáveis por domicílios particulares permanentes com 16 anos de idade
-responsavel4_v0954,Homens,Responsáveis por domicílios particulares permanentes com 17 anos de idade
-responsavel4_v0955,Homens,Responsáveis por domicílios particulares permanentes com 18 anos de idade
-responsavel4_v0956,Homens,Responsáveis por domicílios particulares permanentes com 19 anos de idade
-responsavel4_v0957,Homens,Responsáveis por domicílios particulares permanentes com 20 anos de idade
-responsavel4_v0958,Homens,Responsáveis por domicílios particulares permanentes com 21 anos de idade
-responsavel4_v0959,Homens,Responsáveis por domicílios particulares permanentes com 22 anos de idade
-responsavel4_v0960,Homens,Responsáveis por domicílios particulares permanentes com 23 anos de idade
-responsavel4_v0961,Homens,Responsáveis por domicílios particulares permanentes com 24 anos de idade
-responsavel4_v0962,Homens,Responsáveis por domicílios particulares permanentes com 25 anos de idade
-responsavel4_v0963,Homens,Responsáveis por domicílios particulares permanentes com 26 anos de idade
-responsavel4_v0964,Homens,Responsáveis por domicílios particulares permanentes com 27 anos de idade
-responsavel4_v0965,Homens,Responsáveis por domicílios particulares permanentes com 28 anos de idade
-responsavel4_v0966,Homens,Responsáveis por domicílios particulares permanentes com 29 anos de idade
-responsavel4_v0967,Homens,Responsáveis por domicílios particulares permanentes com 30 anos de idade
-responsavel4_v0968,Homens,Responsáveis por domicílios particulares permanentes com 31 anos de idade
-responsavel4_v0969,Homens,Responsáveis por domicílios particulares permanentes com 32 anos de idade
-responsavel4_v0970,Homens,Responsáveis por domicílios particulares permanentes com 33 anos de idade
-responsavel4_v0971,Homens,Responsáveis por domicílios particulares permanentes com 34 anos de idade
-responsavel4_v0972,Homens,Responsáveis por domicílios particulares permanentes com 35 anos de idade
-responsavel4_v0973,Homens,Responsáveis por domicílios particulares permanentes com 36 anos de idade
-responsavel4_v0974,Homens,Responsáveis por domicílios particulares permanentes com 37 anos de idade
-responsavel4_v0975,Homens,Responsáveis por domicílios particulares permanentes com 38 anos de idade
-responsavel4_v0976,Homens,Responsáveis por domicílios particulares permanentes com 39 anos de idade
-responsavel4_v0977,Homens,Responsáveis por domicílios particulares permanentes com 40 anos de idade
-responsavel4_v0978,Homens,Responsáveis por domicílios particulares permanentes com 41 anos de idade
-responsavel4_v0979,Homens,Responsáveis por domicílios particulares permanentes com 42 anos de idade
-responsavel4_v0980,Homens,Responsáveis por domicílios particulares permanentes com 43 anos de idade
-responsavel4_v0981,Homens,Responsáveis por domicílios particulares permanentes com 44 anos de idade
-responsavel4_v0982,Homens,Responsáveis por domicílios particulares permanentes com 45 anos de idade
-responsavel4_v0983,Homens,Responsáveis por domicílios particulares permanentes com 46 anos de idade
-responsavel4_v0984,Homens,Responsáveis por domicílios particulares permanentes com 47 anos de idade
-responsavel4_v0985,Homens,Responsáveis por domicílios particulares permanentes com 48 anos de idade
-responsavel4_v0986,Homens,Responsáveis por domicílios particulares permanentes com 49 anos de idade
-responsavel4_v0987,Homens,Responsáveis por domicílios particulares permanentes com 50 anos de idade
-responsavel4_v0988,Homens,Responsáveis por domicílios particulares permanentes com 51 anos de idade
-responsavel4_v0989,Homens,Responsáveis por domicílios particulares permanentes com 52 anos de idade
-responsavel4_v0990,Homens,Responsáveis por domicílios particulares permanentes com 53 anos de idade
-responsavel4_v0991,Homens,Responsáveis por domicílios particulares permanentes com 54 anos de idade
-responsavel4_v0992,Homens,Responsáveis por domicílios particulares permanentes com 55 anos de idade
-responsavel4_v0993,Homens,Responsáveis por domicílios particulares permanentes com 56 anos de idade
-responsavel4_v0994,Homens,Responsáveis por domicílios particulares permanentes com 57 anos de idade
-responsavel4_v0995,Homens,Responsáveis por domicílios particulares permanentes com 58 anos de idade
-responsavel4_v0996,Homens,Responsáveis por domicílios particulares permanentes com 59 anos de idade
-responsavel4_v0997,Homens,Responsáveis por domicílios particulares permanentes com 60 anos de idade
-responsavel4_v0998,Homens,Responsáveis por domicílios particulares permanentes com 61 anos de idade
-responsavel4_v0999,Homens,Responsáveis por domicílios particulares permanentes com 62 anos de idade
-responsavel4_v1000,Homens,Responsáveis por domicílios particulares permanentes com 63 anos de idade
-responsavel4_v1001,Homens,Responsáveis por domicílios particulares permanentes com 64 anos de idade
-responsavel4_v1002,Homens,Responsáveis por domicílios particulares permanentes com 65 anos de idade
-responsavel4_v1003,Homens,Responsáveis por domicílios particulares permanentes com 66 anos de idade
-responsavel4_v1004,Homens,Responsáveis por domicílios particulares permanentes com 67 anos de idade
-responsavel4_v1005,Homens,Responsáveis por domicílios particulares permanentes com 68 anos de idade
-responsavel4_v1006,Homens,Responsáveis por domicílios particulares permanentes com 69 anos de idade
-responsavel4_v1007,Homens,Responsáveis por domicílios particulares permanentes com 70 anos de idade
-responsavel4_v1008,Homens,Responsáveis por domicílios particulares permanentes com 71 anos de idade
-responsavel4_v1009,Homens,Responsáveis por domicílios particulares permanentes com 72 anos de idade
-responsavel4_v1010,Homens,Responsáveis por domicílios particulares permanentes com 73 anos de idade
-responsavel4_v1011,Homens,Responsáveis por domicílios particulares permanentes com 74 anos de idade
-responsavel4_v1012,Homens,Responsáveis por domicílios particulares permanentes com 75 anos de idade
-responsavel4_v1013,Homens,Responsáveis por domicílios particulares permanentes com 76 anos de idade
-responsavel4_v1014,Homens,Responsáveis por domicílios particulares permanentes com 77 anos de idade
-responsavel4_v1015,Homens,Responsáveis por domicílios particulares permanentes com 78 anos de idade
-responsavel4_v1016,Homens,Responsáveis por domicílios particulares permanentes com 79 anos de idade
-responsavel4_v1017,Homens,Responsáveis por domicílios particulares permanentes com 80 anos de idade
-responsavel4_v1018,Homens,Responsáveis por domicílios particulares permanentes com 81 anos de idade
-responsavel4_v1019,Homens,Responsáveis por domicílios particulares permanentes com 82 anos de idade
-responsavel4_v1020,Homens,Responsáveis por domicílios particulares permanentes com 83 anos de idade
-responsavel4_v1021,Homens,Responsáveis por domicílios particulares permanentes com 84 anos de idade
-responsavel4_v1022,Homens,Responsáveis por domicílios particulares permanentes com 85 anos de idade
-responsavel4_v1023,Homens,Responsáveis por domicílios particulares permanentes com 86 anos de idade
-responsavel4_v1024,Homens,Responsáveis por domicílios particulares permanentes com 87 anos de idade
-responsavel4_v1025,Homens,Responsáveis por domicílios particulares permanentes com 88 anos de idade
-responsavel4_v1026,Homens,Responsáveis por domicílios particulares permanentes com 89 anos de idade
-responsavel4_v1027,Homens,Responsáveis por domicílios particulares permanentes com 90 anos de idade
-responsavel4_v1028,Homens,Responsáveis por domicílios particulares permanentes com 91 anos de idade
-responsavel4_v1029,Homens,Responsáveis por domicílios particulares permanentes com 92 anos de idade
-responsavel4_v1030,Homens,Responsáveis por domicílios particulares permanentes com 93 anos de idade
-responsavel4_v1031,Homens,Responsáveis por domicílios particulares permanentes com 94 anos de idade
-responsavel4_v1032,Homens,Responsáveis por domicílios particulares permanentes com 95 anos de idade
-responsavel4_v1033,Homens,Responsáveis por domicílios particulares permanentes com 96 anos de idade
-responsavel4_v1034,Homens,Responsáveis por domicílios particulares permanentes com 97 anos de idade
-responsavel4_v1035,Homens,Responsáveis por domicílios particulares permanentes com 98 anos de idade
-responsavel4_v1036,Homens,Responsáveis por domicílios particulares permanentes com 99 anos de idade
-responsavel4_v1037,Homens,Responsáveis por domicílios particulares permanentes com 100 ou mais anos de idade
-responsavel4_v1038,Homens,Responsáveis por domicílios particulares permanentes com 10 a 14 anos de idade
-responsavel4_v1039,Homens,Responsáveis por domicílios particulares permanentes com 15 a 19 anos de idade
-responsavel4_v1040,Homens,Responsáveis por domicílios particulares permanentes com 20 a 24 anos de idade
-responsavel4_v1041,Homens,Responsáveis por domicílios particulares permanentes com 25 a 29 anos de idade
-responsavel4_v1042,Homens,Responsáveis por domicílios particulares permanentes com 30 a 34 anos de idade
-responsavel4_v1043,Homens,Responsáveis por domicílios particulares permanentes com 35 a 39 anos de idade
-responsavel4_v1044,Homens,Responsáveis por domicílios particulares permanentes com 40 a 44 anos de idade
-responsavel4_v1045,Homens,Responsáveis por domicílios particulares permanentes com 45 a 49 anos de idade
-responsavel4_v1046,Homens,Responsáveis por domicílios particulares permanentes com 50 a 54 anos de idade
-responsavel4_v1047,Homens,Responsáveis por domicílios particulares permanentes com 55 a 59 anos de idade
-responsavel4_v1048,Homens,Responsáveis por domicílios particulares permanentes com 60 a 64 anos de idade
-responsavel4_v1049,Homens,Responsáveis por domicílios particulares permanentes com 65 a 69 anos de idade
-responsavel4_v1050,Homens,Responsáveis por domicílios particulares permanentes com 70 a 74 anos de idade
-responsavel4_v1051,Homens,Responsáveis por domicílios particulares permanentes com 75 a 79 anos de idade
-responsavel4_v1052,Homens,Responsáveis por domicílios particulares permanentes com 80 ou mais anos de idade
-responsavel4_v1053,Homens alfabetizados,Responsáveis por domicílios particulares permanentes
-responsavel4_v1054,Homens não alfabetizados,Responsáveis por domicílios particulares permanentes
-responsavel4_v1055,Homens,Responsáveis por domicílios particulares permanentes com alfabetização de adultos como curso freqüentado mais elevado
-responsavel4_v1056,Homens,Responsáveis por domicílios particulares permanentes com antigo primário como curso freqüentado mais elevado
-responsavel4_v1057,Homens,Responsáveis por domicílios particulares permanentes com primeira série do antigo primário que concluída
-responsavel4_v1058,Homens,Responsáveis por domicílios particulares permanentes com segunda série do antigo primário concluída
-responsavel4_v1059,Homens,Responsáveis por domicílios particulares permanentes com terceira série do antigo primário concluída
-responsavel4_v1060,Homens,Responsáveis por domicílios particulares permanentes com quarta série do antigo primário concluída
-responsavel4_v1061,Homens,Responsáveis por domicílios particulares permanentes com antigo ginásio como curso freqüentado mais elevado
-responsavel4_v1062,Homens,Responsáveis por domicílios particulares permanentes com primeira série do antigo ginásio concluída
-responsavel4_v1063,Homens,Responsáveis por domicílios particulares permanentes com segunda série do antigo ginásio concluída
-responsavel4_v1064,Homens,Responsáveis por domicílios particulares permanentes com terceira série do antigo ginásio concluída
-responsavel4_v1065,Homens,Responsáveis por domicílios particulares permanentes com quarta série do antigo ginásio concluída
-responsavel4_v1066,Homens,Responsáveis por domicílios particulares permanentes com antigo clássico científico etc como curso freqüentado mais elevado
-responsavel4_v1067,Homens,Responsáveis por domicílios particulares permanentes com primeira série do antigo clássico científico etc concluída
-responsavel4_v1068,Homens,Responsáveis por domicílios particulares permanentes com segunda série do antigo clássico científico etc concluída
-responsavel4_v1069,Homens,Responsáveis por domicílios particulares permanentes com terceira série do antigo clássico científico etc concluída
-responsavel4_v1070,Homens,Responsáveis por domicílios particulares permanentes com ensino fundamental ou primeiro grau como curso freqüentado mais elevado
-responsavel4_v1071,Homens,Responsáveis por domicílios particulares permanentes com primeira série do ensino fundamental ou primeiro grau concluída
-responsavel4_v1072,Homens,Responsáveis por domicílios particulares permanentes com segunda série do ensino fundamental ou primeiro grau concluída
-responsavel4_v1073,Homens,Responsáveis por domicílios particulares permanentes com terceira série do ensino fundamental ou primeiro grau concluída
-responsavel4_v1074,Homens,Responsáveis por domicílios particulares permanentes com quarta série do ensino fundamental ou primeiro grau concluída
-responsavel4_v1075,Homens,Responsáveis por domicílios particulares permanentes com quinta série do ensino fundamental ou primeiro grau concluída
-responsavel4_v1076,Homens,Responsáveis por domicílios particulares permanentes com sexta série do ensino fundamental ou primeiro grau concluída
-responsavel4_v1077,Homens,Responsáveis por domicílios particulares permanentes com sétima série do ensino fundamental ou primeiro grau concluída
-responsavel4_v1078,Homens,Responsáveis por domicílios particulares permanentes com oitava série do ensino fundamental ou primeiro grau concluída
-responsavel4_v1079,Homens,Responsáveis por domicílios particulares permanentes com curso não seriado do ensino fundamental ou primeiro grau como curso freqüentado mais elevado
-responsavel4_v1080,Homens,Responsáveis por domicílios particulares permanentes com ensino médio ou segundo grau como curso freqüentado mais elevado
-responsavel4_v1081,Homens,Responsáveis por domicílios particulares permanentes com primeira série do ensino médio ou segundo grau concluída
-responsavel4_v1082,Homens,Responsáveis por domicílios particulares permanentes com segunda série do ensino médio ou segundo grau concluída
-responsavel4_v1083,Homens,Responsáveis por domicílios particulares permanentes com terceira série do ensino médio ou segundo grau concluída
-responsavel4_v1084,Homens,Responsáveis por domicílios particulares permanentes com curso não seriado de ensino médio ou segundo grau como curso freqüentado mais elevado
-responsavel4_v1085,Homens,Responsáveis por domicílios particulares permanentes com superior como curso freqüentado mais elevado
-responsavel4_v1086,Homens,Responsáveis por domicílios particulares permanentes com primeira série do superior concluída
-responsavel4_v1087,Homens,Responsáveis por domicílios particulares permanentes com segunda série do superior concluída
-responsavel4_v1088,Homens,Responsáveis por domicílios particulares permanentes com terceira série do superior concluída
-responsavel4_v1089,Homens,Responsáveis por domicílios particulares permanentes com quarta série do superior concluída
-responsavel4_v1090,Homens,Responsáveis por domicílios particulares permanentes com quinta série do superior concluída
-responsavel4_v1091,Homens,Responsáveis por domicílios particulares permanentes com sexta série do superior concluída
-responsavel4_v1092,Homens,Responsáveis por domicílios particulares permanentes com mestrado ou doutorado como curso freqüentado mais elevado
-responsavel4_v1093,Homens,Responsáveis por domicílios particulares permanentes que não freqüentaram curso
-responsavel4_v1094,Homens,Responsáveis por domicílios particulares permanentes sem instrução ou com menos de 1 ano de estudo
-responsavel4_v1095,Homens,Responsáveis por domicílios particulares permanentes com 1 ano de estudo
-responsavel4_v1096,Homens,Responsáveis por domicílios particulares permanentes com 2 anos de estudo
-responsavel4_v1097,Homens,Responsáveis por domicílios particulares permanentes com 3 anos de estudo
-responsavel4_v1098,Homens,Responsáveis por domicílios particulares permanentes com 4 anos de estudo
-responsavel4_v1099,Homens,Responsáveis por domicílios particulares permanentes com 5 anos de estudo
-responsavel4_v1100,Homens,Responsáveis por domicílios particulares permanentes com 6 anos de estudo
-responsavel4_v1101,Homens,Responsáveis por domicílios particulares permanentes com 7 anos de estudo
-responsavel4_v1102,Homens,Responsáveis por domicílios particulares permanentes com 8 anos de estudo
-responsavel4_v1103,Homens,Responsáveis por domicílios particulares permanentes com 9 anos de estudo
-responsavel4_v1104,Homens,Responsáveis por domicílios particulares permanentes com 10 anos de estudo
-responsavel4_v1105,Homens,Responsáveis por domicílios particulares permanentes com 11 anos de estudo
-responsavel4_v1106,Homens,Responsáveis por domicílios particulares permanentes com 12 anos de estudo
-responsavel4_v1107,Homens,Responsáveis por domicílios particulares permanentes com 13 anos de estudo
-responsavel4_v1108,Homens,Responsáveis por domicílios particulares permanentes com 14 anos de estudo
-responsavel4_v1109,Homens,Responsáveis por domicílios particulares permanentes com 15 anos de estudo
-responsavel4_v1110,Homens,Responsáveis por domicílios particulares permanentes com 16 anos de estudo
-responsavel4_v1111,Homens,Responsáveis por domicílios particulares permanentes com 17 ou mais anos de estudo
-responsavel4_v1112,Homens,Responsáveis por domicílios particulares permanentes com anos de estudo não determinado
-responsavel4_v1113,Homens,Responsáveis por domicílios particulares permanentes com anos de estudo determinado
-responsavel4_v1114,Homens,Responsáveis por domicílios particulares permanentes com 1 a 17 ou mais anos de estudo
-responsavel4_v1115,Total de anos de estudo dos,Homens,Responsáveis por domicílios particulares permanentes
-responsavel4_v1116,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de até ½ salário mínimo
-responsavel4_v1117,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de ½ a 1 salário mínimo
-responsavel4_v1118,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 1 a 2 salários mínimos
-responsavel4_v1119,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 2 a 3 salários mínimos
-responsavel4_v1120,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 3 a 5 salários mínimos
-responsavel4_v1121,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 5 a 10 salários mínimos
-responsavel4_v1122,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 10 a 15 salários mínimos
-responsavel4_v1123,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 15 a 20 salários mínimos
-responsavel4_v1124,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 20 salários mínimos
-responsavel4_v1125,Homens,Responsáveis por domicílios particulares permanentes sem rendimento nominal mensal
-responsavel4_v1126,Total do rendimento nominal mensal dos,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de até ½ salário mínimo
-responsavel4_v1127,Total do rendimento nominal mensal dos,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de ½ a 1 salário mínimo
-responsavel4_v1128,Total do rendimento nominal mensal dos,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 1 a 2 salários mínimos
-responsavel4_v1129,Total do rendimento nominal mensal dos,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 2 a 3 salários mínimos
-responsavel4_v1130,Total do rendimento nominal mensal dos,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 3 a 5 salários mínimos
-responsavel4_v1131,Total do rendimento nominal mensal dos,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 5 a 10 salários mínimos
-responsavel4_v1132,Total do rendimento nominal mensal dos,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 10 a 15 salários mínimos
-responsavel4_v1133,Total do rendimento nominal mensal dos,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 15 a 20 salários mínimos
-responsavel4_v1134,Total do rendimento nominal mensal dos,Homens,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 20 salários mínimos
-responsavel4_v1135,Homens,Responsáveis por domicílios particulares permanentes com ou sem rendimento
-responsavel4_v1136,Homens,Responsáveis por domicílios particulares permanentes com rendimento
-responsavel4_v1137,Total do rendimento nominal mensal dos,Homens,Responsáveis por domicílios particulares permanentes
-responsavel5_v1138,Mulheres,Responsáveis por domicílios particulares permanentes
-responsavel5_v1139,Mulheres,Responsáveis por domicílios particulares permanentes com 10 anos de idade
-responsavel5_v1140,Mulheres,Responsáveis por domicílios particulares permanentes com 11 anos de idade
-responsavel5_v1141,Mulheres,Responsáveis por domicílios particulares permanentes com 12 anos de idade
-responsavel5_v1142,Mulheres,Responsáveis por domicílios particulares permanentes com 13 anos de idade
-responsavel5_v1143,Mulheres,Responsáveis por domicílios particulares permanentes com 14 anos de idade
-responsavel5_v1144,Mulheres,Responsáveis por domicílios particulares permanentes com 15 anos de idade
-responsavel5_v1145,Mulheres,Responsáveis por domicílios particulares permanentes com 16 anos de idade
-responsavel5_v1146,Mulheres,Responsáveis por domicílios particulares permanentes com 17 anos de idade
-responsavel5_v1147,Mulheres,Responsáveis por domicílios particulares permanentes com 18 anos de idade
-responsavel5_v1148,Mulheres,Responsáveis por domicílios particulares permanentes com 19 anos de idade
-responsavel5_v1149,Mulheres,Responsáveis por domicílios particulares permanentes com 20 anos de idade
-responsavel5_v1150,Mulheres,Responsáveis por domicílios particulares permanentes com 21 anos de idade
-responsavel5_v1151,Mulheres,Responsáveis por domicílios particulares permanentes com 22 anos de idade
-responsavel5_v1152,Mulheres,Responsáveis por domicílios particulares permanentes com 23 anos de idade
-responsavel5_v1153,Mulheres,Responsáveis por domicílios particulares permanentes com 24 anos de idade
-responsavel5_v1154,Mulheres,Responsáveis por domicílios particulares permanentes com 25 anos de idade
-responsavel5_v1155,Mulheres,Responsáveis por domicílios particulares permanentes com 26 anos de idade
-responsavel5_v1156,Mulheres,Responsáveis por domicílios particulares permanentes com 27 anos de idade
-responsavel5_v1157,Mulheres,Responsáveis por domicílios particulares permanentes com 28 anos de idade
-responsavel5_v1158,Mulheres,Responsáveis por domicílios particulares permanentes com 29 anos de idade
-responsavel5_v1159,Mulheres,Responsáveis por domicílios particulares permanentes com 30 anos de idade
-responsavel5_v1160,Mulheres,Responsáveis por domicílios particulares permanentes com 31 anos de idade
-responsavel5_v1161,Mulheres,Responsáveis por domicílios particulares permanentes com 32 anos de idade
-responsavel5_v1162,Mulheres,Responsáveis por domicílios particulares permanentes com 33 anos de idade
-responsavel5_v1163,Mulheres,Responsáveis por domicílios particulares permanentes com 34 anos de idade
-responsavel5_v1164,Mulheres,Responsáveis por domicílios particulares permanentes com 35 anos de idade
-responsavel5_v1165,Mulheres,Responsáveis por domicílios particulares permanentes com 36 anos de idade
-responsavel5_v1166,Mulheres,Responsáveis por domicílios particulares permanentes com 37 anos de idade
-responsavel5_v1167,Mulheres,Responsáveis por domicílios particulares permanentes com 38 anos de idade
-responsavel5_v1168,Mulheres,Responsáveis por domicílios particulares permanentes com 39 anos de idade
-responsavel5_v1169,Mulheres,Responsáveis por domicílios particulares permanentes com 40 anos de idade
-responsavel5_v1170,Mulheres,Responsáveis por domicílios particulares permanentes com 41 anos de idade
-responsavel5_v1171,Mulheres,Responsáveis por domicílios particulares permanentes com 42 anos de idade
-responsavel5_v1172,Mulheres,Responsáveis por domicílios particulares permanentes com 43 anos de idade
-responsavel5_v1173,Mulheres,Responsáveis por domicílios particulares permanentes com 44 anos de idade
-responsavel5_v1174,Mulheres,Responsáveis por domicílios particulares permanentes com 45 anos de idade
-responsavel5_v1175,Mulheres,Responsáveis por domicílios particulares permanentes com 46 anos de idade
-responsavel5_v1176,Mulheres,Responsáveis por domicílios particulares permanentes com 47 anos de idade
-responsavel5_v1177,Mulheres,Responsáveis por domicílios particulares permanentes com 48 anos de idade
-responsavel5_v1178,Mulheres,Responsáveis por domicílios particulares permanentes com 49 anos de idade
-responsavel5_v1179,Mulheres,Responsáveis por domicílios particulares permanentes com 50 anos de idade
-responsavel5_v1180,Mulheres,Responsáveis por domicílios particulares permanentes com 51 anos de idade
-responsavel5_v1181,Mulheres,Responsáveis por domicílios particulares permanentes com 52 anos de idade
-responsavel5_v1182,Mulheres,Responsáveis por domicílios particulares permanentes com 53 anos de idade
-responsavel5_v1183,Mulheres,Responsáveis por domicílios particulares permanentes com 54 anos de idade
-responsavel5_v1184,Mulheres,Responsáveis por domicílios particulares permanentes com 55 anos de idade
-responsavel5_v1185,Mulheres,Responsáveis por domicílios particulares permanentes com 56 anos de idade
-responsavel5_v1186,Mulheres,Responsáveis por domicílios particulares permanentes com 57 anos de idade
-responsavel5_v1187,Mulheres,Responsáveis por domicílios particulares permanentes com 58 anos de idade
-responsavel5_v1188,Mulheres,Responsáveis por domicílios particulares permanentes com 59 anos de idade
-responsavel5_v1189,Mulheres,Responsáveis por domicílios particulares permanentes com 60 anos de idade
-responsavel5_v1190,Mulheres,Responsáveis por domicílios particulares permanentes com 61 anos de idade
-responsavel5_v1191,Mulheres,Responsáveis por domicílios particulares permanentes com 62 anos de idade
-responsavel5_v1192,Mulheres,Responsáveis por domicílios particulares permanentes com 63 anos de idade
-responsavel5_v1193,Mulheres,Responsáveis por domicílios particulares permanentes com 64 anos de idade
-responsavel5_v1194,Mulheres,Responsáveis por domicílios particulares permanentes com 65 anos de idade
-responsavel5_v1195,Mulheres,Responsáveis por domicílios particulares permanentes com 66 anos de idade
-responsavel5_v1196,Mulheres,Responsáveis por domicílios particulares permanentes com 67 anos de idade
-responsavel5_v1197,Mulheres,Responsáveis por domicílios particulares permanentes com 68 anos de idade
-responsavel5_v1198,Mulheres,Responsáveis por domicílios particulares permanentes com 69 anos de idade
-responsavel5_v1199,Mulheres,Responsáveis por domicílios particulares permanentes com 70 anos de idade
-responsavel5_v1200,Mulheres,Responsáveis por domicílios particulares permanentes com 71 anos de idade
-responsavel5_v1201,Mulheres,Responsáveis por domicílios particulares permanentes com 72 anos de idade
-responsavel5_v1202,Mulheres,Responsáveis por domicílios particulares permanentes com 73 anos de idade
-responsavel5_v1203,Mulheres,Responsáveis por domicílios particulares permanentes com 74 anos de idade
-responsavel5_v1204,Mulheres,Responsáveis por domicílios particulares permanentes com 75 anos de idade
-responsavel5_v1205,Mulheres,Responsáveis por domicílios particulares permanentes com 76 anos de idade
-responsavel5_v1206,Mulheres,Responsáveis por domicílios particulares permanentes com 77 anos de idade
-responsavel5_v1207,Mulheres,Responsáveis por domicílios particulares permanentes com 78 anos de idade
-responsavel5_v1208,Mulheres,Responsáveis por domicílios particulares permanentes com 79 anos de idade
-responsavel5_v1209,Mulheres,Responsáveis por domicílios particulares permanentes com 80 anos de idade
-responsavel5_v1210,Mulheres,Responsáveis por domicílios particulares permanentes com 81 anos de idade
-responsavel5_v1211,Mulheres,Responsáveis por domicílios particulares permanentes com 82 anos de idade
-responsavel5_v1212,Mulheres,Responsáveis por domicílios particulares permanentes com 83 anos de idade
-responsavel5_v1213,Mulheres,Responsáveis por domicílios particulares permanentes com 84 anos de idade
-responsavel5_v1214,Mulheres,Responsáveis por domicílios particulares permanentes com 85 anos de idade
-responsavel5_v1215,Mulheres,Responsáveis por domicílios particulares permanentes com 86 anos de idade
-responsavel5_v1216,Mulheres,Responsáveis por domicílios particulares permanentes com 87 anos de idade
-responsavel5_v1217,Mulheres,Responsáveis por domicílios particulares permanentes com 88 anos de idade
-responsavel5_v1218,Mulheres,Responsáveis por domicílios particulares permanentes com 89 anos de idade
-responsavel5_v1219,Mulheres,Responsáveis por domicílios particulares permanentes com 90 anos de idade
-responsavel5_v1220,Mulheres,Responsáveis por domicílios particulares permanentes com 91 anos de idade
-responsavel5_v1221,Mulheres,Responsáveis por domicílios particulares permanentes com 92 anos de idade
-responsavel5_v1222,Mulheres,Responsáveis por domicílios particulares permanentes com 93 anos de idade
-responsavel5_v1223,Mulheres,Responsáveis por domicílios particulares permanentes com 94 anos de idade
-responsavel5_v1224,Mulheres,Responsáveis por domicílios particulares permanentes com 95 anos de idade
-responsavel5_v1225,Mulheres,Responsáveis por domicílios particulares permanentes com 96 anos de idade
-responsavel5_v1226,Mulheres,Responsáveis por domicílios particulares permanentes com 97 anos de idade
-responsavel5_v1227,Mulheres,Responsáveis por domicílios particulares permanentes com 98 anos de idade
-responsavel5_v1228,Mulheres,Responsáveis por domicílios particulares permanentes com 99 anos de idade
-responsavel5_v1229,Mulheres,Responsáveis por domicílios particulares permanentes com 100 ou mais anos de idade
-responsavel5_v1230,Mulheres,Responsáveis por domicílios particulares permanentes com 10 a 14 anos de idade
-responsavel5_v1231,Mulheres,Responsáveis por domicílios particulares permanentes com 15 a 19 anos de idade
-responsavel5_v1232,Mulheres,Responsáveis por domicílios particulares permanentes com 20 a 24 anos de idade
-responsavel5_v1233,Mulheres,Responsáveis por domicílios particulares permanentes com 25 a 29 anos de idade
-responsavel5_v1234,Mulheres,Responsáveis por domicílios particulares permanentes com 30 a 34 anos de idade
-responsavel5_v1235,Mulheres,Responsáveis por domicílios particulares permanentes com 35 a 39 anos de idade
-responsavel5_v1236,Mulheres,Responsáveis por domicílios particulares permanentes com 40 a 44 anos de idade
-responsavel5_v1237,Mulheres,Responsáveis por domicílios particulares permanentes com 45 a 49 anos de idade
-responsavel5_v1238,Mulheres,Responsáveis por domicílios particulares permanentes com 50 a 54 anos de idade
-responsavel5_v1239,Mulheres,Responsáveis por domicílios particulares permanentes com 55 a 59 anos de idade
-responsavel5_v1240,Mulheres,Responsáveis por domicílios particulares permanentes com 60 a 64 anos de idade
-responsavel5_v1241,Mulheres,Responsáveis por domicílios particulares permanentes com 65 a 69 anos de idade
-responsavel5_v1242,Mulheres,Responsáveis por domicílios particulares permanentes com 70 a 74 anos de idade
-responsavel5_v1243,Mulheres,Responsáveis por domicílios particulares permanentes com 75 a 79 anos de idade
-responsavel5_v1244,Mulheres,Responsáveis por domicílios particulares permanentes com 80 ou mais anos de idade
-responsavel5_v1245,Mulheres alfabetizadas,Responsáveis por domicílios particulares permanentes
-responsavel5_v1246,Mulheres não alfabetizadas,Responsáveis por domicílios particulares permanentes
-responsavel5_v1247,Mulheres,Responsáveis por domicílios particulares permanentes com alfabetização de adultos como curso freqüentado mais elevado
-responsavel5_v1248,Mulheres,Responsáveis por domicílios particulares permanentes com antigo primário como curso freqüentado mais elevado
-responsavel5_v1249,Mulheres,Responsáveis por domicílios particulares permanentes com primeira série do antigo primário que concluída
-responsavel5_v1250,Mulheres,Responsáveis por domicílios particulares permanentes com segunda série do antigo primário concluída
-responsavel5_v1251,Mulheres,Responsáveis por domicílios particulares permanentes com terceira série do antigo primário concluída
-responsavel5_v1252,Mulheres,Responsáveis por domicílios particulares permanentes com quarta série do antigo primário concluída
-responsavel5_v1253,Mulheres,Responsáveis por domicílios particulares permanentes com antigo ginásio como curso freqüentado mais elevado
-responsavel5_v1254,Mulheres,Responsáveis por domicílios particulares permanentes com primeira série do antigo ginásio concluída
-responsavel5_v1255,Mulheres,Responsáveis por domicílios particulares permanentes com segunda série do antigo ginásio concluída
-responsavel5_v1256,Mulheres,Responsáveis por domicílios particulares permanentes com terceira série do antigo ginásio concluída
-responsavel5_v1257,Mulheres,Responsáveis por domicílios particulares permanentes com quarta série do antigo ginásio concluída
-responsavel5_v1258,Mulheres,Responsáveis por domicílios particulares permanentes com antigo clássico científico etc como curso freqüentado mais elevado
-responsavel5_v1259,Mulheres,Responsáveis por domicílios particulares permanentes com primeira série do antigo clássico científico etc concluída
-responsavel5_v1260,Mulheres,Responsáveis por domicílios particulares permanentes com segunda série do antigo clássico científico etc concluída
-responsavel5_v1261,Mulheres,Responsáveis por domicílios particulares permanentes com terceira série do antigo clássico científico etc concluída
-responsavel5_v1262,Mulheres,Responsáveis por domicílios particulares permanentes com ensino fundamental ou primeiro grau como curso freqüentado mais elevado
-responsavel5_v1263,Mulheres,Responsáveis por domicílios particulares permanentes com primeira série do ensino fundamental ou primeiro grau concluída
-responsavel5_v1264,Mulheres,Responsáveis por domicílios particulares permanentes com segunda série do ensino fundamental ou primeiro grau concluída
-responsavel5_v1265,Mulheres,Responsáveis por domicílios particulares permanentes com terceira série do ensino fundamental ou primeiro grau concluída
-responsavel5_v1266,Mulheres,Responsáveis por domicílios particulares permanentes com quarta série do ensino fundamental ou primeiro grau concluída
-responsavel5_v1267,Mulheres,Responsáveis por domicílios particulares permanentes com quinta série do ensino fundamental ou primeiro grau concluída
-responsavel5_v1268,Mulheres,Responsáveis por domicílios particulares permanentes com sexta série do ensino fundamental ou primeiro grau concluída
-responsavel5_v1269,Mulheres,Responsáveis por domicílios particulares permanentes com sétima série do ensino fundamental ou primeiro grau concluída
-responsavel5_v1270,Mulheres,Responsáveis por domicílios particulares permanentes com oitava série do ensino fundamental ou primeiro grau concluída
-responsavel5_v1271,Mulheres,Responsáveis por domicílios particulares permanentes com curso não seriado do ensino fundamental ou primeiro grau como curso freqüentado mais elevado
-responsavel5_v1272,Mulheres,Responsáveis por domicílios particulares permanentes com ensino médio ou segundo grau como curso freqüentado mais elevado
-responsavel5_v1273,Mulheres,Responsáveis por domicílios particulares permanentes com primeira série do ensino médio ou segundo grau concluída
-responsavel5_v1274,Mulheres,Responsáveis por domicílios particulares permanentes com segunda série do ensino médio ou segundo grau concluída
-responsavel5_v1275,Mulheres,Responsáveis por domicílios particulares permanentes com terceira série do ensino médio ou segundo grau concluída
-responsavel5_v1276,Mulheres,Responsáveis por domicílios particulares permanentes com curso não seriado de ensino médio ou segundo grau como curso freqüentado mais elevado
-responsavel5_v1277,Mulheres,Responsáveis por domicílios particulares permanentes com superior como curso freqüentado mais elevado
-responsavel5_v1278,Mulheres,Responsáveis por domicílios particulares permanentes com primeira série do superior concluída
-responsavel5_v1279,Mulheres,Responsáveis por domicílios particulares permanentes com segunda série do superior concluída
-responsavel5_v1280,Mulheres,Responsáveis por domicílios particulares permanentes com terceira série do superior concluída
-responsavel5_v1281,Mulheres,Responsáveis por domicílios particulares permanentes com quarta série do superior concluída
-responsavel5_v1282,Mulheres,Responsáveis por domicílios particulares permanentes com quinta série do superior concluída
-responsavel5_v1283,Mulheres,Responsáveis por domicílios particulares permanentes com sexta série do superior concluída
-responsavel5_v1284,Mulheres,Responsáveis por domicílios particulares permanentes com mestrado ou doutorado como curso freqüentado mais elevado
-responsavel5_v1285,Mulheres,Responsáveis por domicílios particulares permanentes que não freqüentaram curso
-responsavel5_v1286,Mulheres,Responsáveis por domicílios particulares permanentes sem instrução ou com menos de 1 ano de estudo
-responsavel5_v1287,Mulheres,Responsáveis por domicílios particulares permanentes com 1 ano de estudo
-responsavel5_v1288,Mulheres,Responsáveis por domicílios particulares permanentes com 2 anos de estudo
-responsavel5_v1289,Mulheres,Responsáveis por domicílios particulares permanentes com 3 anos de estudo
-responsavel5_v1290,Mulheres,Responsáveis por domicílios particulares permanentes com 4 anos de estudo
-responsavel5_v1291,Mulheres,Responsáveis por domicílios particulares permanentes com 5 anos de estudo
-responsavel5_v1292,Mulheres,Responsáveis por domicílios particulares permanentes com 6 anos de estudo
-responsavel5_v1293,Mulheres,Responsáveis por domicílios particulares permanentes com 7 anos de estudo
-responsavel5_v1294,Mulheres,Responsáveis por domicílios particulares permanentes com 8 anos de estudo
-responsavel5_v1295,Mulheres,Responsáveis por domicílios particulares permanentes com 9 anos de estudo
-responsavel5_v1296,Mulheres,Responsáveis por domicílios particulares permanentes com 10 anos de estudo
-responsavel5_v1297,Mulheres,Responsáveis por domicílios particulares permanentes com 11 anos de estudo
-responsavel5_v1298,Mulheres,Responsáveis por domicílios particulares permanentes com 12 anos de estudo
-responsavel5_v1299,Mulheres,Responsáveis por domicílios particulares permanentes com 13 anos de estudo
-responsavel5_v1300,Mulheres,Responsáveis por domicílios particulares permanentes com 14 anos de estudo
-responsavel5_v1301,Mulheres,Responsáveis por domicílios particulares permanentes com 15 anos de estudo
-responsavel5_v1302,Mulheres,Responsáveis por domicílios particulares permanentes com 16 anos de estudo
-responsavel5_v1303,Mulheres,Responsáveis por domicílios particulares permanentes com 17 ou mais anos de estudo
-responsavel5_v1304,Mulheres,Responsáveis por domicílios particulares permanentes com anos de estudo não determinado
-responsavel5_v1305,Mulheres,Responsáveis por domicílios particulares permanentes com anos de estudo determinado
-responsavel5_v1306,Mulheres,Responsáveis por domicílios particulares permanentes com 1 a 17 ou mais anos de estudo
-responsavel5_v1307,Total de anos de estudo das Mulheres,Responsáveis por domicílios particulares permanentes
-responsavel5_v1308,Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de até ½ salário mínimo
-responsavel5_v1309,Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de ½ a 1 salário mínimo
-responsavel5_v1310,Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 1 a 2 salários mínimos
-responsavel5_v1311,Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 2 a 3 salários mínimos
-responsavel5_v1312,Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 3 a 5 salários mínimos
-responsavel5_v1313,Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 5 a 10 salários mínimos
-responsavel5_v1314,Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 10 a 15 salários mínimos
-responsavel5_v1315,Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 15 a 20 salários mínimos
-responsavel5_v1316,Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 20 salários mínimos
-responsavel5_v1317,Mulheres,Responsáveis por domicílios particulares permanentes sem rendimento nominal mensal
-responsavel5_v1318,Total do rendimento nominal mensal das Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de até ½ salário mínimo
-responsavel5_v1319,Total do rendimento nominal mensal das Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de ½ a 1 salário mínimo
-responsavel5_v13120,Total do rendimento nominal mensal das Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 1 a 2 salários mínimos
-responsavel5_v13121,Total do rendimento nominal mensal das Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 2 a 3 salários mínimos
-responsavel5_v13122,Total do rendimento nominal mensal das Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 3 a 5 salários mínimos
-responsavel5_v13123,Total do rendimento nominal mensal das Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 5 a 10 salários mínimos
-responsavel5_v13124,Total do rendimento nominal mensal das Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 10 a 15 salários mínimos
-responsavel5_v13125,Total do rendimento nominal mensal das Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 15 a 20 salários mínimos
-responsavel5_v13126,Total do rendimento nominal mensal das Mulheres,Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 20 salários mínimos
-responsavel5_v1327,Mulheres,Responsáveis por domicílios particulares permanentes com ou sem rendimento
-responsavel5_v1328,Mulheres,Responsáveis por domicílios particulares permanentes com rendimento
-responsavel5_v1329,Total do rendimento nominal mensal das Mulheres,Responsáveis por domicílios particulares permanentes
+responsavel4_v0946,Homens Responsáveis por domicílios particulares permanentes
+responsavel4_v0947,Homens Responsáveis por domicílios particulares permanentes com 10 anos de idade
+responsavel4_v0948,Homens Responsáveis por domicílios particulares permanentes com 11 anos de idade
+responsavel4_v0949,Homens Responsáveis por domicílios particulares permanentes com 12 anos de idade
+responsavel4_v0950,Homens Responsáveis por domicílios particulares permanentes com 13 anos de idade
+responsavel4_v0951,Homens Responsáveis por domicílios particulares permanentes com 14 anos de idade
+responsavel4_v0952,Homens Responsáveis por domicílios particulares permanentes com 15 anos de idade
+responsavel4_v0953,Homens Responsáveis por domicílios particulares permanentes com 16 anos de idade
+responsavel4_v0954,Homens Responsáveis por domicílios particulares permanentes com 17 anos de idade
+responsavel4_v0955,Homens Responsáveis por domicílios particulares permanentes com 18 anos de idade
+responsavel4_v0956,Homens Responsáveis por domicílios particulares permanentes com 19 anos de idade
+responsavel4_v0957,Homens Responsáveis por domicílios particulares permanentes com 20 anos de idade
+responsavel4_v0958,Homens Responsáveis por domicílios particulares permanentes com 21 anos de idade
+responsavel4_v0959,Homens Responsáveis por domicílios particulares permanentes com 22 anos de idade
+responsavel4_v0960,Homens Responsáveis por domicílios particulares permanentes com 23 anos de idade
+responsavel4_v0961,Homens Responsáveis por domicílios particulares permanentes com 24 anos de idade
+responsavel4_v0962,Homens Responsáveis por domicílios particulares permanentes com 25 anos de idade
+responsavel4_v0963,Homens Responsáveis por domicílios particulares permanentes com 26 anos de idade
+responsavel4_v0964,Homens Responsáveis por domicílios particulares permanentes com 27 anos de idade
+responsavel4_v0965,Homens Responsáveis por domicílios particulares permanentes com 28 anos de idade
+responsavel4_v0966,Homens Responsáveis por domicílios particulares permanentes com 29 anos de idade
+responsavel4_v0967,Homens Responsáveis por domicílios particulares permanentes com 30 anos de idade
+responsavel4_v0968,Homens Responsáveis por domicílios particulares permanentes com 31 anos de idade
+responsavel4_v0969,Homens Responsáveis por domicílios particulares permanentes com 32 anos de idade
+responsavel4_v0970,Homens Responsáveis por domicílios particulares permanentes com 33 anos de idade
+responsavel4_v0971,Homens Responsáveis por domicílios particulares permanentes com 34 anos de idade
+responsavel4_v0972,Homens Responsáveis por domicílios particulares permanentes com 35 anos de idade
+responsavel4_v0973,Homens Responsáveis por domicílios particulares permanentes com 36 anos de idade
+responsavel4_v0974,Homens Responsáveis por domicílios particulares permanentes com 37 anos de idade
+responsavel4_v0975,Homens Responsáveis por domicílios particulares permanentes com 38 anos de idade
+responsavel4_v0976,Homens Responsáveis por domicílios particulares permanentes com 39 anos de idade
+responsavel4_v0977,Homens Responsáveis por domicílios particulares permanentes com 40 anos de idade
+responsavel4_v0978,Homens Responsáveis por domicílios particulares permanentes com 41 anos de idade
+responsavel4_v0979,Homens Responsáveis por domicílios particulares permanentes com 42 anos de idade
+responsavel4_v0980,Homens Responsáveis por domicílios particulares permanentes com 43 anos de idade
+responsavel4_v0981,Homens Responsáveis por domicílios particulares permanentes com 44 anos de idade
+responsavel4_v0982,Homens Responsáveis por domicílios particulares permanentes com 45 anos de idade
+responsavel4_v0983,Homens Responsáveis por domicílios particulares permanentes com 46 anos de idade
+responsavel4_v0984,Homens Responsáveis por domicílios particulares permanentes com 47 anos de idade
+responsavel4_v0985,Homens Responsáveis por domicílios particulares permanentes com 48 anos de idade
+responsavel4_v0986,Homens Responsáveis por domicílios particulares permanentes com 49 anos de idade
+responsavel4_v0987,Homens Responsáveis por domicílios particulares permanentes com 50 anos de idade
+responsavel4_v0988,Homens Responsáveis por domicílios particulares permanentes com 51 anos de idade
+responsavel4_v0989,Homens Responsáveis por domicílios particulares permanentes com 52 anos de idade
+responsavel4_v0990,Homens Responsáveis por domicílios particulares permanentes com 53 anos de idade
+responsavel4_v0991,Homens Responsáveis por domicílios particulares permanentes com 54 anos de idade
+responsavel4_v0992,Homens Responsáveis por domicílios particulares permanentes com 55 anos de idade
+responsavel4_v0993,Homens Responsáveis por domicílios particulares permanentes com 56 anos de idade
+responsavel4_v0994,Homens Responsáveis por domicílios particulares permanentes com 57 anos de idade
+responsavel4_v0995,Homens Responsáveis por domicílios particulares permanentes com 58 anos de idade
+responsavel4_v0996,Homens Responsáveis por domicílios particulares permanentes com 59 anos de idade
+responsavel4_v0997,Homens Responsáveis por domicílios particulares permanentes com 60 anos de idade
+responsavel4_v0998,Homens Responsáveis por domicílios particulares permanentes com 61 anos de idade
+responsavel4_v0999,Homens Responsáveis por domicílios particulares permanentes com 62 anos de idade
+responsavel4_v1000,Homens Responsáveis por domicílios particulares permanentes com 63 anos de idade
+responsavel4_v1001,Homens Responsáveis por domicílios particulares permanentes com 64 anos de idade
+responsavel4_v1002,Homens Responsáveis por domicílios particulares permanentes com 65 anos de idade
+responsavel4_v1003,Homens Responsáveis por domicílios particulares permanentes com 66 anos de idade
+responsavel4_v1004,Homens Responsáveis por domicílios particulares permanentes com 67 anos de idade
+responsavel4_v1005,Homens Responsáveis por domicílios particulares permanentes com 68 anos de idade
+responsavel4_v1006,Homens Responsáveis por domicílios particulares permanentes com 69 anos de idade
+responsavel4_v1007,Homens Responsáveis por domicílios particulares permanentes com 70 anos de idade
+responsavel4_v1008,Homens Responsáveis por domicílios particulares permanentes com 71 anos de idade
+responsavel4_v1009,Homens Responsáveis por domicílios particulares permanentes com 72 anos de idade
+responsavel4_v1010,Homens Responsáveis por domicílios particulares permanentes com 73 anos de idade
+responsavel4_v1011,Homens Responsáveis por domicílios particulares permanentes com 74 anos de idade
+responsavel4_v1012,Homens Responsáveis por domicílios particulares permanentes com 75 anos de idade
+responsavel4_v1013,Homens Responsáveis por domicílios particulares permanentes com 76 anos de idade
+responsavel4_v1014,Homens Responsáveis por domicílios particulares permanentes com 77 anos de idade
+responsavel4_v1015,Homens Responsáveis por domicílios particulares permanentes com 78 anos de idade
+responsavel4_v1016,Homens Responsáveis por domicílios particulares permanentes com 79 anos de idade
+responsavel4_v1017,Homens Responsáveis por domicílios particulares permanentes com 80 anos de idade
+responsavel4_v1018,Homens Responsáveis por domicílios particulares permanentes com 81 anos de idade
+responsavel4_v1019,Homens Responsáveis por domicílios particulares permanentes com 82 anos de idade
+responsavel4_v1020,Homens Responsáveis por domicílios particulares permanentes com 83 anos de idade
+responsavel4_v1021,Homens Responsáveis por domicílios particulares permanentes com 84 anos de idade
+responsavel4_v1022,Homens Responsáveis por domicílios particulares permanentes com 85 anos de idade
+responsavel4_v1023,Homens Responsáveis por domicílios particulares permanentes com 86 anos de idade
+responsavel4_v1024,Homens Responsáveis por domicílios particulares permanentes com 87 anos de idade
+responsavel4_v1025,Homens Responsáveis por domicílios particulares permanentes com 88 anos de idade
+responsavel4_v1026,Homens Responsáveis por domicílios particulares permanentes com 89 anos de idade
+responsavel4_v1027,Homens Responsáveis por domicílios particulares permanentes com 90 anos de idade
+responsavel4_v1028,Homens Responsáveis por domicílios particulares permanentes com 91 anos de idade
+responsavel4_v1029,Homens Responsáveis por domicílios particulares permanentes com 92 anos de idade
+responsavel4_v1030,Homens Responsáveis por domicílios particulares permanentes com 93 anos de idade
+responsavel4_v1031,Homens Responsáveis por domicílios particulares permanentes com 94 anos de idade
+responsavel4_v1032,Homens Responsáveis por domicílios particulares permanentes com 95 anos de idade
+responsavel4_v1033,Homens Responsáveis por domicílios particulares permanentes com 96 anos de idade
+responsavel4_v1034,Homens Responsáveis por domicílios particulares permanentes com 97 anos de idade
+responsavel4_v1035,Homens Responsáveis por domicílios particulares permanentes com 98 anos de idade
+responsavel4_v1036,Homens Responsáveis por domicílios particulares permanentes com 99 anos de idade
+responsavel4_v1037,Homens Responsáveis por domicílios particulares permanentes com 100 ou mais anos de idade
+responsavel4_v1038,Homens Responsáveis por domicílios particulares permanentes com 10 a 14 anos de idade
+responsavel4_v1039,Homens Responsáveis por domicílios particulares permanentes com 15 a 19 anos de idade
+responsavel4_v1040,Homens Responsáveis por domicílios particulares permanentes com 20 a 24 anos de idade
+responsavel4_v1041,Homens Responsáveis por domicílios particulares permanentes com 25 a 29 anos de idade
+responsavel4_v1042,Homens Responsáveis por domicílios particulares permanentes com 30 a 34 anos de idade
+responsavel4_v1043,Homens Responsáveis por domicílios particulares permanentes com 35 a 39 anos de idade
+responsavel4_v1044,Homens Responsáveis por domicílios particulares permanentes com 40 a 44 anos de idade
+responsavel4_v1045,Homens Responsáveis por domicílios particulares permanentes com 45 a 49 anos de idade
+responsavel4_v1046,Homens Responsáveis por domicílios particulares permanentes com 50 a 54 anos de idade
+responsavel4_v1047,Homens Responsáveis por domicílios particulares permanentes com 55 a 59 anos de idade
+responsavel4_v1048,Homens Responsáveis por domicílios particulares permanentes com 60 a 64 anos de idade
+responsavel4_v1049,Homens Responsáveis por domicílios particulares permanentes com 65 a 69 anos de idade
+responsavel4_v1050,Homens Responsáveis por domicílios particulares permanentes com 70 a 74 anos de idade
+responsavel4_v1051,Homens Responsáveis por domicílios particulares permanentes com 75 a 79 anos de idade
+responsavel4_v1052,Homens Responsáveis por domicílios particulares permanentes com 80 ou mais anos de idade
+responsavel4_v1053,Homens alfabetizados Responsáveis por domicílios particulares permanentes
+responsavel4_v1054,Homens não alfabetizados Responsáveis por domicílios particulares permanentes
+responsavel4_v1055,Homens Responsáveis por domicílios particulares permanentes com alfabetização de adultos como curso freqüentado mais elevado
+responsavel4_v1056,Homens Responsáveis por domicílios particulares permanentes com antigo primário como curso freqüentado mais elevado
+responsavel4_v1057,Homens Responsáveis por domicílios particulares permanentes com primeira série do antigo primário que concluída
+responsavel4_v1058,Homens Responsáveis por domicílios particulares permanentes com segunda série do antigo primário concluída
+responsavel4_v1059,Homens Responsáveis por domicílios particulares permanentes com terceira série do antigo primário concluída
+responsavel4_v1060,Homens Responsáveis por domicílios particulares permanentes com quarta série do antigo primário concluída
+responsavel4_v1061,Homens Responsáveis por domicílios particulares permanentes com antigo ginásio como curso freqüentado mais elevado
+responsavel4_v1062,Homens Responsáveis por domicílios particulares permanentes com primeira série do antigo ginásio concluída
+responsavel4_v1063,Homens Responsáveis por domicílios particulares permanentes com segunda série do antigo ginásio concluída
+responsavel4_v1064,Homens Responsáveis por domicílios particulares permanentes com terceira série do antigo ginásio concluída
+responsavel4_v1065,Homens Responsáveis por domicílios particulares permanentes com quarta série do antigo ginásio concluída
+responsavel4_v1066,Homens Responsáveis por domicílios particulares permanentes com antigo clássico científico etc como curso freqüentado mais elevado
+responsavel4_v1067,Homens Responsáveis por domicílios particulares permanentes com primeira série do antigo clássico científico etc concluída
+responsavel4_v1068,Homens Responsáveis por domicílios particulares permanentes com segunda série do antigo clássico científico etc concluída
+responsavel4_v1069,Homens Responsáveis por domicílios particulares permanentes com terceira série do antigo clássico científico etc concluída
+responsavel4_v1070,Homens Responsáveis por domicílios particulares permanentes com ensino fundamental ou primeiro grau como curso freqüentado mais elevado
+responsavel4_v1071,Homens Responsáveis por domicílios particulares permanentes com primeira série do ensino fundamental ou primeiro grau concluída
+responsavel4_v1072,Homens Responsáveis por domicílios particulares permanentes com segunda série do ensino fundamental ou primeiro grau concluída
+responsavel4_v1073,Homens Responsáveis por domicílios particulares permanentes com terceira série do ensino fundamental ou primeiro grau concluída
+responsavel4_v1074,Homens Responsáveis por domicílios particulares permanentes com quarta série do ensino fundamental ou primeiro grau concluída
+responsavel4_v1075,Homens Responsáveis por domicílios particulares permanentes com quinta série do ensino fundamental ou primeiro grau concluída
+responsavel4_v1076,Homens Responsáveis por domicílios particulares permanentes com sexta série do ensino fundamental ou primeiro grau concluída
+responsavel4_v1077,Homens Responsáveis por domicílios particulares permanentes com sétima série do ensino fundamental ou primeiro grau concluída
+responsavel4_v1078,Homens Responsáveis por domicílios particulares permanentes com oitava série do ensino fundamental ou primeiro grau concluída
+responsavel4_v1079,Homens Responsáveis por domicílios particulares permanentes com curso não seriado do ensino fundamental ou primeiro grau como curso freqüentado mais elevado
+responsavel4_v1080,Homens Responsáveis por domicílios particulares permanentes com ensino médio ou segundo grau como curso freqüentado mais elevado
+responsavel4_v1081,Homens Responsáveis por domicílios particulares permanentes com primeira série do ensino médio ou segundo grau concluída
+responsavel4_v1082,Homens Responsáveis por domicílios particulares permanentes com segunda série do ensino médio ou segundo grau concluída
+responsavel4_v1083,Homens Responsáveis por domicílios particulares permanentes com terceira série do ensino médio ou segundo grau concluída
+responsavel4_v1084,Homens Responsáveis por domicílios particulares permanentes com curso não seriado de ensino médio ou segundo grau como curso freqüentado mais elevado
+responsavel4_v1085,Homens Responsáveis por domicílios particulares permanentes com superior como curso freqüentado mais elevado
+responsavel4_v1086,Homens Responsáveis por domicílios particulares permanentes com primeira série do superior concluída
+responsavel4_v1087,Homens Responsáveis por domicílios particulares permanentes com segunda série do superior concluída
+responsavel4_v1088,Homens Responsáveis por domicílios particulares permanentes com terceira série do superior concluída
+responsavel4_v1089,Homens Responsáveis por domicílios particulares permanentes com quarta série do superior concluída
+responsavel4_v1090,Homens Responsáveis por domicílios particulares permanentes com quinta série do superior concluída
+responsavel4_v1091,Homens Responsáveis por domicílios particulares permanentes com sexta série do superior concluída
+responsavel4_v1092,Homens Responsáveis por domicílios particulares permanentes com mestrado ou doutorado como curso freqüentado mais elevado
+responsavel4_v1093,Homens Responsáveis por domicílios particulares permanentes que não freqüentaram curso
+responsavel4_v1094,Homens Responsáveis por domicílios particulares permanentes sem instrução ou com menos de 1 ano de estudo
+responsavel4_v1095,Homens Responsáveis por domicílios particulares permanentes com 1 ano de estudo
+responsavel4_v1096,Homens Responsáveis por domicílios particulares permanentes com 2 anos de estudo
+responsavel4_v1097,Homens Responsáveis por domicílios particulares permanentes com 3 anos de estudo
+responsavel4_v1098,Homens Responsáveis por domicílios particulares permanentes com 4 anos de estudo
+responsavel4_v1099,Homens Responsáveis por domicílios particulares permanentes com 5 anos de estudo
+responsavel4_v1100,Homens Responsáveis por domicílios particulares permanentes com 6 anos de estudo
+responsavel4_v1101,Homens Responsáveis por domicílios particulares permanentes com 7 anos de estudo
+responsavel4_v1102,Homens Responsáveis por domicílios particulares permanentes com 8 anos de estudo
+responsavel4_v1103,Homens Responsáveis por domicílios particulares permanentes com 9 anos de estudo
+responsavel4_v1104,Homens Responsáveis por domicílios particulares permanentes com 10 anos de estudo
+responsavel4_v1105,Homens Responsáveis por domicílios particulares permanentes com 11 anos de estudo
+responsavel4_v1106,Homens Responsáveis por domicílios particulares permanentes com 12 anos de estudo
+responsavel4_v1107,Homens Responsáveis por domicílios particulares permanentes com 13 anos de estudo
+responsavel4_v1108,Homens Responsáveis por domicílios particulares permanentes com 14 anos de estudo
+responsavel4_v1109,Homens Responsáveis por domicílios particulares permanentes com 15 anos de estudo
+responsavel4_v1110,Homens Responsáveis por domicílios particulares permanentes com 16 anos de estudo
+responsavel4_v1111,Homens Responsáveis por domicílios particulares permanentes com 17 ou mais anos de estudo
+responsavel4_v1112,Homens Responsáveis por domicílios particulares permanentes com anos de estudo não determinado
+responsavel4_v1113,Homens Responsáveis por domicílios particulares permanentes com anos de estudo determinado
+responsavel4_v1114,Homens Responsáveis por domicílios particulares permanentes com 1 a 17 ou mais anos de estudo
+responsavel4_v1115,Total de anos de estudo dos Homens Responsáveis por domicílios particulares permanentes
+responsavel4_v1116,Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de até ½ salário mínimo
+responsavel4_v1117,Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de ½ a 1 salário mínimo
+responsavel4_v1118,Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 1 a 2 salários mínimos
+responsavel4_v1119,Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 2 a 3 salários mínimos
+responsavel4_v1120,Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 3 a 5 salários mínimos
+responsavel4_v1121,Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 5 a 10 salários mínimos
+responsavel4_v1122,Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 10 a 15 salários mínimos
+responsavel4_v1123,Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 15 a 20 salários mínimos
+responsavel4_v1124,Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 20 salários mínimos
+responsavel4_v1125,Homens Responsáveis por domicílios particulares permanentes sem rendimento nominal mensal
+responsavel4_v1126,Total do rendimento nominal mensal dos Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de até ½ salário mínimo
+responsavel4_v1127,Total do rendimento nominal mensal dos Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de ½ a 1 salário mínimo
+responsavel4_v1128,Total do rendimento nominal mensal dos Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 1 a 2 salários mínimos
+responsavel4_v1129,Total do rendimento nominal mensal dos Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 2 a 3 salários mínimos
+responsavel4_v1130,Total do rendimento nominal mensal dos Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 3 a 5 salários mínimos
+responsavel4_v1131,Total do rendimento nominal mensal dos Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 5 a 10 salários mínimos
+responsavel4_v1132,Total do rendimento nominal mensal dos Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 10 a 15 salários mínimos
+responsavel4_v1133,Total do rendimento nominal mensal dos Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 15 a 20 salários mínimos
+responsavel4_v1134,Total do rendimento nominal mensal dos Homens Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 20 salários mínimos
+responsavel4_v1135,Homens Responsáveis por domicílios particulares permanentes com ou sem rendimento
+responsavel4_v1136,Homens Responsáveis por domicílios particulares permanentes com rendimento
+responsavel4_v1137,Total do rendimento nominal mensal dos Homens Responsáveis por domicílios particulares permanentes
+responsavel5_v1138,Mulheres Responsáveis por domicílios particulares permanentes
+responsavel5_v1139,Mulheres Responsáveis por domicílios particulares permanentes com 10 anos de idade
+responsavel5_v1140,Mulheres Responsáveis por domicílios particulares permanentes com 11 anos de idade
+responsavel5_v1141,Mulheres Responsáveis por domicílios particulares permanentes com 12 anos de idade
+responsavel5_v1142,Mulheres Responsáveis por domicílios particulares permanentes com 13 anos de idade
+responsavel5_v1143,Mulheres Responsáveis por domicílios particulares permanentes com 14 anos de idade
+responsavel5_v1144,Mulheres Responsáveis por domicílios particulares permanentes com 15 anos de idade
+responsavel5_v1145,Mulheres Responsáveis por domicílios particulares permanentes com 16 anos de idade
+responsavel5_v1146,Mulheres Responsáveis por domicílios particulares permanentes com 17 anos de idade
+responsavel5_v1147,Mulheres Responsáveis por domicílios particulares permanentes com 18 anos de idade
+responsavel5_v1148,Mulheres Responsáveis por domicílios particulares permanentes com 19 anos de idade
+responsavel5_v1149,Mulheres Responsáveis por domicílios particulares permanentes com 20 anos de idade
+responsavel5_v1150,Mulheres Responsáveis por domicílios particulares permanentes com 21 anos de idade
+responsavel5_v1151,Mulheres Responsáveis por domicílios particulares permanentes com 22 anos de idade
+responsavel5_v1152,Mulheres Responsáveis por domicílios particulares permanentes com 23 anos de idade
+responsavel5_v1153,Mulheres Responsáveis por domicílios particulares permanentes com 24 anos de idade
+responsavel5_v1154,Mulheres Responsáveis por domicílios particulares permanentes com 25 anos de idade
+responsavel5_v1155,Mulheres Responsáveis por domicílios particulares permanentes com 26 anos de idade
+responsavel5_v1156,Mulheres Responsáveis por domicílios particulares permanentes com 27 anos de idade
+responsavel5_v1157,Mulheres Responsáveis por domicílios particulares permanentes com 28 anos de idade
+responsavel5_v1158,Mulheres Responsáveis por domicílios particulares permanentes com 29 anos de idade
+responsavel5_v1159,Mulheres Responsáveis por domicílios particulares permanentes com 30 anos de idade
+responsavel5_v1160,Mulheres Responsáveis por domicílios particulares permanentes com 31 anos de idade
+responsavel5_v1161,Mulheres Responsáveis por domicílios particulares permanentes com 32 anos de idade
+responsavel5_v1162,Mulheres Responsáveis por domicílios particulares permanentes com 33 anos de idade
+responsavel5_v1163,Mulheres Responsáveis por domicílios particulares permanentes com 34 anos de idade
+responsavel5_v1164,Mulheres Responsáveis por domicílios particulares permanentes com 35 anos de idade
+responsavel5_v1165,Mulheres Responsáveis por domicílios particulares permanentes com 36 anos de idade
+responsavel5_v1166,Mulheres Responsáveis por domicílios particulares permanentes com 37 anos de idade
+responsavel5_v1167,Mulheres Responsáveis por domicílios particulares permanentes com 38 anos de idade
+responsavel5_v1168,Mulheres Responsáveis por domicílios particulares permanentes com 39 anos de idade
+responsavel5_v1169,Mulheres Responsáveis por domicílios particulares permanentes com 40 anos de idade
+responsavel5_v1170,Mulheres Responsáveis por domicílios particulares permanentes com 41 anos de idade
+responsavel5_v1171,Mulheres Responsáveis por domicílios particulares permanentes com 42 anos de idade
+responsavel5_v1172,Mulheres Responsáveis por domicílios particulares permanentes com 43 anos de idade
+responsavel5_v1173,Mulheres Responsáveis por domicílios particulares permanentes com 44 anos de idade
+responsavel5_v1174,Mulheres Responsáveis por domicílios particulares permanentes com 45 anos de idade
+responsavel5_v1175,Mulheres Responsáveis por domicílios particulares permanentes com 46 anos de idade
+responsavel5_v1176,Mulheres Responsáveis por domicílios particulares permanentes com 47 anos de idade
+responsavel5_v1177,Mulheres Responsáveis por domicílios particulares permanentes com 48 anos de idade
+responsavel5_v1178,Mulheres Responsáveis por domicílios particulares permanentes com 49 anos de idade
+responsavel5_v1179,Mulheres Responsáveis por domicílios particulares permanentes com 50 anos de idade
+responsavel5_v1180,Mulheres Responsáveis por domicílios particulares permanentes com 51 anos de idade
+responsavel5_v1181,Mulheres Responsáveis por domicílios particulares permanentes com 52 anos de idade
+responsavel5_v1182,Mulheres Responsáveis por domicílios particulares permanentes com 53 anos de idade
+responsavel5_v1183,Mulheres Responsáveis por domicílios particulares permanentes com 54 anos de idade
+responsavel5_v1184,Mulheres Responsáveis por domicílios particulares permanentes com 55 anos de idade
+responsavel5_v1185,Mulheres Responsáveis por domicílios particulares permanentes com 56 anos de idade
+responsavel5_v1186,Mulheres Responsáveis por domicílios particulares permanentes com 57 anos de idade
+responsavel5_v1187,Mulheres Responsáveis por domicílios particulares permanentes com 58 anos de idade
+responsavel5_v1188,Mulheres Responsáveis por domicílios particulares permanentes com 59 anos de idade
+responsavel5_v1189,Mulheres Responsáveis por domicílios particulares permanentes com 60 anos de idade
+responsavel5_v1190,Mulheres Responsáveis por domicílios particulares permanentes com 61 anos de idade
+responsavel5_v1191,Mulheres Responsáveis por domicílios particulares permanentes com 62 anos de idade
+responsavel5_v1192,Mulheres Responsáveis por domicílios particulares permanentes com 63 anos de idade
+responsavel5_v1193,Mulheres Responsáveis por domicílios particulares permanentes com 64 anos de idade
+responsavel5_v1194,Mulheres Responsáveis por domicílios particulares permanentes com 65 anos de idade
+responsavel5_v1195,Mulheres Responsáveis por domicílios particulares permanentes com 66 anos de idade
+responsavel5_v1196,Mulheres Responsáveis por domicílios particulares permanentes com 67 anos de idade
+responsavel5_v1197,Mulheres Responsáveis por domicílios particulares permanentes com 68 anos de idade
+responsavel5_v1198,Mulheres Responsáveis por domicílios particulares permanentes com 69 anos de idade
+responsavel5_v1199,Mulheres Responsáveis por domicílios particulares permanentes com 70 anos de idade
+responsavel5_v1200,Mulheres Responsáveis por domicílios particulares permanentes com 71 anos de idade
+responsavel5_v1201,Mulheres Responsáveis por domicílios particulares permanentes com 72 anos de idade
+responsavel5_v1202,Mulheres Responsáveis por domicílios particulares permanentes com 73 anos de idade
+responsavel5_v1203,Mulheres Responsáveis por domicílios particulares permanentes com 74 anos de idade
+responsavel5_v1204,Mulheres Responsáveis por domicílios particulares permanentes com 75 anos de idade
+responsavel5_v1205,Mulheres Responsáveis por domicílios particulares permanentes com 76 anos de idade
+responsavel5_v1206,Mulheres Responsáveis por domicílios particulares permanentes com 77 anos de idade
+responsavel5_v1207,Mulheres Responsáveis por domicílios particulares permanentes com 78 anos de idade
+responsavel5_v1208,Mulheres Responsáveis por domicílios particulares permanentes com 79 anos de idade
+responsavel5_v1209,Mulheres Responsáveis por domicílios particulares permanentes com 80 anos de idade
+responsavel5_v1210,Mulheres Responsáveis por domicílios particulares permanentes com 81 anos de idade
+responsavel5_v1211,Mulheres Responsáveis por domicílios particulares permanentes com 82 anos de idade
+responsavel5_v1212,Mulheres Responsáveis por domicílios particulares permanentes com 83 anos de idade
+responsavel5_v1213,Mulheres Responsáveis por domicílios particulares permanentes com 84 anos de idade
+responsavel5_v1214,Mulheres Responsáveis por domicílios particulares permanentes com 85 anos de idade
+responsavel5_v1215,Mulheres Responsáveis por domicílios particulares permanentes com 86 anos de idade
+responsavel5_v1216,Mulheres Responsáveis por domicílios particulares permanentes com 87 anos de idade
+responsavel5_v1217,Mulheres Responsáveis por domicílios particulares permanentes com 88 anos de idade
+responsavel5_v1218,Mulheres Responsáveis por domicílios particulares permanentes com 89 anos de idade
+responsavel5_v1219,Mulheres Responsáveis por domicílios particulares permanentes com 90 anos de idade
+responsavel5_v1220,Mulheres Responsáveis por domicílios particulares permanentes com 91 anos de idade
+responsavel5_v1221,Mulheres Responsáveis por domicílios particulares permanentes com 92 anos de idade
+responsavel5_v1222,Mulheres Responsáveis por domicílios particulares permanentes com 93 anos de idade
+responsavel5_v1223,Mulheres Responsáveis por domicílios particulares permanentes com 94 anos de idade
+responsavel5_v1224,Mulheres Responsáveis por domicílios particulares permanentes com 95 anos de idade
+responsavel5_v1225,Mulheres Responsáveis por domicílios particulares permanentes com 96 anos de idade
+responsavel5_v1226,Mulheres Responsáveis por domicílios particulares permanentes com 97 anos de idade
+responsavel5_v1227,Mulheres Responsáveis por domicílios particulares permanentes com 98 anos de idade
+responsavel5_v1228,Mulheres Responsáveis por domicílios particulares permanentes com 99 anos de idade
+responsavel5_v1229,Mulheres Responsáveis por domicílios particulares permanentes com 100 ou mais anos de idade
+responsavel5_v1230,Mulheres Responsáveis por domicílios particulares permanentes com 10 a 14 anos de idade
+responsavel5_v1231,Mulheres Responsáveis por domicílios particulares permanentes com 15 a 19 anos de idade
+responsavel5_v1232,Mulheres Responsáveis por domicílios particulares permanentes com 20 a 24 anos de idade
+responsavel5_v1233,Mulheres Responsáveis por domicílios particulares permanentes com 25 a 29 anos de idade
+responsavel5_v1234,Mulheres Responsáveis por domicílios particulares permanentes com 30 a 34 anos de idade
+responsavel5_v1235,Mulheres Responsáveis por domicílios particulares permanentes com 35 a 39 anos de idade
+responsavel5_v1236,Mulheres Responsáveis por domicílios particulares permanentes com 40 a 44 anos de idade
+responsavel5_v1237,Mulheres Responsáveis por domicílios particulares permanentes com 45 a 49 anos de idade
+responsavel5_v1238,Mulheres Responsáveis por domicílios particulares permanentes com 50 a 54 anos de idade
+responsavel5_v1239,Mulheres Responsáveis por domicílios particulares permanentes com 55 a 59 anos de idade
+responsavel5_v1240,Mulheres Responsáveis por domicílios particulares permanentes com 60 a 64 anos de idade
+responsavel5_v1241,Mulheres Responsáveis por domicílios particulares permanentes com 65 a 69 anos de idade
+responsavel5_v1242,Mulheres Responsáveis por domicílios particulares permanentes com 70 a 74 anos de idade
+responsavel5_v1243,Mulheres Responsáveis por domicílios particulares permanentes com 75 a 79 anos de idade
+responsavel5_v1244,Mulheres Responsáveis por domicílios particulares permanentes com 80 ou mais anos de idade
+responsavel5_v1245,Mulheres alfabetizadas Responsáveis por domicílios particulares permanentes
+responsavel5_v1246,Mulheres não alfabetizadas Responsáveis por domicílios particulares permanentes
+responsavel5_v1247,Mulheres Responsáveis por domicílios particulares permanentes com alfabetização de adultos como curso freqüentado mais elevado
+responsavel5_v1248,Mulheres Responsáveis por domicílios particulares permanentes com antigo primário como curso freqüentado mais elevado
+responsavel5_v1249,Mulheres Responsáveis por domicílios particulares permanentes com primeira série do antigo primário que concluída
+responsavel5_v1250,Mulheres Responsáveis por domicílios particulares permanentes com segunda série do antigo primário concluída
+responsavel5_v1251,Mulheres Responsáveis por domicílios particulares permanentes com terceira série do antigo primário concluída
+responsavel5_v1252,Mulheres Responsáveis por domicílios particulares permanentes com quarta série do antigo primário concluída
+responsavel5_v1253,Mulheres Responsáveis por domicílios particulares permanentes com antigo ginásio como curso freqüentado mais elevado
+responsavel5_v1254,Mulheres Responsáveis por domicílios particulares permanentes com primeira série do antigo ginásio concluída
+responsavel5_v1255,Mulheres Responsáveis por domicílios particulares permanentes com segunda série do antigo ginásio concluída
+responsavel5_v1256,Mulheres Responsáveis por domicílios particulares permanentes com terceira série do antigo ginásio concluída
+responsavel5_v1257,Mulheres Responsáveis por domicílios particulares permanentes com quarta série do antigo ginásio concluída
+responsavel5_v1258,Mulheres Responsáveis por domicílios particulares permanentes com antigo clássico científico etc como curso freqüentado mais elevado
+responsavel5_v1259,Mulheres Responsáveis por domicílios particulares permanentes com primeira série do antigo clássico científico etc concluída
+responsavel5_v1260,Mulheres Responsáveis por domicílios particulares permanentes com segunda série do antigo clássico científico etc concluída
+responsavel5_v1261,Mulheres Responsáveis por domicílios particulares permanentes com terceira série do antigo clássico científico etc concluída
+responsavel5_v1262,Mulheres Responsáveis por domicílios particulares permanentes com ensino fundamental ou primeiro grau como curso freqüentado mais elevado
+responsavel5_v1263,Mulheres Responsáveis por domicílios particulares permanentes com primeira série do ensino fundamental ou primeiro grau concluída
+responsavel5_v1264,Mulheres Responsáveis por domicílios particulares permanentes com segunda série do ensino fundamental ou primeiro grau concluída
+responsavel5_v1265,Mulheres Responsáveis por domicílios particulares permanentes com terceira série do ensino fundamental ou primeiro grau concluída
+responsavel5_v1266,Mulheres Responsáveis por domicílios particulares permanentes com quarta série do ensino fundamental ou primeiro grau concluída
+responsavel5_v1267,Mulheres Responsáveis por domicílios particulares permanentes com quinta série do ensino fundamental ou primeiro grau concluída
+responsavel5_v1268,Mulheres Responsáveis por domicílios particulares permanentes com sexta série do ensino fundamental ou primeiro grau concluída
+responsavel5_v1269,Mulheres Responsáveis por domicílios particulares permanentes com sétima série do ensino fundamental ou primeiro grau concluída
+responsavel5_v1270,Mulheres Responsáveis por domicílios particulares permanentes com oitava série do ensino fundamental ou primeiro grau concluída
+responsavel5_v1271,Mulheres Responsáveis por domicílios particulares permanentes com curso não seriado do ensino fundamental ou primeiro grau como curso freqüentado mais elevado
+responsavel5_v1272,Mulheres Responsáveis por domicílios particulares permanentes com ensino médio ou segundo grau como curso freqüentado mais elevado
+responsavel5_v1273,Mulheres Responsáveis por domicílios particulares permanentes com primeira série do ensino médio ou segundo grau concluída
+responsavel5_v1274,Mulheres Responsáveis por domicílios particulares permanentes com segunda série do ensino médio ou segundo grau concluída
+responsavel5_v1275,Mulheres Responsáveis por domicílios particulares permanentes com terceira série do ensino médio ou segundo grau concluída
+responsavel5_v1276,Mulheres Responsáveis por domicílios particulares permanentes com curso não seriado de ensino médio ou segundo grau como curso freqüentado mais elevado
+responsavel5_v1277,Mulheres Responsáveis por domicílios particulares permanentes com superior como curso freqüentado mais elevado
+responsavel5_v1278,Mulheres Responsáveis por domicílios particulares permanentes com primeira série do superior concluída
+responsavel5_v1279,Mulheres Responsáveis por domicílios particulares permanentes com segunda série do superior concluída
+responsavel5_v1280,Mulheres Responsáveis por domicílios particulares permanentes com terceira série do superior concluída
+responsavel5_v1281,Mulheres Responsáveis por domicílios particulares permanentes com quarta série do superior concluída
+responsavel5_v1282,Mulheres Responsáveis por domicílios particulares permanentes com quinta série do superior concluída
+responsavel5_v1283,Mulheres Responsáveis por domicílios particulares permanentes com sexta série do superior concluída
+responsavel5_v1284,Mulheres Responsáveis por domicílios particulares permanentes com mestrado ou doutorado como curso freqüentado mais elevado
+responsavel5_v1285,Mulheres Responsáveis por domicílios particulares permanentes que não freqüentaram curso
+responsavel5_v1286,Mulheres Responsáveis por domicílios particulares permanentes sem instrução ou com menos de 1 ano de estudo
+responsavel5_v1287,Mulheres Responsáveis por domicílios particulares permanentes com 1 ano de estudo
+responsavel5_v1288,Mulheres Responsáveis por domicílios particulares permanentes com 2 anos de estudo
+responsavel5_v1289,Mulheres Responsáveis por domicílios particulares permanentes com 3 anos de estudo
+responsavel5_v1290,Mulheres Responsáveis por domicílios particulares permanentes com 4 anos de estudo
+responsavel5_v1291,Mulheres Responsáveis por domicílios particulares permanentes com 5 anos de estudo
+responsavel5_v1292,Mulheres Responsáveis por domicílios particulares permanentes com 6 anos de estudo
+responsavel5_v1293,Mulheres Responsáveis por domicílios particulares permanentes com 7 anos de estudo
+responsavel5_v1294,Mulheres Responsáveis por domicílios particulares permanentes com 8 anos de estudo
+responsavel5_v1295,Mulheres Responsáveis por domicílios particulares permanentes com 9 anos de estudo
+responsavel5_v1296,Mulheres Responsáveis por domicílios particulares permanentes com 10 anos de estudo
+responsavel5_v1297,Mulheres Responsáveis por domicílios particulares permanentes com 11 anos de estudo
+responsavel5_v1298,Mulheres Responsáveis por domicílios particulares permanentes com 12 anos de estudo
+responsavel5_v1299,Mulheres Responsáveis por domicílios particulares permanentes com 13 anos de estudo
+responsavel5_v1300,Mulheres Responsáveis por domicílios particulares permanentes com 14 anos de estudo
+responsavel5_v1301,Mulheres Responsáveis por domicílios particulares permanentes com 15 anos de estudo
+responsavel5_v1302,Mulheres Responsáveis por domicílios particulares permanentes com 16 anos de estudo
+responsavel5_v1303,Mulheres Responsáveis por domicílios particulares permanentes com 17 ou mais anos de estudo
+responsavel5_v1304,Mulheres Responsáveis por domicílios particulares permanentes com anos de estudo não determinado
+responsavel5_v1305,Mulheres Responsáveis por domicílios particulares permanentes com anos de estudo determinado
+responsavel5_v1306,Mulheres Responsáveis por domicílios particulares permanentes com 1 a 17 ou mais anos de estudo
+responsavel5_v1307,Total de anos de estudo das Mulheres Responsáveis por domicílios particulares permanentes
+responsavel5_v1308,Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de até ½ salário mínimo
+responsavel5_v1309,Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de ½ a 1 salário mínimo
+responsavel5_v1310,Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 1 a 2 salários mínimos
+responsavel5_v1311,Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 2 a 3 salários mínimos
+responsavel5_v1312,Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 3 a 5 salários mínimos
+responsavel5_v1313,Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 5 a 10 salários mínimos
+responsavel5_v1314,Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 10 a 15 salários mínimos
+responsavel5_v1315,Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 15 a 20 salários mínimos
+responsavel5_v1316,Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 20 salários mínimos
+responsavel5_v1317,Mulheres Responsáveis por domicílios particulares permanentes sem rendimento nominal mensal
+responsavel5_v1318,Total do rendimento nominal mensal das Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de até ½ salário mínimo
+responsavel5_v1319,Total do rendimento nominal mensal das Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de ½ a 1 salário mínimo
+responsavel5_v13120,Total do rendimento nominal mensal das Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 1 a 2 salários mínimos
+responsavel5_v13121,Total do rendimento nominal mensal das Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 2 a 3 salários mínimos
+responsavel5_v13122,Total do rendimento nominal mensal das Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 3 a 5 salários mínimos
+responsavel5_v13123,Total do rendimento nominal mensal das Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 5 a 10 salários mínimos
+responsavel5_v13124,Total do rendimento nominal mensal das Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 10 a 15 salários mínimos
+responsavel5_v13125,Total do rendimento nominal mensal das Mulheres Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 15 a 20 salários mínimos
+responsavel5_v13126,Total do rendimento nominal mensal das Mulhere Responsáveis por domicílios particulares permanentes com rendimento nominal mensal de mais de 20 salários mínimos
+responsavel5_v1327,Mulheres Responsáveis por domicílios particulares permanentes com ou sem rendimento
+responsavel5_v1328,Mulheres Responsáveis por domicílios particulares permanentes com rendimento
+responsavel5_v1329,Total do rendimento nominal mensal das Mulheres Responsáveis por domicílios particulares permanentes
