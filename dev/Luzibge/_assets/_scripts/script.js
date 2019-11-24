@@ -22,6 +22,7 @@ function sendRequest(json) {
     var response;
     //quando o arquivo python retornar algo esse evento será disparado
     python.on('message', function(data) {
+        console.log(data)
         if (JSON.parse(data)) {
             response = JSON.parse(data)
             if (response) {
@@ -58,10 +59,12 @@ function buscarColunasCodificadas_Decodificadas(dir_planilha, dir_indice) {
     }
 }
 
-function salvarPlanilha(diretorio, colunas_selecionadas) {
+function salvarPlanilha(diretorio_salvar, diretorio_planilha, diretorio_indice, colunas_selecionadas) {
     var json = {
         "opcao": 2,
-        "dir_salvar": diretorio,
+        "dir_salvar": diretorio_salvar,
+        "dir_planilha": diretorio_planilha,
+        "dir_indice": diretorio_indice,
         "colunas_selecionadas": colunas_selecionadas
     }
     sendRequest(json)
@@ -290,7 +293,7 @@ $(document).ready(function() {
         var dir = planilhas[planilha_atual].diretorio
         dir = dir.substring(0, dir.indexOf(".csv"))
         dir += "-renomeado.csv"
-        console.log(dir)
-        salvarPlanilha(dir, planilhas[planilha_atual].colunas_selecionadas)
+
+        salvarPlanilha(dir, planilhas[planilha_atual].diretorio, url_indice, planilhas[planilha_atual].colunas_selecionadas)
     })
 });
