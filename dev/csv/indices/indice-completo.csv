@@ -7,14 +7,14 @@ basico_situacao_5,rur isol povoado
 basico_situacao_6,rur isol nucleo
 basico_situacao_7,rur isol outros aglo
 basico_situacao_8,rur excl rur
-basico_tipo_do_setor 0,comum
-basico_tipo_do_setor 1,aglo subnormal
-basico_tipo_do_setor 2,militar
-basico_tipo_do_setor 3,alojamentos acamp
-basico_tipo_do_setor 4,naval
-basico_tipo_do_setor 5,indigena
-basico_tipo_do_setor 6,penal
-basico_tipo_do_setor 7,asilos orfanatos
+basico_tipo_do_setor_0,comum
+basico_tipo_do_setor_1,aglo subnormal
+basico_tipo_do_setor_2,militar
+basico_tipo_do_setor_3,alojamentos acamp
+basico_tipo_do_setor_4,naval
+basico_tipo_do_setor_5,indigena
+basico_tipo_do_setor_6,penal
+basico_tipo_do_setor_7,asilos orfanatos
 basico_var01,num dom part
 basico_var02,rendim mensal total
 basico_var03,rendim mensal por pessoa
