@@ -4,7 +4,6 @@ var planilha_atual;
 var url_indice; // par para pegar a planilha de indice vinda da url
 var url_planilhas; //var para pegar as planilhas vindas da url
 
-
 function sendRequest(json) {
     var {
         PythonShell
@@ -350,8 +349,25 @@ $(document).ready(function() {
             input.prop("disabled", true)
         }
     })
+
+      
+    
     
     $("#input-busca").on('input',function(){
-        console.log(planilhas[planilha_atual].getRelation())
+        entrada = $(this).val().toLowerCase(); // variavel que pega o valor que o usuário está digitando
+
+        //console.log(planilhas[planilha_atual].getRelation())
+        let relacao = planilhas[planilha_atual].getRelation()
+
+        var valores = $.map(relacao, function(key, value) {
+            return value;
+        })
+        var filtered = valores.filter(function (str) { return str.indexOf(entrada) === 0; });
+        
+        filtered.forEach(p =>{
+            console.log(relacao[p])
+        }) 
+    
+        
     })
 });
