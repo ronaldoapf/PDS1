@@ -16,7 +16,11 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
+<<<<<<< HEAD
         pythonPath: 'C:\\Python\\python.exe'
+=======
+        pythonPath: 'C:\\Users\\Amanda\\AppData\\Local\\Programs\\Python\\Python37\\python.exe'
+>>>>>>> 10250e0464169c3355d97e1baf80836349616efb
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -402,6 +406,12 @@ $(document).ready(function() {
             input.prop("disabled", true)
         }
     })
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> f31480c1f7cb4b75f4e798f36c1c79ab4d5dc4cc
 
     $("#input-busca").on('input', function() {
         entrada = $(this).val().toLowerCase(); // variavel que pega o valor que o usuário está digitando
