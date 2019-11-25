@@ -17,7 +17,12 @@ def gerarDictIndice(dir_csv_indice):
     return dict_indice
        
 def salvarPlanilhaCSV(dataframe,diretorio):
-    dataframe.to_csv(diretorio,index=False, sep='\t', encoding='utf-8')
+    try:
+        dataframe.to_csv(diretorio, header=True, index=False, sep=',', encoding='utf-8')
+        return True
+    except Exception as e:
+        print(e)
+        return False
 
 def carregarCsvEmDataframe(dir_csv):
     dataframe = pd.read_csv(dir_csv, delimiter=",")
@@ -108,11 +113,19 @@ def processarRequest(request):
         
 
         colunas_nao_utilizadas = getColunasNaoUtilizadas(list(df.columns),chaves_selecionadas)
-        response = colunas_nao_utilizadas
+        
         df = removerColunasDoDataframe(df,colunas_nao_utilizadas)
         df = decodificarValoresDoDataframe(df,idx)
         df = renomearColunasDoDataframe(df, colunas_selecionadas)
-        salvarPlanilhaCSV(df,dir_salvar)
+        
+        res = salvarPlanilhaCSV(df,dir_salvar)
+
+        response = {
+            "opcao": 2,
+            "res": res,
+            "dir_salvar": dir_salvar
+        }
+        print (json.dumps( response ))
         
 
 ### MAIN

@@ -52,8 +52,8 @@
                         </div>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" multiple="multiple" class="custom-file-input" accept=".csv" id="planilhasCSV" aria-describedby="inputGroupFileAddon04" required>
-                                <label class="custom-file-label" for="inputGroupFile04">Selecione os arquivos</label>
+                                <input type="file" multiple="multiple" class="custom-file-input input-file-planilhas" data-browse-on-zone-click="true" accept=".csv" id="planilhasCSV" aria-describedby="inputGroupFileAddon04" required>
+                                <label class="custom-file-label custom-file-planilha" for="inputGroupFile04">Selecione os arquivos</label>
                             </div>
                         </div>
                     </div>
@@ -65,8 +65,8 @@
                         </div>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" accept=".csv" id="indiceCSV" aria-describedby="inputGroupFileAddon04" required>
-                                <label class="custom-file-label" for="inputGroupFile04">Selecione o arquivo</label>
+                                <input type="file" class="custom-file-input input-file-indice" accept=".csv" id="indiceCSV" aria-describedby="inputGroupFileAddon04" required>
+                                <label class="custom-file-label custom-file-indice" for="inputGroupFile04">Selecione o arquivo</label>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,36 @@
     <script src="../_assets/_js/popper.min.js"></script>
     <script src="../_assets/_js/bootstrap.js"></script>
 
+       <script type="application/javascript">
+            $('.input-file-planilhas').change(function(e){
+                var fileName = ' '
 
+                size = e.target.files.length
+                size--
+                
+                for(i=0; i<=size; i++){
+                    fileName += e.target.files[i].name
+                    
+                    if(i != size) {
+                        fileName+= ', '
+                        
+                        if(fileName.length > 50) {
+                            fileName += '...'
+                            break
+                        }
+                    }
+
+                }
+                $('.custom-file-planilha').html(fileName);
+            });
+
+            $('.input-file-indice').change(function(e){
+                fileName = e.target.files[0].name
+
+                $('.custom-file-indice').html(fileName)
+                
+            })
+    </script>
 </body>
 
 </html>

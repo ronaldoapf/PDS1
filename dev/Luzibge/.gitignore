@@ -1,2 +1,5 @@
-.vscode
-node_modules
+#ignorando pasta .vscode
+.vscode/settings.json
+
+#ignorando pasta node_modules
+node_modules/

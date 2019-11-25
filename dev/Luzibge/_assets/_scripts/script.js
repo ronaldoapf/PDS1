@@ -16,7 +16,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
-        pythonPath: 'C:\\Python\\python.exe'
+        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -32,7 +32,9 @@ function sendRequest(json) {
                         planilhas[planilha_atual].indice=10
                         carregarColunasNaTabela([0,1,2,3,4,5,6,7,8,9]);
                     }
-                } else if (response.opcao == 2) {} else {
+                } else if (response.opcao == 2) {
+                    if (response.res) alert(`Planilha salva no diretório: "${response.dir_salvar}"`)
+                } else {
                     console.log(response)
                 }
             } else {
@@ -213,6 +215,7 @@ function carregarColunasNaTabela(arr) {
 }
 
 $(document).ready(function() {
+
     $("#input-busca").hide()
         //inicializando arquivo python
     var {
@@ -344,7 +347,6 @@ $(document).ready(function() {
     
     // Função para salvar planilha quando o usuário bem entender necessário
     $(".salvarPlanilha").click(function() {
-        //var dir = $(this).closest("input").val()
 
         input = $(this).closest("tr").find("input")
 
@@ -352,12 +354,18 @@ $(document).ready(function() {
             input.prop("disabled", false)
             input.val("Informe o novo nome da planilha")
             input.select()
-        }
 
-        // var dir = planilhas[planilha_atual].diretorio
-        // dir = dir.substring(0, dir.indexOf(".csv"))
-        // dir += "-renomeado.csv"
-        // salvarPlanilha(dir, planilhas[planilha_atual].colunas_selecionadas)
+        } else {
+            //pegando nome do arquivo
+            let nome = input.val().indexOf(".csv") == -1 ? input.val() + ".csv" : input.val()
+            let dir = planilhas[planilha_atual].diretorio;
+
+            dir = dir.substring(0, dir.lastIndexOf("\\") + 1)
+            dir += nome
+
+            var response = salvarPlanilha(dir, planilhas[planilha_atual].diretorio, url_indice, planilhas[planilha_atual].colunas_selecionadas)
+
+        }
     })
 
     // Função para liberar o campo de input para editar planilhas
@@ -379,8 +387,8 @@ $(document).ready(function() {
 
             if (planilhas[planilha_atual]) {
 
-                planilhas[planilha_atual].indice = 0
                 planilhas[planilha_atual].colunas_selecionadas = {}
+                planilhas[planilha_atual].indice = 0
 
                 carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice)
             }
@@ -389,10 +397,7 @@ $(document).ready(function() {
         }
     })
 
-      
-    
-    
-    $("#input-busca").on('input',function(){
+    $("#input-busca").on('input', function() {
         entrada = $(this).val().toLowerCase(); // variavel que pega o valor que o usuário está digitando
 
         //console.log(planilhas[planilha_atual].getRelation())
@@ -401,12 +406,11 @@ $(document).ready(function() {
         var valores = $.map(relacao, function(key, value) {
             return value;
         })
-        var filtered = valores.filter(function (str) { return str.indexOf(entrada) === 0; });
-        
-        filtered.forEach(p =>{
+        var filtered = valores.filter(function(str) { return str.indexOf(entrada) === 0; });
+
+        filtered.forEach(p => {
             console.log(relacao[p])
-        }) 
-    
-        
+        })
     })
+
 });
