@@ -16,7 +16,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
-        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+        pythonPath: 'C:\\Python\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -393,9 +393,10 @@ $(document).ready(function() {
             if (planilhas[planilha_atual]) {
 
                 planilhas[planilha_atual].colunas_selecionadas = {}
-                planilhas[planilha_atual].indice = 0
 
-                carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice)
+                planilhas[planilha_atual].indice = 10
+                carregarColunasNaTabela([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+                
             }
             input.val("")
             input.prop("disabled", true)
