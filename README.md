@@ -12,7 +12,7 @@ Once installed (nodejs), go to the project root and run the following commands:
 If the node is already installed correctly, the program will open.
 
 Authors:
-- Amanda Durães [@amandaduraes](https://www.github.com/amandaduraes)
+- Amanda Durães [@amandadduraes](https://www.github.com/amandadduraes)
 - César Cardoso [@Cardoso-CHM](https://www.github.com/Cardoso-CHM)
 - Joao Vitor [@JoaoVitorPereiraUFU](https://www.github.com/JoaoVitorPereiraUFU)
 - Ronaldo Alves [@ronaldoapf](https://www.github.com/ronaldoapf)
