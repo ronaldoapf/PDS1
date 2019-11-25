@@ -12,20 +12,20 @@ Once installed (nodejs), go to the project root and run the following commands:
 If the node is already installed correctly, the program will open.
 
 Authors:
-- Amanda Durães (@amandaduraes)[github.com/amandaduraes]
-- César Cardoso (@Cardoso-CHM)[github.com/Cardoso-CHM]
-- Joao Vitor (@JoaoVitorPereiraUFU)[github.com/JoaoVitorPereiraUFU]
-- Ronaldo Alves (@ronaldoapf)[github.com/ronaldoapf]
+- Amanda Durães [@amandaduraes](github.com/amandaduraes)
+- César Cardoso [@Cardoso-CHM](github.com/Cardoso-CHM)
+- Joao Vitor [@JoaoVitorPereiraUFU](github.com/JoaoVitorPereiraUFU)
+- Ronaldo Alves [@ronaldoapf](github.com/ronaldoapf)
 
 
 ## PDS1 2019/02
 Repositório referente a matéria de Projeto e Desenvolvimento de Sistemas 1
 
 ### Grupo 3:
-- Amanda Durães (@amandaduraes)[github.com/amandaduraes]
-- César Cardoso (@Cardoso-CHM)[github.com/Cardoso-CHM]
-- Joao Vitor (@JoaoVitorPereiraUFU)[github.com/JoaoVitorPereiraUFU]
-- Ronaldo Alves (@ronaldoapf)[github.com/ronaldoapf]
+- Amanda Durães [@amandaduraes](github.com/amandaduraes)
+- César Cardoso [@Cardoso-CHM](github.com/Cardoso-CHM)
+- Joao Vitor [@JoaoVitorPereiraUFU](github.com/JoaoVitorPereiraUFU)
+- Ronaldo Alves [@ronaldoapf](github.com/ronaldoapf)
 
 Para executar a aplicação é necessário ter instalado:
 - Nodejs (https://nodejs.org/en/download/)
