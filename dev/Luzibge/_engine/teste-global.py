@@ -18,7 +18,7 @@ def gerarDictIndice(dir_csv_indice):
        
 def salvarPlanilhaCSV(dataframe,diretorio):
     try:
-        dataframe.to_csv(diretorio,index=False, sep='\t', encoding='utf-8')
+        dataframe.to_csv(diretorio, header=True, index=False, sep=',', encoding='utf-8')
         return True
     except Exception as e:
         print(e)
