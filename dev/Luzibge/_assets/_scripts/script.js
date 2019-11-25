@@ -16,7 +16,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
-        pythonPath: 'C:\\Python\\python.exe'
+        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -352,6 +352,24 @@ $(document).ready(function() {
     })
     
     $("#input-busca").on('input',function(){
-        console.log(planilhas[planilha_atual].getRelation())
+        var colunas = {}
+        colunas = planilhas[planilha_atual].getRelation()
+        
+        entrada = $(this).val().toLowerCase()
+
+        let relacao = planilhas[planilha_atual].getRelation()
+
+        var saida = $.map(relacao, function(key, value){
+            let arr = []
+            if(value.search(entrada)){
+                arr.push(key)
+            }
+
+            return arr
+        })
+        console.log(saida)
+
     })
+
+
 });
