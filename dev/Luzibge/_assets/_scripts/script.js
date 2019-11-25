@@ -357,7 +357,7 @@ $(document).ready(function() {
             input.prop("disabled", true)
         }
     })
-    
+
     $("#input-busca").on('input', function() {
         entrada = $(this).val().toLowerCase(); // variavel que pega o valor que o usuário está digitando
 
