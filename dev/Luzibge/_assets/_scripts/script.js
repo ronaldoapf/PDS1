@@ -15,7 +15,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
-        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+        pythonPath: 'C:\\Users\\Amanda\\AppData\\Local\\Programs\\Python\\Python37\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -373,5 +373,34 @@ $(document).ready(function() {
             console.log(relacao[p])
         })
     })
+
+    $("#input-busca").on('input', function() {
+        entrada = $(this).val().toLowerCase(); // variavel que pega o valor que o usuário está digitando
+        if (entrada) {
+
+            let relacao = planilhas[planilha_atual].getRelation()
+
+            var valores = $.map(relacao, function(key, value) {
+                return value;
+            })
+            var filtered = valores.filter(function(str) { return str.indexOf(entrada) === 0; });
+
+            var arr = [];
+            filtered.forEach(p => {
+                arr.push(relacao[p])
+            })
+            carregarColunasNaTabela(arr)
+        } else {
+
+            var i_atual = planilhas[planilha_atual].indice
+            var i = (i_atual % 10 == 0) ? i_atual - 10 : i_atual - (i_atual % 10)
+            console.log(i_atual)
+            console.log(i)
+
+            var arr = inicilizarArray(i, planilhas[planilha_atual].indice)
+            console.log(arr)
+            carregarColunasNaTabela(arr)
+        }
+    });
 
 });
