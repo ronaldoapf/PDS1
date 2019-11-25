@@ -36,7 +36,9 @@ def decodificarColunasDeDataframe(nomeArquivo, dataframe, dict_indice):
         if(i in dict_indice):
             c.append(dict_indice[i])
         else:
-            c.append(column.lower())
+            aux = column.lower()
+            aux = aux.replace("_", " ")
+            c.append(aux)
     return c
 
 def renomearColunasDoDataframe(dataframe, novas_colunas):
