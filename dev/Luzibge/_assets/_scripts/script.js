@@ -29,8 +29,8 @@ function sendRequest(json) {
                 if (response.opcao == 1) {
                     planilhas[planilha_atual] = new Planilha(url_planilhas[planilha_atual], 0, response.colunas, response.colunas_decodificadas, {})
                     if (planilhas[planilha_atual].colunas && planilhas[planilha_atual].colunas_decodificadas) {
-                        planilhas[planilha_atual].indice=10
-                        carregarColunasNaTabela([0,1,2,3,4,5,6,7,8,9]);
+                        planilhas[planilha_atual].indice = 10
+                        carregarColunasNaTabela([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
                     }
                 } else if (response.opcao == 2) {
                     if (response.res) alert(`Planilha salva no diretório: "${response.dir_salvar}"`)
@@ -56,11 +56,10 @@ function buscarColunasCodificadas_Decodificadas(dir_planilha, dir_indice) {
     let aux = planilhas[planilha_atual]
     let arr = []
     if (aux) {
-        if(aux.indice%10 > 0){
-            arr = inicilizarArray(aux.indice-aux.indice%10,aux.indice)
-        }
-        else
-            arr = inicilizarArray(aux.indice-10,aux.indice)
+        if (aux.indice % 10 > 0) {
+            arr = inicilizarArray(aux.indice - aux.indice % 10, aux.indice)
+        } else
+            arr = inicilizarArray(aux.indice - 10, aux.indice)
 
         carregarColunasNaTabela(arr)
     } else {
@@ -170,14 +169,14 @@ function verificarColunaNaTabela(index, colunas_selecionadas) {
 //function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
 function carregarColunasNaTabela(arr) {
     console.log(planilhas[planilha_atual].indice)
-    //limpando conteudo da tabela
+        //limpando conteudo da tabela
     $("#table-colunas > tbody > tr").remove();
 
-    arr.forEach(function(col){
-        var coluna = planilhas[planilha_atual].colunas[col] 
-        var coluna_decodificada =  planilhas[planilha_atual].colunas_decodificadas[col] 
-        
-        
+    arr.forEach(function(col) {
+        var coluna = planilhas[planilha_atual].colunas[col]
+        var coluna_decodificada = planilhas[planilha_atual].colunas_decodificadas[col]
+
+
 
         var valorDecodificado = coluna_decodificada;
 
@@ -210,8 +209,8 @@ function carregarColunasNaTabela(arr) {
             </tr>`;
 
 
-            $("#table-colunas").append(html);
-        })
+        $("#table-colunas").append(html);
+    })
 }
 
 $(document).ready(function() {
@@ -263,8 +262,8 @@ $(document).ready(function() {
     //botão próximo
     $("#botao-colunas").click(function() {
         if (planilhas[planilha_atual].indice == planilhas[planilha_atual].colunas.length) {
-            $(this).prop("disabled",true)
-        }else{
+            $(this).prop("disabled", true)
+        } else {
             var i_atual = planilhas[planilha_atual].indice;
             var x = planilhas[planilha_atual].colunas.length - i_atual
             x = (10 < x) ? 10 : x
@@ -275,22 +274,23 @@ $(document).ready(function() {
 
             planilhas[planilha_atual].indice += x;
             carregarColunasNaTabela(arr)
-            console.log(planilhas[planilha_atual].colunas_selecionadas)
         }
     });
 
     //botao voltar 
     $("#botao-colunasRetornar").click(function() {
-        
-        if (planilhas[planilha_atual].indice % 10 != 0) { 
+        var i_atual = planilhas[planilha_atual].indice
 
-            planilhas[planilha_atual].indice = planilhas[planilha_atual].indice - (planilhas[planilha_atual].indice % 10)
-            arr = inicilizarArray(planilhas[planilha_atual].indice-10,planilhas[planilha_atual].indice)
+        if (i_atual % 10 != 0) {
+
+            planilhas[planilha_atual].indice -= (i_atual % 10)
+            arr = inicilizarArray(planilhas[planilha_atual].indice - 10, planilhas[planilha_atual].indice)
             carregarColunasNaTabela(arr);
-        } else if (planilhas[planilha_atual].indice - 10 > 0) {
-        
+
+        } else if (i_atual - 10 > 0) {
+
             planilhas[planilha_atual].indice -= 10
-            arr = inicilizarArray(planilhas[planilha_atual].indice-10,planilhas[planilha_atual].indice)
+            arr = inicilizarArray(planilhas[planilha_atual].indice - 10, planilhas[planilha_atual].indice)
             carregarColunasNaTabela(arr);
         }
     });
@@ -302,8 +302,10 @@ $(document).ready(function() {
         });
 
         var input = $(this).closest("td").prev().find("input")
-        let i = $(this).closest("tr").index() + planilhas[planilha_atual].indice - 10
-        
+        var i_atual = planilhas[planilha_atual].indice
+        let i = $(this).closest("tr").index() + planilhas[planilha_atual].indice
+
+        i = (i_atual % 10 == 0) ? i - 10 : i - i_atual % 10
 
         if ($(this).hasClass("bc-green")) {
 
@@ -316,6 +318,7 @@ $(document).ready(function() {
 
             $(this).addClass("bc-green")
             input.prop('disabled', function(i, v) { return !v; });
+
             planilhas[planilha_atual].colunas_selecionadas[i] = planilhas[planilha_atual].colunas_decodificadas[i]; //salvando o valor padrão da decodificação por precaução
             let aux = planilhas[planilha_atual].colunas_decodificadas[i]
 
@@ -327,24 +330,26 @@ $(document).ready(function() {
             input.val(aux)
         }
     })
-    
+
     //funçao que pega o valor que o usuário digitou e salva no array planilhas_selecionadas do objeto planilhas
     $("#table-colunas").on("click", "input[type='text']", function() {
 
         var input = $(this)
         input.select();
-        let i = $(this).closest("tr").index() + planilhas[planilha_atual].indice - 10
-        console.log("I: " + $(this).closest("tr").index())
-    
+
+        var i_atual = planilhas[planilha_atual].indice
+        let i = $(this).closest("tr").index() + i_atual
+        i = (i_atual % 10 == 0) ? i - 10 : i - i_atual % 10
+
         $(input).blur(function() { //pego o determinado valor que o usuário digitar no campo para renomear
 
-        if ($(this).val().length > 0) {
-            planilhas[planilha_atual].colunas_selecionadas[i] = $(this).val(); //save valor renomeado que o usuario digitou
-        }
-    })
+            if ($(this).val().length > 0) {
+                planilhas[planilha_atual].colunas_selecionadas[i] = $(this).val(); //save valor renomeado que o usuario digitou
+            }
+        })
     });
-   
-    
+
+
     // Função para salvar planilha quando o usuário bem entender necessário
     $(".salvarPlanilha").click(function() {
 
@@ -396,6 +401,12 @@ $(document).ready(function() {
             input.prop("disabled", true)
         }
     })
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> f31480c1f7cb4b75f4e798f36c1c79ab4d5dc4cc
 
     $("#input-busca").on('input', function() {
         entrada = $(this).val().toLowerCase(); // variavel que pega o valor que o usuário está digitando
