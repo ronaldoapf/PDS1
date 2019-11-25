@@ -348,8 +348,8 @@ $(document).ready(function() {
 
             if (planilhas[planilha_atual]) {
 
-                planilhas[planilha_atual].indice = 0
                 planilhas[planilha_atual].colunas_selecionadas = {}
+                planilhas[planilha_atual].indice = 0
 
                 carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice)
             }
@@ -357,11 +357,16 @@ $(document).ready(function() {
             input.prop("disabled", true)
         }
     })
+<<<<<<< HEAD
+    
+    $("#input-busca").on('input',function(){
+=======
 
 
 
 
     $("#input-busca").on('input', function() {
+>>>>>>> 8a778eaaf476f5e900e14f37a121880997ddba2d
         entrada = $(this).val().toLowerCase(); // variavel que pega o valor que o usuário está digitando
 
         //console.log(planilhas[planilha_atual].getRelation())
