@@ -391,9 +391,8 @@ $(document).ready(function() {
             if (planilhas[planilha_atual]) {
 
                 planilhas[planilha_atual].colunas_selecionadas = {}
-                planilhas[planilha_atual].indice = 0
-
-                carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice)
+                planilhas[planilha_atual].indice = 10
+                carregarColunasNaTabela([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
             }
             input.val("")
             input.prop("disabled", true)
