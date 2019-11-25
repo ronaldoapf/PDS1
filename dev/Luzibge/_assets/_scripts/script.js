@@ -194,14 +194,14 @@ function carregarColunasNaTabela(arr) {
         }
 
         let html = `<tr>
-            <th scope="row">${col+1}</th>
+            <th scope="row"><p>${col+1}</p></th>
             <td title="${coluna}" class="">${coluna}</td>
             <td title="${coluna_decodificada}"class="">${valorDecodificado}</td>
             <td>
-            <input type="text" ${disabled} value="${valor}">
+                <input type="text" ${disabled} value="${valor}">
             </td>
             <td class="">
-            <button class="check-circle-solid ${aux}">
+                <button class="check-circle-solid ${aux}">
             </td>
             </tr>`;
 
@@ -294,6 +294,7 @@ $(document).ready(function() {
 
     //quando um item é marcado como interessante
     $("#table-colunas").on("click", ".check-circle-solid", function() {
+
         $("input[type='text']").on("click", function() {
             $(this).select();
         });
@@ -301,6 +302,7 @@ $(document).ready(function() {
         var input = $(this).closest("td").prev().find("input")
         var i_atual = planilhas[planilha_atual].indice
         let i = $(this).closest("tr").index() + planilhas[planilha_atual].indice
+        let i_coluna = $(this).closest("tr").find('p').text() - 1
 
         i = (i_atual % 10 == 0) ? i - 10 : i - i_atual % 10
 
@@ -308,20 +310,19 @@ $(document).ready(function() {
 
             $(this).removeClass("bc-green")
             input.prop('disabled', function(i, v) { return !v; });
-            delete planilhas[planilha_atual].colunas_selecionadas[i]
+            delete planilhas[planilha_atual].colunas_selecionadas[i_coluna]
             input.val("")
 
         } else {
 
             $(this).addClass("bc-green")
             input.prop('disabled', function(i, v) { return !v; });
-
+            let aux = planilhas[planilha_atual].colunas_decodificadas[i_coluna]
             planilhas[planilha_atual].colunas_selecionadas[i] = planilhas[planilha_atual].colunas_decodificadas[i]; //salvando o valor padrão da decodificação por precaução
-            let aux = planilhas[planilha_atual].colunas_decodificadas[i]
 
             $(input).blur(function() { //pego o determinado valor que o usuário digitar no campo para renomear
                 if ($(this).val().length > 0) {
-                    planilhas[planilha_atual].colunas_selecionadas[i] = $(this).val(); //save valor renomeado que o usuario digitou
+                    planilhas[planilha_atual].colunas_selecionadas[i_coluna] = $(this).val(); //save valor renomeado que o usuario digitou
                 }
             })
             input.val(aux)
