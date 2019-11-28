@@ -16,7 +16,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
-        pythonPath: 'C:\\Users\\ronal\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+        pythonPath: 'C:\\Python\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -318,11 +318,12 @@ $(document).ready(function() {
             $(this).addClass("bc-green")
             input.prop('disabled', function(i, v) { return !v; });
             let aux = planilhas[planilha_atual].colunas_decodificadas[i_coluna]
-            planilhas[planilha_atual].colunas_selecionadas[i] = planilhas[planilha_atual].colunas_decodificadas[i]; //salvando o valor padrão da decodificação por precaução
-
+            planilhas[planilha_atual].colunas_selecionadas[i_coluna] = planilhas[planilha_atual].colunas_decodificadas[i_coluna]; //salvando o valor padrão da decodificação por precaução
+            
             $(input).blur(function() { //pego o determinado valor que o usuário digitar no campo para renomear
                 if ($(this).val().length > 0) {
                     planilhas[planilha_atual].colunas_selecionadas[i_coluna] = $(this).val(); //save valor renomeado que o usuario digitou
+                    
                 }
             })
             input.val(aux)
@@ -331,18 +332,20 @@ $(document).ready(function() {
 
     //funçao que pega o valor que o usuário digitou e salva no array planilhas_selecionadas do objeto planilhas
     $("#table-colunas").on("click", "input[type='text']", function() {
-
+        console.log("opa")
+        
         var input = $(this)
         input.select();
 
         var i_atual = planilhas[planilha_atual].indice
+        let i_coluna = $(this).closest("tr").find('p').text() - 1
         let i = $(this).closest("tr").index() + i_atual
         i = (i_atual % 10 == 0) ? i - 10 : i - i_atual % 10
-
+       
         $(input).blur(function() { //pego o determinado valor que o usuário digitar no campo para renomear
 
             if ($(this).val().length > 0) {
-                planilhas[planilha_atual].colunas_selecionadas[i] = $(this).val(); //save valor renomeado que o usuario digitou
+                planilhas[planilha_atual].colunas_selecionadas[i_coluna] = $(this).val(); //save valor renomeado que o usuario digitou
             }
         })
     });
