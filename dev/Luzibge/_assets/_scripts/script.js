@@ -165,7 +165,7 @@ function verificarColunaNaTabela(index, colunas_selecionadas) {
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 //function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
 function carregarColunasNaTabela(arr) {
-    console.log(planilhas[planilha_atual].indice)
+    
         //limpando conteudo da tabela
     $("#table-colunas > tbody > tr").remove();
 
@@ -332,7 +332,6 @@ $(document).ready(function() {
 
     //funçao que pega o valor que o usuário digitou e salva no array planilhas_selecionadas do objeto planilhas
     $("#table-colunas").on("click", "input[type='text']", function() {
-        console.log("opa")
         
         var input = $(this)
         input.select();
@@ -421,7 +420,7 @@ $(document).ready(function() {
             $.each(arr, function(i, el){
                 if($.inArray(el, arr_SemRepeticao) === -1) arr_SemRepeticao.push(el);
             })
-            console.log(arr_SemRepeticao)
+    
             carregarColunasNaTabela(arr_SemRepeticao)
         } else {
 
