@@ -412,12 +412,17 @@ $(document).ready(function() {
                 return value;
             })
             var filtered = valores.filter(function(str) { return str.indexOf(entrada) === 0; });
-
             var arr = [];
             filtered.forEach(p => {
                 arr.push(relacao[p])
             })
-            carregarColunasNaTabela(arr)
+
+            var arr_SemRepeticao = [];
+            $.each(arr, function(i, el){
+                if($.inArray(el, arr_SemRepeticao) === -1) arr_SemRepeticao.push(el);
+            })
+            console.log(arr_SemRepeticao)
+            carregarColunasNaTabela(arr_SemRepeticao)
         } else {
 
             var i_atual = planilhas[planilha_atual].indice
