@@ -1,9 +1,9 @@
 # Repository regarding Systems Design and Development 1
 
-## To run the application you must have installed:
+### To run the application you must have installed:
 - Nodejs (https://nodejs.org/en/download/)
 
-## Once installed (nodejs), go to the project root and run the following commands:
+Once installed (nodejs), go to the project root and run the following commands:
 > Step 1: cd dev/Luzibge
 >
 > Step 2: npm start
