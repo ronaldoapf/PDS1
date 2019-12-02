@@ -16,7 +16,8 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
-        pythonPath: 'C:\\Python\\python.exe'
+        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+            //pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -34,8 +35,6 @@ function sendRequest(json) {
                     }
                 } else if (response.opcao == 2) {
                     if (response.res) alert(`Planilha salva no diretório: "${response.dir_salvar}"`)
-                } else {
-                    console.log(response)
                 }
             } else {
                 alert("Erro ao carregar planilha!");
@@ -132,6 +131,9 @@ function carregarPlanilhasNaTabela(sheets) {
                 <input class="input-renomear-planilha" type="text" name="" id="${p}" style="width: 80%;" disabled="true">
             </td>
             <td> 
+                <button title="Desfazer ações" class="btn btn-light desfazerAcoes confirmar-hidden" disabled hidden>
+                    Confirmar Ação
+                </button>
                 <button title="Desfazer ações" class="btn btn-light desfazerAcoes" disabled>
                     <img src="../_assets/icon/icons8-undefined-26.png" alt="Ícone para desfazer ações"></img>
                 </button>
@@ -165,8 +167,7 @@ function verificarColunaNaTabela(index, colunas_selecionadas) {
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 //function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
 function carregarColunasNaTabela(arr) {
-    console.log(planilhas[planilha_atual].indice)
-        //limpando conteudo da tabela
+    //limpando conteudo da tabela
     $("#table-colunas > tbody > tr").remove();
 
     arr.forEach(function(col) {
@@ -186,7 +187,7 @@ function carregarColunasNaTabela(arr) {
 
         let aux = ""
         let valor = ""
-        let disabled = "disabled=true"
+        let disabled = "disabled"
         if (verificarColunaNaTabela(col, planilhas[planilha_atual].colunas_selecionadas) == 1) {
             aux = "bc-green"
             valor = planilhas[planilha_atual].colunas_selecionadas[col]
@@ -309,14 +310,14 @@ $(document).ready(function() {
         if ($(this).hasClass("bc-green")) {
 
             $(this).removeClass("bc-green")
-            input.prop('disabled', function(i, v) { return !v; });
+            input.attr('disabled', 'true');
             delete planilhas[planilha_atual].colunas_selecionadas[i_coluna]
             input.val("")
 
         } else {
 
             $(this).addClass("bc-green")
-            input.prop('disabled', function(i, v) { return !v; });
+            input.removeAttr('disabled');
             let aux = planilhas[planilha_atual].colunas_decodificadas[i_coluna]
             planilhas[planilha_atual].colunas_selecionadas[i] = planilhas[planilha_atual].colunas_decodificadas[i]; //salvando o valor padrão da decodificação por precaução
 
@@ -379,24 +380,41 @@ $(document).ready(function() {
         input.select()
     })
 
+    function teste(obj) {
+        let tr = obj.closest("tr")
+        let input = obj.closest("tr").find("input")
+        planilha_atual = tr.index()
+
+        if (planilhas[planilha_atual]) {
+
+            planilhas[planilha_atual].colunas_selecionadas = {}
+            planilhas[planilha_atual].indice = 10
+            carregarColunasNaTabela([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+        }
+        input.val("")
+        input.prop("disabled", true)
+    }
     // Função para desfazer ações fazendo com que o vetor de colunas_selecionadas receba nenhum valor
     $(".desfazerAcoes").click(function() {
         let p = $(this).closest("tr").find("p")
 
-        if (confirm(`Deseja desfazer todo o processamento realizado na planilha "${p.text()}" ?`)) {
-            let tr = $(this).closest("tr")
-            let input = $(this).closest("tr").find("input")
-            planilha_atual = tr.index()
-
-            if (planilhas[planilha_atual]) {
-
-                planilhas[planilha_atual].colunas_selecionadas = {}
-                planilhas[planilha_atual].indice = 10
-                carregarColunasNaTabela([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+        $.confirm({
+            title: 'Confirmar Ação',
+            columnClass: 'col-md-6',
+            content: `Deseja desfazer todo o processamento realizado na planilha "${p.text()}" ?`,
+            buttons: {
+                Cancelar: {
+                    btnClass: 'btn-red',
+                },
+                Confirmar: {
+                    btnClass: 'btn-blue',
+                    action: function() {
+                        teste(p);
+                    }
+                }
             }
-            input.val("")
-            input.prop("disabled", true)
-        }
+
+        })
     })
 
     $("#input-busca").on('input', function() {
