@@ -1,0 +1,3 @@
+# Sugestão do professor
+- Melhorar a questão de selecionar os arquivos
+    > Mostrar os arquivos que foram selecionados com a intenção do usuário poder retirar algum arquivo.
