@@ -167,12 +167,8 @@ function verificarColunaNaTabela(index, colunas_selecionadas) {
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 //function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
 function carregarColunasNaTabela(arr) {
-<<<<<<< HEAD
+
     //limpando conteudo da tabela
-=======
-    
-        //limpando conteudo da tabela
->>>>>>> 75f252760cd33fbad50b27b3e81375f0f2754bff
     $("#table-colunas > tbody > tr").remove();
 
     arr.forEach(function(col) {
@@ -325,11 +321,11 @@ $(document).ready(function() {
             input.removeAttr('disabled');
             let aux = planilhas[planilha_atual].colunas_decodificadas[i_coluna]
             planilhas[planilha_atual].colunas_selecionadas[i_coluna] = planilhas[planilha_atual].colunas_decodificadas[i_coluna]; //salvando o valor padrão da decodificação por precaução
-            
+
             $(input).blur(function() { //pego o determinado valor que o usuário digitar no campo para renomear
                 if ($(this).val().length > 0) {
                     planilhas[planilha_atual].colunas_selecionadas[i_coluna] = $(this).val(); //save valor renomeado que o usuario digitou
-                    
+
                 }
             })
             input.val(aux)
@@ -338,7 +334,7 @@ $(document).ready(function() {
 
     //funçao que pega o valor que o usuário digitou e salva no array planilhas_selecionadas do objeto planilhas
     $("#table-colunas").on("click", "input[type='text']", function() {
-        
+
         var input = $(this)
         input.select();
 
@@ -346,7 +342,7 @@ $(document).ready(function() {
         let i_coluna = $(this).closest("tr").find('p').text() - 1
         let i = $(this).closest("tr").index() + i_atual
         i = (i_atual % 10 == 0) ? i - 10 : i - i_atual % 10
-       
+
         $(input).blur(function() { //pego o determinado valor que o usuário digitar no campo para renomear
 
             if ($(this).val().length > 0) {
@@ -440,10 +436,10 @@ $(document).ready(function() {
             })
 
             var arr_SemRepeticao = [];
-            $.each(arr, function(i, el){
-                if($.inArray(el, arr_SemRepeticao) === -1) arr_SemRepeticao.push(el);
+            $.each(arr, function(i, el) {
+                if ($.inArray(el, arr_SemRepeticao) === -1) arr_SemRepeticao.push(el);
             })
-    
+
             carregarColunasNaTabela(arr_SemRepeticao)
         } else {
 
