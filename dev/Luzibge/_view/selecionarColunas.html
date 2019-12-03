@@ -17,6 +17,14 @@
     </script>
     <script src="../_assets/_scripts/script.js"></script>
     <script src="../_model/Planilha.js"></script>
+
+    <style type="text/css">
+        .scroll
+        {
+            overflow: auto;
+            height: 230px;
+        }
+    </style>
 </head>
 
 <body>
@@ -40,7 +48,7 @@
                     <h4>Selecione uma planilha para decodificar suas colunas: </h4>
                 </div>
             </div>
-
+            <div class="scroll">
             <table id="table-planilhas" class="table table-sm">
                 <thead class="thead-dark">
                     <tr>
@@ -53,6 +61,7 @@
                 <tbody>
                 </tbody>
             </table>
+             </div>  
 
             
             <div class="row" style="margin-top: 20px; margin-bottom: 20px; display: flex; justify-content: space-around;">
