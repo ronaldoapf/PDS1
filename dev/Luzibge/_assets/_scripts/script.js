@@ -5,7 +5,19 @@ var url_indice; // par para pegar a planilha de indice vinda da url
 var url_planilhas; //var para pegar as planilhas vindas da url
 var arrayIndice = []; //array para percorrer indice
 
+var caminhoDoPython = ''
+
+cmd = require('node-cmd')
+cmd.get(
+    'where python',
+    function(err, data, stderr){
+        pythonPath = (data.split('\n')[0])
+    }
+);
 function sendRequest(json) {
+    pythonPath = ''
+    
+
     var {
         PythonShell
     } = require("python-shell")
@@ -16,7 +28,7 @@ function sendRequest(json) {
         pythonOptions: ["-u"],
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
-        pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+        pythonPath: caminhoDoPython
             //pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);

@@ -17,12 +17,14 @@
   },
   "homepage": "https://github.com/ronaldoapf/PDS1#readme",
   "devDependencies": {
-    "electron": "^6.0.12"
+    "electron": "^6.0.12",
+    "electron-builder": "^21.2.0"
   },
   "dependencies": {
     "electron-json-storage": "^4.1.8",
     "jquery": "^3.4.1",
     "json": "^9.0.6",
+    "node-cmd": "^3.0.0",
     "python-shell": "^1.0.8",
     "utf8": "^3.0.0"
   }
