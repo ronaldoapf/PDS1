@@ -17,7 +17,8 @@ function sendRequest(json) {
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
         pythonPath: 'C:\\Users\\Amanda\\AppData\\Local\\Programs\\Python\\Python37\\python.exe'
-        //pythonPath: 'C:\\Users\\Amanda\\AppData\\Local\\Programs\\Python\\Python37\\python.exe'
+            //pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
+            //pythonPath: 'C:\\Users\\Amanda\\AppData\\Local\\Programs\\Python\\Python37\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
@@ -35,8 +36,6 @@ function sendRequest(json) {
                     }
                 } else if (response.opcao == 2) {
                     if (response.res) alert(`Planilha salva no diretório: "${response.dir_salvar}"`)
-                } else {
-                    console.log(response)
                 }
             } else {
                 alert("Erro ao carregar planilha!");
@@ -133,6 +132,9 @@ function carregarPlanilhasNaTabela(sheets) {
                 <input class="input-renomear-planilha" type="text" name="" id="${p}" style="width: 80%;" disabled="true">
             </td>
             <td> 
+                <button title="Desfazer ações" class="btn btn-light desfazerAcoes confirmar-hidden" disabled hidden>
+                    Confirmar Ação
+                </button>
                 <button title="Desfazer ações" class="btn btn-light desfazerAcoes" disabled>
                     <img src="../_assets/icon/icons8-undefined-26.png" alt="Ícone para desfazer ações"></img>
                 </button>
@@ -166,8 +168,8 @@ function verificarColunaNaTabela(index, colunas_selecionadas) {
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 //function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
 function carregarColunasNaTabela(arr) {
-    console.log(planilhas[planilha_atual].indice)
-        //limpando conteudo da tabela
+
+    //limpando conteudo da tabela
     $("#table-colunas > tbody > tr").remove();
 
     arr.forEach(function(col) {
@@ -187,7 +189,7 @@ function carregarColunasNaTabela(arr) {
 
         let aux = ""
         let valor = ""
-        let disabled = "disabled=true"
+        let disabled = "disabled"
         if (verificarColunaNaTabela(col, planilhas[planilha_atual].colunas_selecionadas) == 1) {
             aux = "bc-green"
             valor = planilhas[planilha_atual].colunas_selecionadas[col]
@@ -195,14 +197,14 @@ function carregarColunasNaTabela(arr) {
         }
 
         let html = `<tr>
-            <th scope="row">${col+1}</th>
+            <th scope="row"><p>${col+1}</p></th>
             <td title="${coluna}" class="">${coluna}</td>
             <td title="${coluna_decodificada}"class="">${valorDecodificado}</td>
             <td>
-            <input type="text" ${disabled} value="${valor}">
+                <input type="text" ${disabled} value="${valor}">
             </td>
             <td class="">
-            <button class="check-circle-solid ${aux}">
+                <button class="check-circle-solid ${aux}">
             </td>
             </tr>`;
 
@@ -295,6 +297,7 @@ $(document).ready(function() {
 
     //quando um item é marcado como interessante
     $("#table-colunas").on("click", ".check-circle-solid", function() {
+
         $("input[type='text']").on("click", function() {
             $(this).select();
         });
@@ -302,27 +305,28 @@ $(document).ready(function() {
         var input = $(this).closest("td").prev().find("input")
         var i_atual = planilhas[planilha_atual].indice
         let i = $(this).closest("tr").index() + planilhas[planilha_atual].indice
+        let i_coluna = $(this).closest("tr").find('p').text() - 1
 
         i = (i_atual % 10 == 0) ? i - 10 : i - i_atual % 10
 
         if ($(this).hasClass("bc-green")) {
 
             $(this).removeClass("bc-green")
-            input.prop('disabled', function(i, v) { return !v; });
-            delete planilhas[planilha_atual].colunas_selecionadas[i]
+            input.attr('disabled', 'true');
+            delete planilhas[planilha_atual].colunas_selecionadas[i_coluna]
             input.val("")
 
         } else {
 
             $(this).addClass("bc-green")
-            input.prop('disabled', function(i, v) { return !v; });
-
-            planilhas[planilha_atual].colunas_selecionadas[i] = planilhas[planilha_atual].colunas_decodificadas[i]; //salvando o valor padrão da decodificação por precaução
-            let aux = planilhas[planilha_atual].colunas_decodificadas[i]
+            input.removeAttr('disabled');
+            let aux = planilhas[planilha_atual].colunas_decodificadas[i_coluna]
+            planilhas[planilha_atual].colunas_selecionadas[i_coluna] = planilhas[planilha_atual].colunas_decodificadas[i_coluna]; //salvando o valor padrão da decodificação por precaução
 
             $(input).blur(function() { //pego o determinado valor que o usuário digitar no campo para renomear
                 if ($(this).val().length > 0) {
-                    planilhas[planilha_atual].colunas_selecionadas[i] = $(this).val(); //save valor renomeado que o usuario digitou
+                    planilhas[planilha_atual].colunas_selecionadas[i_coluna] = $(this).val(); //save valor renomeado que o usuario digitou
+
                 }
             })
             input.val(aux)
@@ -336,13 +340,14 @@ $(document).ready(function() {
         input.select();
 
         var i_atual = planilhas[planilha_atual].indice
+        let i_coluna = $(this).closest("tr").find('p').text() - 1
         let i = $(this).closest("tr").index() + i_atual
         i = (i_atual % 10 == 0) ? i - 10 : i - i_atual % 10
 
         $(input).blur(function() { //pego o determinado valor que o usuário digitar no campo para renomear
 
             if ($(this).val().length > 0) {
-                planilhas[planilha_atual].colunas_selecionadas[i] = $(this).val(); //save valor renomeado que o usuario digitou
+                planilhas[planilha_atual].colunas_selecionadas[i_coluna] = $(this).val(); //save valor renomeado que o usuario digitou
             }
         })
     });
@@ -379,25 +384,41 @@ $(document).ready(function() {
         input.select()
     })
 
+    function teste(obj) {
+        let tr = obj.closest("tr")
+        let input = obj.closest("tr").find("input")
+        planilha_atual = tr.index()
+
+        if (planilhas[planilha_atual]) {
+
+            planilhas[planilha_atual].colunas_selecionadas = {}
+            planilhas[planilha_atual].indice = 10
+            carregarColunasNaTabela([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+        }
+        input.val("")
+        input.prop("disabled", true)
+    }
     // Função para desfazer ações fazendo com que o vetor de colunas_selecionadas receba nenhum valor
     $(".desfazerAcoes").click(function() {
         let p = $(this).closest("tr").find("p")
 
-        if (confirm(`Deseja desfazer todo o processamento realizado na planilha "${p.text()}" ?`)) {
-            let tr = $(this).closest("tr")
-            let input = $(this).closest("tr").find("input")
-            planilha_atual = tr.index()
-
-            if (planilhas[planilha_atual]) {
-
-                planilhas[planilha_atual].colunas_selecionadas = {}
-                planilhas[planilha_atual].indice = 0
-
-                carregarColunasNaTabela(planilhas[planilha_atual].colunas, planilhas[planilha_atual].colunas_decodificadas, planilhas[planilha_atual].indice)
+        $.confirm({
+            title: 'Confirmar Ação',
+            columnClass: 'col-md-6',
+            content: `Deseja desfazer todo o processamento realizado na planilha "${p.text()}" ?`,
+            buttons: {
+                Cancelar: {
+                    btnClass: 'btn-red',
+                },
+                Confirmar: {
+                    btnClass: 'btn-blue',
+                    action: function() {
+                        teste(p);
+                    }
+                }
             }
-            input.val("")
-            input.prop("disabled", true)
-        }
+
+        })
     })
 
     $("#input-busca").on('input', function() {
@@ -410,12 +431,17 @@ $(document).ready(function() {
                 return value;
             })
             var filtered = valores.filter(function(str) { return str.indexOf(entrada) === 0; });
-
             var arr = [];
             filtered.forEach(p => {
                 arr.push(relacao[p])
             })
-            carregarColunasNaTabela(arr)
+
+            var arr_SemRepeticao = [];
+            $.each(arr, function(i, el) {
+                if ($.inArray(el, arr_SemRepeticao) === -1) arr_SemRepeticao.push(el);
+            })
+
+            carregarColunasNaTabela(arr_SemRepeticao)
         } else {
 
             var i_atual = planilhas[planilha_atual].indice
