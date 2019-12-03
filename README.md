@@ -6,6 +6,8 @@
 Once installed (nodejs), go to the project root and run the following commands:
 > Step 1: cd dev/Luzibge
 >
+> Step 2: npm install
+>
 > Step 2: npm start
 
 If the node is already installed correctly, the program will open.
@@ -30,8 +32,10 @@ Para executar a aplicação é necessário ter instalado:
 - Nodejs (https://nodejs.org/en/download/)
 
 Depois de instalado o nodejs vá até a raiz do projeto e execute os seguintes comandos:
-> Passo 1: cd dev/Luzibge
+> Step 1: cd dev/Luzibge
 >
-> Passo 2: npm start
+> Step 2: npm install
+>
+> Step 2: npm start
 
 Se o nodejs tiver sido instalado corretamente, o programa irá abrir.

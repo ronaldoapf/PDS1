@@ -29,7 +29,6 @@ function sendRequest(json) {
         scriptPath: path.join(__dirname, '../_engine/'),
         args: [JSON.stringify(json)],
         pythonPath: caminhoDoPython
-            //pythonPath: 'C:\\Users\\Henri\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe'
     }
     var python = new PythonShell('teste-global.py', opcoes);
 
