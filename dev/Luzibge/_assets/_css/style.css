@@ -121,3 +121,8 @@ body {
     width: 40%;
     float: right;
 }
+
+.scroll {
+    overflow: auto;
+    height: 230px;
+}
