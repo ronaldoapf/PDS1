@@ -225,14 +225,11 @@ function carregarColunasNaTabela(arr) {
 
 //Função para fazer o controle de só habilitar botão de salvar e restaurar quando tiver alguma coluna selecionada na planilha
 function controleBotoes(){
+    
     if(Object.keys(planilhas[planilha_atual].colunas_selecionadas).length  > 0) {
-        
         buttons.prop( "disabled", false );
-        console.log("opa")
     }else{
-        
         buttons.prop("disabled", true );
-        console.log("opa2")
     }
 }
 
