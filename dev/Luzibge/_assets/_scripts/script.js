@@ -1,4 +1,5 @@
 //variaveis globais
+var buttons; //variavel para controlar os botoes da coluna selecionada para ficar habilitado/desabilitado se houver coluna selecionada da planilha
 var planilhas = [];
 var planilha_atual;
 var url_indice; // par para pegar a planilha de indice vinda da url
@@ -178,7 +179,6 @@ function verificarColunaNaTabela(index, colunas_selecionadas) {
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 //function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
 function carregarColunasNaTabela(arr) {
-
     //limpando conteudo da tabela
     $("#table-colunas > tbody > tr").remove();
 
@@ -223,6 +223,19 @@ function carregarColunasNaTabela(arr) {
     })
 }
 
+//Função para fazer o controle de só habilitar botão de salvar e restaurar quando tiver alguma coluna selecionada na planilha
+function controleBotoes(){
+    if(Object.keys(planilhas[planilha_atual].colunas_selecionadas).length  > 0) {
+        
+        buttons.prop( "disabled", false );
+        console.log("opa")
+    }else{
+        
+        buttons.prop("disabled", true );
+        console.log("opa2")
+    }
+}
+
 $(document).ready(function() {
 
     $("#input-busca").hide()
@@ -244,9 +257,9 @@ $(document).ready(function() {
 
         buscarColunasCodificadas_Decodificadas(url_planilhas[planilha_atual], url_indice);
 
-        let buttons = $(this).closest("tr").find("button");
-        buttons.prop("disabled", false)
-
+        buttons = $(this).closest("tr").find("button");
+        //buttons.prop("disabled", true)
+        
 
         var selected = tr.hasClass("bg-gray");
         $("#table-planilhas tr").removeClass("bg-gray");
@@ -320,14 +333,14 @@ $(document).ready(function() {
         i = (i_atual % 10 == 0) ? i - 10 : i - i_atual % 10
 
         if ($(this).hasClass("bc-green")) {
-
+            
             $(this).removeClass("bc-green")
             input.attr('disabled', 'true');
             delete planilhas[planilha_atual].colunas_selecionadas[i_coluna]
             input.val("")
-
+            controleBotoes();
         } else {
-
+            
             $(this).addClass("bc-green")
             input.removeAttr('disabled');
             let aux = planilhas[planilha_atual].colunas_decodificadas[i_coluna]
@@ -340,6 +353,8 @@ $(document).ready(function() {
                 }
             })
             input.val(aux)
+            controleBotoes();
+            
         }
     })
 
@@ -407,6 +422,7 @@ $(document).ready(function() {
         }
         input.val("")
         input.prop("disabled", true)
+        buttons.prop("disabled", true)
     }
     // Função para desfazer ações fazendo com que o vetor de colunas_selecionadas receba nenhum valor
     $(".desfazerAcoes").click(function() {
