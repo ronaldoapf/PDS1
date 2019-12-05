@@ -220,7 +220,7 @@ function carregarColunasNaTabela(arr) {
 
 
         $("#table-colunas").append(html);
-    })
+    })  
 }
 
 //Função para fazer o controle de só habilitar botão de salvar e restaurar quando tiver alguma coluna selecionada na planilha
@@ -248,6 +248,9 @@ $(document).ready(function() {
     carregarPlanilhasNaTabela(url_planilhas)
 
     $('#table-planilhas').on('click', '.nome-planilha', function() {
+        if(buttons){
+            buttons.prop("disabled",true)
+        }
 
         let tr = $(this).closest("tr");
         planilha_atual = tr.index()
@@ -255,7 +258,9 @@ $(document).ready(function() {
         buscarColunasCodificadas_Decodificadas(url_planilhas[planilha_atual], url_indice);
 
         buttons = $(this).closest("tr").find("button");
-        //buttons.prop("disabled", true)
+        if(planilhas[planilha_atual]){
+            controleBotoes();
+        }    
         
 
         var selected = tr.hasClass("bg-gray");
@@ -274,6 +279,7 @@ $(document).ready(function() {
         if ($("#div-botao").is(":hidden")) {
             $("#div-botao").show();
         }
+        
         return false;
 
 
