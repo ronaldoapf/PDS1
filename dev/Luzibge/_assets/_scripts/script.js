@@ -275,7 +275,6 @@ $(document).ready(function() {
         $("#input-busca").toggle(true)
         $("#planilha-selecionada").html('');
         $("#planilha-selecionada").html('Filtrar colunas da planilha "' + nome + '":');
-
         if ($("#div-botao").is(":hidden")) {
             $("#div-botao").show();
         }
