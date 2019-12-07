@@ -14,7 +14,9 @@
     <script src="../_assets/_js/sweetalert.min.js"></script>
     <script src="../_assets/_js/jquery-3.4.1.js"></script>
 
-    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
     <script src="../_linkers/files.js"></script>
 
 </head>
@@ -43,14 +45,14 @@
 
                 <div class="jumbotron">
                     <h2 class="text-center" style="margin-bottom: 50px;">
-                        Seleção de arquivos
+                        Seleção de Planilhas
                     </h2>
 
-                    <div class="input-file">
+                    <div class="">
                         <div class="input-group">
-                            <label>Selecionar planilhas do IBGE (.csv)</label>
+                            <h4>Selecionar planilhas do IBGE (.csv)</h4>
                         </div>
-                        <div class="input-group">
+                        <div class="input-group mb-5">
                             <div class="custom-file">
                                 <input type="file" multiple="multiple" class="custom-file-input input-file-planilhas" data-browse-on-zone-click="true" accept=".csv" id="planilhasCSV" aria-describedby="inputGroupFileAddon04" required>
                                 <label class="custom-file-label custom-file-planilha" for="inputGroupFile04">Selecione os arquivos</label>
@@ -58,6 +60,13 @@
                         </div>
                     </div>
 
+                    <!-- Div para carregar o nome das planilhas -->
+                    <div id="div-planilhas" class="row mt-2 mb-2" style="display: none;">
+                        <div class="col-11">
+                            <ul id="lista-planilhas" class="list-group scroll">
+                            </ul>
+                        </div>
+                    </div>
 
                     <div class="input-file">
                         <div class="input-group">
@@ -94,35 +103,40 @@
     <script src="../_assets/_js/popper.min.js"></script>
     <script src="../_assets/_js/bootstrap.js"></script>
 
-       <script type="application/javascript">
+    <script type="application/javascript">
+        var check = function(li) {
+            return $("#lista-planilhas li").filter(function(i, li2) {
+                return $(li2).text() == li;
+            }).length > 0;
+        };
 
-            $('.input-file-planilhas').change(function(e){
-                var fileName = ' '
+        $('.input-file-planilhas').change(function(e) {
 
-                size = e.target.files.length
-                size--
-                
-                for(i=0; i<=size; i++){
-                    fileName += e.target.files[i].name
-                    
-                    if(i != size) {
-                        fileName+= ', '
-                        
-                        if(fileName.length > 50) {
-                            fileName += '...'
-                            break
-                        }
-                    }
-                }
-                $('.custom-file-planilha').html(fileName);
-            });
+            $("#div-planilhas").show()
 
-            $('.input-file-indice').change(function(e){
-                fileName = e.target.files[0].name
+            var fileName = ' '
 
-                $('.custom-file-indice').html(fileName)
-                
-            })
+            size = e.target.files.length
+            size--
+
+            for (i = 0; i <= size; i++) {
+                fileName = e.target.files[i].path
+
+                if (!check(fileName))
+                    $("#lista-planilhas").append(`<li class="list-group-item">${fileName}</li>`)
+                else
+                    alert(`A planilha "${fileName}" já foi escolhida!`)
+            }
+
+            //$('.custom-file-planilha').html(fileName);
+        });
+
+        $('.input-file-indice').change(function(e) {
+            fileName = e.target.files[0].name
+
+            $('.custom-file-indice').html(fileName)
+
+        })
     </script>
 </body>
 
