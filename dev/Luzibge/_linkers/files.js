@@ -33,7 +33,7 @@ $(document).ready(function() {
             fileName = e.target.files[i].path
 
             if (!check(fileName))
-                $("#lista-planilhas").append(`<li class="list-group-item">${fileName} <button type="button" class="remover-planilha" style="float:right">remover</button> </li>`)
+                $("#lista-planilhas").append(`<li class="list-group-item"><span>${fileName}</span> <button type="button" class="remover-planilha" style="float:right">remover</button> </li>`)
             else
                 alert(`A planilha "${fileName}" já foi escolhida!`)
         }
@@ -50,8 +50,11 @@ $(document).ready(function() {
 
     //evento antes de submeter o form para outra página
     $("#form").submit(function() {
-        var planilhasCSV = $('#planilhasCSV').prop("files")
-        var planilhas = $.map(planilhasCSV, function(val) { return val.path; });
+
+        var planilhas = [];
+        $('#lista-planilhas span').each(function() {
+            planilhas.push($(this).text());
+        });
 
         var indiceCSV = $('#indiceCSV').prop("files")
         var indice = $.map(indiceCSV, function(val) { return val.path; });
@@ -62,7 +65,5 @@ $(document).ready(function() {
         indice.forEach(i => {
             $("#form").append('<input type="hidden" name="indice" value="' + i + '">')
         })
-
-        //return false;
     })
 })
