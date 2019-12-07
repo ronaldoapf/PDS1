@@ -126,3 +126,7 @@ body {
     overflow: auto;
     height: 230px;
 }
+
+.cursor-default {
+    cursor: default;
+}

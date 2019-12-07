@@ -11,13 +11,14 @@ var caminhoDoPython = ''
 cmd = require('node-cmd')
 cmd.get(
     'where python',
-    function(err, data, stderr){
+    function(err, data, stderr) {
         pythonPath = (data.split('\n')[0])
     }
 );
+
 function sendRequest(json) {
     pythonPath = ''
-    
+
 
     var {
         PythonShell
@@ -191,8 +192,10 @@ function carregarColunasNaTabela(arr) {
         var valorDecodificado = coluna_decodificada;
 
         if (valorDecodificado.length > 50) {
-            let temp = valorDecodificado.slice(0, valorDecodificado.indexOf("_"))
-            temp += '...'
+
+            let i_slice = (valorDecodificado.indexOf(" ") != -1) ? valorDecodificado.indexOf(" ") : valorDecodificado.indexOf("_")
+            let temp = valorDecodificado.slice(0, i_slice)
+            temp += ' ... '
             temp += valorDecodificado.slice(valorDecodificado.length - (50 - temp.length), valorDecodificado.length)
             valorDecodificado = temp
         }
@@ -207,29 +210,25 @@ function carregarColunasNaTabela(arr) {
         }
 
         let html = `<tr>
-            <th scope="row"><p>${col+1}</p></th>
-            <td title="${coluna}" class="">${coluna}</td>
-            <td title="${coluna_decodificada}"class="">${valorDecodificado}</td>
-            <td>
-                <input type="text" ${disabled} value="${valor}">
-            </td>
-            <td class="">
-                <button class="check-circle-solid ${aux}">
-            </td>
+            <th scope="row" class="cursor-default"><p>${col+1}</p></th>
+            <td title="${coluna}" class="cursor-default">${coluna}</td>
+            <td title="${coluna_decodificada}"class="cursor-default">${valorDecodificado}</td>
+            <td> <input type="text" ${disabled} value="${valor}"> </td>
+            <td class=""> <button class="check-circle-solid ${aux}"> </td>
             </tr>`;
 
 
         $("#table-colunas").append(html);
-    })  
+    })
 }
 
 //Função para fazer o controle de só habilitar botão de salvar e restaurar quando tiver alguma coluna selecionada na planilha
-function controleBotoes(){
-    
-    if(Object.keys(planilhas[planilha_atual].colunas_selecionadas).length  > 0) {
-        buttons.prop( "disabled", false );
-    }else{
-        buttons.prop("disabled", true );
+function controleBotoes() {
+
+    if (Object.keys(planilhas[planilha_atual].colunas_selecionadas).length > 0) {
+        buttons.prop("disabled", false);
+    } else {
+        buttons.prop("disabled", true);
     }
 }
 
@@ -248,8 +247,8 @@ $(document).ready(function() {
     carregarPlanilhasNaTabela(url_planilhas)
 
     $('#table-planilhas').on('click', '.nome-planilha', function() {
-        if(buttons){
-            buttons.prop("disabled",true)
+        if (buttons) {
+            buttons.prop("disabled", true)
         }
 
         let tr = $(this).closest("tr");
@@ -258,10 +257,10 @@ $(document).ready(function() {
         buscarColunasCodificadas_Decodificadas(url_planilhas[planilha_atual], url_indice);
 
         buttons = $(this).closest("tr").find("button");
-        if(planilhas[planilha_atual]){
+        if (planilhas[planilha_atual]) {
             controleBotoes();
-        }    
-        
+        }
+
 
         var selected = tr.hasClass("bg-gray");
         $("#table-planilhas tr").removeClass("bg-gray");
@@ -278,7 +277,7 @@ $(document).ready(function() {
         if ($("#div-botao").is(":hidden")) {
             $("#div-botao").show();
         }
-        
+
         return false;
 
 
@@ -335,14 +334,14 @@ $(document).ready(function() {
         i = (i_atual % 10 == 0) ? i - 10 : i - i_atual % 10
 
         if ($(this).hasClass("bc-green")) {
-            
+
             $(this).removeClass("bc-green")
             input.attr('disabled', 'true');
             delete planilhas[planilha_atual].colunas_selecionadas[i_coluna]
             input.val("")
             controleBotoes();
         } else {
-            
+
             $(this).addClass("bc-green")
             input.removeAttr('disabled');
             let aux = planilhas[planilha_atual].colunas_decodificadas[i_coluna]
@@ -356,7 +355,7 @@ $(document).ready(function() {
             })
             input.val(aux)
             controleBotoes();
-            
+
         }
     })
 
