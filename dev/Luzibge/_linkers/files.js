@@ -31,7 +31,7 @@ $(document).ready(function() {
 
         for (i = 0; i <= size; i++) {
             fileName = e.target.files[i].path
-            console.log(">" + check(fileName))
+
             if (!check(fileName))
                 $("#lista-planilhas").append(`<li class="list-group-item">${fileName} <button type="button" class="remover-planilha" style="float:right">remover</button> </li>`)
             else
@@ -57,11 +57,9 @@ $(document).ready(function() {
         var indice = $.map(indiceCSV, function(val) { return val.path; });
 
         planilhas.forEach((p, i) => {
-            console.log(p)
             $("#form").append('<input type="hidden" name="planilha' + i + '" value="' + p + '">')
         })
         indice.forEach(i => {
-            console.log(i)
             $("#form").append('<input type="hidden" name="indice" value="' + i + '">')
         })
 

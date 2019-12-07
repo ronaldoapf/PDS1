@@ -43,8 +43,9 @@ function sendRequest(json) {
                 if (response.opcao == 1) {
                     planilhas[planilha_atual] = new Planilha(url_planilhas[planilha_atual], 0, response.colunas, response.colunas_decodificadas, {})
                     if (planilhas[planilha_atual].colunas && planilhas[planilha_atual].colunas_decodificadas) {
-                        planilhas[planilha_atual].indice = 10
-                        carregarColunasNaTabela([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+                        let aux_lenght = (planilhas[planilha_atual].colunas.length > 10) ? 10 : planilhas[planilha_atual].colunas.length
+                        planilhas[planilha_atual].indice = aux_lenght
+                        carregarColunasNaTabela(inicilizarArray(0, aux_lenght));
                     }
                 } else if (response.opcao == 2) {
                     if (response.res) alert(`Planilha salva no diretório: "${response.dir_salvar}"`)
@@ -134,16 +135,16 @@ function carregarPlanilhasNaTabela(sheets) {
         nome = p.split('\\')
         nome = nome[nome.length - 1]
 
-        let html = `<tr class="trClass">
+        let html = `<tr class="trClass cursor-default">
             <th scope="row">
                 ${i+1}
             </th>
-            <td style="cursor: pointer;" onmouseover="style='text-decoration:underline;'" onmouseout="style='text-decoration:none;'">
+            <td class="cursor-pointer" onmouseover="style='text-decoration:underline;'" onmouseout="style='text-decoration:none;'">
             <p class="nome-planilha">${nome}</p></td>
             <td>
                 <input class="input-renomear-planilha" type="text" name="" id="${p}" style="width: 80%;" disabled="true">
             </td>
-            <td> 
+            <td > 
                 <button title="Desfazer ações" class="btn btn-light desfazerAcoes confirmar-hidden" disabled hidden>
                     Confirmar Ação
                 </button>
@@ -245,6 +246,10 @@ $(document).ready(function() {
     carregarPlanilhasNaTabela(url_planilhas)
 
     $('#table-planilhas').on('click', '.nome-planilha', function() {
+
+        if (!$("#div-colunas").is(":visible")) $("#div-colunas").show();
+
+
         if (buttons) {
             buttons.prop("disabled", true)
         }
@@ -258,7 +263,6 @@ $(document).ready(function() {
         if (planilhas[planilha_atual]) {
             controleBotoes();
         }
-
 
         var selected = tr.hasClass("bg-gray");
         $("#table-planilhas tr").removeClass("bg-gray");

@@ -56,76 +56,75 @@
                 </div>
             </div>
 
-
-            <div class="row d-flex">
-                <div class="col-10 title-columns">
-                    <div>
-                        <h4>Selecione uma das planilhas abaixo para decodificar suas colunas:<i class="material-icons col-2 mt-5" data-toggle="modal" data-target="#ModalLongoExemplo">info</i></h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="scroll mb-2">
-                <table id="table-planilhas" class="table table-sm">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nome do Arquivo</th>
-                            <th scope="col">Novo nome da planilha</th>
-                            <th scope="col">Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-
-            <div>
-                <div class="row filtragem-colunas" style="margin-top: 20px; margin-bottom: 20px; display: flex; justify-content: space-around;" hidden>
-
-                    <h3 id="planilha-selecionada"></h3>
-
-                    <div class="campo-busca">
-                        <input placeholder="Ex: 'var001, 'var015, 'variancia', 'media'" type="text" name="" id="input-busca" class="form-control">
+            <div class="content">
+                <div class="row d-flex">
+                    <div class="col-10 title-columns">
+                        <div>
+                            <h4>Selecione uma das planilhas abaixo para decodificar suas colunas:<i class="material-icons col-2 mt-5" data-toggle="modal" data-target="#ModalLongoExemplo">info</i></h4>
+                        </div>
                     </div>
                 </div>
 
-                <table id="table-colunas" class="table table-borderless">
-                    <thead class="thead-dark">
-                        <tr class>
-                            <th scope="col">#</th>
-                            <th scope="col ">Coluna original</th>
-                            <th scope="col">Coluna decodificada</th>
-                            <th scope="col">Valor renomeado</th>
-                            <th scope="col">Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div class="scroll mb-2">
+                    <table id="table-planilhas" class="table table-sm">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nome do Arquivo</th>
+                                <th scope="col">Novo nome da planilha</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
 
-                    </tbody>
-                </table>
-                <div class="row" id="div-botao" style="display: flex;">
+                <div id="div-colunas" style="display: none; justify-content: space-around;">
+                    <div class="filtragem-colunas" style="margin-top: 20px; margin-bottom: 20px; display: flex; justify-content: space-between;">
+                        <h4 id="planilha-selecionada"></h4>
+                        <div class="campo-busca">
+                            <input placeholder="Ex: 'var001, 'var015, 'variancia', 'media'" type="text" name="" id="input-busca" class="form-control">
+                        </div>
+                    </div>
 
-                    <div class="col-6">
-                        <div class="btnBack">
-                            <div class="input-group">
-                                <button class="btn btn-secondary" type="submit" id="botao-colunasRetornar">
+                    <table id="table-colunas" class="table table-borderless">
+                        <thead class="thead-dark">
+                            <tr class>
+                                <th scope="col">#</th>
+                                <th scope="col ">Coluna original</th>
+                                <th scope="col">Coluna decodificada</th>
+                                <th scope="col">Valor renomeado</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <div class="row" id="div-botao" style="display: flex;">
+
+                        <div class="col-6">
+                            <div class="btnBack">
+                                <div class="input-group">
+                                    <button class="btn btn-secondary" type="submit" id="botao-colunasRetornar">
                                 Colunas Anteriores
                             </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-6" style="justify-content: flex-end;">
-                        <div class="buttonNext">
-                            <div class="input-group">
-                                <button class="btn btn-secondary" type="submit" id="botao-colunas">
+                        <div class="col-6" style="justify-content: flex-end;">
+                            <div class="buttonNext">
+                                <div class="input-group">
+                                    <button class="btn btn-secondary" type="submit" id="botao-colunas">
                                 Próximas colunas
                             </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
         </div>
