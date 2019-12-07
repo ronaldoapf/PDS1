@@ -6,6 +6,7 @@ var url_indice; // par para pegar a planilha de indice vinda da url
 var url_planilhas; //var para pegar as planilhas vindas da url
 var arrayIndice = []; //array para percorrer indice
 
+//funcao para pegar caminho do python
 var caminhoDoPython = ''
 
 cmd = require('node-cmd')
@@ -32,7 +33,7 @@ function sendRequest(json) {
         args: [JSON.stringify(json)],
         pythonPath: caminhoDoPython
     }
-    var python = new PythonShell('teste-global.py', opcoes);
+    var python = new PythonShell('planilhas.py', opcoes);
 
     var response;
     //quando o arquivo python retornar algo esse evento será disparado
@@ -51,7 +52,7 @@ function sendRequest(json) {
                     if (response.res) alert(`Planilha salva no diretório: "${response.dir_salvar}"`)
                 }
             } else {
-                alert("Erro ao carregar planilha!");
+                alert("Erro ao se comunicar com Python, verifique página de tutoriais!");
             }
         }
     })
