@@ -1,4 +1,5 @@
 //variaveis globais
+var buttons; //variavel para controlar os botoes da coluna selecionada para ficar habilitado/desabilitado se houver coluna selecionada da planilha
 var planilhas = [];
 var planilha_atual;
 var url_indice; // par para pegar a planilha de indice vinda da url
@@ -178,7 +179,6 @@ function verificarColunaNaTabela(index, colunas_selecionadas) {
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 //function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
 function carregarColunasNaTabela(arr) {
-
     //limpando conteudo da tabela
     $("#table-colunas > tbody > tr").remove();
 
@@ -220,7 +220,17 @@ function carregarColunasNaTabela(arr) {
 
 
         $("#table-colunas").append(html);
-    })
+    })  
+}
+
+//Função para fazer o controle de só habilitar botão de salvar e restaurar quando tiver alguma coluna selecionada na planilha
+function controleBotoes(){
+    
+    if(Object.keys(planilhas[planilha_atual].colunas_selecionadas).length  > 0) {
+        buttons.prop( "disabled", false );
+    }else{
+        buttons.prop("disabled", true );
+    }
 }
 
 $(document).ready(function() {
@@ -238,15 +248,20 @@ $(document).ready(function() {
     carregarPlanilhasNaTabela(url_planilhas)
 
     $('#table-planilhas').on('click', '.nome-planilha', function() {
+        if(buttons){
+            buttons.prop("disabled",true)
+        }
 
         let tr = $(this).closest("tr");
         planilha_atual = tr.index()
 
         buscarColunasCodificadas_Decodificadas(url_planilhas[planilha_atual], url_indice);
 
-        let buttons = $(this).closest("tr").find("button");
-        buttons.prop("disabled", false)
-
+        buttons = $(this).closest("tr").find("button");
+        if(planilhas[planilha_atual]){
+            controleBotoes();
+        }    
+        
 
         var selected = tr.hasClass("bg-gray");
         $("#table-planilhas tr").removeClass("bg-gray");
@@ -260,10 +275,10 @@ $(document).ready(function() {
         $("#input-busca").toggle(true)
         $("#planilha-selecionada").html('');
         $("#planilha-selecionada").html('Filtrar colunas da planilha "' + nome + '":');
-
         if ($("#div-botao").is(":hidden")) {
             $("#div-botao").show();
         }
+        
         return false;
 
 
@@ -320,14 +335,14 @@ $(document).ready(function() {
         i = (i_atual % 10 == 0) ? i - 10 : i - i_atual % 10
 
         if ($(this).hasClass("bc-green")) {
-
+            
             $(this).removeClass("bc-green")
             input.attr('disabled', 'true');
             delete planilhas[planilha_atual].colunas_selecionadas[i_coluna]
             input.val("")
-
+            controleBotoes();
         } else {
-
+            
             $(this).addClass("bc-green")
             input.removeAttr('disabled');
             let aux = planilhas[planilha_atual].colunas_decodificadas[i_coluna]
@@ -340,6 +355,8 @@ $(document).ready(function() {
                 }
             })
             input.val(aux)
+            controleBotoes();
+            
         }
     })
 
@@ -407,6 +424,7 @@ $(document).ready(function() {
         }
         input.val("")
         input.prop("disabled", true)
+        buttons.prop("disabled", true)
     }
     // Função para desfazer ações fazendo com que o vetor de colunas_selecionadas receba nenhum valor
     $(".desfazerAcoes").click(function() {
