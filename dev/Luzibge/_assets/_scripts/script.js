@@ -233,9 +233,7 @@ function controleBotoes() {
 }
 
 $(document).ready(function() {
-
-    $("#input-busca").hide()
-        //inicializando arquivo python
+    //inicializando arquivo python
     var {
         PythonShell
     } = require("python-shell")

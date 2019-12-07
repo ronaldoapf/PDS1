@@ -24,7 +24,7 @@
 
     <script src="../_assets/_js/jquery-confirm.min.js"></script>
     <div class="d-flex">
-        <div class="container">
+        <div class="container ">
             <button type="button" class="btnBack btn btn-primary">
                 <a href="telaArquivos.html">
                     <div class="d-flex">
@@ -50,20 +50,20 @@
                         </div>
                         <div class="modal-body">
                             Neste campo, selecione a planilha que você deseja manipular para selecionar as colunas desejadas.
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
-                
+
 
             <div class="row d-flex">
                 <div class="col-10 title-columns">
-                        <div>
-                            <h4>Selecione uma planilha para decodificar suas colunas:<i class="material-icons col-2" data-toggle="modal" data-target="#ModalLongoExemplo">info</i></h4>       
-                        </div>   
+                    <div>
+                        <h4>Selecione uma planilha para decodificar suas colunas:<i class="material-icons col-2" data-toggle="modal" data-target="#ModalLongoExemplo">info</i></h4>
+                    </div>
                 </div>
             </div>
-            <div class="scroll">
+            <div class="scroll mb-2">
                 <table id="table-planilhas" class="table table-sm">
                     <thead class="thead-dark">
                         <tr>
@@ -79,14 +79,15 @@
             </div>
 
 
-            <div class="row" style="margin-top: 20px; margin-bottom: 20px; display: flex; justify-content: space-around;">
+            <div class="row filtragem-colunas" style="margin-top: 20px; margin-bottom: 20px; display: flex; justify-content: space-around;" hidden>
 
-                <h3 id="planilha-selecionada"></h3> 
+                <h3 id="planilha-selecionada"></h3>
 
                 <div class="campo-busca">
                     <input placeholder="Ex: 'var001, 'var015, 'variancia', 'media'" type="text" name="" id="input-busca" class="form-control">
                 </div>
             </div>
+
             <table id="table-colunas" class="table table-borderless">
                 <thead class="thead-dark">
                     <tr class>

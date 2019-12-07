@@ -124,9 +124,13 @@ body {
 
 .scroll {
     overflow: auto;
-    height: 230px;
+    max-height: 230px;
 }
 
 .cursor-default {
     cursor: default;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
