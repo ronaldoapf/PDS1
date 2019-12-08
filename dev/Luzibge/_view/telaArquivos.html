@@ -32,7 +32,7 @@
                                 <div class="icon">
                                     <i class="material-icons">arrow_back</i>
                                 </div>
-                                <div class="label">        
+                                <div class="label">
                                     Voltar
                                 </div>
                             </div>
@@ -48,15 +48,16 @@
                         Seleção de Planilhas
                     </h2>
 
-                    <div class="">
-                        <div class="input-group">
-                            <h4>Selecionar planilhas do IBGE (.csv)</h4>
-                        </div>
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input type="file" multiple="multiple" class="custom-file-input input-file-planilhas" data-browse-on-zone-click="true" accept=".csv" id="planilhasCSV" aria-describedby="inputGroupFileAddon04" required>
-                                <label class="custom-file-label custom-file-planilha" for="inputGroupFile04">Selecione os arquivos</label>
-                            </div>
+                    <div class="input-group">
+                        <h4>Selecionar planilhas do IBGE (.csv)</h4>
+                    </div>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" multiple="multiple" class="custom-file-input input-file-planilhas"
+                                data-browse-on-zone-click="true" accept=".csv" id="planilhasCSV"
+                                aria-describedby="inputGroupFileAddon04" required>
+                            <label class="custom-file-label custom-file-planilha" for="inputGroupFile04">Selecione
+                                os arquivos</label>
                         </div>
                     </div>
 
@@ -71,36 +72,14 @@
                     <div class="input-file mt-5">
                         <div class="input-group">
                             <label>Selecionar planilha de índice (.csv)</label>
-                            <i class="material-icons ml-2 cursor-pointer" data-toggle="modal" data-target="#ModalLongoExemplo">info</i>
-
-                            <!-- Modal Mensagem de dúvida -->
-                            <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="TituloModalLongoExemplo">Selecionar planilha de índice</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Neste campo, selecione a planilha de índice correspondente as planilhas do IBGE selecionadas, com o intuito de decodificá-las.
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
+                            <i class="material-icons ml-2 cursor-pointer" data-toggle="modal"
+                                data-target="#ModalLongoExemplo">info
+                            </i>
                         </div>
 
-                        <div class="">
-                            <div class="">
-                                <select id="selectIndice" aria-describedby="inputGroupFileAddon04" required>
-                                    <option value="" selected disabled>Selecione a planilha de índices</option>
-                                </select>
-                                <label class="custom-file-label custom-file-indice" for="inputGroupFile04">Selecione o arquivo</label>
-                            </div>
-                        </div>
+                        <select class="form-control" name="" id="selectIndice">
+                            <option value="" selected disabled>Selecione a planilha de índices</option>
+                        </select>
                     </div>
 
                     <div class="row">
@@ -116,9 +95,29 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- Modal Mensagem de dúvida -->
+    <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalLongoExemplo">Selecionar planilha de
+                        índice</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Neste campo, selecione a planilha de índice correspondente as planilhas do
+                    IBGE selecionadas, com o intuito de decodificá-las.
+                </div>
+
+            </div>
         </div>
     </div>
 
