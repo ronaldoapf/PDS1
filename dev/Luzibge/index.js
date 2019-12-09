@@ -19,8 +19,6 @@ function createWindow () {
   win.loadFile('./index.html')
   win.maximize() 
 
-  // Open the DevTools.
-  win.webContents.openDevTools()
 
   // Emitido quando a janela é fechada.
   win.on('closed', () => {
