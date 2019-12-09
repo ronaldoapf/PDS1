@@ -27,11 +27,6 @@ body {
     align-items: center !important;
 }
 
-.btnBack {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
 .label {
     color: white;
 }
@@ -49,10 +44,6 @@ body {
     height: 30px;
 }
 
-.btnBack {
-    margin-bottom: 10px;
-}
-
 .btnBack a {
     color: white;
     text-decoration: none;
@@ -61,7 +52,6 @@ body {
 .buttonNext {
     display: flex;
     float: right;
-    margin-top: 25px;
 }
 
 .icon {
@@ -127,10 +117,31 @@ body {
     max-height: 230px;
 }
 
+.scroll2 {
+    overflow: auto;
+    max-height: 400px;
+}
+
 .cursor-default {
     cursor: default;
 }
 
 .cursor-pointer {
     cursor: pointer;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-10-negative {
+    margin-top: -10px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-10-negative {
+    margin-bottom: -10px;
 }
