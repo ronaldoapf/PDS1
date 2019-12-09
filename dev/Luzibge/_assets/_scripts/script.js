@@ -216,7 +216,7 @@ function carregarColunasNaTabela(arr) {
             <td title="${coluna}" class="cursor-default">${coluna}</td>
             <td title="${coluna_decodificada}"class="cursor-default">${valorDecodificado}</td>
             <td> <input type="text" ${disabled} value="${valor}"> </td>
-            <td class=""> <button class="check-circle-solid ${aux}"> </td>
+            <td class=" d-flex justify-content-center"> <button class="check-circle-solid ${aux}"> </td>
             </tr>`;
 
 

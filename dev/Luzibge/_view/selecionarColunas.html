@@ -26,7 +26,7 @@
     <div class="d-flex">
         <div class="container ">
             <!-- Botão para voltar à tela anterior -->
-            <button type="button" class="btnBack btn btn-primary">
+            <button type="button" class="btn btn-primary" style="margin-top: 10px;">
                 <a href="telaArquivos.html">
                     <div class="d-flex">
                         <div class="icon">
@@ -108,25 +108,24 @@
                         </div>
                     </div>
 
-                    <div class="scroll2">
-                        <table id="table-colunas" class="table table-borderless">
-                            <thead class="thead-dark">
-                                <tr class>
-                                    <th scope="col">#</th>
-                                    <th scope="col ">Coluna original</th>
-                                    <th scope="col">Coluna decodificada</th>
-                                    <th scope="col">Valor renomeado</th>
-                                    <th scope="col">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                    <table id="table-colunas" class="table table-borderless">
+                        <thead class="thead-dark">
+                            <tr class>
+                                <th scope="col">#</th>
+                                <th scope="col ">Coluna original</th>
+                                <th scope="col">Coluna decodificada</th>
+                                <th scope="col">Valor renomeado</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="row" id="div-botao" style="display: flex;">
+                        </tbody>
+                    </table>
 
-                        <div class="col-6">
+                    <div class="row mb-10" id="div-botao" style="display: flex;">
+
+                        <div class="col-6" style="">
                             <div class="btnBack">
                                 <div class="input-group">
                                     <button class="btn btn-secondary" type="submit" id="botao-colunasRetornar">
