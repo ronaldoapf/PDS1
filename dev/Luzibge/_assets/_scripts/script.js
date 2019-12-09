@@ -288,9 +288,7 @@ $(document).ready(function() {
 
     //botão próximo
     $("#botao-colunas").click(function() {
-        if (planilhas[planilha_atual].indice == planilhas[planilha_atual].colunas.length) {
-            $(this).prop("disabled", true)
-        } else {
+        if(planilhas[planilha_atual].indice != planilhas[planilha_atual].colunas.length) {
             var i_atual = planilhas[planilha_atual].indice;
             var x = planilhas[planilha_atual].colunas.length - i_atual
             x = (10 < x) ? 10 : x
