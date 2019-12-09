@@ -1,15 +1,15 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Tray } = require('electron')
 // Mantém a referência global do objeto da janela.
 // se você não fizer isso,
 // a janela será fechada automaticamente
 // quando o objeto JavaScript for coletado como lixo.
 let win
-
 function createWindow () {
   // Criar uma janela de navegação.
   win = new BrowserWindow({
     width: 1600,
     height: 1200,
+    icon: __dirname + '/sigeo-logo.ico',
     webPreferences: {
       nodeIntegration: true
     }
@@ -17,8 +17,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   win.loadFile('./index.html')
-  win.maximize() 
-
+  win.maximize()
 
   // Emitido quando a janela é fechada.
   win.on('closed', () => {
