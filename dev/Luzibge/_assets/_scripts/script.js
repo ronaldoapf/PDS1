@@ -1,22 +1,25 @@
 //variaveis globais
+var buttons; //variavel para controlar os botoes da coluna selecionada para ficar habilitado/desabilitado se houver coluna selecionada da planilha
 var planilhas = [];
 var planilha_atual;
 var url_indice; // par para pegar a planilha de indice vinda da url
 var url_planilhas; //var para pegar as planilhas vindas da url
 var arrayIndice = []; //array para percorrer indice
 
+//funcao para pegar caminho do python
 var caminhoDoPython = ''
 
 cmd = require('node-cmd')
 cmd.get(
     'where python',
-    function(err, data, stderr){
+    function(err, data, stderr) {
         pythonPath = (data.split('\n')[0])
     }
 );
+
 function sendRequest(json) {
     pythonPath = ''
-    
+
 
     var {
         PythonShell
@@ -30,7 +33,7 @@ function sendRequest(json) {
         args: [JSON.stringify(json)],
         pythonPath: caminhoDoPython
     }
-    var python = new PythonShell('teste-global.py', opcoes);
+    var python = new PythonShell('planilhas.py', opcoes);
 
     var response;
     //quando o arquivo python retornar algo esse evento será disparado
@@ -41,14 +44,15 @@ function sendRequest(json) {
                 if (response.opcao == 1) {
                     planilhas[planilha_atual] = new Planilha(url_planilhas[planilha_atual], 0, response.colunas, response.colunas_decodificadas, {})
                     if (planilhas[planilha_atual].colunas && planilhas[planilha_atual].colunas_decodificadas) {
-                        planilhas[planilha_atual].indice = 10
-                        carregarColunasNaTabela([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+                        let aux_lenght = (planilhas[planilha_atual].colunas.length > 10) ? 10 : planilhas[planilha_atual].colunas.length
+                        planilhas[planilha_atual].indice = aux_lenght
+                        carregarColunasNaTabela(inicilizarArray(0, aux_lenght));
                     }
                 } else if (response.opcao == 2) {
                     if (response.res) alert(`Planilha salva no diretório: "${response.dir_salvar}"`)
                 }
             } else {
-                alert("Erro ao carregar planilha!");
+                alert("Erro ao se comunicar com Python, verifique página de tutoriais!");
             }
         }
     })
@@ -132,16 +136,16 @@ function carregarPlanilhasNaTabela(sheets) {
         nome = p.split('\\')
         nome = nome[nome.length - 1]
 
-        let html = `<tr class="trClass">
+        let html = `<tr class="trClass cursor-default">
             <th scope="row">
                 ${i+1}
             </th>
-            <td style="cursor: pointer;" onmouseover="style='text-decoration:underline;'" onmouseout="style='text-decoration:none;'">
+            <td class="cursor-pointer" onmouseover="style='text-decoration:underline;'" onmouseout="style='text-decoration:none;'">
             <p class="nome-planilha">${nome}</p></td>
             <td>
                 <input class="input-renomear-planilha" type="text" name="" id="${p}" style="width: 80%;" disabled="true">
             </td>
-            <td> 
+            <td > 
                 <button title="Desfazer ações" class="btn btn-light desfazerAcoes confirmar-hidden" disabled hidden>
                     Confirmar Ação
                 </button>
@@ -150,7 +154,7 @@ function carregarPlanilhasNaTabela(sheets) {
                 </button>
                 
                 <button title="Editar nome da planilha" class="btn btn-light editarPlanilha" disabled>
-                    <img src="../_assets/icon/icons8-editar-26.png"></img>
+                    <img src="../_assets/icon/icons8-informações-26.png"></img>
                 </button>
                 <button title="Salvar planilha" class="btn btn-light salvarPlanilha" disabled>
                     <img src="../_assets/icon/icons8-salvar-26.png"></img>
@@ -178,7 +182,6 @@ function verificarColunaNaTabela(index, colunas_selecionadas) {
 //funcao que carrega as colunas de uma planilha na tabela "tabela-colunas"
 //function carregarColunasNaTabela(colunas, colunas_decodificadas, index) {
 function carregarColunasNaTabela(arr) {
-
     //limpando conteudo da tabela
     $("#table-colunas > tbody > tr").remove();
 
@@ -191,8 +194,10 @@ function carregarColunasNaTabela(arr) {
         var valorDecodificado = coluna_decodificada;
 
         if (valorDecodificado.length > 50) {
-            let temp = valorDecodificado.slice(0, valorDecodificado.indexOf("_"))
-            temp += '...'
+
+            let i_slice = (valorDecodificado.indexOf(" ") != -1) ? valorDecodificado.indexOf(" ") : valorDecodificado.indexOf("_")
+            let temp = valorDecodificado.slice(0, i_slice)
+            temp += ' ... '
             temp += valorDecodificado.slice(valorDecodificado.length - (50 - temp.length), valorDecodificado.length)
             valorDecodificado = temp
         }
@@ -207,26 +212,47 @@ function carregarColunasNaTabela(arr) {
         }
 
         let html = `<tr>
-            <th scope="row"><p>${col+1}</p></th>
-            <td title="${coluna}" class="">${coluna}</td>
-            <td title="${coluna_decodificada}"class="">${valorDecodificado}</td>
-            <td>
-                <input type="text" ${disabled} value="${valor}">
-            </td>
-            <td class="">
-                <button class="check-circle-solid ${aux}">
-            </td>
+            <th scope="row" class="cursor-default"><p>${col+1}</p></th>
+            <td title="${coluna}" class="cursor-default">${coluna}</td>
+            <td title="${coluna_decodificada}"class="cursor-default">${valorDecodificado}</td>
+            <td> <input type="text" ${disabled} value="${valor}"> </td>
+            <td class=""> <button class="check-circle-solid ${aux}"> </td>
             </tr>`;
 
 
         $("#table-colunas").append(html);
     })
+
+    if (arr.length != 10) {
+        let aux_tam = 10 - arr.length
+
+        for (i = 0; i < aux_tam; i++) {
+            let html = `<tr>
+            <th scope="row" class="cursor-default"><p>&nbsp</p></th>
+            <td title="" class="cursor-default"></td>
+            <td title="" class="cursor-default"></td>
+            <td></td>
+            <td class=""></td>
+            </tr>`;
+
+
+            $("#table-colunas").append(html);
+        }
+    }
+}
+
+//Função para fazer o controle de só habilitar botão de salvar e restaurar quando tiver alguma coluna selecionada na planilha
+function controleBotoes() {
+
+    if (Object.keys(planilhas[planilha_atual].colunas_selecionadas).length > 0) {
+        buttons.prop("disabled", false);
+    } else {
+        buttons.prop("disabled", true);
+    }
 }
 
 $(document).ready(function() {
-
-    $("#input-busca").hide()
-        //inicializando arquivo python
+    //inicializando arquivo python
     var {
         PythonShell
     } = require("python-shell")
@@ -239,14 +265,22 @@ $(document).ready(function() {
 
     $('#table-planilhas').on('click', '.nome-planilha', function() {
 
+        if (!$("#div-colunas").is(":visible")) $("#div-colunas").show();
+
+
+        if (buttons) {
+            buttons.prop("disabled", true)
+        }
+
         let tr = $(this).closest("tr");
         planilha_atual = tr.index()
 
         buscarColunasCodificadas_Decodificadas(url_planilhas[planilha_atual], url_indice);
 
-        let buttons = $(this).closest("tr").find("button");
-        buttons.prop("disabled", false)
-
+        buttons = $(this).closest("tr").find("button");
+        if (planilhas[planilha_atual]) {
+            controleBotoes();
+        }
 
         var selected = tr.hasClass("bg-gray");
         $("#table-planilhas tr").removeClass("bg-gray");
@@ -259,11 +293,11 @@ $(document).ready(function() {
 
         $("#input-busca").toggle(true)
         $("#planilha-selecionada").html('');
-        $("#planilha-selecionada").html('Filtrar colunas da planilha "' + nome + '":');
-
+        $("#planilha-selecionada").html('Filtrar colunas da planilha "' + nome + '":' + '<i class="material-icons" style="cursor: pointer;" data-toggle="modal" data-target="#ModalLongoColunasPlanilha">info</i>');
         if ($("#div-botao").is(":hidden")) {
             $("#div-botao").show();
         }
+
         return false;
 
 
@@ -271,9 +305,7 @@ $(document).ready(function() {
 
     //botão próximo
     $("#botao-colunas").click(function() {
-        if (planilhas[planilha_atual].indice == planilhas[planilha_atual].colunas.length) {
-            $(this).prop("disabled", true)
-        } else {
+        if (planilhas[planilha_atual].indice != planilhas[planilha_atual].colunas.length) {
             var i_atual = planilhas[planilha_atual].indice;
             var x = planilhas[planilha_atual].colunas.length - i_atual
             x = (10 < x) ? 10 : x
@@ -325,7 +357,7 @@ $(document).ready(function() {
             input.attr('disabled', 'true');
             delete planilhas[planilha_atual].colunas_selecionadas[i_coluna]
             input.val("")
-
+            controleBotoes();
         } else {
 
             $(this).addClass("bc-green")
@@ -340,6 +372,8 @@ $(document).ready(function() {
                 }
             })
             input.val(aux)
+            controleBotoes();
+
         }
     })
 
@@ -407,6 +441,7 @@ $(document).ready(function() {
         }
         input.val("")
         input.prop("disabled", true)
+        buttons.prop("disabled", true)
     }
     // Função para desfazer ações fazendo com que o vetor de colunas_selecionadas receba nenhum valor
     $(".desfazerAcoes").click(function() {

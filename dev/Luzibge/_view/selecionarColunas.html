@@ -18,21 +18,14 @@
     </script>
     <script src="../_assets/_scripts/script.js"></script>
     <script src="../_model/Planilha.js"></script>
-
-    <style type="text/css">
-        .scroll
-        {
-            overflow: auto;
-            height: 230px;
-        }
-    </style>
+    <script src="../_assets/_js/jquery-confirm.min.js"></script>
 </head>
 
 <body>
 
-    <script src="../_assets/_js/jquery-confirm.min.js"></script>
     <div class="d-flex">
-        <div class="container">
+        <div class="container ">
+            <!-- Botão para voltar à tela anterior -->
             <button type="button" class="btnBack btn btn-primary">
                 <a href="telaArquivos.html">
                     <div class="d-flex">
@@ -46,32 +39,76 @@
                 </a>
             </button>
 
-            <div class="row">
-                <div class="col-12 title-columns">
-                    <h4>Selecione uma planilha para decodificar suas colunas: </h4>
+            <!-- Modal Mensagem de dúvida referente a selecionar a planilhar de mostrar colunas -->
+            <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="TituloModalLongoExemplo">Selecionar planilha de índice</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Neste campo, selecione a planilha que você deseja manipular para selecionar as colunas desejadas.
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="scroll">
-            <table id="table-planilhas" class="table table-sm">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nome do Arquivo</th>
-                        <th scope="col">Novo nome da planilha</th>
-                        <th scope="col">Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-             </div>  
 
+            <!-- Modal Mensagem de dúvida referente a selecionar a coluna de interesse -->
+            <div class="modal fade" id="ModalLongoColunasPlanilha" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="TituloModalLongoExemplo">Selecionar planilha de índice</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Neste campo, selecione a coluna que você deseja decodificar da planilha que foi selecionada logo acima.
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <div class="row" style="margin-top: 20px; margin-bottom: 20px; display: flex; justify-content: space-around;">
+            <div class="content">
+                <div class="row d-flex">
+                    <div class="col-10 title-columns">
+                        <div>
+                            <h4>
+                                Selecione uma das planilhas abaixo para decodificar suas colunas:
+                                <i class="material-icons" style="cursor: pointer;" data-toggle="modal" data-target="#ModalLongoExemplo">info</i>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
 
-                <h3 id="planilha-selecionada"></h3>
+                <div class="scroll mb-2">
+                    <table id="table-planilhas" class="table table-sm">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nome do Arquivo</th>
+                                <th scope="col">Novo nome da planilha</th>
+                                <th scope="col">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
 
+                <div id="div-colunas" style="display: none; justify-content: space-around;">
+                    <div class="filtragem-colunas" style="margin-top: 20px; margin-bottom: 20px; display: flex; justify-content: space-between;">
+                        <h4 id="planilha-selecionada"></h4>
+                        <div class="campo-busca">
+                            <input placeholder="Ex: 'var001, 'var015, 'variancia', 'media'" type="text" name="" id="input-busca" class="form-control">
+                        </div>
+                    </div>
 
+<<<<<<< HEAD
                 <div class="campo-busca">
                     <input placeholder="Ex: 'var001, 'var015, 'variancia', 'media'" type="search" name="" id="input-busca" class="form-control">
                 </div>
@@ -96,24 +133,48 @@
                     <div class="btnBack" style="display: flex;">
                         <div class="input-group">
                             <button class="btn btn-secondary" type="submit" id="botao-colunasRetornar">
+=======
+                    <div class="scroll2">
+                        <table id="table-colunas" class="table table-borderless">
+                            <thead class="thead-dark">
+                                <tr class>
+                                    <th scope="col">#</th>
+                                    <th scope="col ">Coluna original</th>
+                                    <th scope="col">Coluna decodificada</th>
+                                    <th scope="col">Valor renomeado</th>
+                                    <th scope="col">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row" id="div-botao" style="display: flex;">
+
+                        <div class="col-6">
+                            <div class="btnBack">
+                                <div class="input-group">
+                                    <button class="btn btn-secondary" type="submit" id="botao-colunasRetornar">
+>>>>>>> c1a2d5cd2af929645f26c4136b884553f6c42085
                                 Colunas Anteriores
                             </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="col-6">
-                    <div class="buttonNext">
-                        <div class="input-group">
-                            <button class="btn btn-secondary" type="submit" id="botao-colunas">
+                        <div class="col-6" style="justify-content: flex-end;">
+                            <div class="buttonNext">
+                                <div class="input-group">
+                                    <button class="btn btn-secondary" type="submit" id="botao-colunas">
                                 Próximas colunas
-                                <!-- <a href="selecionarColunas.html">Próximo</a> -->
-                                <!-- <a href="teste.html">Próximo</a> -->
                             </button>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
