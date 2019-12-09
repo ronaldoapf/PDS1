@@ -56,13 +56,30 @@
                 </div>
             </div>
 
+            <!-- Modal Mensagem de dúvida referente a selecionar a coluna de interesse -->
+            <div class="modal fade" id="ModalLongoColunasPlanilha" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="TituloModalLongoExemplo">Selecionar planilha de índice</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Neste campo, selecione a coluna que você deseja decodificar da planilha que foi selecionada logo acima. 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="content">
                 <div class="row d-flex">
                     <div class="col-10 title-columns">
                         <div>
                             <h4>
                                 Selecione uma das planilhas abaixo para decodificar suas colunas:
-                                <i class="material-icons col-2 mt-5" style="cursor: pointer;" data-toggle="modal" data-target="#ModalLongoExemplo">info</i>
+                                <i class="material-icons" style="cursor: pointer;" data-toggle="modal" data-target="#ModalLongoExemplo">info</i>
                             </h4>
                         </div>
                     </div>

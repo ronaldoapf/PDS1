@@ -276,7 +276,7 @@ $(document).ready(function() {
 
         $("#input-busca").toggle(true)
         $("#planilha-selecionada").html('');
-        $("#planilha-selecionada").html('Filtrar colunas da planilha "' + nome + '":');
+        $("#planilha-selecionada").html('Filtrar colunas da planilha "' + nome + '":' + '<i class="material-icons" style="cursor: pointer;" data-toggle="modal" data-target="#ModalLongoColunasPlanilha">info</i>');
         if ($("#div-botao").is(":hidden")) {
             $("#div-botao").show();
         }
