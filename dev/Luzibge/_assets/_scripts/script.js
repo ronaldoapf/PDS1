@@ -222,6 +222,23 @@ function carregarColunasNaTabela(arr) {
 
         $("#table-colunas").append(html);
     })
+
+    if (arr.length != 10) {
+        let aux_tam = 10 - arr.length
+
+        for (i = 0; i < aux_tam; i++) {
+            let html = `<tr>
+            <th scope="row" class="cursor-default"><p>&nbsp</p></th>
+            <td title="" class="cursor-default"></td>
+            <td title="" class="cursor-default"></td>
+            <td></td>
+            <td class=""></td>
+            </tr>`;
+
+
+            $("#table-colunas").append(html);
+        }
+    }
 }
 
 //Função para fazer o controle de só habilitar botão de salvar e restaurar quando tiver alguma coluna selecionada na planilha
@@ -288,7 +305,7 @@ $(document).ready(function() {
 
     //botão próximo
     $("#botao-colunas").click(function() {
-        if(planilhas[planilha_atual].indice != planilhas[planilha_atual].colunas.length) {
+        if (planilhas[planilha_atual].indice != planilhas[planilha_atual].colunas.length) {
             var i_atual = planilhas[planilha_atual].indice;
             var x = planilhas[planilha_atual].colunas.length - i_atual
             x = (10 < x) ? 10 : x

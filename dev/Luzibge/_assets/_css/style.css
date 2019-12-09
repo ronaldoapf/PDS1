@@ -127,6 +127,11 @@ body {
     max-height: 230px;
 }
 
+.scroll2 {
+    overflow: auto;
+    max-height: 400px;
+}
+
 .cursor-default {
     cursor: default;
 }
