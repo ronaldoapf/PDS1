@@ -153,7 +153,7 @@ function carregarPlanilhasNaTabela(sheets) {
                     <img src="../_assets/icon/icons8-undefined-26.png" alt="Ícone para desfazer ações"></img>
                 </button>
                 
-                <button title="Editar nome da planilha" class="btn btn-light editarPlanilha" disabled>
+                <button title="Editar nome da planilha" class="btn btn-light editarPlanilha" disabled data-toggle="modal" data-target="#ModalParaInformacoes">
                     <img src="../_assets/icon/icons8-informações-26.png"></img>
                 </button>
                 <button title="Salvar planilha" class="btn btn-light salvarPlanilha" disabled>
@@ -165,6 +165,12 @@ function carregarPlanilhasNaTabela(sheets) {
         $("#table-planilhas").append(html)
 
     });
+}
+
+function carregarDadosModal(frase){
+    $("#table-colunas-dados > tbody > tr").remove();
+    $("#table-colunas-dados").append(frase);
+
 }
 
 //função que verifica se a coluna já foi marcada
@@ -403,12 +409,23 @@ $(document).ready(function() {
         }
     })
 
-    // Função para liberar o campo de input para editar planilhas
+    // Função para mostrar as colunas selecionadas
     $(".editarPlanilha").click(function() {
-        let input = $(this).closest("tr").find("input")
-        input.prop("disabled", false)
-        input.val("Informe o novo nome da planilha")
-        input.select()
+        nome = planilhas[planilha_atual].diretorio.split('\\')
+        nome = nome[nome.length - 1]
+        
+        let frase = "As colunas selecionadas da planilha " + nome + " são: <br><br>"    
+        let html =""
+        Object.keys(planilhas[planilha_atual].colunas_selecionadas).forEach(function(item){
+            frase = frase + planilhas[planilha_atual].colunas[item]+ " : " + planilhas[planilha_atual].colunas_selecionadas[item] + "<br>";
+            html = html + `<tr>
+                    <td title="${planilhas[planilha_atual].colunas[item]}" class="cursor-default">${planilhas[planilha_atual].colunas[item]}</td>
+                    <td title="${planilhas[planilha_atual].colunas_selecionadas[item]}"class="cursor-default">${planilhas[planilha_atual].colunas_selecionadas[item]}</td>
+                    </tr>`;
+           });
+
+        
+        carregarDadosModal(html);
     })
 
     function teste(obj) {

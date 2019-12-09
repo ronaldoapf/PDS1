@@ -39,39 +39,7 @@
                 </a>
             </button>
 
-            <!-- Modal Mensagem de dúvida referente a selecionar a planilhar de mostrar colunas -->
-            <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="TituloModalLongoExemplo">Selecionar planilha de índice</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            Neste campo, selecione a planilha que você deseja manipular para selecionar as colunas desejadas.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal Mensagem de dúvida referente a selecionar a coluna de interesse -->
-            <div class="modal fade" id="ModalLongoColunasPlanilha" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="TituloModalLongoExemplo">Selecionar planilha de índice</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            Neste campo, selecione a coluna que você deseja decodificar da planilha que foi selecionada logo acima. 
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
             <div class="content">
                 <div class="row d-flex">
@@ -145,6 +113,68 @@
                         </div>
 
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Mensagem de dúvida referente a selecionar a planilhar de mostrar colunas -->
+    <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalLongoExemplo">Selecionar planilha de índice</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Neste campo, selecione a planilha que você deseja manipular para selecionar as colunas desejadas.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Mensagem de dúvida referente a selecionar a coluna de interesse -->
+    <div class="modal fade" id="ModalLongoColunasPlanilha" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalLongoExemplo">Selecionar colunas de interesse</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Neste campo, selecione a coluna que você deseja decodificar da planilha que foi selecionada logo acima. 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- teste de modal -->
+    <div class="modal fade" id="ModalParaInformacoes" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalLongoExemplo">Colunas selecionadas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="DadosModal" class="modal-body">
+                    <table id="table-colunas-dados" class="table table-borderless">
+                        <thead class="thead-dark">
+                            <tr class>
+                                <th scope="col ">Coluna original</th>
+                                <th scope="col">Coluna decodificada</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
