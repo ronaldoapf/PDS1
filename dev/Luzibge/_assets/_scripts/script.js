@@ -154,7 +154,7 @@ function carregarPlanilhasNaTabela(sheets) {
                 </button>
                 
                 <button title="Editar nome da planilha" class="btn btn-light editarPlanilha" disabled>
-                    <img src="../_assets/icon/icons8-editar-26.png"></img>
+                    <img src="../_assets/icon/icons8-informações-26.png"></img>
                 </button>
                 <button title="Salvar planilha" class="btn btn-light salvarPlanilha" disabled>
                     <img src="../_assets/icon/icons8-salvar-26.png"></img>
