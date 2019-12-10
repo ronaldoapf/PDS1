@@ -145,3 +145,18 @@ body {
 .mb-10-negative {
     margin-bottom: -10px;
 }
+
+.menu{
+    margin-top: 20px;
+}
+
+.menu-item{
+    margin-left: -40px;
+}
+
+.btnInicio{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+
+}
