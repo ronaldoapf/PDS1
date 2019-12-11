@@ -153,7 +153,7 @@ function carregarPlanilhasNaTabela(sheets) {
                     <img src="../_assets/icon/icons8-undefined-26.png" alt="Ícone para desfazer ações"></img>
                 </button>
                 
-                <button title="Editar nome da planilha" class="btn btn-light editarPlanilha" disabled data-toggle="modal" data-target="#ModalParaInformacoes">
+                <button title="Colunas selecionadas" class="btn btn-light editarPlanilha" disabled data-toggle="modal" data-target="#ModalParaInformacoes">
                     <img src="../_assets/icon/icons8-informações-26.png"></img>
                 </button>
                 <button title="Salvar planilha" class="btn btn-light salvarPlanilha" disabled>
