@@ -153,7 +153,7 @@ function carregarPlanilhasNaTabela(sheets) {
                     <img src="../_assets/icon/icons8-undefined-26.png" alt="Ícone para desfazer ações"></img>
                 </button>
                 
-                <button title="Editar nome da planilha" class="btn btn-light editarPlanilha" disabled data-toggle="modal" data-target="#ModalParaInformacoes">
+                <button title="Exibir colunas que já foram selecionadas" class="btn btn-light informacoesPlanilha" disabled data-toggle="modal" data-target="#ModalParaInformacoes">
                     <img src="../_assets/icon/icons8-informações-26.png"></img>
                 </button>
                 <button title="Salvar planilha" class="btn btn-light salvarPlanilha" disabled>
@@ -167,9 +167,10 @@ function carregarPlanilhasNaTabela(sheets) {
     });
 }
 
-function carregarDadosModal(frase){
-    $("#table-colunas-dados > tbody > tr").remove();
-    $("#table-colunas-dados").append(frase);
+function carregarDadosModal(html, frase) {
+    $("#modal-tbody > tr").remove();
+    $("#modal-tbody").append(html);
+    $("#qtde_colunas_selecionadas").text(frase)
 
 }
 
@@ -427,22 +428,20 @@ $(document).ready(function() {
     })
 
     // Função para mostrar as colunas selecionadas
-    $(".editarPlanilha").click(function() {
+    $(".informacoesPlanilha").click(function() {
         nome = planilhas[planilha_atual].diretorio.split('\\')
         nome = nome[nome.length - 1]
-        
-        let frase = "As colunas selecionadas da planilha " + nome + " são: <br><br>"    
-        let html =""
-        Object.keys(planilhas[planilha_atual].colunas_selecionadas).forEach(function(item){
-            frase = frase + planilhas[planilha_atual].colunas[item]+ " : " + planilhas[planilha_atual].colunas_selecionadas[item] + "<br>";
-            html = html + `<tr>
+
+        let frase = `Colunas selecionadas: ${Object.keys(planilhas[planilha_atual].colunas_selecionadas).length}`
+        let html = ""
+        Object.keys(planilhas[planilha_atual].colunas_selecionadas).forEach(function(item) {
+            html += `<tr>
                     <td title="${planilhas[planilha_atual].colunas[item]}" class="cursor-default">${planilhas[planilha_atual].colunas[item]}</td>
                     <td title="${planilhas[planilha_atual].colunas_selecionadas[item]}"class="cursor-default">${planilhas[planilha_atual].colunas_selecionadas[item]}</td>
                     </tr>`;
-           });
+        });
 
-        
-        carregarDadosModal(html);
+        carregarDadosModal(html, frase)
     })
 
     function teste(obj) {
