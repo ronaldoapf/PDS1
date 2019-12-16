@@ -1,7 +1,7 @@
 Passo a passo para gerar o instalador
 
 1º Instalar o electron-packager
-npm install electron-packager
+npm install electron-packager -g
 
 2º Comandos necessários para gerar o .exe
 electron-packager pastadoarquivo 
