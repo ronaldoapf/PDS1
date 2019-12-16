@@ -22,7 +22,7 @@ DefaultDirName={userpf}\{#MyAppName}
 DisableProgramGroupPage=yes
 ; The [Icons] "quicklaunchicon" entry uses {userappdata} but its [Tasks] entry has a proper IsAdminInstallMode Check.
 UsedUserAreasWarning=no
-InfoBeforeFile=C:\Users\ronal\Desktop\PDS1\Instalador\Luzibge\readme.txt
+InfoBeforeFile=C:\Users\ronal\Desktop\Luzibge\readme.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputBaseFilename=luzibge
@@ -39,10 +39,10 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 6.1; Check: not IsAdminInstallMode
 
 [Files]
-Source: "C:\Users\ronal\Desktop\PDS1\Instalador\Luzibge\luzibge-win32-x64\luzibge.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\ronal\Desktop\PDS1\Instalador\Luzibge\luzibge-win32-x64\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\ronal\Desktop\Luzibge\luzibge-win32-x64\luzibge.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\ronal\Desktop\Luzibge\luzibge-win32-x64\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\ronal\Downloads\python-3.8.0.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\ronal\Desktop\PDS1\Instalador\Luzibge\installPandas.bat"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\ronal\Desktop\Luzibge\installPandas.bat"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
