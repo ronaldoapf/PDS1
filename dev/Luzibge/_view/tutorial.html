@@ -72,9 +72,11 @@
                     </h3>
                     <p>Programa feito consiste em um aplicação na qual o usuário deve selecionar 
                         planilhas do IBGE, codificadas, para decodificá-las e salvar uma nova 
-                        planilha apenas com as colunas que lhe interessa.</p>
+                        planilha apenas com as colunas que lhe interessa.
+                    </p>
                     <p>O processo de decodificação é realizado através de uma planilha de índices que deve ser feita 
-                        manualmente para cada grupo de planilhas codificadas.</p>
+                        manualmente para cada grupo de planilhas codificadas.
+                    </p>
                     <p><b>Dependências:</b></p>
                     <ul>
                         <li>
@@ -95,7 +97,45 @@
                                 Portanto, ao baixar as planilhas do IBGE, elas provavelmente virão no formalo .xlsx, e devem ser 
                                 convertidas para .csv (pode-se utilizar ferramentas gratuitas como o Libre Office Calc para realizar tal conversão)</p></li>
                         
-                        <li><b>Python: </b>É necessário ter instalado, em seu computador, alguma versão do python 3.7 ou superior</li>
+                        <li>
+                            <b>Python:</b>
+                            Versão: 3.8.0 e biblioteca pandas.<br>
+                            O instalador tentará instalar o Python em seu computador e também o Pandas.
+                            Caso o Python não tenha sido instalado:
+                            <ol>
+                                <li>
+                                    Acessa a página do <a href="https://www.python.org/downloads/" target="_blank">Python</a> e baixe última versão.
+                                </li>
+
+                                <li>
+                                    Execute o instalador do Python e selecione a opção com a seguinte descrição: 
+                                    "Add Python X.x to PATH". Depois disso clique em <i>"Install Now"</i>
+                                </li>
+
+                                <img src="../_assets/_image/installpython.png" style="margin-top:10px; margin-bottom: 20px;" alt="" width= "50%">
+
+                                <li>
+                                    Execute o CMD (Prompt de Comando) como administrador.
+                                </li>
+                                <img src="../_assets/_image/cmdAdministrador.png" style="margin-top:10px; margin-bottom: 20px;" alt="" width= "50%">
+                                <br>
+                                
+                                <li>
+                                    Digite "pip install pandas" sem aspas.
+                                </li>
+                                <img src="../_assets/_image/installPandas.png" style="margin-top:10px; margin-bottom: 20px;" alt="" width= "50%">
+                                
+                                <li>
+                                    Se tudo der certo, irá aparecer algumas mensagens como essas:
+                                </li>
+                                <img src="../_assets/_image/instalacaoPandas.png" style="margin-top:10px; margin-bottom: 20px;" alt="" width= "70%">
+
+                                <li>
+                                    E pronto! Agora seu <b>Luzibge</b> irá funcionar como deveria 😊
+                                </li>
+                            </ol>
+                            
+                        </li>
                     </ul>
                 </div>
 

@@ -29,7 +29,7 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 Source: "C:\Users\ronal\Desktop\luzibge-win32-x64\luzibge.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\ronal\Desktop\luzibge-win32-x64\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\Users\ronal\Downloads\python-3.8.0.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\ronal\Desktop\installPandas.dat"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\ronal\Desktop\PDS1\Instalador\installPandas.bat"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
@@ -42,11 +42,7 @@ Filename: "{app}\python-3.8.0.exe"
 Filename: "{cmd}"; Parameters: "\CC ""installPandas.dat"""; WorkingDir: "{app}"
 Filename: "{app}\luzibge.exe"; Flags: postinstall skipifsilent; Description: "{cm:LaunchProgram,Luzibge}"
 
-[Types]
-Name: "Mínima"; Description: "Mínima (Somente o Software Luzibge)"
-Name: "Completa"; Description: "Completa (Instalação do Python e do Luzibge)"
-
 [Components]
-Name: "Luzibge"; Description: "Programa Principal"; Types: Completa Mínima
-Name: "Python"; Description: "Dependências para utilização"; Types: Completa
-Name: "Python/installPandas"; Description: "Instalação da lib do Python"; Types: Completa
+Name: "Luzibge"; Description: "Programa Principal";
+Name: "Python"; Description: "Dependências para utilização";
+Name: "Python/installPandas"; Description: "Instalação da lib do Python";
