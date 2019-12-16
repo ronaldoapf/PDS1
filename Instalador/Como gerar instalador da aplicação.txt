@@ -1,0 +1,23 @@
+Passo a passo para gerar o instalador
+
+1º Instalar o electron-packager
+npm install electron-packager -g
+
+2º Comandos necessários para gerar o .exe
+electron-packager pastadoarquivo 
+
+3º Mudar o caminho dos arquivos dentro do script do inno setup
+
+- Esse é o .exe gerado pelo electron-packager
+Source: "C:\Users\ronal\Desktop\luzibge-win32-x64\luzibge.exe"; DestDir: "{app}"; Flags: ignoreversion 
+
+- A pasta com o resto dos arquivos
+Source: "C:\Users\ronal\Desktop\luzibge-win32-x64\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+
+- O instalador do python3.8
+Source: "C:\Users\ronal\Downloads\python-3.8.0.exe"; DestDir: "{app}"; Flags: ignoreversion
+
+- O arquivo .bat para instalar o pip
+Source: "C:\Users\ronal\Desktop\installPandas.bat"; DestDir: "{app}"; Flags: ignoreversion
+
+4º Feito tudo isso, só compilar o script do inno setup que vai ser gerado o instalador.
