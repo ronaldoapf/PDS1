@@ -4,7 +4,7 @@ Passo a passo para gerar o instalador
 npm install electron-packager -g
 
 2º Comandos necessários para gerar o .exe
-electron-packager pastadoarquivo 
+electron-packager pastadoarquivo  --platform=win32  --arch=x64  --icon C:\Users\ronal\Desktop\PDS1\dev\Luzibge\sigeo-logo.icon
 
 3º Gerado o .exe, mova toda a pasta do .exe para a pasta Luzibge.
 
