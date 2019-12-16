@@ -48,6 +48,8 @@ function sendRequest(json) {
                         let aux_arquivo = element.split("\\")
                         $("#selectIndice").append(`<option value="${element}" title="${element}">${aux_arquivo[aux_arquivo.length -1]}</option>`)
                     });
+
+                    $("#selectIndice").append(`<option value="" title="" disabled>Para criar sua própria planilha de índices clique no ícone de informações logo acima</option>`)
                 }
             }
         }

@@ -2,10 +2,6 @@ body {
     height: 100%;
 }
 
-.container {
-    overflow: auto !important;
-}
-
 .trClass {
     background-color: white;
 }
@@ -146,17 +142,47 @@ body {
     margin-bottom: -10px;
 }
 
-.menu{
+.menu {
     margin-top: 20px;
 }
 
-.menu-item{
+.menu-item {
     margin-left: -40px;
 }
 
-.btnInicio{
+.btnInicio {
     width: 30%;
     display: flex;
     justify-content: center;
+}
 
+.d-block {
+    display: block;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.sticky-menu-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sticky-fill {
+    flex: 1 1 auto;
+}
+
+.sticky-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    flex-wrap: wrap;
+    top: 10px;
+    left: 0;
+}
+
+.other-content {
+    height: 300vh;
 }

@@ -38,8 +38,8 @@
         </button>
 
         <div class="row" style="margin-top: 20px;">
-            <div class="col-3">
-                <div class="tabela-referencias jumbotron">
+            <div class="col-3 sticky-menu-container">
+                <div class="tabela-referencias jumbotron sticky-menu">
                     <h2 style="margin-top: -20px;">Referências</h2>
                     <ol class="menu">
                         <li class="menu-item">
@@ -61,53 +61,96 @@
                         </li>
                     </ol>
                 </div>
+                <div class="sticky-fill"></div>
             </div>
 
-            <div class="col-9">
+            <div class="col-9 other-content">
 
                 <div class="jumbotron" id="comoFunciona">
                     <h3 class="" style="margin-top: -20px; margin-bottom: 20px;">
                         1. Como a aplicação funciona
                     </h3>
-                        <b><p>Passo 1:</b> Clicar no botão Iniciar. </p>
-                        <b><p>Passo 2:</b> Selecionar as planilhas que foram baixadas pelo IBGE, que possuem colunas como “Var 01, Var02”, (todas as planilhas deverão estar no formato .csv).</p>
-                        <ul>
-                            <li>Escolha a planilha codificada.</li>
-                            <br>
-                            <li>Escolha uma planilha de índice.</li>
-                        </ul>
-                        <br>
-                        <b><p>Passo 3:</b> Selecione uma planilha escolhida, para  decodificar e escolha   colunas de sua preferência.</p>
-                        <ul>
-                            <li> Pode filtrar colunas da planilha selecionada.</li>
-                            <li> Pode escolher entre uma das ações: Salvar coluna selecionada, desfazer a ação.</li>
-                            <li> Opção de renomear a coluna selecionada, com nome que desejar. </li>
-                        </ul>
+                    <p>Programa feito consiste em um aplicação na qual o usuário deve selecionar 
+                        planilhas do IBGE, codificadas, para decodificá-las e salvar uma nova 
+                        planilha apenas com as colunas que lhe interessa.</p>
+                    <p>O processo de decodificação é realizado através de uma planilha de índices que deve ser feita 
+                        manualmente para cada grupo de planilhas codificadas.</p>
+                    <p><b>Dependências:</b></p>
+                    <ul>
+                        <li>
+                            <p>
+                                <b>Baixar planilhas do IBGE:</b>
+                                As planilhas podem ser baixadas diretamente pelo site do 
+                                <a href="https://www.ibge.gov.br/estatisticas/downloads-estatisticas.html" target="_blank">IBGE</a>.<br>
+                                <b>Obs: </b> Após realizar o download das planilhas, sugerimos que não altere o nome das mesmas, 
+                                    para facilitar a geração da planilha de índices, assim como é explicado na seção de 
+                                    <a href="#gerarIndice">Como gerar planilha de índices</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <b>Formato das planilhas: </b>
+                                Todas as planilhas utilizadas nesta aplicação devem estar no formato <b>.csv</b>, que é 
+                                um formato que separa os valores utilizando vírgula e informa as colunas na primeira linha do arquivo. 
+                                Portanto, ao baixar as planilhas do IBGE, elas provavelmente virão no formalo .xlsx, e devem ser 
+                                convertidas para .csv (pode-se utilizar ferramentas gratuitas como o Libre Office Calc para realizar tal conversão)</p></li>
+                        
+                        <li><b>Python: </b>É necessário ter instalado, em seu computador, alguma versão do python 3.7 ou superior</li>
+                    </ul>
+                </div>
 
-                            
-                                       </div>
+                <div class="jumbotron" id="comoUtilizar">
+                    <h3 class="" style="margin-top: -20px; margin-bottom: 20px;">
+                        2. Como utilizar a aplicação
+                    </h3>
+                    <p><b>Passo 1:</b> Clicar no botão Iniciar. </p>
+                    <p><b>Passo 2:</b> Selecionar as planilhas que foram baixadas pelo IBGE, que possuem colunas como “Var 01, Var02”, (todas as planilhas deverão estar no formato .csv).</p>
+                    <ul>
+                        <li>Escolha as planilhas codificadas.</li>
+                        
+                        <li>Selecione a planilha de índice correspondente.</li>
+                        
+                        <li>Clique no botão "próximo" .</li>
+                    </ul>
+                    <br>
+                    <p><b>Passo 3:</b> Clique no nome de uma das planilhas listadas, para carregar suas colunas.</p>
+                    <ul>
+                        <li> (Opcional) Digite termos como "Var", "media", dentre outros, para filtrar entre as colunas codificadas e decodificadas.</li>
+                    
+                        <li> Para selecionar uma coluna como interessante, basta clicar no "ícone vermelho" correspondente.</li>
+                    
+                        <li> Para renomear uma coluna primeiro ela deve ser marcada como interessante, conforme passo anterior. Após selecionada, basta clicar no campo "valor renomeado" correspondente e digitar o novo nome. </li>
+                        
+                      </ul>
+                        <br>
+                <p><b>Passo 4:</b> Salvar nova planilha. </p>
+                      <ul>
+                          <li>Após selecionadas as colunas de interesse, clique no botão "Salvar" (Botão com ícone de disquete).
+                            <li>Informe o nome da nova planilha e, por último, clique novamente no botão "Salvar". </li>
+                            <li> <b>Obs: </b>A nova planilha será salva no mesmo diretório da planilha original.</li>
+                      </ul>
+                </div>
 
                 <div class="jumbotron" id="gerarIndice">
                     <h3 class="" style="margin-top: -20px; margin-bottom: 20px;">
                         3. Como gerar planilha de índices
                     </h3>
                 
-                   <b><p>Passo 1 :</b> Baixar as planilhas - Disponibilizadas no  <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9662-censo-demografico-2010.html?edicao=9673&t=downloads." target="_blank"> site do IBGE</a></p>  </p> 
+                   <p><b>Passo 1 :</b> Baixar as planilhas - Disponibilizadas no  <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9662-censo-demografico-2010.html?edicao=9673&t=downloads." target="_blank"> site do IBGE</a></p>  </p> 
                     <br>
-                    <b><p>Passo 2:</b> Estrutura do arquivo .csv</p>
+                    <p><b>Passo 2:</b> Estrutura do arquivo .csv</p>
                     <ul>
-                        <li> <p>Primeira linha do arquivo csv deve  ser: "chave,valor", pois representa as colunas;</p>
-                            </li>
+                        <li> <p>Primeira linha do arquivo csv deve  ser: "chave,valor", pois representa as colunas;</p>                            </li>
                         <li> <p>A estrutura do arquivo deverá seguir o seguinte padrão "nome da planilha"_"nome coluna decodificada","nome da coluna decodificado". Exemplo: " basico_var01, responsaveis pelo domicilio ";</p></li>
                         </ul>                    
                     <img src="../_assets/_image/col_normais.png" width="90%" alt="">
 
                     <br>
                     <br>
-                    <b><p>Passo 3:</b> Mapear índices para as planilhas, que podem ser de dois tipos: </p>
+                    <p><b>Passo 3:</b> Mapear índices para as planilhas, que podem ser de dois tipos: </p>
                     <ul>
                         <li>Multivaloradas: Podem assumir diferentes valores decodificados “1”, “2”,”3”,...;</li>
-                        <br>    
+                           
 
                         <li>Simples: Assume um único valor decodificado;</li>
                     </ul>

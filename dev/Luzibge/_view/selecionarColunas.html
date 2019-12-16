@@ -26,7 +26,7 @@
     <div class="d-flex">
         <div class="container ">
             <!-- Botão para voltar à tela anterior -->
-            <button type="button" class=" btn btn-primary mt-5">
+            <button type="button" class=" btn btn-primary mt-5 ">
                 <a href="telaArquivos.html">
                     <div class="d-flex">
                         <div class="icon">
@@ -38,7 +38,7 @@
                     </div>
                 </a>
             </button>
-            
+
             <div class="content">
                 <div class="row d-flex">
                     <div class="col-10 title-columns">
@@ -129,6 +129,11 @@
                 </div>
                 <div class="modal-body">
                     Neste campo, selecione a planilha que você deseja manipular para selecionar as colunas desejadas.
+                    <br><br>
+                    <form action="tutorial.html?#comoFunciona">
+                        <button type="submit" class="btn btn-secondary btn-sm" >Tutorial</button>
+                    </form>
+                    
                 </div>
             </div>
         </div>
@@ -145,7 +150,12 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Neste campo, selecione a coluna que você deseja decodificar da planilha que foi selecionada logo acima. 
+                    Neste campo, selecione a coluna que você deseja decodificar da planilha que foi selecionada logo acima.
+                    <br><br>
+                    <form action="tutorial.html?#comoUtilizar">
+                        <button type="submit" class="btn btn-secondary btn-sm" >Tutorial</button>
+                    </form>
+                    
                 </div>
             </div>
         </div>
@@ -156,21 +166,22 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="TituloModalLongoExemplo">Colunas selecionadas</h5>
+                    <h5 id="qtde_colunas_selecionadas" class="modal-title"></h5>
+
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div id="DadosModal" class="modal-body">
-                    <table id="table-colunas-dados" class="table table-borderless">
-                        <thead class="thead-dark">
+                <div id="DadosModal " class="modal-body ">
+                    <table id="table-colunas-dados " class="table table-borderless ">
+                        <thead class="thead-dark ">
                             <tr class>
                                 <th scope="col ">Coluna original</th>
-                                <th scope="col">Coluna decodificada</th>
+                                <th scope="col ">Coluna decodificada</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            
+                        <tbody id="modal-tbody">
+
                         </tbody>
                     </table>
                 </div>
@@ -179,9 +190,9 @@
     </div>
 
     <!-- Importação arquivos JS -->
-    <script src="../_assets/_js/jquery-3.4.1.js"></script>
-    <script src="../_assets/_js/popper.min.js"></script>
-    <script src="../_assets/_js/bootstrap.js"></script>
+    <script src="../_assets/_js/jquery-3.4.1.js "></script>
+    <script src="../_assets/_js/popper.min.js "></script>
+    <script src="../_assets/_js/bootstrap.js "></script>
 </body>
 
 </html>
