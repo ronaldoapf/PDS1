@@ -128,7 +128,11 @@
                                 <li>
                                     Se tudo der certo, irá aparecer algumas mensagens como essas:
                                 </li>
-                                <img src="../_assets/_image/instalacaoPandas.png" style="margin-top:10px; margin-bottom: 20px;" alt="" width= "70%">
+                                
+                                     <img src="../_assets/_image/instalacaoPandas.png" style="margin-top:10px; margin-bottom: 20px;" alt="" width= "70%">
+                                     
+
+                               
 
                                 <li>
                                     E pronto! Agora seu <b>Luzibge</b> irá funcionar como deveria 😊
@@ -157,17 +161,29 @@
                         
                     <ul>
                         <li>Clique no nome de uma das planilhas listadas, para carregar suas colunas.</li>
-                        <img src="../_assets/_image/selecionar_planilha.png" width="90%" alt="">
-                            
+                        <figure>
+                                <img src="../_assets/_image/selecionar_planilha.png" width="90%" alt="">
+                                <figcaption>Print contendo nome das planilhas listadas.</figcaption>
+                        </figure>
+                        
+
                         <li> (Opcional) No campo "Filtrar colunas da planilha", digite termos como "Var", "media", dentre outros, para filtrar entre as colunas codificadas e decodificadas.</li>
                     
                         <li> Para selecionar uma coluna como interessante, basta clicar no "ícone vermelho" correspondente.</li>
                     
                         <li> Para renomear uma coluna primeiro ela deve ser marcada como interessante, conforme passo anterior. Após selecionada, basta clicar no campo "valor renomeado" correspondente e digitar o novo nome. </li>
-                        <img src="../_assets/_image/marcar_interessante_e_renomear.png" width="90%" alt="">
+                        <figure>
+                                <img src="../_assets/_image/marcar_interessante_e_renomear.png" width="90%" alt="">
+                                <figcaption> Print contendo o campo de interesse marcado, e a opção de renomear aquela coluna, marcada como interessante.</figcaption>
+                        </figure>
+                        
                         
                         <li> Para visualizar outras colunas da planilha clique nos botões "Próximas Colunas" e "Colunas Anteriores", para andar de 10 em 10 colunas. </li>
-                        <img src="../_assets/_image/botao_proximo_e_anterior.png" width="90%" alt="">
+                        <figure>
+                            <img src="../_assets/_image/botao_proximo_e_anterior.png" width="90%" alt="">
+                            <figcaption>Print contendo represetação dos botões anterior e próximo.</figcaption>
+                        </figure>
+                        
                       </ul>
                         <br>
                 <p><b>Passo 4:</b> Salvar nova planilha. </p>
@@ -183,23 +199,42 @@
                         3. Como gerar planilha de índices
                     </h3>
                 
-                   <p><b>Passo 1 :</b> Baixar as planilhas - Disponibilizadas no  <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9662-censo-demografico-2010.html?edicao=9673&t=downloads." target="_blank"> site do IBGE</a></p>  </p> 
+                   <p><b>Passo 1 :</b> Ao baixar as planilhas disponibilizadas no  <a href="https://www.ibge.gov.br/estatisticas/downloads-estatisticas.html" target="_blank"> site do IBGE</a>,
+                        procure um arquivo de documentação, que é um pdf vindo junto com as planilhas, na qual possui as relações entre
+                        as colunas codificadas e o valor real das mesmas</p>  </p> 
                     <br>
                     <p><b>Passo 2:</b> Estrutura do arquivo .csv</p>
                     <ul>
-                        <li> <p>Primeira linha do arquivo csv deve  ser: "chave,valor", pois representa as colunas;</p>                            </li>
+                        <li> <p>Primeira linha do arquivo csv deve  ser: "chave,valor", pois representa as colunas;</p>  
                         <li> <p>A estrutura do arquivo deverá seguir o seguinte padrão "nome da planilha"_"nome coluna decodificada","nome da coluna decodificado". Exemplo: " basico_var01, responsaveis pelo domicilio ";</p></li>
-                        </ul>                    
-                    <img src="../_assets/_image/col_normais.png" width="90%" alt="">
+                        <figure>
+                                <img src="../_assets/_image/cabecalho.png" width="90%" alt=""> 
+                                <figcaption>Print exemplificando  mapeamento  das planilha com chave, valor.</figcaption>
+                        </figure>
+                                                 </li>
+                    </ul>                    
+                    
 
                     <br>
                     <br>
                     <p><b>Passo 3:</b> Mapear índices para as planilhas, que podem ser de dois tipos: </p>
                     <ul>
                         <li>Multivaloradas: Podem assumir diferentes valores decodificados “1”, “2”,”3”,...;</li>
-                           
+                        <figure>
+
+                                <img src="../_assets/_image/col_multivalorada.png" width="90%" alt="">
+                                <figcaption>Print contendo  colunas com valores multivalorados.</figcaption>
+                        </figure>
+                        
 
                         <li>Simples: Assume um único valor decodificado;</li>
+                        <figure>
+                         <img src="../_assets/_image/col_normais.png" width="90%" alt=""> 
+                         <figcaption>Print contendo colunas que contém apenas um valor decodificado.</figcaption>  
+                        </figure>
+                        
+
+                        <li><b>Obs:</b> Os nomes das planilhas deverão estar de acordo com a planilha original do IBGE.</li>
                     </ul>
                 
                 </div>
