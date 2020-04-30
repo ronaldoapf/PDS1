@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "electron-json-storage": "^4.1.8",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "json": "^9.0.6",
     "node-cmd": "^3.0.0",
     "python-shell": "^1.0.8",
